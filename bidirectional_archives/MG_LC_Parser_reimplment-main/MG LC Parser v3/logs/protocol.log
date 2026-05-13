@@ -1,0 +1,7 @@
+2026-01-27T10:49:12 | system | start_suite(parser)
+2026-01-27T10:49:12 | parser | parse_result(input([seven]),status(ok),tree([li([seven],[cfin])]))
+2026-01-27T10:49:12 | parser | parse_result(input([twenty]),status(ok),tree([li([twenty],[cfin])]))
+2026-01-27T10:49:12 | parser | parse_result(input([twenty_,one]),status(ok),tree([tree(_328380,li([twenty_],[=c1,cfin]),li([one],[c1]))]))
+2026-01-27T10:49:12 | parser | parse_result(input([six,teen]),status(ok),tree([tree(_329574,empty,tree(_329230,li([teen],[=c1,+a,cfin]),li([six],[c1,-a])))]))
+2026-01-27T10:49:12 | parser | parse_result(input([forty_,seven]),status(ok),tree([tree(_330174,li([forty_],[=c1,cfin]),li([seven],[c1]))]))
+2026-01-27T10:49:12 | parser | parse_result(input([two,hundred_and,four]),status(ok),tree([tree(_330986,tree(_331282,li([hundred_and],[=c2,=c1,cfin]),li([four],[c2])),li([two],[c1]))]))

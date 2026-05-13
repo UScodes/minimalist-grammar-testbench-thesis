@@ -1,0 +1,144 @@
+==================================================
+SEMANTIC: 1
+GEN STATUS: ok
+GEN TOKENS: [eins]
+GEN SENTENCE: eins
+GEN TREE:
+li([eins],[c1],1)
+
+==================================================
+SEMANTIC: 3
+GEN STATUS: ok
+GEN TOKENS: [drei]
+GEN SENTENCE: drei
+GEN TREE:
+li([drei],[c1,-c,-b,-a],3)
+
+==================================================
+SEMANTIC: 10
+GEN STATUS: ok
+GEN TOKENS: [zehn]
+GEN SENTENCE: zehn
+GEN TREE:
+li([zehn],[c2,-s1],10)
+
+==================================================
+SEMANTIC: 11
+GEN STATUS: ok
+GEN TOKENS: [elf]
+GEN SENTENCE: elf
+GEN TREE:
+li([elf],[c2,-s1],11)
+
+==================================================
+SEMANTIC: 12
+GEN STATUS: ok
+GEN TOKENS: [zwölf]
+GEN SENTENCE: zwölf
+GEN TREE:
+li([zwölf],[c2,-s1],12)
+
+==================================================
+SEMANTIC: 16
+GEN STATUS: ok
+GEN TOKENS: [sechzehn]
+GEN SENTENCE: sechzehn
+GEN TREE:
+li([sechzehn],[c2,-s1],16)
+
+==================================================
+SEMANTIC: 17
+GEN STATUS: ok
+GEN TOKENS: [siebzehn]
+GEN SENTENCE: siebzehn
+GEN TREE:
+li([siebzehn],[c2,-s1],17)
+
+==================================================
+SEMANTIC: 20
+GEN STATUS: ok
+GEN TOKENS: [zwanzig]
+GEN SENTENCE: zwanzig
+GEN TREE:
+li([zwanzig],[c2,-s1],20)
+
+==================================================
+SEMANTIC: 21
+GEN STATUS: ok
+GEN TOKENS: [einundzwanzig]
+GEN SENTENCE: einundzwanzig
+GEN TREE:
+li([einundzwanzig],[c2,-s1],21)
+
+==================================================
+SEMANTIC: 60
+GEN STATUS: ok
+GEN TOKENS: [sechzig]
+GEN SENTENCE: sechzig
+GEN TREE:
+li([sechzig],[c2,-s1],60)
+
+==================================================
+SEMANTIC: 61
+GEN STATUS: ok
+GEN TOKENS: [einundsechzig]
+GEN SENTENCE: einundsechzig
+GEN TREE:
+li([einundsechzig],[c2,-s1],61)
+
+==================================================
+SEMANTIC: 70
+GEN STATUS: ok
+GEN TOKENS: [siebzig]
+GEN SENTENCE: siebzig
+GEN TREE:
+li([siebzig],[c2,-s1],70)
+
+==================================================
+SEMANTIC: 71
+GEN STATUS: ok
+GEN TOKENS: [einundsiebzig]
+GEN SENTENCE: einundsiebzig
+GEN TREE:
+li([einundsiebzig],[c2,-s1],71)
+
+==================================================
+SEMANTIC: 100
+GEN STATUS: ok
+GEN TOKENS: [hundert]
+GEN SENTENCE: hundert
+GEN TREE:
+li([hundert],[c3],100)
+
+==================================================
+SEMANTIC: '1X+10'(3)
+GEN STATUS: ok
+GEN TOKENS: [zehn]
+GEN SENTENCE: zehn
+GEN TREE:
+tree([([zehn],[+a,c2,-s1],[_13352,_13384]>>(_13384='1X+10'(_13352))),([drei],[-c,-b,-a],3)],merge3,li([zehn],[=c1,+a,c2,-s1],[_13352,_13384]>>(_13384='1X+10'(_13352))),li([drei],[c1,-c,-b,-a],3))
+
+==================================================
+SEMANTIC: '1X+20'(2)
+GEN STATUS: ok
+GEN TOKENS: [zwei,undzwanzig]
+GEN SENTENCE: zweiundzwanzig
+GEN TREE:
+tree([([zwei,undzwanzig],[c2,-s1],'1X+20'(2))],move1,empty,tree([([undzwanzig],[+b,c2,-s1],[_13352,_13384]>>(_13384='1X+20'(_13352))),([zwei],[-b],2)],merge3,li([undzwanzig],[=c1,+b,c2,-s1],[_13352,_13384]>>(_13384='1X+20'(_13352))),li([zwei],[c1,-b],2)))
+
+==================================================
+SEMANTIC: '0X+30'(3)
+GEN STATUS: ok
+GEN TOKENS: [ßig]
+GEN SENTENCE: ßig
+GEN TREE:
+tree([([ßig],[c2,-s1],[_19410,_19442]>>(_19442='0X+30'(_19410))),([drei],[-b,-a],3)],move2,empty,tree([([ßig],[+c,c2,-s1],[_19410,_19442]>>(_19442='0X+30'(_19410))),([drei],[-c,-b,-a],3)],merge3,li([ßig],[=c1,+c,c2,-s1],[_19410,_19442]>>(_19442='0X+30'(_19410))),li([drei],[c1,-c,-b,-a],3)))
+
+==================================================
+SEMANTIC: '10X'(4)
+GEN STATUS: ok
+GEN TOKENS: [zig]
+GEN SENTENCE: zig
+GEN TREE:
+tree([([zig],[+d,c2,-s1],[_19410,_19442]>>(_19442='10X'(_19410))),([vier],[-b,-a,-d],4)],merge3,li([zig],[=c1,+d,c2,-s1],[_19410,_19442]>>(_19442='10X'(_19410))),li([vier],[c1,-b,-a,-d],4))
+

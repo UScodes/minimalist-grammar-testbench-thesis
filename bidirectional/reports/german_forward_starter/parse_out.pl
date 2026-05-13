@@ -1,0 +1,14 @@
+bidir_case(1, ok, [eins], [eins], [eins], ok, 1).
+bidir_case(3, ok, [drei], [drei], [drei], ok, 3).
+bidir_case(10, ok, [zehn], [zehn], [zehn], ok, 10).
+bidir_case(11, ok, [elf], [elf], [elf], ok, 11).
+bidir_case(12, ok, [zwölf], [zwölf], [zwölf], ok, 12).
+bidir_case(16, ok, [sechzehn], [sechzehn], [sechzehn], ok, 16).
+bidir_case(17, ok, [siebzehn], [siebzehn], [siebzehn], ok, 17).
+bidir_case(20, ok, [zwanzig], [zwanzig], [zwanzig], ok, 20).
+bidir_case(21, ok, [einundzwanzig], [einundzwanzig], [einundzwanzig], ok, 21).
+bidir_case(60, ok, [sechzig], [sechzig], [sechzig], ok, 60).
+bidir_case(61, ok, [einundsechzig], [einundsechzig], [einundsechzig], ok, 61).
+bidir_case(70, ok, [siebzig], [siebzig], [siebzig], ok, 70).
+bidir_case(71, ok, [einundsiebzig], [einundsiebzig], [einundsiebzig], ok, 71).
+bidir_case(100, ok, [hundert], [hundert], [hundert], ok, 100).

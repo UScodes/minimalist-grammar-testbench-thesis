@@ -1,0 +1,215 @@
+
+[gen_run] profile=english_numbers_profile generator='MG Generator' generator_main='../../SemanticGenerator/MG-Generator/main.pl' generator_lexicon=numbers_Gen semantic_cases='../cases/test_cases.pl' gen_out='../generated/gen_out.pl' gen_tree_report='../generated/forward_gen_tree_report.txt' repair=false smoothing=false style=none
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/lambdaselect.pl:116:
+Warning:    Clauses of lambdaSelect:lambdaFitting/3 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/lambdaselect.pl:27
+Warning:    Current predicate: lambdaSelect:matchVariable/6
+Warning:    Use :- discontiguous lambdaSelect:lambdaFitting/3. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/lambdaselect.pl:135:
+Warning:    Clauses of lambdaSelect:checkLambda/5 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/lambdaselect.pl:46
+Warning:    Current predicate: lambdaSelect:lambdaFitting/3
+Warning:    Use :- discontiguous lambdaSelect:checkLambda/5. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/lambdaselect.pl:143:
+Warning:    Clauses of lambdaSelect:checkLambda/3 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/lambdaselect.pl:54
+Warning:    Current predicate: lambdaSelect:checkLambda/5
+Warning:    Use :- discontiguous lambdaSelect:checkLambda/3. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/lambdaselect.pl:156:
+Warning:    Clauses of lambdaSelect:makePotList/6 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/lambdaselect.pl:67
+Warning:    Current predicate: lambdaSelect:checkLambda/3
+Warning:    Use :- discontiguous lambdaSelect:makePotList/6. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/lambdaselect.pl:180:
+Warning:    Clauses of lambdaSelect:sortFromFkt/4 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/lambdaselect.pl:91
+Warning:    Current predicate: lambdaSelect:makePotList/6
+Warning:    Use :- discontiguous lambdaSelect:sortFromFkt/4. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/lambdaselect.pl:191:
+Warning:    Clauses of lambdaSelect:matchVariable/6 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/lambdaselect.pl:102
+Warning:    Current predicate: lambdaSelect:sortFromFkt/4
+Warning:    Use :- discontiguous lambdaSelect:matchVariable/6. to suppress this message
+ERROR: [Thread main] c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:746:1: Syntax error: Illegal start of term
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:754:
+Warning:    Clauses of ypsilonSelect:checkFinishStart/2 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:39
+Warning:    Current predicate: ypsilonSelect:changeToLI/2
+Warning:    Use :- discontiguous ypsilonSelect:checkFinishStart/2. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:768:
+Warning:    Clauses of ypsilonSelect:checkFinishFace/2 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:53
+Warning:    Current predicate: ypsilonSelect:checkFinishStart/2
+Warning:    Use :- discontiguous ypsilonSelect:checkFinishFace/2. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:791:
+Warning:    Clauses of ypsilonSelect:checkDuringFillIn/2 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:76
+Warning:    Current predicate: ypsilonSelect:checkFinishFace/2
+Warning:    Use :- discontiguous ypsilonSelect:checkDuringFillIn/2. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:807:
+Warning:    Clauses of ypsilonSelect:checkFinish/4 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:92
+Warning:    Current predicate: ypsilonSelect:checkDuringFillIn/2
+Warning:    Use :- discontiguous ypsilonSelect:checkFinish/4. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:816:
+Warning:    Clauses of ypsilonSelect:checkLegal/3 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:101
+Warning:    Current predicate: ypsilonSelect:checkFinish/4
+Warning:    Use :- discontiguous ypsilonSelect:checkLegal/3. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:830:
+Warning:    Clauses of ypsilonSelect:extractFList/2 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:115
+Warning:    Current predicate: ypsilonSelect:checkLegal/3
+Warning:    Use :- discontiguous ypsilonSelect:extractFList/2. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:842:
+Warning:    Clauses of ypsilonSelect:prepList/2 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:127
+Warning:    Current predicate: ypsilonSelect:extractFList/2
+Warning:    Use :- discontiguous ypsilonSelect:prepList/2. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:854:
+Warning:    Clauses of ypsilonSelect:groupLambda/3 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:139
+Warning:    Current predicate: ypsilonSelect:prepList/2
+Warning:    Use :- discontiguous ypsilonSelect:groupLambda/3. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:876:
+Warning:    Clauses of ypsilonSelect:compGroup/3 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:161
+Warning:    Current predicate: ypsilonSelect:groupLambda/3
+Warning:    Use :- discontiguous ypsilonSelect:compGroup/3. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:890:
+Warning:    Clauses of ypsilonSelect:fillYpsilon/3 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:175
+Warning:    Current predicate: ypsilonSelect:compGroup/3
+Warning:    Use :- discontiguous ypsilonSelect:fillYpsilon/3. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:914:
+Warning:    Clauses of ypsilonSelect:fillEpsilon/3 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:199
+Warning:    Current predicate: ypsilonSelect:fillYpsilon/3
+Warning:    Use :- discontiguous ypsilonSelect:fillEpsilon/3. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:938:
+Warning:    Clauses of ypsilonSelect:inputNewLi/3 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:223
+Warning:    Current predicate: ypsilonSelect:fillEpsilon/3
+Warning:    Use :- discontiguous ypsilonSelect:inputNewLi/3. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:976:
+Warning:    Clauses of ypsilonSelect:inputYAfter/5 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:261
+Warning:    Current predicate: ypsilonSelect:inputNewLi/3
+Warning:    Use :- discontiguous ypsilonSelect:inputYAfter/5. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:992:
+Warning:    Clauses of ypsilonSelect:inputYBefore/4 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:277
+Warning:    Current predicate: ypsilonSelect:inputYAfter/5
+Warning:    Use :- discontiguous ypsilonSelect:inputYBefore/4. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:1018:
+Warning:    Clauses of ypsilonSelect:connectLisLizLiz/7 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:300
+Warning:    Current predicate: ypsilonSelect:inputYBefore/4
+Warning:    Use :- discontiguous ypsilonSelect:connectLisLizLiz/7. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:1019:
+Warning:    Clauses of ypsilonSelect:connectLisLizLiz/8 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:301
+Warning:    Current predicate: ypsilonSelect:connectLisLizLiz/7
+Warning:    Use :- discontiguous ypsilonSelect:connectLisLizLiz/8. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:1061:
+Warning:    Clauses of ypsilonSelect:connectLisLizCat/8 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:344
+Warning:    Current predicate: ypsilonSelect:connectLisLizLiz/8
+Warning:    Use :- discontiguous ypsilonSelect:connectLisLizCat/8. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:1091:
+Warning:    Clauses of ypsilonSelect:connectLisSelLiz/8 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:374
+Warning:    Current predicate: ypsilonSelect:connectLisLizCat/8
+Warning:    Use :- discontiguous ypsilonSelect:connectLisSelLiz/8. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:1114:
+Warning:    Clauses of ypsilonSelect:connectLisSelCat/8 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:397
+Warning:    Current predicate: ypsilonSelect:connectLisSelLiz/8
+Warning:    Use :- discontiguous ypsilonSelect:connectLisSelCat/8. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:1157:
+Warning:    Clauses of ypsilonSelect:insertY/4 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:448
+Warning:    Current predicate: ypsilonSelect:connectLisSelCat/8
+Warning:    Use :- discontiguous ypsilonSelect:insertY/4. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:1178:
+Warning:    Clauses of ypsilonSelect:correctRestLi/4 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:470
+Warning:    Current predicate: ypsilonSelect:insertY/4
+Warning:    Use :- discontiguous ypsilonSelect:correctRestLi/4. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:1205:
+Warning:    Clauses of ypsilonSelect:makeNewGroup/4 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:497
+Warning:    Current predicate: ypsilonSelect:correctRestLi/4
+Warning:    Use :- discontiguous ypsilonSelect:makeNewGroup/4. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:1225:
+Warning:    Clauses of ypsilonSelect:splitHeadpos/2 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:517
+Warning:    Current predicate: ypsilonSelect:makeNewGroup/4
+Warning:    Use :- discontiguous ypsilonSelect:splitHeadpos/2. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:1242:
+Warning:    Clauses of ypsilonSelect:splitpos/2 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:534
+Warning:    Current predicate: ypsilonSelect:splitHeadpos/2
+Warning:    Use :- discontiguous ypsilonSelect:splitpos/2. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:1258:
+Warning:    Clauses of ypsilonSelect:splitHeadneg/2 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:550
+Warning:    Current predicate: ypsilonSelect:splitpos/2
+Warning:    Use :- discontiguous ypsilonSelect:splitHeadneg/2. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:1275:
+Warning:    Clauses of ypsilonSelect:splitneg/2 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:567
+Warning:    Current predicate: ypsilonSelect:splitHeadneg/2
+Warning:    Use :- discontiguous ypsilonSelect:splitneg/2. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:1290:
+Warning:    Clauses of ypsilonSelect:matchLis/3 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:582
+Warning:    Current predicate: ypsilonSelect:splitneg/2
+Warning:    Use :- discontiguous ypsilonSelect:matchLis/3. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:1305:
+Warning:    Clauses of ypsilonSelect:matchFuncToY/4 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:597
+Warning:    Current predicate: ypsilonSelect:matchLis/3
+Warning:    Use :- discontiguous ypsilonSelect:matchFuncToY/4. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:1319:
+Warning:    Clauses of ypsilonSelect:matchingYScope/4 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:611
+Warning:    Current predicate: ypsilonSelect:matchFuncToY/4
+Warning:    Use :- discontiguous ypsilonSelect:matchingYScope/4. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:1337:
+Warning:    Clauses of ypsilonSelect:matchYToScop/5 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:629
+Warning:    Current predicate: ypsilonSelect:matchingYScope/4
+Warning:    Use :- discontiguous ypsilonSelect:matchYToScop/5. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:1380:
+Warning:    Clauses of ypsilonSelect:matchScopToY/5 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:671
+Warning:    Current predicate: ypsilonSelect:matchYToScop/5
+Warning:    Use :- discontiguous ypsilonSelect:matchScopToY/5. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:1394:
+Warning:    Clauses of ypsilonSelect:removePairs/4 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:685
+Warning:    Current predicate: ypsilonSelect:matchScopToY/5
+Warning:    Use :- discontiguous ypsilonSelect:removePairs/4. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:1407:
+Warning:    Clauses of ypsilonSelect:flattenForWS/2 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:698
+Warning:    Current predicate: ypsilonSelect:removePairs/4
+Warning:    Use :- discontiguous ypsilonSelect:flattenForWS/2. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:1420:
+Warning:    Clauses of ypsilonSelect:sortDepth/4 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:711
+Warning:    Current predicate: ypsilonSelect:flattenForWS/2
+Warning:    Use :- discontiguous ypsilonSelect:sortDepth/4. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:1438:
+Warning:    Clauses of ypsilonSelect:flattenLambdaLi/2 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:729
+Warning:    Current predicate: ypsilonSelect:sortDepth/4
+Warning:    Use :- discontiguous ypsilonSelect:flattenLambdaLi/2. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:1451:
+Warning:    Clauses of ypsilonSelect:changeToLI/2 are not together in the source-file
+Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:742
+Warning:    Current predicate: ypsilonSelect:flattenLambdaLi/2
+Warning:    Use :- discontiguous ypsilonSelect:changeToLI/2. to suppress this message
+Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/main.pl:11:
+Warning:    Local definition of user:generate/4 overrides weak import from mg_generate_wrapper

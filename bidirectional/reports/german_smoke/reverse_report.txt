@@ -1,0 +1,180 @@
+==================================================
+Validation Report: Parsing -> Generation
+==================================================
+Profile Name: german_numbers_profile
+Generator: MG Generator
+Parser: MG LC Parser
+Generator Main File: ../../SemanticGenerator/MG-Generator/main.pl
+Parser Load File: ../../MG-LC-Parser-with-Semantic-main/load.pl
+Parser Semantics File: ../../MG-LC-Parser-with-Semantic-main/sem_from_tree.pl
+Generator Lexicon: German_Generation
+Parser Lexicon: German_Parse
+Generator Lexicon File: ../../SemanticGenerator/MG-Generator/grammars/German_Generation.pl
+Parser Lexicon File: ../../MG-LC-Parser-with-Semantic-main/grammars/German_Parse.pl
+Repair Enabled: No
+Smoothing Enabled: No
+Smoothing Style: none
+Token Case File: ../cases/token_cases_german.pl
+Reverse Parsing Output File: ../generated/reverse_parse_out.pl
+Reverse Generation Output File: ../generated/reverse_out.pl
+==================================================
+
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [eins]
+Parsing Status: ok
+Parsed Semantic Output: 1
+Generation Status: ok
+Raw Generated Tokens: [eins]
+Normalized Generated Tokens: [eins]
+Generated Sentence: eins
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [drei]
+Parsing Status: ok
+Parsed Semantic Output: 3
+Generation Status: ok
+Raw Generated Tokens: [drei]
+Normalized Generated Tokens: [drei]
+Generated Sentence: drei
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [zehn]
+Parsing Status: ok
+Parsed Semantic Output: 10
+Generation Status: ok
+Raw Generated Tokens: [zehn]
+Normalized Generated Tokens: [zehn]
+Generated Sentence: zehn
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [elf]
+Parsing Status: ok
+Parsed Semantic Output: 11
+Generation Status: ok
+Raw Generated Tokens: [elf]
+Normalized Generated Tokens: [elf]
+Generated Sentence: elf
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [sechzehn]
+Parsing Status: ok
+Parsed Semantic Output: 16
+Generation Status: ok
+Raw Generated Tokens: [sechzehn]
+Normalized Generated Tokens: [sechzehn]
+Generated Sentence: sechzehn
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [siebzehn]
+Parsing Status: ok
+Parsed Semantic Output: 17
+Generation Status: ok
+Raw Generated Tokens: [siebzehn]
+Normalized Generated Tokens: [siebzehn]
+Generated Sentence: siebzehn
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [zwanzig]
+Parsing Status: ok
+Parsed Semantic Output: 20
+Generation Status: ok
+Raw Generated Tokens: [zwanzig]
+Normalized Generated Tokens: [zwanzig]
+Generated Sentence: zwanzig
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [einundzwanzig]
+Parsing Status: ok
+Parsed Semantic Output: 21
+Generation Status: ok
+Raw Generated Tokens: [einundzwanzig]
+Normalized Generated Tokens: [einundzwanzig]
+Generated Sentence: einundzwanzig
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [sechzig]
+Parsing Status: ok
+Parsed Semantic Output: 60
+Generation Status: ok
+Raw Generated Tokens: [sechzig]
+Normalized Generated Tokens: [sechzig]
+Generated Sentence: sechzig
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [einundsechzig]
+Parsing Status: ok
+Parsed Semantic Output: 61
+Generation Status: ok
+Raw Generated Tokens: [einundsechzig]
+Normalized Generated Tokens: [einundsechzig]
+Generated Sentence: einundsechzig
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [siebzig]
+Parsing Status: ok
+Parsed Semantic Output: 70
+Generation Status: ok
+Raw Generated Tokens: [siebzig]
+Normalized Generated Tokens: [siebzig]
+Generated Sentence: siebzig
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [einundsiebzig]
+Parsing Status: ok
+Parsed Semantic Output: 71
+Generation Status: ok
+Raw Generated Tokens: [einundsiebzig]
+Normalized Generated Tokens: [einundsiebzig]
+Generated Sentence: einundsiebzig
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [hundert]
+Parsing Status: ok
+Parsed Semantic Output: 100
+Generation Status: ok
+Raw Generated Tokens: [hundert]
+Normalized Generated Tokens: [hundert]
+Generated Sentence: hundert
+--------------------------------------------------
+
+================ Validation Summary ================
+Total Cases: 13
+Validation Passed: 13
+Parsing Skipped: 0
+Parsing Failed: 0
+Generation Not Attempted: 0
+Generation Failed: 0
+No Surface Form Generated: 0
+Token Roundtrip Mismatch: 0
+
+================ Failure Stage Summary ==============
+No Failure Stage: 13
+Parsing: 0
+Generation: 0
+Token Roundtrip: 0

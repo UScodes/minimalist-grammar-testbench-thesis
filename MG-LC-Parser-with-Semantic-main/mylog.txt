@@ -1,0 +1,214 @@
+[31mWarning: c:/daten/mg_mp_programme/mg lc parser v3 semantik 2/main.pl:38:
+Warning:    Singleton variables: [TreeSyn]
+[0m[31mWarning: c:/daten/mg_mp_programme/mg lc parser v3 semantik 2/main.pl:38:
+Warning:    Singleton variable in branch: TreeSyn
+[0m[32m% c:/daten/mg_mp_programme/mg lc parser v3 semantik 2/main compiled 0.03 sec, 0 clauses
+[0m[1mtrue.[0m
+
+?- make.
+
+
+[32m%   helpers/painter compiled into tree_painter 0.00 sec, 0 clauses
+[0m[32m%   helpers/extermination compiled into extermination 0.00 sec, 0 clauses
+[0m[32m%   helpers/linker compiled into linker 0.00 sec, 0 clauses
+[0m[32m%   helpers/filter compiled into filter 0.00 sec, 0 clauses
+[0m[32m%   helpers/workspace compiled into workspace 0.00 sec, 0 clauses
+[0m[32m%   helpers/lambda compiled into lambda 0.00 sec, 0 clauses
+[0m[32m%   scanner compiled 0.00 sec, 0 clauses
+[0m[32m%   lcparser compiled into lcparser 0.00 sec, 0 clauses
+[0m[32m%   grammars/Grammar_sem/German_trans_pruned compiled 0.00 sec, 0 clauses
+[0m[32m%  load compiled 0.00 sec, 0 clauses
+[0m[32m% c:/daten/mg_mp_programme/mg lc parser v3 semantik 2/main compiled 0.00 sec, -1 clauses
+[0m[1mtrue.[0m
+
+?- parse("drei,hundert,vier,zig",T).
+
+
+T = tree([([drei, hundert, vier, zig], [cfin])], tree([([hundert, vier, zig], [=c2b, cfin])], li([hundert], [=c3e, =c2b, cfin]), tree([([vier, zig], [c3e])], empty, tree([([zig], [+d, c3e]), ([vier], [-d])], li([zig], [=c1, +d, c3e]), li([vier], [c1, -d])))), li([drei], [c2b])) [1m.[0m
+
+?- ab(d).
+
+
+[1;31mERROR: Unknown procedure: ab/1 (DWIM could not correct goal)
+[0m?- ab(d),C(d).
+
+
+[1;31mERROR: Syntax error: Operator expected
+ERROR: ab(d),
+ERROR: ** here **
+ERROR: C(d) . 
+[0m?- make.
+
+
+[31mWarning: c:/daten/mg_mp_programme/mg lc parser v3 semantik 2/helpers/lambda.pl:30:
+Warning:    Singleton variables: [B]
+[0m[31mWarning: c:/daten/mg_mp_programme/mg lc parser v3 semantik 2/helpers/lambda.pl:30:
+Warning:    Singleton variable in branch: B
+[0m[1;31mERROR: c:/daten/mg_mp_programme/mg lc parser v3 semantik 2/helpers/lambda.pl:52:0: Syntax error: Operator expected
+[0m[32m% c:/daten/mg_mp_programme/mg lc parser v3 semantik 2/helpers/lambda compiled into lambda 0.00 sec, 1 clauses
+[0m[1mtrue.[0m
+
+?- make.
+
+
+[31mWarning: c:/daten/mg_mp_programme/mg lc parser v3 semantik 2/helpers/lambda.pl:30:
+Warning:    Singleton variables: [B]
+[0m[31mWarning: c:/daten/mg_mp_programme/mg lc parser v3 semantik 2/helpers/lambda.pl:30:
+Warning:    Singleton variable in branch: B
+[0m[32m% c:/daten/mg_mp_programme/mg lc parser v3 semantik 2/helpers/lambda compiled into lambda 0.00 sec, 1 clauses
+[0m[1mtrue.[0m
+
+?- make.
+
+
+[32m% c:/daten/mg_mp_programme/mg lc parser v3 semantik 2/helpers/lambda compiled into lambda 0.00 sec, 0 clauses
+[0m[1mtrue.[0m
+
+?- beta(red(abst(x,x),3),B).
+
+
+B = 3 [1m.[0m
+
+?- beta(red(abst(x,x),3),B).
+
+
+B = 3 	[1m;[0m
+B = 3 	[1m;[0m
+B = x 	[1m;[0m
+B = red(abst(x, x), 3).
+
+?- beta(red(abst(x,mal10(x)),3),B).
+
+
+B = mal10(3) 	[1m;[0m
+B = red(abst(x, mal10(x)), 3).
+
+?- beta(red(red(abst(x,abst(y,mal10plus(x,y))),3),7),B).
+
+
+B = mal10plus(3, 7) 	[1m;[0m
+B = mal10plus(3, 7) 	[1m;[0m
+B = red(abst(y, mal10plus(3, y)), 7) 	[1m;[0m
+B = mal10plus(3, 7) 	[1m;[0m
+B = mal10plus(3, 7) 	[1m;[0m
+B = mal10plus(3, 7) 	[1m;[0m
+B = red(abst(y, mal10plus(3, y)), 7) [1m.[0m
+
+?- beta(red(abst(x,3),4),B).
+
+
+B = 3 [1m.[0m
+
+?- beta( red(red(abst(x, abst(y, '1X+100Y'(x, y))), red(abst(x, '10X'(x)), 4)), 3),B).
+
+
+B = '1X+100Y'('10X'(4), 3) [1m.[0m
+
+?- make.
+
+
+[32m%   helpers/painter compiled into tree_painter 0.00 sec, 0 clauses
+[0m[32m%   helpers/extermination compiled into extermination 0.00 sec, 0 clauses
+[0m[32m%   helpers/linker compiled into linker 0.02 sec, 0 clauses
+[0m[32m%   helpers/filter compiled into filter 0.00 sec, 0 clauses
+[0m[32m%   helpers/workspace compiled into workspace 0.00 sec, 0 clauses
+[0m[32m%   helpers/lambda compiled into lambda 0.00 sec, 0 clauses
+[0m[32m%   scanner compiled 0.00 sec, 0 clauses
+[0m[32m%   lcparser compiled into lcparser 0.02 sec, 0 clauses
+[0m[32m%   grammars/Grammar_sem/German_trans_pruned compiled 0.00 sec, 0 clauses
+[0m[32m%  load compiled 0.03 sec, 0 clauses
+[0m[32m% c:/daten/mg_mp_programme/mg lc parser v3 semantik 2/main compiled 0.03 sec, 0 clauses
+[0m[1mtrue.[0m
+
+?- parse("drei,hundert,vier,zig",T).
+
+
+T = tree([([drei, hundert, vier, zig], [cfin], red(red(abst(x, abst(y, '1X+100Y'(x, y))), red(abst(x, '10X'(x)), 4)), 3))], tree([([hundert, vier, zig], [=c2b, cfin], red(abst(x, abst(y, '1X+100Y'(x, y))), red(abst(x, '10X'(x)), 4)))], li([hundert], [=c3e, =c2b, cfin], abst(x, abst(y, '1X+100Y'(x, y)))), tree([([vier, zig], [c3e], red(abst(x, '10X'(x)), 4))], empty, tree([([zig], [+d, c3e], abst(x, '10X'(x))), ([vier], [- ...], 4)], li([zig], [=c1, +d, c3e], abst(x, '10X'(x))), li([vier], [c1, -d], 4)))), li([drei], [c2b], 3)) [1m.[0m
+
+?- make.
+
+
+[32m% c:/daten/mg_mp_programme/mg lc parser v3 semantik 2/helpers/lambda compiled into lambda 0.00 sec, 1 clauses
+[0m[1mtrue.[0m
+
+?- parse("drei,hundert,vier,zig",T),betaRoot(T,TR).
+
+
+T = tree([([drei, hundert, vier, zig], [cfin], abst(x, abst(y, '1X+100Y'(x, y)))), ([drei], [], 3), ([vier, zig], [], red(abst(x, '10X'(x)), 4))], tree([([hundert, vier, zig], [=c2b, cfin], abst(x, abst(y, '1X+100Y'(x, y)))), ([vier, zig], [], red(abst(x, '10X'(x)), 4))], li([hundert], [=c3e, =c2b, cfin], abst(x, abst(y, '1X+100Y'(x, y)))), tree([([vier, zig], [c3e], red(abst(x, '10X'(x)), 4))], empty, tree([([zig], [+d, c3e], abst(x, '10X'(x))), ([vier], [- ...], 4)], li([zig], [=c1, +d, c3e], abst(x, '10X'(x))), li([vier], [c1, -d], 4)))), li([drei], [c2b], 3)),
+TR = tree([([drei, hundert, vier, zig], [cfin], abst(x, abst(y, '1X+100Y'(x, y)))), ([drei], [], 3), ([vier, zig], [], '10X'(4))], tree([([hundert, vier, zig], [=c2b, cfin], abst(x, abst(y, '1X+100Y'(x, y)))), ([vier, zig], [], red(abst(x, '10X'(x)), 4))], li([hundert], [=c3e, =c2b, cfin], abst(x, abst(y, '1X+100Y'(x, y)))), tree([([vier, zig], [c3e], red(abst(x, '10X'(x)), 4))], empty, tree([([zig], [+d, c3e], abst(x, '10X'(x))), ([vier], [- ...], 4)], li([zig], [=c1, +d, c3e], abst(x, '10X'(x))), li([vier], [c1, -d], 4)))), li([drei], [c2b], 3)) [1m.[0m
+
+?- make.
+
+
+[32m%   helpers/painter compiled into tree_painter 0.00 sec, 0 clauses
+[0m[32m%   helpers/extermination compiled into extermination 0.00 sec, 0 clauses
+[0m[32m%   helpers/linker compiled into linker 0.00 sec, 0 clauses
+[0m[32m%   helpers/filter compiled into filter 0.00 sec, 0 clauses
+[0m[32m%   helpers/workspace compiled into workspace 0.02 sec, 0 clauses
+[0m[32m%   helpers/lambda compiled into lambda 0.00 sec, 0 clauses
+[0m[32m%   scanner compiled 0.00 sec, 0 clauses
+[0m[32m%   lcparser compiled into lcparser 0.02 sec, 0 clauses
+[0m[32m%   grammars/Grammar_sem/German_trans_pruned compiled 0.00 sec, 0 clauses
+[0m[32m%  load compiled 0.03 sec, 0 clauses
+[0m[32m% c:/daten/mg_mp_programme/mg lc parser v3 semantik 2/main compiled 0.03 sec, 0 clauses
+[0m[1mtrue.[0m
+
+?- parse("drei,hundert,vier,zig",T),betaRoot(T,TR).
+
+
+T = tree([([drei, hundert, vier, zig], [cfin], abst(x, abst(y, '1X+100Y'(x, y)))), ([drei], [], 3), ([vier, zig], [], red(abst(x, '10X'(x)), 4))], tree([([hundert, vier, zig], [=c2b, cfin], abst(x, abst(y, '1X+100Y'(x, y)))), ([vier, zig], [], red(abst(x, '10X'(x)), 4))], li([hundert], [=c3e, =c2b, cfin], abst(x, abst(y, '1X+100Y'(x, y)))), tree([([vier, zig], [c3e], red(abst(x, '10X'(x)), 4))], empty, tree([([zig], [+d, c3e], abst(x, '10X'(x))), ([vier], [- ...], 4)], li([zig], [=c1, +d, c3e], abst(x, '10X'(x))), li([vier], [c1, -d], 4)))), li([drei], [c2b], 3)),
+TR = tree([([drei, hundert, vier, zig], [cfin], abst(x, abst(y, '1X+100Y'(x, y)))), ([drei], [], 3), ([vier, zig], [], '10X'(4))], tree([([hundert, vier, zig], [=c2b, cfin], abst(x, abst(y, '1X+100Y'(x, y)))), ([vier, zig], [], red(abst(x, '10X'(x)), 4))], li([hundert], [=c3e, =c2b, cfin], abst(x, abst(y, '1X+100Y'(x, y)))), tree([([vier, zig], [c3e], red(abst(x, '10X'(x)), 4))], empty, tree([([zig], [+d, c3e], abst(x, '10X'(x))), ([vier], [- ...], 4)], li([zig], [=c1, +d, c3e], abst(x, '10X'(x))), li([vier], [c1, -d], 4)))), li([drei], [c2b], 3)) [1m.[0m
+
+?- beta( red(red(abst(x, abst(y, '1X+100Y'(x, y))), red(abst(x, '10X'(x)), 4)), 3),B).
+
+
+B = '1X+100Y'('10X'(4), 3) [1m.[0m
+
+?- make.
+
+
+[32m% c:/daten/mg_mp_programme/mg lc parser v3 semantik 2/helpers/lambda compiled into lambda 0.00 sec, 0 clauses
+[0m[1mtrue.[0m
+
+?- parse("drei,hundert,vier,zig",T),betaRoot(T,TR).
+
+
+T = tree([([drei, hundert, vier, zig], [cfin], red(red(abst(x, abst(y, '1X+100Y'(x, y))), red(abst(x, '10X'(x)), 4)), 3))], tree([([hundert, vier, zig], [=c2b, cfin], red(abst(x, abst(y, '1X+100Y'(x, y))), red(abst(x, '10X'(x)), 4)))], li([hundert], [=c3e, =c2b, cfin], abst(x, abst(y, '1X+100Y'(x, y)))), tree([([vier, zig], [c3e], red(abst(x, '10X'(x)), 4))], empty, tree([([zig], [+d, c3e], abst(x, '10X'(x))), ([vier], [- ...], 4)], li([zig], [=c1, +d, c3e], abst(x, '10X'(x))), li([vier], [c1, -d], 4)))), li([drei], [c2b], 3)),
+TR = tree([([drei, hundert, vier, zig], [cfin], '1X+100Y'('10X'(4), 3))], tree([([hundert, vier, zig], [=c2b, cfin], red(abst(x, abst(y, '1X+100Y'(x, y))), red(abst(x, '10X'(x)), 4)))], li([hundert], [=c3e, =c2b, cfin], abst(x, abst(y, '1X+100Y'(x, y)))), tree([([vier, zig], [c3e], red(abst(x, '10X'(x)), 4))], empty, tree([([zig], [+d, c3e], abst(x, '10X'(x))), ([vier], [- ...], 4)], li([zig], [=c1, +d, c3e], abst(x, '10X'(x))), li([vier], [c1, -d], 4)))), li([drei], [c2b], 3)) [1m.[0m
+
+?- make.
+
+
+[32m%   helpers/painter compiled into tree_painter 0.02 sec, 0 clauses
+[0m[32m%   helpers/extermination compiled into extermination 0.00 sec, 0 clauses
+[0m[32m%   helpers/linker compiled into linker 0.00 sec, 0 clauses
+[0m[32m%   helpers/filter compiled into filter 0.00 sec, 0 clauses
+[0m[32m%   helpers/workspace compiled into workspace 0.00 sec, 0 clauses
+[0m[32m%   helpers/lambda compiled into lambda 0.00 sec, 0 clauses
+[0m[32m%   scanner compiled 0.00 sec, 0 clauses
+[0m[32m%   lcparser compiled into lcparser 0.00 sec, 0 clauses
+[0m[32m%   grammars/Grammar_sem/German_trans_pruned compiled 0.00 sec, 0 clauses
+[0m[32m%  load compiled 0.03 sec, 0 clauses
+[0m[32m% c:/daten/mg_mp_programme/mg lc parser v3 semantik 2/main compiled 0.03 sec, 0 clauses
+[0m[1mtrue.[0m
+
+?- parse("drei,hundert,vier,zig",T).
+
+
+T = tree([([drei, hundert, vier, zig], [cfin], '1X+100Y'('10X'(4), 3))], tree([([hundert, vier, zig], [=c2b, cfin], red(abst(x, abst(y, '1X+100Y'(x, y))), red(abst(x, '10X'(x)), 4)))], li([hundert], [=c3e, =c2b, cfin], abst(x, abst(y, '1X+100Y'(x, y)))), tree([([vier, zig], [c3e], red(abst(x, '10X'(x)), 4))], empty, tree([([zig], [+d, c3e], abst(x, '10X'(x))), ([vier], [- ...], 4)], li([zig], [=c1, +d, c3e], abst(x, '10X'(x))), li([vier], [c1, -d], 4)))), li([drei], [c2b], 3)) [1m.[0m
+
+?- parse("drei,hundert,vier",T).
+
+
+T = tree([([drei, hundert, vier], [cfin], '1X+100Y'(4, 3))], tree([([hundert, vier], [=c2b, cfin], red(abst(x, abst(y, '1X+100Y'(x, y))), 4))], li([hundert], [=c3e, =c2b, cfin], abst(x, abst(y, '1X+100Y'(x, y)))), li([vier], [c3e], 4)), li([drei], [c2b], 3)) [1m.[0m
+
+?- % parse("drei,hundert",T).
+|    parse("drei,hundert",T).
+
+
+T = tree([([drei, hundert], [cfin], '100X'(3))], empty, tree([([hundert], [+b, cfin], abst(x, '100X'(x))), ([drei], [-b], 3)], li([hundert], [=c1, +b, cfin], abst(x, '100X'(x))), li([drei], [c1, -b], 3))) [1m.[0m
+
+?- parse("sieben,und,vier,zig",T).
+
+
+T = tree([([sieben, und, vier, zig], [cfin], '1X+1Y'('10X+N'(4), 7))], tree([([und, vier, zig], [=c2b, cfin], red(abst(x, abst(y, '1X+1Y'(x, y))), red(abst(x, '10X+N'(x)), 4)))], li([und], [=c24s, =c2b, cfin], abst(x, abst(y, '1X+1Y'(x, y)))), tree([([vier, zig], [c24s], red(abst(x, '10X+N'(x)), 4))], empty, tree([([zig], [+d, c24s], abst(x, '10X+N'(x))), ([vier], [- ...], 4)], li([zig], [=c1, +d, c24s], abst(x, '10X+N'(x))), li([vier], [c1, -d], 4)))), li([sieben], [c2b], 7)) [1m.[0m

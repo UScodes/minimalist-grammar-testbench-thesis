@@ -1,0 +1,14 @@
+reverse_parse_case([eins], ok, 1).
+reverse_parse_case([drei], ok, 3).
+reverse_parse_case([zehn], ok, 10).
+reverse_parse_case([elf], ok, 11).
+reverse_parse_case([zwölf], ok, 12).
+reverse_parse_case([sechzehn], ok, 16).
+reverse_parse_case([siebzehn], ok, 17).
+reverse_parse_case([zwanzig], ok, 20).
+reverse_parse_case([einundzwanzig], ok, 21).
+reverse_parse_case([sechzig], ok, 60).
+reverse_parse_case([einundsechzig], ok, 61).
+reverse_parse_case([siebzig], ok, 70).
+reverse_parse_case([einundsiebzig], ok, 71).
+reverse_parse_case([hundert], ok, 100).

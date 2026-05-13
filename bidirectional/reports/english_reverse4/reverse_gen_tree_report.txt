@@ -1,0 +1,414 @@
+Input Tokens: [one]
+Parse Status: ok
+Parsed Semantic Input: 1
+Generation Status: ok
+Raw Generated Tokens: [one]
+Normalized Generated Tokens: [one]
+Generated Sentence: one
+Generation Tree: li([one],[c1],1)
+--------------------------------------------------
+Input Tokens: [two]
+Parse Status: ok
+Parsed Semantic Input: 2
+Generation Status: ok
+Raw Generated Tokens: [two]
+Normalized Generated Tokens: [two]
+Generated Sentence: two
+Generation Tree: li([two],[c1],2)
+--------------------------------------------------
+Input Tokens: [three]
+Parse Status: ok
+Parsed Semantic Input: 3
+Generation Status: ok
+Raw Generated Tokens: [three]
+Normalized Generated Tokens: [three]
+Generated Sentence: three
+Generation Tree: li([three],[c1],3)
+--------------------------------------------------
+Input Tokens: [four]
+Parse Status: ok
+Parsed Semantic Input: 4
+Generation Status: ok
+Raw Generated Tokens: [four]
+Normalized Generated Tokens: [four]
+Generated Sentence: four
+Generation Tree: li([four],[c1,-tee],4)
+--------------------------------------------------
+Input Tokens: [five]
+Parse Status: ok
+Parsed Semantic Input: 5
+Generation Status: ok
+Raw Generated Tokens: [five]
+Normalized Generated Tokens: [five]
+Generated Sentence: five
+Generation Tree: li([five],[c1],5)
+--------------------------------------------------
+Input Tokens: [six]
+Parse Status: ok
+Parsed Semantic Input: 6
+Generation Status: ok
+Raw Generated Tokens: [six]
+Normalized Generated Tokens: [six]
+Generated Sentence: six
+Generation Tree: li([six],[c1,-tee],6)
+--------------------------------------------------
+Input Tokens: [seven]
+Parse Status: ok
+Parsed Semantic Input: 7
+Generation Status: ok
+Raw Generated Tokens: [seven]
+Normalized Generated Tokens: [seven]
+Generated Sentence: seven
+Generation Tree: li([seven],[c1,-tee],7)
+--------------------------------------------------
+Input Tokens: [eight]
+Parse Status: ok
+Parsed Semantic Input: 8
+Generation Status: ok
+Raw Generated Tokens: [eight]
+Normalized Generated Tokens: [eight]
+Generated Sentence: eight
+Generation Tree: li([eight],[c1,-ee],8)
+--------------------------------------------------
+Input Tokens: [nine]
+Parse Status: ok
+Parsed Semantic Input: 9
+Generation Status: ok
+Raw Generated Tokens: [nine]
+Normalized Generated Tokens: [nine]
+Generated Sentence: nine
+Generation Tree: li([nine],[c1,-tee],9)
+--------------------------------------------------
+Input Tokens: [ten]
+Parse Status: ok
+Parsed Semantic Input: 10
+Generation Status: ok
+Raw Generated Tokens: [ten]
+Normalized Generated Tokens: [ten]
+Generated Sentence: ten
+Generation Tree: li([ten],[c2],10)
+--------------------------------------------------
+Input Tokens: [eleven]
+Parse Status: ok
+Parsed Semantic Input: 11
+Generation Status: ok
+Raw Generated Tokens: [eleven]
+Normalized Generated Tokens: [eleven]
+Generated Sentence: eleven
+Generation Tree: li([eleven],[c2],11)
+--------------------------------------------------
+Input Tokens: [twelve]
+Parse Status: ok
+Parsed Semantic Input: 12
+Generation Status: ok
+Raw Generated Tokens: [twelve]
+Normalized Generated Tokens: [twelve]
+Generated Sentence: twelve
+Generation Tree: li([twelve],[c2],12)
+--------------------------------------------------
+Input Tokens: [thirteen]
+Parse Status: ok
+Parsed Semantic Input: 13
+Generation Status: ok
+Raw Generated Tokens: [thirteen]
+Normalized Generated Tokens: [thirteen]
+Generated Sentence: thirteen
+Generation Tree: li([thirteen],[c2],13)
+--------------------------------------------------
+Input Tokens: [fifteen]
+Parse Status: ok
+Parsed Semantic Input: 15
+Generation Status: ok
+Raw Generated Tokens: [fifteen]
+Normalized Generated Tokens: [fifteen]
+Generated Sentence: fifteen
+Generation Tree: li([fifteen],[c2],15)
+--------------------------------------------------
+Input Tokens: [four,teen]
+Parse Status: ok
+Parsed Semantic Input: '1X+10'(4)
+Generation Status: ok
+Raw Generated Tokens: [four,teen]
+Normalized Generated Tokens: [four,teen]
+Generated Sentence: fourteen
+Generation Tree: tree([([four,teen],[c2],'1X+10'(4))],move1,empty,tree([([teen],[+tee,c2],[_9262,_9294]>>(_9294='1X+10'(_9262))),([four],[-tee],4)],merge3,li([teen],[=c1,+tee,c2],[_9262,_9294]>>(_9294='1X+10'(_9262))),li([four],[c1,-tee],4)))
+--------------------------------------------------
+Input Tokens: [eight,een]
+Parse Status: ok
+Parsed Semantic Input: '0X+18'(8)
+Generation Status: ok
+Raw Generated Tokens: [eight,een]
+Normalized Generated Tokens: [eight,een]
+Generated Sentence: eighteen
+Generation Tree: tree([([eight,een],[c2],'0X+18'(8))],move1,empty,tree([([een],[+ee,c2],[_15314,_15346]>>(_15346='0X+18'(_15314))),([eight],[-ee],8)],merge3,li([een],[=c1,+ee,c2],[_15314,_15346]>>(_15346='0X+18'(_15314))),li([eight],[c1,-ee],8)))
+--------------------------------------------------
+Input Tokens: [twenty]
+Parse Status: ok
+Parsed Semantic Input: 20
+Generation Status: ok
+Raw Generated Tokens: [twenty]
+Normalized Generated Tokens: [twenty]
+Generated Sentence: twenty
+Generation Tree: li([twenty],[c2],20)
+--------------------------------------------------
+Input Tokens: [thirty]
+Parse Status: ok
+Parsed Semantic Input: 30
+Generation Status: ok
+Raw Generated Tokens: [thirty]
+Normalized Generated Tokens: [thirty]
+Generated Sentence: thirty
+Generation Tree: li([thirty],[c2],30)
+--------------------------------------------------
+Input Tokens: [fifty]
+Parse Status: ok
+Parsed Semantic Input: 50
+Generation Status: ok
+Raw Generated Tokens: [fifty]
+Normalized Generated Tokens: [fifty]
+Generated Sentence: fifty
+Generation Tree: li([fifty],[c2],50)
+--------------------------------------------------
+Input Tokens: [twenty_,one]
+Parse Status: ok
+Parsed Semantic Input: '1X+20'(1)
+Generation Status: ok
+Raw Generated Tokens: [twenty,one]
+Normalized Generated Tokens: [twenty_,one]
+Generated Sentence: twentyone
+Generation Tree: tree([([twenty,one],[c2],'1X+20'(1))],merge1,li([twenty],[=c1,c2],[_15314,_15346]>>(_15346='1X+20'(_15314))),li([one],[c1],1))
+--------------------------------------------------
+Input Tokens: [twenty_,two]
+Parse Status: ok
+Parsed Semantic Input: '1X+20'(2)
+Generation Status: ok
+Raw Generated Tokens: [twenty,two]
+Normalized Generated Tokens: [twenty_,two]
+Generated Sentence: twentytwo
+Generation Tree: tree([([twenty,two],[c2],'1X+20'(2))],merge1,li([twenty],[=c1,c2],[_15314,_15346]>>(_15346='1X+20'(_15314))),li([two],[c1],2))
+--------------------------------------------------
+Input Tokens: [twenty_,three]
+Parse Status: ok
+Parsed Semantic Input: '1X+20'(3)
+Generation Status: ok
+Raw Generated Tokens: [twenty,three]
+Normalized Generated Tokens: [twenty_,three]
+Generated Sentence: twentythree
+Generation Tree: tree([([twenty,three],[c2],'1X+20'(3))],merge1,li([twenty],[=c1,c2],[_15314,_15346]>>(_15346='1X+20'(_15314))),li([three],[c1],3))
+--------------------------------------------------
+Input Tokens: [twenty_,four]
+Parse Status: ok
+Parsed Semantic Input: '1X+20'(4)
+Generation Status: ok
+Raw Generated Tokens: [twenty]
+Normalized Generated Tokens: [twenty]
+Generated Sentence: twenty
+Generation Tree: tree([([twenty],[c2],[_15314,_15346]>>(_15346='1X+20'(_15314))),([four],[-tee],4)],merge3,li([twenty],[=c1,c2],[_15314,_15346]>>(_15346='1X+20'(_15314))),li([four],[c1,-tee],4))
+--------------------------------------------------
+Input Tokens: [twenty_,five]
+Parse Status: ok
+Parsed Semantic Input: '1X+20'(5)
+Generation Status: ok
+Raw Generated Tokens: [twenty,five]
+Normalized Generated Tokens: [twenty_,five]
+Generated Sentence: twentyfive
+Generation Tree: tree([([twenty,five],[c2],'1X+20'(5))],merge1,li([twenty],[=c1,c2],[_15314,_15346]>>(_15346='1X+20'(_15314))),li([five],[c1],5))
+--------------------------------------------------
+Input Tokens: [twenty_,six]
+Parse Status: ok
+Parsed Semantic Input: '1X+20'(6)
+Generation Status: ok
+Raw Generated Tokens: [twenty]
+Normalized Generated Tokens: [twenty]
+Generated Sentence: twenty
+Generation Tree: tree([([twenty],[c2],[_15314,_15346]>>(_15346='1X+20'(_15314))),([six],[-tee],6)],merge3,li([twenty],[=c1,c2],[_15314,_15346]>>(_15346='1X+20'(_15314))),li([six],[c1,-tee],6))
+--------------------------------------------------
+Input Tokens: [twenty_,seven]
+Parse Status: ok
+Parsed Semantic Input: '1X+20'(7)
+Generation Status: ok
+Raw Generated Tokens: [twenty]
+Normalized Generated Tokens: [twenty]
+Generated Sentence: twenty
+Generation Tree: tree([([twenty],[c2],[_15314,_15346]>>(_15346='1X+20'(_15314))),([seven],[-tee],7)],merge3,li([twenty],[=c1,c2],[_15314,_15346]>>(_15346='1X+20'(_15314))),li([seven],[c1,-tee],7))
+--------------------------------------------------
+Input Tokens: [twenty_,eight]
+Parse Status: ok
+Parsed Semantic Input: '1X+20'(8)
+Generation Status: ok
+Raw Generated Tokens: [twenty]
+Normalized Generated Tokens: [twenty]
+Generated Sentence: twenty
+Generation Tree: tree([([twenty],[c2],[_15314,_15346]>>(_15346='1X+20'(_15314))),([eight],[-ee],8)],merge3,li([twenty],[=c1,c2],[_15314,_15346]>>(_15346='1X+20'(_15314))),li([eight],[c1,-ee],8))
+--------------------------------------------------
+Input Tokens: [twenty_,nine]
+Parse Status: ok
+Parsed Semantic Input: '1X+20'(9)
+Generation Status: ok
+Raw Generated Tokens: [twenty]
+Normalized Generated Tokens: [twenty]
+Generated Sentence: twenty
+Generation Tree: tree([([twenty],[c2],[_15314,_15346]>>(_15346='1X+20'(_15314))),([nine],[-tee],9)],merge3,li([twenty],[=c1,c2],[_15314,_15346]>>(_15346='1X+20'(_15314))),li([nine],[c1,-tee],9))
+--------------------------------------------------
+Input Tokens: [thirty_,one]
+Parse Status: ok
+Parsed Semantic Input: '1X+30'(1)
+Generation Status: ok
+Raw Generated Tokens: [thirty,one]
+Normalized Generated Tokens: [thirty_,one]
+Generated Sentence: thirtyone
+Generation Tree: tree([([thirty,one],[c2],'1X+30'(1))],merge1,li([thirty],[=c1,c2],[_15314,_15346]>>(_15346='1X+30'(_15314))),li([one],[c1],1))
+--------------------------------------------------
+Input Tokens: [thirty_,two]
+Parse Status: ok
+Parsed Semantic Input: '1X+30'(2)
+Generation Status: ok
+Raw Generated Tokens: [thirty,two]
+Normalized Generated Tokens: [thirty_,two]
+Generated Sentence: thirtytwo
+Generation Tree: tree([([thirty,two],[c2],'1X+30'(2))],merge1,li([thirty],[=c1,c2],[_15314,_15346]>>(_15346='1X+30'(_15314))),li([two],[c1],2))
+--------------------------------------------------
+Input Tokens: [thirty_,three]
+Parse Status: ok
+Parsed Semantic Input: '1X+30'(3)
+Generation Status: ok
+Raw Generated Tokens: [thirty,three]
+Normalized Generated Tokens: [thirty_,three]
+Generated Sentence: thirtythree
+Generation Tree: tree([([thirty,three],[c2],'1X+30'(3))],merge1,li([thirty],[=c1,c2],[_15314,_15346]>>(_15346='1X+30'(_15314))),li([three],[c1],3))
+--------------------------------------------------
+Input Tokens: [thirty_,four]
+Parse Status: ok
+Parsed Semantic Input: '1X+30'(4)
+Generation Status: ok
+Raw Generated Tokens: [thirty]
+Normalized Generated Tokens: [thirty]
+Generated Sentence: thirty
+Generation Tree: tree([([thirty],[c2],[_15314,_15346]>>(_15346='1X+30'(_15314))),([four],[-tee],4)],merge3,li([thirty],[=c1,c2],[_15314,_15346]>>(_15346='1X+30'(_15314))),li([four],[c1,-tee],4))
+--------------------------------------------------
+Input Tokens: [thirty_,five]
+Parse Status: ok
+Parsed Semantic Input: '1X+30'(5)
+Generation Status: ok
+Raw Generated Tokens: [thirty,five]
+Normalized Generated Tokens: [thirty_,five]
+Generated Sentence: thirtyfive
+Generation Tree: tree([([thirty,five],[c2],'1X+30'(5))],merge1,li([thirty],[=c1,c2],[_15314,_15346]>>(_15346='1X+30'(_15314))),li([five],[c1],5))
+--------------------------------------------------
+Input Tokens: [thirty_,six]
+Parse Status: ok
+Parsed Semantic Input: '1X+30'(6)
+Generation Status: ok
+Raw Generated Tokens: [thirty]
+Normalized Generated Tokens: [thirty]
+Generated Sentence: thirty
+Generation Tree: tree([([thirty],[c2],[_15314,_15346]>>(_15346='1X+30'(_15314))),([six],[-tee],6)],merge3,li([thirty],[=c1,c2],[_15314,_15346]>>(_15346='1X+30'(_15314))),li([six],[c1,-tee],6))
+--------------------------------------------------
+Input Tokens: [thirty_,seven]
+Parse Status: ok
+Parsed Semantic Input: '1X+30'(7)
+Generation Status: ok
+Raw Generated Tokens: [thirty]
+Normalized Generated Tokens: [thirty]
+Generated Sentence: thirty
+Generation Tree: tree([([thirty],[c2],[_15314,_15346]>>(_15346='1X+30'(_15314))),([seven],[-tee],7)],merge3,li([thirty],[=c1,c2],[_15314,_15346]>>(_15346='1X+30'(_15314))),li([seven],[c1,-tee],7))
+--------------------------------------------------
+Input Tokens: [thirty_,eight]
+Parse Status: ok
+Parsed Semantic Input: '1X+30'(8)
+Generation Status: ok
+Raw Generated Tokens: [thirty]
+Normalized Generated Tokens: [thirty]
+Generated Sentence: thirty
+Generation Tree: tree([([thirty],[c2],[_15314,_15346]>>(_15346='1X+30'(_15314))),([eight],[-ee],8)],merge3,li([thirty],[=c1,c2],[_15314,_15346]>>(_15346='1X+30'(_15314))),li([eight],[c1,-ee],8))
+--------------------------------------------------
+Input Tokens: [thirty_,nine]
+Parse Status: ok
+Parsed Semantic Input: '1X+30'(9)
+Generation Status: ok
+Raw Generated Tokens: [thirty]
+Normalized Generated Tokens: [thirty]
+Generated Sentence: thirty
+Generation Tree: tree([([thirty],[c2],[_15314,_15346]>>(_15346='1X+30'(_15314))),([nine],[-tee],9)],merge3,li([thirty],[=c1,c2],[_15314,_15346]>>(_15346='1X+30'(_15314))),li([nine],[c1,-tee],9))
+--------------------------------------------------
+Input Tokens: [fifty_,one]
+Parse Status: ok
+Parsed Semantic Input: '1X+50'(1)
+Generation Status: ok
+Raw Generated Tokens: [fifty,one]
+Normalized Generated Tokens: [fifty_,one]
+Generated Sentence: fiftyone
+Generation Tree: tree([([fifty,one],[c2],'1X+50'(1))],merge1,li([fifty],[=c1,c2],[_15314,_15346]>>(_15346='1X+50'(_15314))),li([one],[c1],1))
+--------------------------------------------------
+Input Tokens: [fifty_,two]
+Parse Status: ok
+Parsed Semantic Input: '1X+50'(2)
+Generation Status: ok
+Raw Generated Tokens: [fifty,two]
+Normalized Generated Tokens: [fifty_,two]
+Generated Sentence: fiftytwo
+Generation Tree: tree([([fifty,two],[c2],'1X+50'(2))],merge1,li([fifty],[=c1,c2],[_15314,_15346]>>(_15346='1X+50'(_15314))),li([two],[c1],2))
+--------------------------------------------------
+Input Tokens: [fifty_,three]
+Parse Status: ok
+Parsed Semantic Input: '1X+50'(3)
+Generation Status: ok
+Raw Generated Tokens: [fifty,three]
+Normalized Generated Tokens: [fifty_,three]
+Generated Sentence: fiftythree
+Generation Tree: tree([([fifty,three],[c2],'1X+50'(3))],merge1,li([fifty],[=c1,c2],[_15314,_15346]>>(_15346='1X+50'(_15314))),li([three],[c1],3))
+--------------------------------------------------
+Input Tokens: [fifty_,four]
+Parse Status: ok
+Parsed Semantic Input: '1X+50'(4)
+Generation Status: ok
+Raw Generated Tokens: [fifty]
+Normalized Generated Tokens: [fifty]
+Generated Sentence: fifty
+Generation Tree: tree([([fifty],[c2],[_15314,_15346]>>(_15346='1X+50'(_15314))),([four],[-tee],4)],merge3,li([fifty],[=c1,c2],[_15314,_15346]>>(_15346='1X+50'(_15314))),li([four],[c1,-tee],4))
+--------------------------------------------------
+Input Tokens: [fifty_,five]
+Parse Status: ok
+Parsed Semantic Input: '1X+50'(5)
+Generation Status: ok
+Raw Generated Tokens: [fifty,five]
+Normalized Generated Tokens: [fifty_,five]
+Generated Sentence: fiftyfive
+Generation Tree: tree([([fifty,five],[c2],'1X+50'(5))],merge1,li([fifty],[=c1,c2],[_15314,_15346]>>(_15346='1X+50'(_15314))),li([five],[c1],5))
+--------------------------------------------------
+Input Tokens: [fifty_,six]
+Parse Status: ok
+Parsed Semantic Input: '1X+50'(6)
+Generation Status: ok
+Raw Generated Tokens: [fifty]
+Normalized Generated Tokens: [fifty]
+Generated Sentence: fifty
+Generation Tree: tree([([fifty],[c2],[_15314,_15346]>>(_15346='1X+50'(_15314))),([six],[-tee],6)],merge3,li([fifty],[=c1,c2],[_15314,_15346]>>(_15346='1X+50'(_15314))),li([six],[c1,-tee],6))
+--------------------------------------------------
+Input Tokens: [fifty_,seven]
+Parse Status: ok
+Parsed Semantic Input: '1X+50'(7)
+Generation Status: ok
+Raw Generated Tokens: [fifty]
+Normalized Generated Tokens: [fifty]
+Generated Sentence: fifty
+Generation Tree: tree([([fifty],[c2],[_15314,_15346]>>(_15346='1X+50'(_15314))),([seven],[-tee],7)],merge3,li([fifty],[=c1,c2],[_15314,_15346]>>(_15346='1X+50'(_15314))),li([seven],[c1,-tee],7))
+--------------------------------------------------
+Input Tokens: [fifty_,eight]
+Parse Status: ok
+Parsed Semantic Input: '1X+50'(8)
+Generation Status: ok
+Raw Generated Tokens: [fifty]
+Normalized Generated Tokens: [fifty]
+Generated Sentence: fifty
+Generation Tree: tree([([fifty],[c2],[_15314,_15346]>>(_15346='1X+50'(_15314))),([eight],[-ee],8)],merge3,li([fifty],[=c1,c2],[_15314,_15346]>>(_15346='1X+50'(_15314))),li([eight],[c1,-ee],8))
+--------------------------------------------------
+Input Tokens: [fifty_,nine]
+Parse Status: ok
+Parsed Semantic Input: '1X+50'(9)
+Generation Status: ok
+Raw Generated Tokens: [fifty]
+Normalized Generated Tokens: [fifty]
+Generated Sentence: fifty
+Generation Tree: tree([([fifty],[c2],[_15314,_15346]>>(_15346='1X+50'(_15314))),([nine],[-tee],9)],merge3,li([fifty],[=c1,c2],[_15314,_15346]>>(_15346='1X+50'(_15314))),li([nine],[c1,-tee],9))
+--------------------------------------------------

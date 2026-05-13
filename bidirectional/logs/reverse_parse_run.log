@@ -1,0 +1,2 @@
+
+[reverse_parse_run] profile=english_numbers_profile parser='MG LC Parser' parser_load='../../MG-LC-Parser-with-Semantic-main/load.pl' parser_semantics='../../MG-LC-Parser-with-Semantic-main/sem_from_tree.pl' parser_lexicon='English_trans_pruned' token_cases='../cases/token_cases.pl' reverse_parse_out='../generated/reverse_parse_out.pl' repair=false smoothing=false style=none

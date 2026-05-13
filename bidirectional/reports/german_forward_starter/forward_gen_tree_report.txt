@@ -1,0 +1,112 @@
+==================================================
+SEMANTIC: 1
+GEN STATUS: ok
+GEN TOKENS: [eins]
+GEN SENTENCE: eins
+GEN TREE:
+li([eins],[c1],1)
+
+==================================================
+SEMANTIC: 3
+GEN STATUS: ok
+GEN TOKENS: [drei]
+GEN SENTENCE: drei
+GEN TREE:
+li([drei],[c1,-c,-b,-a],3)
+
+==================================================
+SEMANTIC: 10
+GEN STATUS: ok
+GEN TOKENS: [zehn]
+GEN SENTENCE: zehn
+GEN TREE:
+li([zehn],[c2,-s1],10)
+
+==================================================
+SEMANTIC: 11
+GEN STATUS: ok
+GEN TOKENS: [elf]
+GEN SENTENCE: elf
+GEN TREE:
+li([elf],[c2,-s1],11)
+
+==================================================
+SEMANTIC: 12
+GEN STATUS: ok
+GEN TOKENS: [zwölf]
+GEN SENTENCE: zwölf
+GEN TREE:
+li([zwölf],[c2,-s1],12)
+
+==================================================
+SEMANTIC: 16
+GEN STATUS: ok
+GEN TOKENS: [sechzehn]
+GEN SENTENCE: sechzehn
+GEN TREE:
+li([sechzehn],[c2,-s1],16)
+
+==================================================
+SEMANTIC: 17
+GEN STATUS: ok
+GEN TOKENS: [siebzehn]
+GEN SENTENCE: siebzehn
+GEN TREE:
+li([siebzehn],[c2,-s1],17)
+
+==================================================
+SEMANTIC: 20
+GEN STATUS: ok
+GEN TOKENS: [zwanzig]
+GEN SENTENCE: zwanzig
+GEN TREE:
+li([zwanzig],[c2,-s1],20)
+
+==================================================
+SEMANTIC: 21
+GEN STATUS: ok
+GEN TOKENS: [einundzwanzig]
+GEN SENTENCE: einundzwanzig
+GEN TREE:
+li([einundzwanzig],[c2,-s1],21)
+
+==================================================
+SEMANTIC: 60
+GEN STATUS: ok
+GEN TOKENS: [sechzig]
+GEN SENTENCE: sechzig
+GEN TREE:
+li([sechzig],[c2,-s1],60)
+
+==================================================
+SEMANTIC: 61
+GEN STATUS: ok
+GEN TOKENS: [einundsechzig]
+GEN SENTENCE: einundsechzig
+GEN TREE:
+li([einundsechzig],[c2,-s1],61)
+
+==================================================
+SEMANTIC: 70
+GEN STATUS: ok
+GEN TOKENS: [siebzig]
+GEN SENTENCE: siebzig
+GEN TREE:
+li([siebzig],[c2,-s1],70)
+
+==================================================
+SEMANTIC: 71
+GEN STATUS: ok
+GEN TOKENS: [einundsiebzig]
+GEN SENTENCE: einundsiebzig
+GEN TREE:
+li([einundsiebzig],[c2,-s1],71)
+
+==================================================
+SEMANTIC: 100
+GEN STATUS: ok
+GEN TOKENS: [hundert]
+GEN SENTENCE: hundert
+GEN TREE:
+li([hundert],[c3],100)
+

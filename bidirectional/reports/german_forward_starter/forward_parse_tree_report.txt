@@ -1,0 +1,168 @@
+==================================================
+SEMANTIC: 1
+GEN STATUS: ok
+GEN TOKENS: [eins]
+REPAIRED TOKENS: [eins]
+PARSER TOKENS: [eins]
+REPAIR STATUS: repair_disabled
+PARSE STATUS: ok
+PARSED SEMANTICS: 1
+PARSE TREE:
+[li([eins],[cfin])]
+
+==================================================
+SEMANTIC: 3
+GEN STATUS: ok
+GEN TOKENS: [drei]
+REPAIRED TOKENS: [drei]
+PARSER TOKENS: [drei]
+REPAIR STATUS: repair_disabled
+PARSE STATUS: ok
+PARSED SEMANTICS: 3
+PARSE TREE:
+[li([drei],[cfin])]
+
+==================================================
+SEMANTIC: 10
+GEN STATUS: ok
+GEN TOKENS: [zehn]
+REPAIRED TOKENS: [zehn]
+PARSER TOKENS: [zehn]
+REPAIR STATUS: repair_disabled
+PARSE STATUS: ok
+PARSED SEMANTICS: 10
+PARSE TREE:
+[li([zehn],[cfin])]
+
+==================================================
+SEMANTIC: 11
+GEN STATUS: ok
+GEN TOKENS: [elf]
+REPAIRED TOKENS: [elf]
+PARSER TOKENS: [elf]
+REPAIR STATUS: repair_disabled
+PARSE STATUS: ok
+PARSED SEMANTICS: 11
+PARSE TREE:
+[li([elf],[cfin])]
+
+==================================================
+SEMANTIC: 12
+GEN STATUS: ok
+GEN TOKENS: [zwölf]
+REPAIRED TOKENS: [zwölf]
+PARSER TOKENS: [zwölf]
+REPAIR STATUS: repair_disabled
+PARSE STATUS: ok
+PARSED SEMANTICS: 12
+PARSE TREE:
+[li([zwölf],[cfin])]
+
+==================================================
+SEMANTIC: 16
+GEN STATUS: ok
+GEN TOKENS: [sechzehn]
+REPAIRED TOKENS: [sechzehn]
+PARSER TOKENS: [sechzehn]
+REPAIR STATUS: repair_disabled
+PARSE STATUS: ok
+PARSED SEMANTICS: 16
+PARSE TREE:
+[li([sechzehn],[cfin])]
+
+==================================================
+SEMANTIC: 17
+GEN STATUS: ok
+GEN TOKENS: [siebzehn]
+REPAIRED TOKENS: [siebzehn]
+PARSER TOKENS: [siebzehn]
+REPAIR STATUS: repair_disabled
+PARSE STATUS: ok
+PARSED SEMANTICS: 17
+PARSE TREE:
+[li([siebzehn],[cfin])]
+
+==================================================
+SEMANTIC: 20
+GEN STATUS: ok
+GEN TOKENS: [zwanzig]
+REPAIRED TOKENS: [zwanzig]
+PARSER TOKENS: [zwanzig]
+REPAIR STATUS: repair_disabled
+PARSE STATUS: ok
+PARSED SEMANTICS: 20
+PARSE TREE:
+[li([zwanzig],[cfin])]
+
+==================================================
+SEMANTIC: 21
+GEN STATUS: ok
+GEN TOKENS: [einundzwanzig]
+REPAIRED TOKENS: [einundzwanzig]
+PARSER TOKENS: [einundzwanzig]
+REPAIR STATUS: repair_disabled
+PARSE STATUS: ok
+PARSED SEMANTICS: 21
+PARSE TREE:
+[li([einundzwanzig],[cfin])]
+
+==================================================
+SEMANTIC: 60
+GEN STATUS: ok
+GEN TOKENS: [sechzig]
+REPAIRED TOKENS: [sechzig]
+PARSER TOKENS: [sechzig]
+REPAIR STATUS: repair_disabled
+PARSE STATUS: ok
+PARSED SEMANTICS: 60
+PARSE TREE:
+[li([sechzig],[cfin])]
+
+==================================================
+SEMANTIC: 61
+GEN STATUS: ok
+GEN TOKENS: [einundsechzig]
+REPAIRED TOKENS: [einundsechzig]
+PARSER TOKENS: [einundsechzig]
+REPAIR STATUS: repair_disabled
+PARSE STATUS: ok
+PARSED SEMANTICS: 61
+PARSE TREE:
+[li([einundsechzig],[cfin])]
+
+==================================================
+SEMANTIC: 70
+GEN STATUS: ok
+GEN TOKENS: [siebzig]
+REPAIRED TOKENS: [siebzig]
+PARSER TOKENS: [siebzig]
+REPAIR STATUS: repair_disabled
+PARSE STATUS: ok
+PARSED SEMANTICS: 70
+PARSE TREE:
+[li([siebzig],[cfin])]
+
+==================================================
+SEMANTIC: 71
+GEN STATUS: ok
+GEN TOKENS: [einundsiebzig]
+REPAIRED TOKENS: [einundsiebzig]
+PARSER TOKENS: [einundsiebzig]
+REPAIR STATUS: repair_disabled
+PARSE STATUS: ok
+PARSED SEMANTICS: 71
+PARSE TREE:
+[li([einundsiebzig],[cfin])]
+
+==================================================
+SEMANTIC: 100
+GEN STATUS: ok
+GEN TOKENS: [hundert]
+REPAIRED TOKENS: [hundert]
+PARSER TOKENS: [hundert]
+REPAIR STATUS: repair_disabled
+PARSE STATUS: ok
+PARSED SEMANTICS: 100
+PARSE TREE:
+[li([hundert],[cfin])]
+

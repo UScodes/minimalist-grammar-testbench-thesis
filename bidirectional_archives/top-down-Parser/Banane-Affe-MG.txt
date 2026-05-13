@@ -1,0 +1,28 @@
+
+%(1) Gehe bis zur Kiste. 
+
+%(2) Transportiere die Kiste bis unter die Banane. 
+
+%(3) Springe auf die Kiste
+
+%(4) Greife die Banane über dir.
+
+startCategory(vp).
+
+[gehe] :: [=pp,vp].
+[bis] :: [=pp,pp,-w].
+[zur] :: [=n,pp].
+[] :: [=pp,+w,pp].
+['Kiste'] :: [n].
+[transportiere] :: [=np,=pp,v,-d].
+[] :: [=v,+w,+d,vp].
+[die] :: [=n,np].
+[unter] :: [=np,pp].
+['Banane'] :: [n].
+[springe] :: [=np,vp].
+[auf] :: [=np,pp].
+[greife] :: [=np,vp].
+[über] :: [=pr,=np,pp].
+[] :: [=pp,np].
+['dir'] :: [pr].
+

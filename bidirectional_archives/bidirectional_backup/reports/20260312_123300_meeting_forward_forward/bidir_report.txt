@@ -1,0 +1,65 @@
+pass | Sem=1 | Gen=ok | GenTokens=[one] | Repaired=[one] | ParserTokens=[one] | Parse=ok | ParsedSem=1
+pass | Sem=2 | Gen=ok | GenTokens=[two] | Repaired=[two] | ParserTokens=[two] | Parse=ok | ParsedSem=2
+pass | Sem=3 | Gen=ok | GenTokens=[three] | Repaired=[three] | ParserTokens=[three] | Parse=ok | ParsedSem=3
+pass | Sem=4 | Gen=ok | GenTokens=[four] | Repaired=[four] | ParserTokens=[four] | Parse=ok | ParsedSem=4
+pass | Sem=5 | Gen=ok | GenTokens=[five] | Repaired=[five] | ParserTokens=[five] | Parse=ok | ParsedSem=5
+pass | Sem=6 | Gen=ok | GenTokens=[six] | Repaired=[six] | ParserTokens=[six] | Parse=ok | ParsedSem=6
+pass | Sem=7 | Gen=ok | GenTokens=[seven] | Repaired=[seven] | ParserTokens=[seven] | Parse=ok | ParsedSem=7
+pass | Sem=8 | Gen=ok | GenTokens=[eight] | Repaired=[eight] | ParserTokens=[eight] | Parse=ok | ParsedSem=8
+pass | Sem=9 | Gen=ok | GenTokens=[nine] | Repaired=[nine] | ParserTokens=[nine] | Parse=ok | ParsedSem=9
+pass | Sem=10 | Gen=ok | GenTokens=[ten] | Repaired=[ten] | ParserTokens=[ten] | Parse=ok | ParsedSem=10
+pass | Sem=11 | Gen=ok | GenTokens=[eleven] | Repaired=[eleven] | ParserTokens=[eleven] | Parse=ok | ParsedSem=11
+pass | Sem=12 | Gen=ok | GenTokens=[twelve] | Repaired=[twelve] | ParserTokens=[twelve] | Parse=ok | ParsedSem=12
+pass | Sem=13 | Gen=ok | GenTokens=[thirteen] | Repaired=[thirteen] | ParserTokens=[thirteen] | Parse=ok | ParsedSem=13
+pass | Sem=15 | Gen=ok | GenTokens=[fifteen] | Repaired=[fifteen] | ParserTokens=[fifteen] | Parse=ok | ParsedSem=15
+gen_empty_yield | Sem=18 | Gen=gen_empty_yield | GenTokens=[] | Repaired=[] | ParserTokens=[] | Parse=parse_skipped_empty_tokens | ParsedSem=none
+pass | Sem=20 | Gen=ok | GenTokens=[twenty] | Repaired=[twenty] | ParserTokens=[twenty] | Parse=ok | ParsedSem=20
+pass | Sem=30 | Gen=ok | GenTokens=[thirty] | Repaired=[thirty] | ParserTokens=[thirty] | Parse=ok | ParsedSem=30
+pass | Sem=50 | Gen=ok | GenTokens=[fifty] | Repaired=[fifty] | ParserTokens=[fifty] | Parse=ok | ParsedSem=50
+pass | Sem='1X+10'(4) | Gen=ok | GenTokens=[four,teen] | Repaired=[four,teen] | ParserTokens=[four,teen] | Parse=ok | ParsedSem='1X+10'(4)
+parse_fail | Sem='1X+10'(6) | Gen=ok | GenTokens=[six,teen] | Repaired=[six,teen] | ParserTokens=[six,teen] | Parse=parse_fail | ParsedSem=none
+parse_fail | Sem='1X+10'(7) | Gen=ok | GenTokens=[seven,teen] | Repaired=[seven,teen] | ParserTokens=[seven,teen] | Parse=parse_fail | ParsedSem=none
+pass | Sem='0X+18'(8) | Gen=ok | GenTokens=[eight,een] | Repaired=[eight,een] | ParserTokens=[eight,een] | Parse=ok | ParsedSem='0X+18'(8)
+parse_fail | Sem='1X+10'(9) | Gen=ok | GenTokens=[nine,teen] | Repaired=[nine,teen] | ParserTokens=[nine,teen] | Parse=parse_fail | ParsedSem=none
+pass | Sem='1X+20'(1) | Gen=ok | GenTokens=[twenty,one] | Repaired=[twenty,one] | ParserTokens=[twenty_,one] | Parse=ok | ParsedSem='1X+20'(1)
+pass | Sem='1X+20'(2) | Gen=ok | GenTokens=[twenty,two] | Repaired=[twenty,two] | ParserTokens=[twenty_,two] | Parse=ok | ParsedSem='1X+20'(2)
+pass | Sem='1X+20'(3) | Gen=ok | GenTokens=[twenty,three] | Repaired=[twenty,three] | ParserTokens=[twenty_,three] | Parse=ok | ParsedSem='1X+20'(3)
+pass_repaired | Sem='1X+20'(4) | Gen=ok | GenTokens=[twenty] | Repaired=[twenty,four] | ParserTokens=[twenty_,four] | Parse=ok | ParsedSem='1X+20'(4)
+pass | Sem='1X+20'(5) | Gen=ok | GenTokens=[twenty,five] | Repaired=[twenty,five] | ParserTokens=[twenty_,five] | Parse=ok | ParsedSem='1X+20'(5)
+pass_repaired | Sem='1X+20'(6) | Gen=ok | GenTokens=[twenty] | Repaired=[twenty,six] | ParserTokens=[twenty_,six] | Parse=ok | ParsedSem='1X+20'(6)
+pass_repaired | Sem='1X+20'(7) | Gen=ok | GenTokens=[twenty] | Repaired=[twenty,seven] | ParserTokens=[twenty_,seven] | Parse=ok | ParsedSem='1X+20'(7)
+pass_repaired | Sem='1X+20'(8) | Gen=ok | GenTokens=[twenty] | Repaired=[twenty,eight] | ParserTokens=[twenty_,eight] | Parse=ok | ParsedSem='1X+20'(8)
+pass_repaired | Sem='1X+20'(9) | Gen=ok | GenTokens=[twenty] | Repaired=[twenty,nine] | ParserTokens=[twenty_,nine] | Parse=ok | ParsedSem='1X+20'(9)
+pass | Sem='1X+30'(1) | Gen=ok | GenTokens=[thirty,one] | Repaired=[thirty,one] | ParserTokens=[thirty_,one] | Parse=ok | ParsedSem='1X+30'(1)
+pass | Sem='1X+30'(2) | Gen=ok | GenTokens=[thirty,two] | Repaired=[thirty,two] | ParserTokens=[thirty_,two] | Parse=ok | ParsedSem='1X+30'(2)
+pass | Sem='1X+30'(3) | Gen=ok | GenTokens=[thirty,three] | Repaired=[thirty,three] | ParserTokens=[thirty_,three] | Parse=ok | ParsedSem='1X+30'(3)
+pass_repaired | Sem='1X+30'(4) | Gen=ok | GenTokens=[thirty] | Repaired=[thirty,four] | ParserTokens=[thirty_,four] | Parse=ok | ParsedSem='1X+30'(4)
+pass | Sem='1X+30'(5) | Gen=ok | GenTokens=[thirty,five] | Repaired=[thirty,five] | ParserTokens=[thirty_,five] | Parse=ok | ParsedSem='1X+30'(5)
+pass_repaired | Sem='1X+30'(6) | Gen=ok | GenTokens=[thirty] | Repaired=[thirty,six] | ParserTokens=[thirty_,six] | Parse=ok | ParsedSem='1X+30'(6)
+pass_repaired | Sem='1X+30'(7) | Gen=ok | GenTokens=[thirty] | Repaired=[thirty,seven] | ParserTokens=[thirty_,seven] | Parse=ok | ParsedSem='1X+30'(7)
+pass_repaired | Sem='1X+30'(8) | Gen=ok | GenTokens=[thirty] | Repaired=[thirty,eight] | ParserTokens=[thirty_,eight] | Parse=ok | ParsedSem='1X+30'(8)
+pass_repaired | Sem='1X+30'(9) | Gen=ok | GenTokens=[thirty] | Repaired=[thirty,nine] | ParserTokens=[thirty_,nine] | Parse=ok | ParsedSem='1X+30'(9)
+pass | Sem='1X+50'(1) | Gen=ok | GenTokens=[fifty,one] | Repaired=[fifty,one] | ParserTokens=[fifty_,one] | Parse=ok | ParsedSem='1X+50'(1)
+pass | Sem='1X+50'(2) | Gen=ok | GenTokens=[fifty,two] | Repaired=[fifty,two] | ParserTokens=[fifty_,two] | Parse=ok | ParsedSem='1X+50'(2)
+pass | Sem='1X+50'(3) | Gen=ok | GenTokens=[fifty,three] | Repaired=[fifty,three] | ParserTokens=[fifty_,three] | Parse=ok | ParsedSem='1X+50'(3)
+pass_repaired | Sem='1X+50'(4) | Gen=ok | GenTokens=[fifty] | Repaired=[fifty,four] | ParserTokens=[fifty_,four] | Parse=ok | ParsedSem='1X+50'(4)
+pass | Sem='1X+50'(5) | Gen=ok | GenTokens=[fifty,five] | Repaired=[fifty,five] | ParserTokens=[fifty_,five] | Parse=ok | ParsedSem='1X+50'(5)
+pass_repaired | Sem='1X+50'(6) | Gen=ok | GenTokens=[fifty] | Repaired=[fifty,six] | ParserTokens=[fifty_,six] | Parse=ok | ParsedSem='1X+50'(6)
+pass_repaired | Sem='1X+50'(7) | Gen=ok | GenTokens=[fifty] | Repaired=[fifty,seven] | ParserTokens=[fifty_,seven] | Parse=ok | ParsedSem='1X+50'(7)
+pass_repaired | Sem='1X+50'(8) | Gen=ok | GenTokens=[fifty] | Repaired=[fifty,eight] | ParserTokens=[fifty_,eight] | Parse=ok | ParsedSem='1X+50'(8)
+pass_repaired | Sem='1X+50'(9) | Gen=ok | GenTokens=[fifty] | Repaired=[fifty,nine] | ParserTokens=[fifty_,nine] | Parse=ok | ParsedSem='1X+50'(9)
+gen_empty_yield | Sem='1X+40'(4) | Gen=gen_empty_yield | GenTokens=[] | Repaired=[] | ParserTokens=[] | Parse=parse_skipped_empty_tokens | ParsedSem=none
+gen_empty_yield | Sem='1X+60'(4) | Gen=gen_empty_yield | GenTokens=[] | Repaired=[] | ParserTokens=[] | Parse=parse_skipped_empty_tokens | ParsedSem=none
+gen_empty_yield | Sem='1X+70'(4) | Gen=gen_empty_yield | GenTokens=[] | Repaired=[] | ParserTokens=[] | Parse=parse_skipped_empty_tokens | ParsedSem=none
+gen_empty_yield | Sem='1X+80'(4) | Gen=gen_empty_yield | GenTokens=[] | Repaired=[] | ParserTokens=[] | Parse=parse_skipped_empty_tokens | ParsedSem=none
+gen_empty_yield | Sem='1X+90'(4) | Gen=gen_empty_yield | GenTokens=[] | Repaired=[] | ParserTokens=[] | Parse=parse_skipped_empty_tokens | ParsedSem=none
+
+===== TOTALS =====
+PASS: 31
+PASS REPAIRED: 15
+GEN EMPTY YIELD: 6
+GEN FAIL: 0
+GEN ERROR: 0
+PARSE SKIPPED EMPTY TOKENS: 0
+PARSE FAIL: 3
+SEMANTIC MISMATCH: 0

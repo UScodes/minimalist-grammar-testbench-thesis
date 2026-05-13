@@ -1,0 +1,51 @@
+tree([([gehe,bis,zur,Kiste],[vp])],
+┕---li([gehe],[=pp,vp]),
+┕---tree([([bis,zur,Kiste],[pp])],
+	┕---tree([([],[+w,pp]),([bis,zur,Kiste],[-w])],
+		┕---li([],[=pp,+w,pp]),
+		┕---tree([([bis,zur,Kiste],[pp,-w])],
+			┕---li([bis],[=pp,pp,-w]),
+			┕---tree([([zur,Kiste],[pp])],
+				┕---li([zur],[=n,pp]),
+				┕---li([Kiste],[n]))))))
+		
+tree([([springe,auf,die,Kiste],[vp])],
+┕---li([springe],[=np,vp]),
+┕---tree([([auf,die,Kiste],[np])],
+	┕---li([],[=pp,np]),
+	┕---tree([([auf,die,Kiste],[pp])],
+		┕---li([auf],[=np,pp]),
+		┕---tree([([die,Kiste],[np])],
+			┕---li([die],[=n,np]),
+			┕---li([Kiste],[n])))))
+				
+tree([([greife,die,Banane,über,dir],[vp])],
+┕---li([greife],[=np,vp]),
+┕---tree([([die,Banane,über,dir],[np])],
+	┕---li([],[=pp,np]),
+	┕---tree([([die,Banane,über,dir],[pp])],
+		┕---tree([([über,dir],[=np,pp])],
+		|	┕---li([über],[=pr,=np,pp]),
+		|	┕---li([dir],[pr])),
+		┕---tree([([die,Banane],[np])],
+			┕---li([die],[=n,np]),
+			┕---li([Banane],[n])))))
+			
+tree([([transportiere,die,'Kiste',bis,unter,die,'Banane'],[vp])],
+┕---	tree([([bis,unter,die,'Banane'],[+d,vp]),([transportiere,die,'Kiste'],[-d])],
+	┕---	tree([([],[+w,+d,vp]),([transportiere,die,'Kiste'],[-d]),([bis,unter,die,'Banane'],[-w])],
+		┕---	li([],[=v,+w,+d,vp]),
+		┕---	tree([([transportiere,die,'Kiste'],[v,-d]),([bis,unter,die,'Banane'],[-w])],
+			┕---	tree([([transportiere,die,'Kiste'],[=pp,v,-d])],
+			|	┕---	li([transportiere],[=np,=pp,v,-d]),
+			|	┕---	tree([([die,'Kiste'],[np])],
+			|		┕---	li([die],[=n,np]),
+			|		┕---	li(['Kiste'],[n])))
+			┕---	tree([([bis,unter,die,'Banane'],[pp,-w])],
+				┕---	li([bis],[=pp,pp,-w]),
+				┕---	tree([([unter,die,'Banane'],[pp])],
+					┕---	li([unter],[=np,pp]),
+					┕---	tree([([die,'Banane'],[np])],
+						┕---	li([die],[=n,np]),
+						┕---	li(['Banane'],[n]))))))))
+					

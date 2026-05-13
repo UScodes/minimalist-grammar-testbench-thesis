@@ -1,0 +1,14 @@
+reverse_case([eins], ok, 1, ok, [eins], [eins], eins).
+reverse_case([drei], ok, 3, ok, [drei], [drei], drei).
+reverse_case([zehn], ok, 10, ok, [zehn], [zehn], zehn).
+reverse_case([elf], ok, 11, ok, [elf], [elf], elf).
+reverse_case([zwölf], ok, 12, ok, [zwölf], [zwölf], zwölf).
+reverse_case([sechzehn], ok, 16, ok, [sechzehn], [sechzehn], sechzehn).
+reverse_case([siebzehn], ok, 17, ok, [siebzehn], [siebzehn], siebzehn).
+reverse_case([zwanzig], ok, 20, ok, [zwanzig], [zwanzig], zwanzig).
+reverse_case([einundzwanzig], ok, 21, ok, [einundzwanzig], [einundzwanzig], einundzwanzig).
+reverse_case([sechzig], ok, 60, ok, [sechzig], [sechzig], sechzig).
+reverse_case([einundsechzig], ok, 61, ok, [einundsechzig], [einundsechzig], einundsechzig).
+reverse_case([siebzig], ok, 70, ok, [siebzig], [siebzig], siebzig).
+reverse_case([einundsiebzig], ok, 71, ok, [einundsiebzig], [einundsiebzig], einundsiebzig).
+reverse_case([hundert], ok, 100, ok, [hundert], [hundert], hundert).

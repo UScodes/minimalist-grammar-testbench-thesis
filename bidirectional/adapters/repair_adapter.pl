@@ -2,7 +2,7 @@
     maybe_repair_tokens/3
 ]).
 
-:- use_module('../config/testbench_options').
+:- use_module('../config/testbench_profile').
 
 /*
 -----------------------------------------------------------
@@ -17,14 +17,17 @@ Behavior
 --------
 If repair_enabled(false), tokens are left unchanged.
 If repair_enabled(true), known repair rules may be applied.
+
+The option repair_enabled/1 is read from testbench_profile.pl,
+so the active profile is the single source of truth.
 */
 
 maybe_repair_tokens(_Sem, GenTokens, GenTokens) :-
-    testbench_options:repair_enabled(false),
+    testbench_profile:repair_enabled(false),
     !.
 
 maybe_repair_tokens(Sem, GenTokens, FixedTokens) :-
-    testbench_options:repair_enabled(true),
+    testbench_profile:repair_enabled(true),
     ( repair_compound_drop(Sem, GenTokens, FixedTokens) ->
         true
     ;
@@ -33,8 +36,10 @@ maybe_repair_tokens(Sem, GenTokens, FixedTokens) :-
 
 repair_compound_drop('1X+20'(N), [twenty], [twenty, Unit]) :-
     unit_token(N, Unit).
+
 repair_compound_drop('1X+30'(N), [thirty], [thirty, Unit]) :-
     unit_token(N, Unit).
+
 repair_compound_drop('1X+50'(N), [fifty], [fifty, Unit]) :-
     unit_token(N, Unit).
 

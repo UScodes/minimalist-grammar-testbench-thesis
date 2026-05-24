@@ -114,27 +114,29 @@ log_run_configuration :-
     ).
 
 run_reverse_gen_case(_InputTokens, parse_fail, none, generation_not_attempted, [], [], '', none) :- !.
+
 run_reverse_gen_case(_InputTokens, parse_skipped_empty_tokens, none, generation_not_attempted, [], [], '', none) :- !.
+
 run_reverse_gen_case(_InputTokens, ok, ParsedSem, GenStatus, RawGenTokens, NormalizedGenTokens, Sent, Tree) :-
     catch(
-        (
-            mg_generate_wrapper:generate_safe(ParsedSem, Sent0, _L, Tree0, Status0),
-            extract_words(Tree0, RawGenTokens0),
-            normalize_sent(Sent0, Sent),
-            normalize_gen_status(Status0, RawGenTokens0, GenStatus),
-            RawGenTokens = RawGenTokens0,
-            token_normalizer:normalize_gen_to_parser(RawGenTokens, NormalizedGenTokens),
-            Tree = Tree0
+        call_with_time_limit(
+            5,
+            (
+                mg_generate_wrapper:generate_safe(ParsedSem, Sent0, _L, Tree0, Status0),
+                extract_words(Tree0, RawGenTokens0),
+                normalize_sent(Sent0, Sent),
+                normalize_gen_status(Status0, RawGenTokens0, GenStatus),
+                RawGenTokens = RawGenTokens0,
+                token_normalizer:normalize_gen_to_parser(RawGenTokens, NormalizedGenTokens),
+                Tree = Tree0
+            )
         ),
         E,
-        (
-            GenStatus = error(E),
-            RawGenTokens = [],
-            NormalizedGenTokens = [],
-            Sent = '',
-            Tree = none
-        )
+        handle_reverse_gen_exception(E, GenStatus, RawGenTokens, NormalizedGenTokens, Sent, Tree)
     ).
+
+handle_reverse_gen_exception(time_limit_exceeded, generation_timeout, [], [], '', none) :- !.
+handle_reverse_gen_exception(E, error(E), [], [], '', none).
 
 normalize_gen_status(ok, [], gen_empty_yield) :- !.
 normalize_gen_status(ok, [_|_], ok) :- !.
@@ -142,8 +144,44 @@ normalize_gen_status(Status, _, Status).
 
 normalize_sent(S, S).
 
-extract_words(li(W, _, _), W) :- !.
-extract_words(tree(H, _, _), W) :- extract_words(H, W), !.
-extract_words(tree([(W, _, _) | _], _, _, _), W) :- !.
-extract_words([T | _], W) :- extract_words(T, W), !.
+/*
+extract_words/2
+---------------
+Extracts the surface token list from a generated MG tree.
+
+Generated trees may contain multiple chains at the root. The extractor
+therefore collects the word lists from all chains instead of taking only
+the first one.
+*/
+
+extract_words(li(Words, _, _), Words) :- !.
+
+extract_words(tree(Chains, _, _, _), Words) :-
+    is_chain_list(Chains),
+    words_from_chains(Chains, Words),
+    !.
+
+extract_words(tree(Chains, _, _), Words) :-
+    is_chain_list(Chains),
+    words_from_chains(Chains, Words),
+    !.
+
+extract_words(tree(Head, _, _), Words) :-
+    extract_words(Head, Words),
+    !.
+
+extract_words([T | _], Words) :-
+    extract_words(T, Words),
+    !.
+
 extract_words(_, []).
+
+is_chain_list([(Words, _Features, _Sem) | _]) :-
+    is_list(Words),
+    !.
+
+words_from_chains([], []).
+
+words_from_chains([(Words, _Features, _Sem) | Rest], Out) :-
+    words_from_chains(Rest, RestOut),
+    append(Words, RestOut, Out).

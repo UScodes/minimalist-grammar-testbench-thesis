@@ -120,11 +120,52 @@ normalize_gen_status(Status, _, Status).
 
 normalize_sent(S, S).
 
-extract_words(li(W, _, _), W) :- !.
-extract_words(tree(H, _, _), W) :- extract_words(H, W), !.
-extract_words(tree([(W, _, _) | _], _, _, _), W) :- !.
-extract_words([T | _], W) :- extract_words(T, W), !.
+/*
+extract_words/2
+---------------
+Extracts the surface token list from a generated MG tree.
+
+Important:
+Generated trees may contain more than one chain at the root, for example:
+
+    tree([([twenty],[c2],Sem), ([four],[-tee],4)], ...)
+
+The old extractor only took the first chain and returned [twenty].
+That lost mover-chain surface material such as [four]. The new extractor
+collects words from all chains in the root annotation list.
+*/
+
+extract_words(li(Words, _, _), Words) :- !.
+
+extract_words(tree(Chains, _, _, _), Words) :-
+    is_chain_list(Chains),
+    words_from_chains(Chains, Words),
+    !.
+
+extract_words(tree(Chains, _, _), Words) :-
+    is_chain_list(Chains),
+    words_from_chains(Chains, Words),
+    !.
+
+extract_words(tree(Head, _, _), Words) :-
+    extract_words(Head, Words),
+    !.
+
+extract_words([T | _], Words) :-
+    extract_words(T, Words),
+    !.
+
 extract_words(_, []).
+
+is_chain_list([(Words, _Features, _Sem) | _]) :-
+    is_list(Words),
+    !.
+
+words_from_chains([], []).
+
+words_from_chains([(Words, _Features, _Sem) | Rest], Out) :-
+    words_from_chains(Rest, RestOut),
+    append(Words, RestOut, Out).
 
 write_gen_tree_block(S, Sem, GenStatus, Tokens, Sent, TreeTerm) :-
     format(S, "==================================================~n", []),

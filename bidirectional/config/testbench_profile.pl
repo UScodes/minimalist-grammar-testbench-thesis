@@ -64,8 +64,8 @@ generator_lexicon_file('../../SemanticGenerator/MG-Generator/grammars/numbers_Ge
 parser_lexicon_file('../../MG-LC-Parser-with-Semantic-main/grammars/English_trans_pruned.pl').
 
 repair_enabled(false).
-smoothing_enabled(false).
-smoothing_style(none).
+smoothing_enabled(true).
+smoothing_style(underscore).
 
 semantic_cases_file('../cases/test_cases.pl').
 token_cases_file('../cases/token_cases.pl').

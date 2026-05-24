@@ -8,6 +8,7 @@
     parser_name/1,
 
     generator_main_file/1,
+generator_wrapper_file/1,
     parser_load_file/1,
     parser_semantics_file/1,
     parser_semantics_source/1,
@@ -47,6 +48,7 @@ generator_name('MG Generator').
 parser_name('MG LC Parser').
 
 generator_main_file('../../SemanticGenerator/MG-Generator/main.pl').
+generator_wrapper_file('../adapters/generator_adapter.pl').
 
 parser_load_file('../../MG-LC-Parser-with-Semantic-main/load.pl').
 

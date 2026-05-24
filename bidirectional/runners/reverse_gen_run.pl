@@ -11,6 +11,8 @@ main :-
 
     testbench_profile:generator_main_file(GeneratorMainFile),
     consult(GeneratorMainFile),
+% Testbench-local generator adapter.
+consult('../adapters/generator_adapter.pl'),
 
     run_metadata:reverse_parse_out_file(ReverseParseOutFile),
     consult(ReverseParseOutFile),

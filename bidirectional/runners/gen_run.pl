@@ -10,6 +10,8 @@ main :-
 
     testbench_profile:generator_main_file(GeneratorMainFile),
     consult(GeneratorMainFile),
+% Testbench-local generator adapter.
+consult('../adapters/generator_adapter.pl'),
 
     testbench_profile:semantic_cases_file(TestCasesFile),
     consult(TestCasesFile),

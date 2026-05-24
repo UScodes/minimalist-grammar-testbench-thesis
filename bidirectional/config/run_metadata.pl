@@ -21,10 +21,14 @@
 /*
   Central path metadata for generated artifacts, logs, and reports.
 
-  This module should only contain output/runtime artifact paths.
+  The predicate names are kept stable for compatibility with existing
+  runners, but the actual file names now use clearer pipeline labels:
+
+      gen_to_parse = Generation -> Parsing
+      parse_to_gen = Parsing -> Generation
 
   Experiment setup such as active cases, grammars, lexicons, and options
-  belongs in testbench_profile.pl
+  belongs in testbench_profile.pl.
 */
 
 project_root('..').
@@ -33,16 +37,24 @@ generated_dir('../generated').
 logs_dir('../logs').
 reports_dir('../reports').
 
-gen_out_file('../generated/gen_out.pl').
-parse_out_file('../generated/parse_out.pl').
-reverse_out_file('../generated/reverse_out.pl').
-reverse_parse_out_file('../generated/reverse_parse_out.pl').
+/*
+  Generation -> Parsing output files
+*/
+gen_out_file('../generated/gen_to_parse_gen_out.pl').
+parse_out_file('../generated/gen_to_parse_parse_out.pl').
 
-bidir_report_file('../generated/bidir_report.txt').
-reverse_report_file('../generated/reverse_report.txt').
+bidir_report_file('../generated/gen_to_parse_report.txt').
 
-forward_gen_tree_report_file('../generated/forward_gen_tree_report.txt').
-forward_parse_tree_report_file('../generated/forward_parse_tree_report.txt').
+forward_gen_tree_report_file('../generated/gen_to_parse_generation_trees.txt').
+forward_parse_tree_report_file('../generated/gen_to_parse_parsing_trees.txt').
 
-reverse_gen_tree_report_file('../generated/reverse_gen_tree_report.txt').
-reverse_parse_tree_report_file('../generated/reverse_parse_tree_report.txt').
+/*
+  Parsing -> Generation output files
+*/
+reverse_parse_out_file('../generated/parse_to_gen_parse_out.pl').
+reverse_out_file('../generated/parse_to_gen_gen_out.pl').
+
+reverse_report_file('../generated/parse_to_gen_report.txt').
+
+reverse_parse_tree_report_file('../generated/parse_to_gen_parsing_trees.txt').
+reverse_gen_tree_report_file('../generated/parse_to_gen_generation_trees.txt').

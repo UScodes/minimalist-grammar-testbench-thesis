@@ -19,23 +19,28 @@ GENERATED_DIR = BASE_DIR / "generated"
 
 PROFILE_FILE = CONFIG_DIR / "testbench_profile.pl"
 
-FORWARD_FILES = [
-    GENERATED_DIR / "gen_out.pl",
-    GENERATED_DIR / "parse_out.pl",
-    GENERATED_DIR / "forward_gen_tree_report.txt",
-    GENERATED_DIR / "forward_parse_tree_report.txt",
-    GENERATED_DIR / "bidir_report.txt",
+GEN_TO_PARSE_FILES = [
+    GENERATED_DIR / "gen_to_parse_gen_out.pl",
+    GENERATED_DIR / "gen_to_parse_parse_out.pl",
+    GENERATED_DIR / "gen_to_parse_generation_trees.txt",
+    GENERATED_DIR / "gen_to_parse_parsing_trees.txt",
+    GENERATED_DIR / "gen_to_parse_report.txt",
 ]
 
-REVERSE_FILES = [
-    GENERATED_DIR / "reverse_out.pl",
-    GENERATED_DIR / "reverse_parse_out.pl",
-    GENERATED_DIR / "reverse_gen_tree_report.txt",
-    GENERATED_DIR / "reverse_parse_tree_report.txt",
-    GENERATED_DIR / "reverse_report.txt",
+PARSE_TO_GEN_FILES = [
+    GENERATED_DIR / "parse_to_gen_parse_out.pl",
+    GENERATED_DIR / "parse_to_gen_gen_out.pl",
+    GENERATED_DIR / "parse_to_gen_parsing_trees.txt",
+    GENERATED_DIR / "parse_to_gen_generation_trees.txt",
+    GENERATED_DIR / "parse_to_gen_report.txt",
 ]
 
-ALL_OUTPUTS = FORWARD_FILES + REVERSE_FILES
+ALL_OUTPUTS = GEN_TO_PARSE_FILES + PARSE_TO_GEN_FILES
+
+MODE_ALIASES = {
+    "forward": "gen_to_parse",
+    "reverse": "parse_to_gen",
+}
 
 
 def ensure_dirs() -> None:
@@ -140,26 +145,35 @@ def print_existing_case_info() -> None:
         raise FileNotFoundError(f"Missing token case file: {token_cases_path}")
 
 
+def normalize_mode(mode: str) -> str:
+    return MODE_ALIASES.get(mode, mode)
+
+
 def parse_args(argv: Iterable[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Run the MG bidirectional testbench."
     )
     parser.add_argument(
         "--mode",
-        choices=["forward", "reverse", "both"],
+        choices=["gen_to_parse", "parse_to_gen", "both", "forward", "reverse"],
         default="both",
-        help="Which direction(s) to execute"
+        help=(
+            "Which validation pipeline to execute. "
+            "Use gen_to_parse or parse_to_gen. "
+            "Legacy aliases forward/reverse are still accepted."
+        ),
     )
     parser.add_argument(
         "--label",
         default=None,
-        help="Archive label under reports/"
+        help="Archive label under reports/",
     )
     return parser.parse_args(list(argv))
 
 
 def main(argv: Iterable[str]) -> int:
     args = parse_args(argv)
+    mode = normalize_mode(args.mode)
 
     ensure_dirs()
     print_existing_case_info()
@@ -167,15 +181,15 @@ def main(argv: Iterable[str]) -> int:
     print("\n=== Cleaning previous generated outputs ===")
     cleanup_outputs()
 
-    if args.mode in ("forward", "both"):
-        run_prolog("gen_run.pl", "gen_run.log")
-        run_prolog("parse_run.pl", "parse_run.log")
-        run_prolog("compare.pl", "compare.log")
+    if mode in ("gen_to_parse", "both"):
+        run_prolog("gen_to_parse_generate.pl", "gen_to_parse_generate.log")
+        run_prolog("gen_to_parse_parse.pl", "gen_to_parse_parse.log")
+        run_prolog("gen_to_parse_compare.pl", "gen_to_parse_compare.log")
 
-    if args.mode in ("reverse", "both"):
-        run_prolog("reverse_parse_run.pl", "reverse_parse_run.log")
-        run_prolog("reverse_gen_run.pl", "reverse_gen_run.log")
-        run_prolog("compare_reverse.pl", "compare_reverse.log")
+    if mode in ("parse_to_gen", "both"):
+        run_prolog("parse_to_gen_parse.pl", "parse_to_gen_parse.log")
+        run_prolog("parse_to_gen_generate.pl", "parse_to_gen_generate.log")
+        run_prolog("parse_to_gen_compare.pl", "parse_to_gen_compare.log")
 
     archive_outputs(args.label)
 

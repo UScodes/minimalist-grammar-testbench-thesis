@@ -58,7 +58,8 @@ write_report_header(S) :-
 
     testbench_profile:generator_main_file(GeneratorMainFile),
     testbench_profile:parser_load_file(ParserLoadFile),
-    testbench_profile:parser_semantics_file(ParserSemanticsFile),
+    testbench_profile:parser_semantics_source(ParserSemanticsSource),
+    testbench_profile:parser_wrapper_file(ParserWrapperFile),
 
     testbench_profile:generator_lexicon_name(GeneratorLexiconName),
     testbench_profile:parser_lexicon_name(ParserLexiconName),
@@ -86,7 +87,8 @@ write_report_header(S) :-
     format(S, "Parser: ~w~n", [ParserName]),
     format(S, "Generator Main File: ~w~n", [GeneratorMainFile]),
     format(S, "Parser Load File: ~w~n", [ParserLoadFile]),
-    format(S, "Parser Semantics File: ~w~n", [ParserSemanticsFile]),
+    format(S, "Parser Semantics Source: ~w~n", [ParserSemanticsSource]),
+    format(S, "Parser Wrapper File: ~w~n", [ParserWrapperFile]),
     format(S, "Generator Lexicon: ~w~n", [GeneratorLexiconName]),
     format(S, "Parser Lexicon: ~w~n", [ParserLexiconName]),
     format(S, "Generator Lexicon File: ~w~n", [GeneratorLexiconFile]),

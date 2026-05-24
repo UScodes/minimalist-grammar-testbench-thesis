@@ -10,6 +10,8 @@
     generator_main_file/1,
     parser_load_file/1,
     parser_semantics_file/1,
+    parser_semantics_source/1,
+    parser_wrapper_file/1,
 
     generator_lexicon_name/1,
     parser_lexicon_name/1,
@@ -26,6 +28,14 @@
 
 /*
   Central experiment profile for the bidirectional validation testbench.
+
+  Important:
+  ----------
+  parser_semantics_file/1 is retained only for backward compatibility with
+  older scripts. The active parser semantics are obtained through the parser's
+  internal semantic pipeline, exposed by mg_parse_wrapper.pl:
+
+      lcParse/2 -> workSpace/2 -> lappend/2 -> betaRoot/2
 */
 
 profile_name('english_numbers_profile').
@@ -37,8 +47,15 @@ generator_name('MG Generator').
 parser_name('MG LC Parser').
 
 generator_main_file('../../SemanticGenerator/MG-Generator/main.pl').
+
 parser_load_file('../../MG-LC-Parser-with-Semantic-main/load.pl').
+
+% Legacy field. Do not use this as the active semantic source.
 parser_semantics_file('../../MG-LC-Parser-with-Semantic-main/sem_from_tree.pl').
+
+% Active semantic source used by the current testbench.
+parser_semantics_source(parser_internal_pipeline).
+parser_wrapper_file('../../MG-LC-Parser-with-Semantic-main/mg_parse_wrapper.pl').
 
 generator_lexicon_name('numbers_Gen').
 parser_lexicon_name('English_trans_pruned').

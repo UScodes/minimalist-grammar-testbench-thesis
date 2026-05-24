@@ -1,5 +1,5 @@
 
-[gen_run] profile=english_numbers_profile generator='MG Generator' generator_main='../../SemanticGenerator/MG-Generator/main.pl' generator_lexicon=numbers_Gen semantic_cases='../cases/test_cases.pl' gen_out='../generated/gen_out.pl' gen_tree_report='../generated/forward_gen_tree_report.txt' repair=false smoothing=false style=none
+[gen_run] profile=english_numbers_profile generator='MG Generator' generator_main='../../SemanticGenerator/MG-Generator/main.pl' generator_lexicon=numbers_Gen semantic_cases='../cases/test_cases.pl' gen_out='../generated/gen_out.pl' gen_tree_report='../generated/forward_gen_tree_report.txt' repair=false smoothing=true style=underscore
 Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/lambdaselect.pl:116:
 Warning:    Clauses of lambdaSelect:lambdaFitting/3 are not together in the source-file
 Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/lambdaselect.pl:27

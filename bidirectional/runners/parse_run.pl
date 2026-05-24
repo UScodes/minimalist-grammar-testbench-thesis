@@ -13,9 +13,10 @@ main :-
     testbench_profile:parser_load_file(ParserLoadFile),
     consult(ParserLoadFile),
 
-    % The parser wrapper uses the parser's internal semantic pipeline:
+    % Testbench-local parser adapter.
+    % It uses the parser's internal semantic pipeline:
     % lcParse/2 -> workSpace/2 -> lappend/2 -> betaRoot/2
-    consult('../../MG-LC-Parser-with-Semantic-main/mg_parse_wrapper.pl'),
+    consult('../adapters/parser_adapter.pl'),
 
     run_metadata:gen_out_file(GenOutFile),
     consult(GenOutFile),
@@ -77,6 +78,8 @@ log_run_configuration :-
     testbench_profile:profile_name(ProfileName),
     testbench_profile:parser_name(ParserName),
     testbench_profile:parser_load_file(ParserLoadFile),
+    testbench_profile:parser_semantics_source(ParserSemanticsSource),
+    testbench_profile:parser_wrapper_file(ParserWrapperFile),
     testbench_profile:parser_lexicon_name(ParserLexiconName),
     testbench_profile:parser_lexicon_file(ParserLexiconFile),
 
@@ -94,7 +97,8 @@ log_run_configuration :-
             profile_name(ProfileName),
             parser_name(ParserName),
             parser_load_file(ParserLoadFile),
-            parser_semantics_source(parser_internal_pipeline),
+            parser_semantics_source(ParserSemanticsSource),
+            parser_wrapper_file(ParserWrapperFile),
             parser_lexicon_name(ParserLexiconName),
             parser_lexicon_file(ParserLexiconFile),
             gen_out_file(GenOutFile),
@@ -107,12 +111,13 @@ log_run_configuration :-
     ),
 
     format(
-        "~n[parse_run] profile=~q parser=~q parser_load=~q parser_semantics=~q parser_lexicon=~q gen_out=~q parse_out=~q parse_tree_report=~q repair=~q smoothing=~q style=~q~n",
+        "~n[parse_run] profile=~q parser=~q parser_load=~q parser_semantics=~q parser_wrapper=~q parser_lexicon=~q gen_out=~q parse_out=~q parse_tree_report=~q repair=~q smoothing=~q style=~q~n",
         [
             ProfileName,
             ParserName,
             ParserLoadFile,
-            parser_internal_pipeline,
+            ParserSemanticsSource,
+            ParserWrapperFile,
             ParserLexiconName,
             GenOutFile,
             ParseOutFile,

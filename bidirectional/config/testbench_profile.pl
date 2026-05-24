@@ -33,7 +33,7 @@
   ----------
   parser_semantics_file/1 is retained only for backward compatibility with
   older scripts. The active parser semantics are obtained through the parser's
-  internal semantic pipeline, exposed by mg_parse_wrapper.pl:
+  internal semantic pipeline, exposed by the testbench parser adapter:
 
       lcParse/2 -> workSpace/2 -> lappend/2 -> betaRoot/2
 */
@@ -53,9 +53,9 @@ parser_load_file('../../MG-LC-Parser-with-Semantic-main/load.pl').
 % Legacy field. Do not use this as the active semantic source.
 parser_semantics_file('../../MG-LC-Parser-with-Semantic-main/sem_from_tree.pl').
 
-% Active semantic source used by the current testbench.
+% Active parser semantic source used by the current testbench.
 parser_semantics_source(parser_internal_pipeline).
-parser_wrapper_file('../../MG-LC-Parser-with-Semantic-main/mg_parse_wrapper.pl').
+parser_wrapper_file('../adapters/parser_adapter.pl').
 
 generator_lexicon_name('numbers_Gen').
 parser_lexicon_name('English_trans_pruned').

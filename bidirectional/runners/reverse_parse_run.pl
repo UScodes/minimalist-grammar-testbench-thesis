@@ -11,9 +11,10 @@ main :-
     testbench_profile:parser_load_file(ParserLoadFile),
     consult(ParserLoadFile),
 
-    % The parser wrapper uses the parser's internal semantic pipeline:
+    % Testbench-local parser adapter.
+    % It uses the parser's internal semantic pipeline:
     % lcParse/2 -> workSpace/2 -> lappend/2 -> betaRoot/2
-    consult('../../MG-LC-Parser-with-Semantic-main/mg_parse_wrapper.pl'),
+    consult('../adapters/parser_adapter.pl'),
 
     testbench_profile:token_cases_file(TokenCasesFile),
     consult(TokenCasesFile),

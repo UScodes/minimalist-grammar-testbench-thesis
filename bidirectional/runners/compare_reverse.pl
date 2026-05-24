@@ -66,7 +66,8 @@ write_report_header(S) :-
 
     testbench_profile:generator_main_file(GeneratorMainFile),
     testbench_profile:parser_load_file(ParserLoadFile),
-    testbench_profile:parser_semantics_file(ParserSemanticsFile),
+    testbench_profile:parser_semantics_source(ParserSemanticsSource),
+    testbench_profile:parser_wrapper_file(ParserWrapperFile),
 
     testbench_profile:generator_lexicon_name(GeneratorLexiconName),
     testbench_profile:parser_lexicon_name(ParserLexiconName),
@@ -94,7 +95,8 @@ write_report_header(S) :-
     format(S, "Parser: ~w~n", [ParserName]),
     format(S, "Generator Main File: ~w~n", [GeneratorMainFile]),
     format(S, "Parser Load File: ~w~n", [ParserLoadFile]),
-    format(S, "Parser Semantics File: ~w~n", [ParserSemanticsFile]),
+    format(S, "Parser Semantics Source: ~w~n", [ParserSemanticsSource]),
+    format(S, "Parser Wrapper File: ~w~n", [ParserWrapperFile]),
     format(S, "Generator Lexicon: ~w~n", [GeneratorLexiconName]),
     format(S, "Parser Lexicon: ~w~n", [ParserLexiconName]),
     format(S, "Generator Lexicon File: ~w~n", [GeneratorLexiconFile]),
@@ -260,7 +262,9 @@ failure_reason_label(generation_exceeded_time_limit, 'Generation exceeded the ti
 failure_reason_label(generator_returned_empty_token_yield, 'Generator returned an empty token yield').
 failure_reason_label(no_tokens_available_for_parsing, 'Parsing was skipped because no tokens were available').
 failure_reason_label(parser_could_not_derive_valid_parse, 'Parser could not derive a valid parse for the token sequence').
+
 failure_reason_label(regenerated_tokens_differ_from_original_input(Expected, Actual), Label) :-
     format(atom(Label), 'Regenerated tokens differed from the original token input: expected ~q but got ~q', [Expected, Actual]).
+
 failure_reason_label(generator_error(E), Label) :-
     format(atom(Label), 'Generator raised an error: ~q', [E]).

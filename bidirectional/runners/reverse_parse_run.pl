@@ -1,4 +1,4 @@
-:- use_module('../../SemanticGenerator/MG-Generator/helpers/mg_logger').
+:- use_module('../logging/testbench_logger').
 :- use_module('../config/run_metadata').
 :- use_module('../config/testbench_profile').
 
@@ -11,8 +11,9 @@ main :-
     testbench_profile:parser_load_file(ParserLoadFile),
     consult(ParserLoadFile),
 
-    testbench_profile:parser_semantics_file(ParserSemanticsFile),
-    consult(ParserSemanticsFile),
+    % The parser wrapper uses the parser's internal semantic pipeline:
+    % lcParse/2 -> workSpace/2 -> lappend/2 -> betaRoot/2
+    consult('../../MG-LC-Parser-with-Semantic-main/mg_parse_wrapper.pl'),
 
     testbench_profile:token_cases_file(TokenCasesFile),
     consult(TokenCasesFile),
@@ -28,11 +29,13 @@ main :-
         (
             run_reverse_parse_case(Tokens, ParseStatus, ParsedSem, ParseTree),
             format(S, "reverse_parse_case(~q, ~q, ~q).~n", [Tokens, ParseStatus, ParsedSem]),
+
             format(TreeS, "Tokens: ~q~n", [Tokens]),
             format(TreeS, "Parse Status: ~q~n", [ParseStatus]),
             format(TreeS, "Parsed Semantic Output: ~q~n", [ParsedSem]),
             format(TreeS, "Parse Tree: ~q~n", [ParseTree]),
             format(TreeS, "--------------------------------------------------~n", []),
+
             mg_logger:log_event(
                 reverse_parse_session,
                 reverse_parse_case(
@@ -54,7 +57,8 @@ log_run_configuration :-
     testbench_profile:profile_name(ProfileName),
     testbench_profile:parser_name(ParserName),
     testbench_profile:parser_load_file(ParserLoadFile),
-    testbench_profile:parser_semantics_file(ParserSemanticsFile),
+    testbench_profile:parser_semantics_source(ParserSemanticsSource),
+    testbench_profile:parser_wrapper_file(ParserWrapperFile),
     testbench_profile:parser_lexicon_name(ParserLexiconName),
     testbench_profile:parser_lexicon_file(ParserLexiconFile),
 
@@ -71,7 +75,8 @@ log_run_configuration :-
             profile_name(ProfileName),
             parser_name(ParserName),
             parser_load_file(ParserLoadFile),
-            parser_semantics_file(ParserSemanticsFile),
+            parser_semantics_source(ParserSemanticsSource),
+            parser_wrapper_file(ParserWrapperFile),
             parser_lexicon_name(ParserLexiconName),
             parser_lexicon_file(ParserLexiconFile),
             token_cases_file(TokenCasesFile),
@@ -83,12 +88,13 @@ log_run_configuration :-
     ),
 
     format(
-        "~n[reverse_parse_run] profile=~q parser=~q parser_load=~q parser_semantics=~q parser_lexicon=~q token_cases=~q reverse_parse_out=~q repair=~q smoothing=~q style=~q~n",
+        "~n[reverse_parse_run] profile=~q parser=~q parser_load=~q parser_semantics=~q parser_wrapper=~q parser_lexicon=~q token_cases=~q reverse_parse_out=~q repair=~q smoothing=~q style=~q~n",
         [
             ProfileName,
             ParserName,
             ParserLoadFile,
-            ParserSemanticsFile,
+            ParserSemanticsSource,
+            ParserWrapperFile,
             ParserLexiconName,
             TokenCasesFile,
             ReverseParseOutFile,
@@ -99,8 +105,25 @@ log_run_configuration :-
     ).
 
 run_reverse_parse_case([], parse_skipped_empty_tokens, none, none) :- !.
-run_reverse_parse_case(Tokens, ok, ParsedSem, Tree) :-
-    once(lcparser:lcParse(Tokens, Tree)),
-    sem_from_tree:sem_from_parse_result(Tree, ParsedSem),
+
+run_reverse_parse_case(Tokens, ok, ParsedSem, RawTree) :-
+    mg_parse_wrapper:parse_with_semantics_safe(Tokens, RawTree, SemanticTree, ok),
+    extract_root_semantics(SemanticTree, ParsedSem),
     !.
+
 run_reverse_parse_case(_, parse_fail, none, none).
+
+/*
+extract_root_semantics/2
+------------------------
+The parser's internal semantic pipeline returns a semantic tree such as:
+
+tree([([four, teen], [cfin], '1X+10'(4))], ...)
+
+The root semantic value is the third element of the first tuple in the
+root annotation list.
+*/
+
+extract_root_semantics(tree([(_, _, Sem) | _], _, _), Sem) :- !.
+extract_root_semantics(li(_, _, Sem), Sem) :- !.
+extract_root_semantics(Sem, Sem).

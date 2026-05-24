@@ -1,4 +1,4 @@
-:- use_module('../../SemanticGenerator/MG-Generator/helpers/mg_logger').
+:- use_module('../logging/testbench_logger').
 :- use_module('../adapters/token_normalizer').
 :- use_module('../config/run_metadata').
 :- use_module('../config/testbench_profile').

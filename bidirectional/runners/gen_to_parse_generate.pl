@@ -99,16 +99,13 @@ log_run_configuration :-
 
 run_gen_case(Sem, GenStatus, Tokens, Sent, TreeTerm) :-
     catch(
-        call_with_time_limit(
-            5,
-            (
-                mg_generate_wrapper:generate_safe(Sem, Sent0, _L, Tree0, Status0),
-                extract_words(Tree0, Tokens0),
-                normalize_sent(Sent0, Sent),
-                normalize_gen_status(Status0, Tokens0, GenStatus),
-                Tokens = Tokens0,
-                TreeTerm = Tree0
-            )
+        (
+            mg_generate_wrapper:generate_safe(Sem, Sent0, _L, Tree0, Status0),
+            extract_words(Tree0, Tokens0),
+            normalize_sent(Sent0, Sent),
+            normalize_gen_status(Status0, Tokens0, GenStatus),
+            Tokens = Tokens0,
+            TreeTerm = Tree0
         ),
         E,
         handle_gen_exception(E, GenStatus, Tokens, Sent, TreeTerm)

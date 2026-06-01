@@ -122,17 +122,14 @@ run_reverse_gen_case(_InputTokens, parse_skipped_empty_tokens, none, generation_
 
 run_reverse_gen_case(_InputTokens, ok, ParsedSem, GenStatus, RawGenTokens, NormalizedGenTokens, Sent, Tree) :-
     catch(
-        call_with_time_limit(
-            5,
-            (
-                mg_generate_wrapper:generate_safe(ParsedSem, Sent0, _L, Tree0, Status0),
-                extract_words(Tree0, RawGenTokens0),
-                normalize_sent(Sent0, Sent),
-                normalize_gen_status(Status0, RawGenTokens0, GenStatus),
-                RawGenTokens = RawGenTokens0,
-                token_normalizer:normalize_gen_to_parser(RawGenTokens, NormalizedGenTokens),
-                Tree = Tree0
-            )
+        (
+            mg_generate_wrapper:generate_safe(ParsedSem, Sent0, _L, Tree0, Status0),
+            extract_words(Tree0, RawGenTokens0),
+            normalize_sent(Sent0, Sent),
+            normalize_gen_status(Status0, RawGenTokens0, GenStatus),
+            RawGenTokens = RawGenTokens0,
+            token_normalizer:normalize_gen_to_parser(RawGenTokens, NormalizedGenTokens),
+            Tree = Tree0
         ),
         E,
         handle_reverse_gen_exception(E, GenStatus, RawGenTokens, NormalizedGenTokens, Sent, Tree)

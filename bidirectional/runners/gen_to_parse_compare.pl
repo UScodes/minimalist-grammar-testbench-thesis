@@ -142,6 +142,14 @@ classify_case(
             VerdictKey = parsing_skipped,
             FailureStageKey = parsing,
             FailureReasonKey = no_tokens_available_for_parsing
+    ;   ParseStatus = parse_timeout ->
+            VerdictKey = parsing_timed_out,
+            FailureStageKey = parsing,
+            FailureReasonKey = parsing_exceeded_time_limit
+    ;   ParseStatus = parser_error(E) ->
+            VerdictKey = parsing_failed,
+            FailureStageKey = parsing,
+            FailureReasonKey = parser_error(E)
     ;   ParseStatus = parse_fail ->
             VerdictKey = parsing_failed,
             FailureStageKey = parsing,
@@ -191,6 +199,7 @@ summarize_results(S, Results) :-
     count_verdict(Results, generation_failed, GenerationFailed),
     count_verdict(Results, no_surface_form_generated, NoSurfaceFormGenerated),
     count_verdict(Results, parsing_skipped, ParsingSkipped),
+    count_verdict(Results, parsing_timed_out, ParsingTimedOut),
     count_verdict(Results, parsing_failed, ParsingFailed),
     count_verdict(Results, semantic_roundtrip_mismatch, SemanticMismatch),
 
@@ -202,6 +211,7 @@ summarize_results(S, Results) :-
     format(S, "Generation Failed: ~d~n", [GenerationFailed]),
     format(S, "No Surface Form Generated: ~d~n", [NoSurfaceFormGenerated]),
     format(S, "Parsing Skipped: ~d~n", [ParsingSkipped]),
+    format(S, "Parsing Timed Out: ~d~n", [ParsingTimedOut]),
     format(S, "Parsing Failed: ~d~n", [ParsingFailed]),
     format(S, "Semantic Roundtrip Mismatch: ~d~n", [SemanticMismatch]),
 
@@ -236,6 +246,7 @@ verdict_label(generation_timed_out, 'Generation Timed Out').
 verdict_label(generation_failed, 'Generation Failed').
 verdict_label(no_surface_form_generated, 'Generation Produced No Surface Form').
 verdict_label(parsing_skipped, 'Parsing Skipped').
+verdict_label(parsing_timed_out, 'Parsing Timed Out').
 verdict_label(parsing_failed, 'Parsing Failed').
 verdict_label(semantic_roundtrip_mismatch, 'Semantic Roundtrip Mismatch').
 
@@ -248,6 +259,7 @@ failure_reason_label(none, 'None').
 failure_reason_label(generation_exceeded_time_limit, 'Generation exceeded the time limit for this test case').
 failure_reason_label(generator_returned_empty_token_yield, 'Generator returned an empty token yield').
 failure_reason_label(no_tokens_available_for_parsing, 'Parsing was skipped because no tokens were available').
+failure_reason_label(parsing_exceeded_time_limit, 'Parsing exceeded the time limit for this test case').
 failure_reason_label(parser_could_not_derive_valid_parse, 'Parser could not derive a valid parse for the token sequence').
 
 failure_reason_label(parsed_semantics_differ_from_original_input(Expected, Actual), Label) :-
@@ -255,3 +267,6 @@ failure_reason_label(parsed_semantics_differ_from_original_input(Expected, Actua
 
 failure_reason_label(generator_error(E), Label) :-
     format(atom(Label), 'Generator raised an error: ~q', [E]).
+
+failure_reason_label(parser_error(E), Label) :-
+    format(atom(Label), 'Parser raised an error: ~q', [E]).

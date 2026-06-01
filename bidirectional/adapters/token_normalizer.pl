@@ -34,10 +34,10 @@ source of truth.
 */
 
 normalize_gen_to_parser(In, Out) :-
-    normalize_tokens(gen_to_parser, In, Out).
+    normalize_tokens(gen_to_parse, In, Out).
 
 normalize_parser_to_gen(In, Out) :-
-    normalize_tokens(parser_to_gen, In, Out).
+    normalize_tokens(parse_to_gen, In, Out).
 
 normalize_tokens(_Direction, In, In) :-
     testbench_profile:smoothing_enabled(false),

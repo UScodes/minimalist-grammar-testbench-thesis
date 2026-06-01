@@ -10,8 +10,9 @@ main :-
 
     testbench_profile:generator_main_file(GeneratorMainFile),
     consult(GeneratorMainFile),
-% Testbench-local generator adapter.
-consult('../adapters/generator_adapter.pl'),
+
+    % Testbench-local generator adapter.
+    consult('../adapters/generator_adapter.pl'),
 
     testbench_profile:semantic_cases_file(TestCasesFile),
     consult(TestCasesFile),
@@ -116,6 +117,8 @@ run_gen_case(Sem, GenStatus, Tokens, Sent, TreeTerm) :-
 handle_gen_exception(time_limit_exceeded, generation_timeout, [], '', none) :- !.
 handle_gen_exception(E, error(E), [], '', none).
 
+normalize_gen_status(timeout, _, generation_timeout) :- !.
+normalize_gen_status(no_solution, _, gen_empty_yield) :- !.
 normalize_gen_status(ok, [], gen_empty_yield) :- !.
 normalize_gen_status(ok, [_|_], ok) :- !.
 normalize_gen_status(Status, _, Status).

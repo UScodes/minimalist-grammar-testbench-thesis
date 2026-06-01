@@ -11,8 +11,9 @@ main :-
 
     testbench_profile:generator_main_file(GeneratorMainFile),
     consult(GeneratorMainFile),
-% Testbench-local generator adapter.
-consult('../adapters/generator_adapter.pl'),
+
+    % Testbench-local generator adapter.
+    consult('../adapters/generator_adapter.pl'),
 
     run_metadata:reverse_parse_out_file(ReverseParseOutFile),
     consult(ReverseParseOutFile),
@@ -140,6 +141,8 @@ run_reverse_gen_case(_InputTokens, ok, ParsedSem, GenStatus, RawGenTokens, Norma
 handle_reverse_gen_exception(time_limit_exceeded, generation_timeout, [], [], '', none) :- !.
 handle_reverse_gen_exception(E, error(E), [], [], '', none).
 
+normalize_gen_status(timeout, _, generation_timeout) :- !.
+normalize_gen_status(no_solution, _, gen_empty_yield) :- !.
 normalize_gen_status(ok, [], gen_empty_yield) :- !.
 normalize_gen_status(ok, [_|_], ok) :- !.
 normalize_gen_status(Status, _, Status).

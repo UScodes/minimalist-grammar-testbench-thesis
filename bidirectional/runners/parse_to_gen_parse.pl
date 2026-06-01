@@ -107,12 +107,23 @@ log_run_configuration :-
 
 run_reverse_parse_case([], parse_skipped_empty_tokens, none, none) :- !.
 
-run_reverse_parse_case(Tokens, ok, ParsedSem, RawTree) :-
-    mg_parse_wrapper:parse_with_semantics_safe(Tokens, RawTree, SemanticTree, ok),
-    extract_root_semantics(SemanticTree, ParsedSem),
+run_reverse_parse_case(Tokens, ParseStatus, ParsedSem, RawTree) :-
+    mg_parse_wrapper:parse_with_semantics_safe(Tokens, RawTree0, SemanticTree, AdapterStatus),
+    normalize_parse_status(AdapterStatus, ParseStatus),
+
+    (   ParseStatus == ok
+    ->  extract_root_semantics(SemanticTree, ParsedSem),
+        RawTree = RawTree0
+    ;   ParsedSem = none,
+        RawTree = none
+    ),
     !.
 
-run_reverse_parse_case(_, parse_fail, none, none).
+normalize_parse_status(ok, ok) :- !.
+normalize_parse_status(timeout, parse_timeout) :- !.
+normalize_parse_status(no_solution, parse_fail) :- !.
+normalize_parse_status(error(E), parser_error(E)) :- !.
+normalize_parse_status(_, parse_fail).
 
 /*
 extract_root_semantics/2

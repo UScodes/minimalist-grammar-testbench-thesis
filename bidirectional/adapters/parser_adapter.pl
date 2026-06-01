@@ -30,37 +30,112 @@ predicates:
           -> betaRoot/2
 
       This avoids using the old sem_from_tree.pl reconstruction file.
+
+Status values
+-------------
+  ok
+      Parsing succeeded.
+
+  timeout
+      Parsing exceeded the adapter time limit.
+
+  no_solution
+      No parse or semantic result could be produced.
+
+  error(E)
+      An unexpected exception occurred.
 */
 
-parse_safe(Tokens, Tree, ok) :-
+% =============================================================================
+% Configuration
+% =============================================================================
+
+adapter_time_limit_seconds(5).
+
+
+% =============================================================================
+% parse_safe(+Tokens, -Tree, -Status)
+% =============================================================================
+
+parse_safe(Tokens, Tree, Status) :-
     catch(
-        call_with_time_limit(
-            5,
-            once(lcparser:lcParse(Tokens, Tree))
-        ),
-        _,
-        fail
+        parse_safe_(Tokens, Tree, Status),
+        E,
+        (
+            Tree = none,
+            Status = error(E)
+        )
+    ).
+
+parse_safe_(Tokens, Tree, Status) :-
+    run_limited_once(
+        lcparser:lcParse(Tokens, Tree),
+        ParseStatus
     ),
-    !.
+    (
+        ParseStatus == ok
+    ->  Status = ok
+    ;   Tree = none,
+        Status = ParseStatus
+    ).
 
-parse_safe(_, none, fail).
 
+% =============================================================================
+% parse_with_semantics_safe(+Tokens, -RawTree, -SemanticTree, -Status)
+% =============================================================================
 
-parse_with_semantics_safe(Tokens, RawTree, SemanticTree, ok) :-
+parse_with_semantics_safe(Tokens, RawTree, SemanticTree, Status) :-
     catch(
-        call_with_time_limit(
-            5,
-            (
-                once(lcparser:lcParse(Tokens, [ParseTree])),
-                workSpace(ParseTree, TreeSyn),
-                lappend(TreeSyn, TreeSem),
-                betaRoot(TreeSem, SemanticTree),
-                RawTree = [ParseTree]
-            )
-        ),
-        _,
-        fail
-    ),
-    !.
+        parse_with_semantics_safe_(Tokens, RawTree, SemanticTree, Status),
+        E,
+        (
+            empty_parse_result(RawTree, SemanticTree),
+            Status = error(E)
+        )
+    ).
 
-parse_with_semantics_safe(_, none, none, fail).
+parse_with_semantics_safe_(Tokens, RawTree, SemanticTree, Status) :-
+    run_limited_once(
+        (
+            lcparser:lcParse(Tokens, [ParseTree]),
+            workSpace(ParseTree, TreeSyn),
+            lappend(TreeSyn, TreeSem),
+            betaRoot(TreeSem, SemanticTree0),
+            RawTree0 = [ParseTree]
+        ),
+        ParseStatus
+    ),
+    (
+        ParseStatus == ok
+    ->  RawTree = RawTree0,
+        SemanticTree = SemanticTree0,
+        Status = ok
+    ;   empty_parse_result(RawTree, SemanticTree),
+        Status = ParseStatus
+    ).
+
+
+% =============================================================================
+% Shared execution helper
+% =============================================================================
+
+:- meta_predicate run_limited_once(0, -).
+
+run_limited_once(Goal, Status) :-
+    adapter_time_limit_seconds(Limit),
+    catch(
+        (
+            call_with_time_limit(Limit, once(Goal))
+        ->  Status = ok
+        ;   Status = no_solution
+        ),
+        time_limit_exceeded,
+        Status = timeout
+    ).
+
+
+% =============================================================================
+% Default result values
+% =============================================================================
+
+empty_parse_result(none, none).

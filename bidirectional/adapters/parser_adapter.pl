@@ -4,6 +4,7 @@
 ]).
 
 :- use_module(library(time)).
+:- use_module('../config/testbench_profile').
 
 /*
 -----------------------------------------------------------
@@ -37,7 +38,7 @@ Status values
       Parsing succeeded.
 
   timeout
-      Parsing exceeded the adapter time limit.
+      Parsing exceeded the configured adapter time limit.
 
   no_solution
       No parse or semantic result could be produced.
@@ -46,9 +47,14 @@ Status values
       An unexpected exception occurred.
 */
 
+
 % =============================================================================
 % Configuration
 % =============================================================================
+
+adapter_time_limit_seconds(Seconds) :-
+    testbench_profile:adapter_timeout_seconds(Seconds),
+    !.
 
 adapter_time_limit_seconds(5).
 

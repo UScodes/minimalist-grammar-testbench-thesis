@@ -8,7 +8,7 @@
     parser_name/1,
 
     generator_main_file/1,
-generator_wrapper_file/1,
+    generator_wrapper_file/1,
     parser_load_file/1,
     parser_semantics_file/1,
     parser_semantics_source/1,
@@ -22,6 +22,7 @@ generator_wrapper_file/1,
     repair_enabled/1,
     smoothing_enabled/1,
     smoothing_style/1,
+    adapter_timeout_seconds/1,
 
     semantic_cases_file/1,
     token_cases_file/1
@@ -52,8 +53,9 @@ generator_wrapper_file('../adapters/generator_adapter.pl').
 
 parser_load_file('../../MG-LC-Parser-with-Semantic-main/load.pl').
 
-% Legacy field. Do not use this as the active semantic source.
-parser_semantics_file('../../MG-LC-Parser-with-Semantic-main/sem_from_tree.pl').
+% Legacy semantic reconstruction adapter retained only for development history.
+% The active parser semantics are obtained through parser_internal_pipeline.
+parser_semantics_file('../archive_legacy/sem_from_tree_legacy.pl').
 
 % Active parser semantic source used by the current testbench.
 parser_semantics_source(parser_internal_pipeline).
@@ -68,6 +70,9 @@ parser_lexicon_file('../../MG-LC-Parser-with-Semantic-main/grammars/English_tran
 repair_enabled(false).
 smoothing_enabled(true).
 smoothing_style(underscore).
+
+% Execution limit used by the parser and generator adapters.
+adapter_timeout_seconds(5).
 
 semantic_cases_file('../cases/test_cases.pl').
 token_cases_file('../cases/token_cases.pl').

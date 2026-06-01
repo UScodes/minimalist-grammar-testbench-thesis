@@ -1,0 +1,440 @@
+==================================================
+SEMANTIC: 1
+GEN STATUS: ok
+GEN TOKENS: [one]
+GEN SENTENCE: one
+GEN TREE:
+li([one],[c1],1)
+
+==================================================
+SEMANTIC: 2
+GEN STATUS: ok
+GEN TOKENS: [two]
+GEN SENTENCE: two
+GEN TREE:
+li([two],[c1],2)
+
+==================================================
+SEMANTIC: 3
+GEN STATUS: ok
+GEN TOKENS: [three]
+GEN SENTENCE: three
+GEN TREE:
+li([three],[c1],3)
+
+==================================================
+SEMANTIC: 4
+GEN STATUS: ok
+GEN TOKENS: [four]
+GEN SENTENCE: four
+GEN TREE:
+li([four],[c1,-tee],4)
+
+==================================================
+SEMANTIC: 5
+GEN STATUS: ok
+GEN TOKENS: [five]
+GEN SENTENCE: five
+GEN TREE:
+li([five],[c1],5)
+
+==================================================
+SEMANTIC: 6
+GEN STATUS: ok
+GEN TOKENS: [six]
+GEN SENTENCE: six
+GEN TREE:
+li([six],[c1,-tee],6)
+
+==================================================
+SEMANTIC: 7
+GEN STATUS: ok
+GEN TOKENS: [seven]
+GEN SENTENCE: seven
+GEN TREE:
+li([seven],[c1,-tee],7)
+
+==================================================
+SEMANTIC: 8
+GEN STATUS: ok
+GEN TOKENS: [eight]
+GEN SENTENCE: eight
+GEN TREE:
+li([eight],[c1,-ee],8)
+
+==================================================
+SEMANTIC: 9
+GEN STATUS: ok
+GEN TOKENS: [nine]
+GEN SENTENCE: nine
+GEN TREE:
+li([nine],[c1,-tee],9)
+
+==================================================
+SEMANTIC: 10
+GEN STATUS: ok
+GEN TOKENS: [ten]
+GEN SENTENCE: ten
+GEN TREE:
+li([ten],[c2],10)
+
+==================================================
+SEMANTIC: 11
+GEN STATUS: ok
+GEN TOKENS: [eleven]
+GEN SENTENCE: eleven
+GEN TREE:
+li([eleven],[c2],11)
+
+==================================================
+SEMANTIC: 12
+GEN STATUS: ok
+GEN TOKENS: [twelve]
+GEN SENTENCE: twelve
+GEN TREE:
+li([twelve],[c2],12)
+
+==================================================
+SEMANTIC: 13
+GEN STATUS: ok
+GEN TOKENS: [thirteen]
+GEN SENTENCE: thirteen
+GEN TREE:
+li([thirteen],[c2],13)
+
+==================================================
+SEMANTIC: 15
+GEN STATUS: ok
+GEN TOKENS: [fifteen]
+GEN SENTENCE: fifteen
+GEN TREE:
+li([fifteen],[c2],15)
+
+==================================================
+SEMANTIC: 18
+GEN STATUS: gen_empty_yield
+GEN TOKENS: []
+GEN SENTENCE: ''
+GEN TREE:
+li([],[=c1,cfin],[18,_4802]>>(_4802=18))
+
+==================================================
+SEMANTIC: 20
+GEN STATUS: ok
+GEN TOKENS: [twenty]
+GEN SENTENCE: twenty
+GEN TREE:
+li([twenty],[c2],20)
+
+==================================================
+SEMANTIC: 30
+GEN STATUS: ok
+GEN TOKENS: [thirty]
+GEN SENTENCE: thirty
+GEN TREE:
+li([thirty],[c2],30)
+
+==================================================
+SEMANTIC: 50
+GEN STATUS: ok
+GEN TOKENS: [fifty]
+GEN SENTENCE: fifty
+GEN TREE:
+li([fifty],[c2],50)
+
+==================================================
+SEMANTIC: '1X+10'(4)
+GEN STATUS: ok
+GEN TOKENS: [four,teen]
+GEN SENTENCE: fourteen
+GEN TREE:
+tree([([four,teen],[c2],'1X+10'(4))],move1,empty,tree([([teen],[+tee,c2],[_4786,_4818]>>(_4818='1X+10'(_4786))),([four],[-tee],4)],merge3,li([teen],[=c1,+tee,c2],[_4786,_4818]>>(_4818='1X+10'(_4786))),li([four],[c1,-tee],4)))
+
+==================================================
+SEMANTIC: '1X+10'(6)
+GEN STATUS: ok
+GEN TOKENS: [six,teen]
+GEN SENTENCE: sixteen
+GEN TREE:
+tree([([six,teen],[c2],'1X+10'(6))],move1,empty,tree([([teen],[+tee,c2],[_10834,_10866]>>(_10866='1X+10'(_10834))),([six],[-tee],6)],merge3,li([teen],[=c1,+tee,c2],[_10834,_10866]>>(_10866='1X+10'(_10834))),li([six],[c1,-tee],6)))
+
+==================================================
+SEMANTIC: '1X+10'(7)
+GEN STATUS: ok
+GEN TOKENS: [seven,teen]
+GEN SENTENCE: seventeen
+GEN TREE:
+tree([([seven,teen],[c2],'1X+10'(7))],move1,empty,tree([([teen],[+tee,c2],[_10834,_10866]>>(_10866='1X+10'(_10834))),([seven],[-tee],7)],merge3,li([teen],[=c1,+tee,c2],[_10834,_10866]>>(_10866='1X+10'(_10834))),li([seven],[c1,-tee],7)))
+
+==================================================
+SEMANTIC: '0X+18'(8)
+GEN STATUS: ok
+GEN TOKENS: [eight,een]
+GEN SENTENCE: eighteen
+GEN TREE:
+tree([([eight,een],[c2],'0X+18'(8))],move1,empty,tree([([een],[+ee,c2],[_10834,_10866]>>(_10866='0X+18'(_10834))),([eight],[-ee],8)],merge3,li([een],[=c1,+ee,c2],[_10834,_10866]>>(_10866='0X+18'(_10834))),li([eight],[c1,-ee],8)))
+
+==================================================
+SEMANTIC: '1X+10'(9)
+GEN STATUS: ok
+GEN TOKENS: [nine,teen]
+GEN SENTENCE: nineteen
+GEN TREE:
+tree([([nine,teen],[c2],'1X+10'(9))],move1,empty,tree([([teen],[+tee,c2],[_10834,_10866]>>(_10866='1X+10'(_10834))),([nine],[-tee],9)],merge3,li([teen],[=c1,+tee,c2],[_10834,_10866]>>(_10866='1X+10'(_10834))),li([nine],[c1,-tee],9)))
+
+==================================================
+SEMANTIC: '1X+20'(1)
+GEN STATUS: ok
+GEN TOKENS: [twenty,one]
+GEN SENTENCE: twentyone
+GEN TREE:
+tree([([twenty,one],[c2],'1X+20'(1))],merge1,li([twenty],[=c1,c2],[_10834,_10866]>>(_10866='1X+20'(_10834))),li([one],[c1],1))
+
+==================================================
+SEMANTIC: '1X+20'(2)
+GEN STATUS: ok
+GEN TOKENS: [twenty,two]
+GEN SENTENCE: twentytwo
+GEN TREE:
+tree([([twenty,two],[c2],'1X+20'(2))],merge1,li([twenty],[=c1,c2],[_10834,_10866]>>(_10866='1X+20'(_10834))),li([two],[c1],2))
+
+==================================================
+SEMANTIC: '1X+20'(3)
+GEN STATUS: ok
+GEN TOKENS: [twenty,three]
+GEN SENTENCE: twentythree
+GEN TREE:
+tree([([twenty,three],[c2],'1X+20'(3))],merge1,li([twenty],[=c1,c2],[_10834,_10866]>>(_10866='1X+20'(_10834))),li([three],[c1],3))
+
+==================================================
+SEMANTIC: '1X+20'(4)
+GEN STATUS: ok
+GEN TOKENS: [twenty,four]
+GEN SENTENCE: twenty
+GEN TREE:
+tree([([twenty],[c2],[_10834,_10866]>>(_10866='1X+20'(_10834))),([four],[-tee],4)],merge3,li([twenty],[=c1,c2],[_10834,_10866]>>(_10866='1X+20'(_10834))),li([four],[c1,-tee],4))
+
+==================================================
+SEMANTIC: '1X+20'(5)
+GEN STATUS: ok
+GEN TOKENS: [twenty,five]
+GEN SENTENCE: twentyfive
+GEN TREE:
+tree([([twenty,five],[c2],'1X+20'(5))],merge1,li([twenty],[=c1,c2],[_10834,_10866]>>(_10866='1X+20'(_10834))),li([five],[c1],5))
+
+==================================================
+SEMANTIC: '1X+20'(6)
+GEN STATUS: ok
+GEN TOKENS: [twenty,six]
+GEN SENTENCE: twenty
+GEN TREE:
+tree([([twenty],[c2],[_10834,_10866]>>(_10866='1X+20'(_10834))),([six],[-tee],6)],merge3,li([twenty],[=c1,c2],[_10834,_10866]>>(_10866='1X+20'(_10834))),li([six],[c1,-tee],6))
+
+==================================================
+SEMANTIC: '1X+20'(7)
+GEN STATUS: ok
+GEN TOKENS: [twenty,seven]
+GEN SENTENCE: twenty
+GEN TREE:
+tree([([twenty],[c2],[_10834,_10866]>>(_10866='1X+20'(_10834))),([seven],[-tee],7)],merge3,li([twenty],[=c1,c2],[_10834,_10866]>>(_10866='1X+20'(_10834))),li([seven],[c1,-tee],7))
+
+==================================================
+SEMANTIC: '1X+20'(8)
+GEN STATUS: ok
+GEN TOKENS: [twenty,eight]
+GEN SENTENCE: twenty
+GEN TREE:
+tree([([twenty],[c2],[_10834,_10866]>>(_10866='1X+20'(_10834))),([eight],[-ee],8)],merge3,li([twenty],[=c1,c2],[_10834,_10866]>>(_10866='1X+20'(_10834))),li([eight],[c1,-ee],8))
+
+==================================================
+SEMANTIC: '1X+20'(9)
+GEN STATUS: ok
+GEN TOKENS: [twenty,nine]
+GEN SENTENCE: twenty
+GEN TREE:
+tree([([twenty],[c2],[_10834,_10866]>>(_10866='1X+20'(_10834))),([nine],[-tee],9)],merge3,li([twenty],[=c1,c2],[_10834,_10866]>>(_10866='1X+20'(_10834))),li([nine],[c1,-tee],9))
+
+==================================================
+SEMANTIC: '1X+30'(1)
+GEN STATUS: ok
+GEN TOKENS: [thirty,one]
+GEN SENTENCE: thirtyone
+GEN TREE:
+tree([([thirty,one],[c2],'1X+30'(1))],merge1,li([thirty],[=c1,c2],[_10834,_10866]>>(_10866='1X+30'(_10834))),li([one],[c1],1))
+
+==================================================
+SEMANTIC: '1X+30'(2)
+GEN STATUS: ok
+GEN TOKENS: [thirty,two]
+GEN SENTENCE: thirtytwo
+GEN TREE:
+tree([([thirty,two],[c2],'1X+30'(2))],merge1,li([thirty],[=c1,c2],[_10834,_10866]>>(_10866='1X+30'(_10834))),li([two],[c1],2))
+
+==================================================
+SEMANTIC: '1X+30'(3)
+GEN STATUS: ok
+GEN TOKENS: [thirty,three]
+GEN SENTENCE: thirtythree
+GEN TREE:
+tree([([thirty,three],[c2],'1X+30'(3))],merge1,li([thirty],[=c1,c2],[_10834,_10866]>>(_10866='1X+30'(_10834))),li([three],[c1],3))
+
+==================================================
+SEMANTIC: '1X+30'(4)
+GEN STATUS: ok
+GEN TOKENS: [thirty,four]
+GEN SENTENCE: thirty
+GEN TREE:
+tree([([thirty],[c2],[_10834,_10866]>>(_10866='1X+30'(_10834))),([four],[-tee],4)],merge3,li([thirty],[=c1,c2],[_10834,_10866]>>(_10866='1X+30'(_10834))),li([four],[c1,-tee],4))
+
+==================================================
+SEMANTIC: '1X+30'(5)
+GEN STATUS: ok
+GEN TOKENS: [thirty,five]
+GEN SENTENCE: thirtyfive
+GEN TREE:
+tree([([thirty,five],[c2],'1X+30'(5))],merge1,li([thirty],[=c1,c2],[_10834,_10866]>>(_10866='1X+30'(_10834))),li([five],[c1],5))
+
+==================================================
+SEMANTIC: '1X+30'(6)
+GEN STATUS: ok
+GEN TOKENS: [thirty,six]
+GEN SENTENCE: thirty
+GEN TREE:
+tree([([thirty],[c2],[_10834,_10866]>>(_10866='1X+30'(_10834))),([six],[-tee],6)],merge3,li([thirty],[=c1,c2],[_10834,_10866]>>(_10866='1X+30'(_10834))),li([six],[c1,-tee],6))
+
+==================================================
+SEMANTIC: '1X+30'(7)
+GEN STATUS: ok
+GEN TOKENS: [thirty,seven]
+GEN SENTENCE: thirty
+GEN TREE:
+tree([([thirty],[c2],[_10834,_10866]>>(_10866='1X+30'(_10834))),([seven],[-tee],7)],merge3,li([thirty],[=c1,c2],[_10834,_10866]>>(_10866='1X+30'(_10834))),li([seven],[c1,-tee],7))
+
+==================================================
+SEMANTIC: '1X+30'(8)
+GEN STATUS: ok
+GEN TOKENS: [thirty,eight]
+GEN SENTENCE: thirty
+GEN TREE:
+tree([([thirty],[c2],[_10834,_10866]>>(_10866='1X+30'(_10834))),([eight],[-ee],8)],merge3,li([thirty],[=c1,c2],[_10834,_10866]>>(_10866='1X+30'(_10834))),li([eight],[c1,-ee],8))
+
+==================================================
+SEMANTIC: '1X+30'(9)
+GEN STATUS: ok
+GEN TOKENS: [thirty,nine]
+GEN SENTENCE: thirty
+GEN TREE:
+tree([([thirty],[c2],[_10834,_10866]>>(_10866='1X+30'(_10834))),([nine],[-tee],9)],merge3,li([thirty],[=c1,c2],[_10834,_10866]>>(_10866='1X+30'(_10834))),li([nine],[c1,-tee],9))
+
+==================================================
+SEMANTIC: '1X+50'(1)
+GEN STATUS: ok
+GEN TOKENS: [fifty,one]
+GEN SENTENCE: fiftyone
+GEN TREE:
+tree([([fifty,one],[c2],'1X+50'(1))],merge1,li([fifty],[=c1,c2],[_10834,_10866]>>(_10866='1X+50'(_10834))),li([one],[c1],1))
+
+==================================================
+SEMANTIC: '1X+50'(2)
+GEN STATUS: ok
+GEN TOKENS: [fifty,two]
+GEN SENTENCE: fiftytwo
+GEN TREE:
+tree([([fifty,two],[c2],'1X+50'(2))],merge1,li([fifty],[=c1,c2],[_10834,_10866]>>(_10866='1X+50'(_10834))),li([two],[c1],2))
+
+==================================================
+SEMANTIC: '1X+50'(3)
+GEN STATUS: ok
+GEN TOKENS: [fifty,three]
+GEN SENTENCE: fiftythree
+GEN TREE:
+tree([([fifty,three],[c2],'1X+50'(3))],merge1,li([fifty],[=c1,c2],[_10834,_10866]>>(_10866='1X+50'(_10834))),li([three],[c1],3))
+
+==================================================
+SEMANTIC: '1X+50'(4)
+GEN STATUS: ok
+GEN TOKENS: [fifty,four]
+GEN SENTENCE: fifty
+GEN TREE:
+tree([([fifty],[c2],[_10834,_10866]>>(_10866='1X+50'(_10834))),([four],[-tee],4)],merge3,li([fifty],[=c1,c2],[_10834,_10866]>>(_10866='1X+50'(_10834))),li([four],[c1,-tee],4))
+
+==================================================
+SEMANTIC: '1X+50'(5)
+GEN STATUS: ok
+GEN TOKENS: [fifty,five]
+GEN SENTENCE: fiftyfive
+GEN TREE:
+tree([([fifty,five],[c2],'1X+50'(5))],merge1,li([fifty],[=c1,c2],[_10834,_10866]>>(_10866='1X+50'(_10834))),li([five],[c1],5))
+
+==================================================
+SEMANTIC: '1X+50'(6)
+GEN STATUS: ok
+GEN TOKENS: [fifty,six]
+GEN SENTENCE: fifty
+GEN TREE:
+tree([([fifty],[c2],[_10834,_10866]>>(_10866='1X+50'(_10834))),([six],[-tee],6)],merge3,li([fifty],[=c1,c2],[_10834,_10866]>>(_10866='1X+50'(_10834))),li([six],[c1,-tee],6))
+
+==================================================
+SEMANTIC: '1X+50'(7)
+GEN STATUS: ok
+GEN TOKENS: [fifty,seven]
+GEN SENTENCE: fifty
+GEN TREE:
+tree([([fifty],[c2],[_10834,_10866]>>(_10866='1X+50'(_10834))),([seven],[-tee],7)],merge3,li([fifty],[=c1,c2],[_10834,_10866]>>(_10866='1X+50'(_10834))),li([seven],[c1,-tee],7))
+
+==================================================
+SEMANTIC: '1X+50'(8)
+GEN STATUS: ok
+GEN TOKENS: [fifty,eight]
+GEN SENTENCE: fifty
+GEN TREE:
+tree([([fifty],[c2],[_10834,_10866]>>(_10866='1X+50'(_10834))),([eight],[-ee],8)],merge3,li([fifty],[=c1,c2],[_10834,_10866]>>(_10866='1X+50'(_10834))),li([eight],[c1,-ee],8))
+
+==================================================
+SEMANTIC: '1X+50'(9)
+GEN STATUS: ok
+GEN TOKENS: [fifty,nine]
+GEN SENTENCE: fifty
+GEN TREE:
+tree([([fifty],[c2],[_10834,_10866]>>(_10866='1X+50'(_10834))),([nine],[-tee],9)],merge3,li([fifty],[=c1,c2],[_10834,_10866]>>(_10866='1X+50'(_10834))),li([nine],[c1,-tee],9))
+
+==================================================
+SEMANTIC: '1X+40'(4)
+GEN STATUS: gen_empty_yield
+GEN TOKENS: []
+GEN SENTENCE: ''
+GEN TREE:
+li([],[=c1,cfin],['1X+40'(_10834),_10866]>>(_10866='1X+40'(_10834)))
+
+==================================================
+SEMANTIC: '1X+60'(4)
+GEN STATUS: gen_empty_yield
+GEN TOKENS: []
+GEN SENTENCE: ''
+GEN TREE:
+li([],[=c1,cfin],['1X+60'(_10834),_10866]>>(_10866='1X+60'(_10834)))
+
+==================================================
+SEMANTIC: '1X+70'(4)
+GEN STATUS: gen_empty_yield
+GEN TOKENS: []
+GEN SENTENCE: ''
+GEN TREE:
+li([],[=c1,cfin],['1X+70'(_10834),_10866]>>(_10866='1X+70'(_10834)))
+
+==================================================
+SEMANTIC: '1X+80'(4)
+GEN STATUS: gen_empty_yield
+GEN TOKENS: []
+GEN SENTENCE: ''
+GEN TREE:
+li([],[=c1,cfin],['1X+80'(_10834),_10866]>>(_10866='1X+80'(_10834)))
+
+==================================================
+SEMANTIC: '1X+90'(4)
+GEN STATUS: gen_empty_yield
+GEN TOKENS: []
+GEN SENTENCE: ''
+GEN TREE:
+li([],[=c1,cfin],['1X+90'(_10834),_10866]>>(_10866='1X+90'(_10834)))
+

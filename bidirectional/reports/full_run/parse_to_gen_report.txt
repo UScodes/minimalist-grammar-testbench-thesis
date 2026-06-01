@@ -1,0 +1,614 @@
+==================================================
+Validation Report: Parsing -> Generation
+==================================================
+Profile Name: english_numbers_profile
+Generator: MG Generator
+Parser: MG LC Parser
+Generator Main File: ../../SemanticGenerator/MG-Generator/main.pl
+Generator Wrapper File: ../adapters/generator_adapter.pl
+Parser Load File: ../../MG-LC-Parser-with-Semantic-main/load.pl
+Parser Semantics Source: parser_internal_pipeline
+Parser Wrapper File: ../adapters/parser_adapter.pl
+Generator Lexicon: numbers_Gen
+Parser Lexicon: English_trans_pruned
+Generator Lexicon File: ../../SemanticGenerator/MG-Generator/grammars/numbers_Gen.pl
+Parser Lexicon File: ../../MG-LC-Parser-with-Semantic-main/grammars/English_trans_pruned.pl
+Repair Enabled: No
+Smoothing Enabled: Yes
+Smoothing Style: underscore
+Token Case File: ../cases/token_cases.pl
+Reverse Parsing Output File: ../generated/parse_to_gen_parse_out.pl
+Reverse Generation Output File: ../generated/parse_to_gen_gen_out.pl
+Reverse Parsing Tree Report: ../generated/parse_to_gen_parsing_trees.txt
+Reverse Generation Tree Report: ../generated/parse_to_gen_generation_trees.txt
+==================================================
+
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [one]
+Parsing Status: ok
+Parsed Semantic Output: 1
+Generation Status: ok
+Raw Generated Tokens: [one]
+Normalized Generated Tokens: [one]
+Generated Sentence: one
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [two]
+Parsing Status: ok
+Parsed Semantic Output: 2
+Generation Status: ok
+Raw Generated Tokens: [two]
+Normalized Generated Tokens: [two]
+Generated Sentence: two
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [three]
+Parsing Status: ok
+Parsed Semantic Output: 3
+Generation Status: ok
+Raw Generated Tokens: [three]
+Normalized Generated Tokens: [three]
+Generated Sentence: three
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [four]
+Parsing Status: ok
+Parsed Semantic Output: 4
+Generation Status: ok
+Raw Generated Tokens: [four]
+Normalized Generated Tokens: [four]
+Generated Sentence: four
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [five]
+Parsing Status: ok
+Parsed Semantic Output: 5
+Generation Status: ok
+Raw Generated Tokens: [five]
+Normalized Generated Tokens: [five]
+Generated Sentence: five
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [six]
+Parsing Status: ok
+Parsed Semantic Output: 6
+Generation Status: ok
+Raw Generated Tokens: [six]
+Normalized Generated Tokens: [six]
+Generated Sentence: six
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [seven]
+Parsing Status: ok
+Parsed Semantic Output: 7
+Generation Status: ok
+Raw Generated Tokens: [seven]
+Normalized Generated Tokens: [seven]
+Generated Sentence: seven
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [eight]
+Parsing Status: ok
+Parsed Semantic Output: 8
+Generation Status: ok
+Raw Generated Tokens: [eight]
+Normalized Generated Tokens: [eight]
+Generated Sentence: eight
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [nine]
+Parsing Status: ok
+Parsed Semantic Output: 9
+Generation Status: ok
+Raw Generated Tokens: [nine]
+Normalized Generated Tokens: [nine]
+Generated Sentence: nine
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [ten]
+Parsing Status: ok
+Parsed Semantic Output: 10
+Generation Status: ok
+Raw Generated Tokens: [ten]
+Normalized Generated Tokens: [ten]
+Generated Sentence: ten
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [eleven]
+Parsing Status: ok
+Parsed Semantic Output: 11
+Generation Status: ok
+Raw Generated Tokens: [eleven]
+Normalized Generated Tokens: [eleven]
+Generated Sentence: eleven
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [twelve]
+Parsing Status: ok
+Parsed Semantic Output: 12
+Generation Status: ok
+Raw Generated Tokens: [twelve]
+Normalized Generated Tokens: [twelve]
+Generated Sentence: twelve
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [thirteen]
+Parsing Status: ok
+Parsed Semantic Output: 13
+Generation Status: ok
+Raw Generated Tokens: [thirteen]
+Normalized Generated Tokens: [thirteen]
+Generated Sentence: thirteen
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [fifteen]
+Parsing Status: ok
+Parsed Semantic Output: 15
+Generation Status: ok
+Raw Generated Tokens: [fifteen]
+Normalized Generated Tokens: [fifteen]
+Generated Sentence: fifteen
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [four,teen]
+Parsing Status: ok
+Parsed Semantic Output: '1X+10'(4)
+Generation Status: ok
+Raw Generated Tokens: [four,teen]
+Normalized Generated Tokens: [four,teen]
+Generated Sentence: fourteen
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [eight,een]
+Parsing Status: ok
+Parsed Semantic Output: '0X+18'(8)
+Generation Status: ok
+Raw Generated Tokens: [eight,een]
+Normalized Generated Tokens: [eight,een]
+Generated Sentence: eighteen
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [twenty]
+Parsing Status: ok
+Parsed Semantic Output: 20
+Generation Status: ok
+Raw Generated Tokens: [twenty]
+Normalized Generated Tokens: [twenty]
+Generated Sentence: twenty
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [thirty]
+Parsing Status: ok
+Parsed Semantic Output: 30
+Generation Status: ok
+Raw Generated Tokens: [thirty]
+Normalized Generated Tokens: [thirty]
+Generated Sentence: thirty
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [fifty]
+Parsing Status: ok
+Parsed Semantic Output: 50
+Generation Status: ok
+Raw Generated Tokens: [fifty]
+Normalized Generated Tokens: [fifty]
+Generated Sentence: fifty
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [twenty_,one]
+Parsing Status: ok
+Parsed Semantic Output: '1X+20'(1)
+Generation Status: ok
+Raw Generated Tokens: [twenty,one]
+Normalized Generated Tokens: [twenty_,one]
+Generated Sentence: twentyone
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [twenty_,two]
+Parsing Status: ok
+Parsed Semantic Output: '1X+20'(2)
+Generation Status: ok
+Raw Generated Tokens: [twenty,two]
+Normalized Generated Tokens: [twenty_,two]
+Generated Sentence: twentytwo
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [twenty_,three]
+Parsing Status: ok
+Parsed Semantic Output: '1X+20'(3)
+Generation Status: ok
+Raw Generated Tokens: [twenty,three]
+Normalized Generated Tokens: [twenty_,three]
+Generated Sentence: twentythree
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [twenty_,four]
+Parsing Status: ok
+Parsed Semantic Output: '1X+20'(4)
+Generation Status: ok
+Raw Generated Tokens: [twenty,four]
+Normalized Generated Tokens: [twenty_,four]
+Generated Sentence: twenty
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [twenty_,five]
+Parsing Status: ok
+Parsed Semantic Output: '1X+20'(5)
+Generation Status: ok
+Raw Generated Tokens: [twenty,five]
+Normalized Generated Tokens: [twenty_,five]
+Generated Sentence: twentyfive
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [twenty_,six]
+Parsing Status: ok
+Parsed Semantic Output: '1X+20'(6)
+Generation Status: ok
+Raw Generated Tokens: [twenty,six]
+Normalized Generated Tokens: [twenty_,six]
+Generated Sentence: twenty
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [twenty_,seven]
+Parsing Status: ok
+Parsed Semantic Output: '1X+20'(7)
+Generation Status: ok
+Raw Generated Tokens: [twenty,seven]
+Normalized Generated Tokens: [twenty_,seven]
+Generated Sentence: twenty
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [twenty_,eight]
+Parsing Status: ok
+Parsed Semantic Output: '1X+20'(8)
+Generation Status: ok
+Raw Generated Tokens: [twenty,eight]
+Normalized Generated Tokens: [twenty_,eight]
+Generated Sentence: twenty
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [twenty_,nine]
+Parsing Status: ok
+Parsed Semantic Output: '1X+20'(9)
+Generation Status: ok
+Raw Generated Tokens: [twenty,nine]
+Normalized Generated Tokens: [twenty_,nine]
+Generated Sentence: twenty
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [thirty_,one]
+Parsing Status: ok
+Parsed Semantic Output: '1X+30'(1)
+Generation Status: ok
+Raw Generated Tokens: [thirty,one]
+Normalized Generated Tokens: [thirty_,one]
+Generated Sentence: thirtyone
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [thirty_,two]
+Parsing Status: ok
+Parsed Semantic Output: '1X+30'(2)
+Generation Status: ok
+Raw Generated Tokens: [thirty,two]
+Normalized Generated Tokens: [thirty_,two]
+Generated Sentence: thirtytwo
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [thirty_,three]
+Parsing Status: ok
+Parsed Semantic Output: '1X+30'(3)
+Generation Status: ok
+Raw Generated Tokens: [thirty,three]
+Normalized Generated Tokens: [thirty_,three]
+Generated Sentence: thirtythree
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [thirty_,four]
+Parsing Status: ok
+Parsed Semantic Output: '1X+30'(4)
+Generation Status: ok
+Raw Generated Tokens: [thirty,four]
+Normalized Generated Tokens: [thirty_,four]
+Generated Sentence: thirty
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [thirty_,five]
+Parsing Status: ok
+Parsed Semantic Output: '1X+30'(5)
+Generation Status: ok
+Raw Generated Tokens: [thirty,five]
+Normalized Generated Tokens: [thirty_,five]
+Generated Sentence: thirtyfive
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [thirty_,six]
+Parsing Status: ok
+Parsed Semantic Output: '1X+30'(6)
+Generation Status: ok
+Raw Generated Tokens: [thirty,six]
+Normalized Generated Tokens: [thirty_,six]
+Generated Sentence: thirty
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [thirty_,seven]
+Parsing Status: ok
+Parsed Semantic Output: '1X+30'(7)
+Generation Status: ok
+Raw Generated Tokens: [thirty,seven]
+Normalized Generated Tokens: [thirty_,seven]
+Generated Sentence: thirty
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [thirty_,eight]
+Parsing Status: ok
+Parsed Semantic Output: '1X+30'(8)
+Generation Status: ok
+Raw Generated Tokens: [thirty,eight]
+Normalized Generated Tokens: [thirty_,eight]
+Generated Sentence: thirty
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [thirty_,nine]
+Parsing Status: ok
+Parsed Semantic Output: '1X+30'(9)
+Generation Status: ok
+Raw Generated Tokens: [thirty,nine]
+Normalized Generated Tokens: [thirty_,nine]
+Generated Sentence: thirty
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [fifty_,one]
+Parsing Status: ok
+Parsed Semantic Output: '1X+50'(1)
+Generation Status: ok
+Raw Generated Tokens: [fifty,one]
+Normalized Generated Tokens: [fifty_,one]
+Generated Sentence: fiftyone
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [fifty_,two]
+Parsing Status: ok
+Parsed Semantic Output: '1X+50'(2)
+Generation Status: ok
+Raw Generated Tokens: [fifty,two]
+Normalized Generated Tokens: [fifty_,two]
+Generated Sentence: fiftytwo
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [fifty_,three]
+Parsing Status: ok
+Parsed Semantic Output: '1X+50'(3)
+Generation Status: ok
+Raw Generated Tokens: [fifty,three]
+Normalized Generated Tokens: [fifty_,three]
+Generated Sentence: fiftythree
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [fifty_,four]
+Parsing Status: ok
+Parsed Semantic Output: '1X+50'(4)
+Generation Status: ok
+Raw Generated Tokens: [fifty,four]
+Normalized Generated Tokens: [fifty_,four]
+Generated Sentence: fifty
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [fifty_,five]
+Parsing Status: ok
+Parsed Semantic Output: '1X+50'(5)
+Generation Status: ok
+Raw Generated Tokens: [fifty,five]
+Normalized Generated Tokens: [fifty_,five]
+Generated Sentence: fiftyfive
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [fifty_,six]
+Parsing Status: ok
+Parsed Semantic Output: '1X+50'(6)
+Generation Status: ok
+Raw Generated Tokens: [fifty,six]
+Normalized Generated Tokens: [fifty_,six]
+Generated Sentence: fifty
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [fifty_,seven]
+Parsing Status: ok
+Parsed Semantic Output: '1X+50'(7)
+Generation Status: ok
+Raw Generated Tokens: [fifty,seven]
+Normalized Generated Tokens: [fifty_,seven]
+Generated Sentence: fifty
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [fifty_,eight]
+Parsing Status: ok
+Parsed Semantic Output: '1X+50'(8)
+Generation Status: ok
+Raw Generated Tokens: [fifty,eight]
+Normalized Generated Tokens: [fifty_,eight]
+Generated Sentence: fifty
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Token Input: [fifty_,nine]
+Parsing Status: ok
+Parsed Semantic Output: '1X+50'(9)
+Generation Status: ok
+Raw Generated Tokens: [fifty,nine]
+Normalized Generated Tokens: [fifty_,nine]
+Generated Sentence: fifty
+--------------------------------------------------
+Case Result: Parsing Failed
+Failure Stage: Parsing
+Failure Reason: Parser could not derive a valid parse for the token sequence
+Original Token Input: [six,teen]
+Parsing Status: parse_fail
+Parsed Semantic Output: none
+Generation Status: generation_not_attempted
+Raw Generated Tokens: []
+Normalized Generated Tokens: []
+Generated Sentence: ''
+--------------------------------------------------
+Case Result: Parsing Failed
+Failure Stage: Parsing
+Failure Reason: Parser could not derive a valid parse for the token sequence
+Original Token Input: [seven,teen]
+Parsing Status: parse_fail
+Parsed Semantic Output: none
+Generation Status: generation_not_attempted
+Raw Generated Tokens: []
+Normalized Generated Tokens: []
+Generated Sentence: ''
+--------------------------------------------------
+Case Result: Parsing Failed
+Failure Stage: Parsing
+Failure Reason: Parser could not derive a valid parse for the token sequence
+Original Token Input: [nine,teen]
+Parsing Status: parse_fail
+Parsed Semantic Output: none
+Generation Status: generation_not_attempted
+Raw Generated Tokens: []
+Normalized Generated Tokens: []
+Generated Sentence: ''
+--------------------------------------------------
+Case Result: Parsing Failed
+Failure Stage: Parsing
+Failure Reason: Parser could not derive a valid parse for the token sequence
+Original Token Input: [teen]
+Parsing Status: parse_fail
+Parsed Semantic Output: none
+Generation Status: generation_not_attempted
+Raw Generated Tokens: []
+Normalized Generated Tokens: []
+Generated Sentence: ''
+--------------------------------------------------
+Case Result: Generation Produced No Surface Form
+Failure Stage: Generation
+Failure Reason: Generator returned an empty token yield
+Original Token Input: [forty_,four]
+Parsing Status: ok
+Parsed Semantic Output: '1X+40'(4)
+Generation Status: gen_empty_yield
+Raw Generated Tokens: []
+Normalized Generated Tokens: []
+Generated Sentence: ''
+--------------------------------------------------
+Case Result: Parsing Failed
+Failure Stage: Parsing
+Failure Reason: Parser could not derive a valid parse for the token sequence
+Original Token Input: [sixty_,four]
+Parsing Status: parse_fail
+Parsed Semantic Output: none
+Generation Status: generation_not_attempted
+Raw Generated Tokens: []
+Normalized Generated Tokens: []
+Generated Sentence: ''
+--------------------------------------------------
+
+================ Validation Summary ================
+Total Cases: 52
+Validation Passed: 46
+Generation Not Attempted: 0
+Generation Timed Out: 0
+Generation Failed: 0
+No Surface Form Generated: 1
+Parsing Skipped: 0
+Parsing Failed: 5
+Token Roundtrip Mismatch: 0
+
+================ Failure Stage Summary ==============
+No Failure Stage: 46
+Generation: 1
+Parsing: 5
+Token Comparison: 0

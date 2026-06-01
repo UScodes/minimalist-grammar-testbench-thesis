@@ -1,0 +1,646 @@
+==================================================
+Validation Report: Generation -> Parsing
+==================================================
+Profile Name: english_numbers_profile
+Generator: MG Generator
+Parser: MG LC Parser
+Generator Main File: ../../SemanticGenerator/MG-Generator/main.pl
+Generator Wrapper File: ../adapters/generator_adapter.pl
+Parser Load File: ../../MG-LC-Parser-with-Semantic-main/load.pl
+Parser Semantics Source: parser_internal_pipeline
+Parser Wrapper File: ../adapters/parser_adapter.pl
+Generator Lexicon: numbers_Gen
+Parser Lexicon: English_trans_pruned
+Generator Lexicon File: ../../SemanticGenerator/MG-Generator/grammars/numbers_Gen.pl
+Parser Lexicon File: ../../MG-LC-Parser-with-Semantic-main/grammars/English_trans_pruned.pl
+Repair Enabled: No
+Smoothing Enabled: Yes
+Smoothing Style: underscore
+Semantic Case File: ../cases/test_cases.pl
+Generation Output File: ../generated/gen_out.pl
+Parsing Output File: ../generated/parse_out.pl
+Generation Tree Report: ../generated/forward_gen_tree_report.txt
+Parsing Tree Report: ../generated/forward_parse_tree_report.txt
+==================================================
+
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: 1
+Generation Status: ok
+Generated Tokens: [one]
+Repaired Tokens: [one]
+Parser Tokens: [one]
+Parsing Status: ok
+Parsed Semantic Output: 1
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: 2
+Generation Status: ok
+Generated Tokens: [two]
+Repaired Tokens: [two]
+Parser Tokens: [two]
+Parsing Status: ok
+Parsed Semantic Output: 2
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: 3
+Generation Status: ok
+Generated Tokens: [three]
+Repaired Tokens: [three]
+Parser Tokens: [three]
+Parsing Status: ok
+Parsed Semantic Output: 3
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: 4
+Generation Status: ok
+Generated Tokens: [four]
+Repaired Tokens: [four]
+Parser Tokens: [four]
+Parsing Status: ok
+Parsed Semantic Output: 4
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: 5
+Generation Status: ok
+Generated Tokens: [five]
+Repaired Tokens: [five]
+Parser Tokens: [five]
+Parsing Status: ok
+Parsed Semantic Output: 5
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: 6
+Generation Status: ok
+Generated Tokens: [six]
+Repaired Tokens: [six]
+Parser Tokens: [six]
+Parsing Status: ok
+Parsed Semantic Output: 6
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: 7
+Generation Status: ok
+Generated Tokens: [seven]
+Repaired Tokens: [seven]
+Parser Tokens: [seven]
+Parsing Status: ok
+Parsed Semantic Output: 7
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: 8
+Generation Status: ok
+Generated Tokens: [eight]
+Repaired Tokens: [eight]
+Parser Tokens: [eight]
+Parsing Status: ok
+Parsed Semantic Output: 8
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: 9
+Generation Status: ok
+Generated Tokens: [nine]
+Repaired Tokens: [nine]
+Parser Tokens: [nine]
+Parsing Status: ok
+Parsed Semantic Output: 9
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: 10
+Generation Status: ok
+Generated Tokens: [ten]
+Repaired Tokens: [ten]
+Parser Tokens: [ten]
+Parsing Status: ok
+Parsed Semantic Output: 10
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: 11
+Generation Status: ok
+Generated Tokens: [eleven]
+Repaired Tokens: [eleven]
+Parser Tokens: [eleven]
+Parsing Status: ok
+Parsed Semantic Output: 11
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: 12
+Generation Status: ok
+Generated Tokens: [twelve]
+Repaired Tokens: [twelve]
+Parser Tokens: [twelve]
+Parsing Status: ok
+Parsed Semantic Output: 12
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: 13
+Generation Status: ok
+Generated Tokens: [thirteen]
+Repaired Tokens: [thirteen]
+Parser Tokens: [thirteen]
+Parsing Status: ok
+Parsed Semantic Output: 13
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: 15
+Generation Status: ok
+Generated Tokens: [fifteen]
+Repaired Tokens: [fifteen]
+Parser Tokens: [fifteen]
+Parsing Status: ok
+Parsed Semantic Output: 15
+--------------------------------------------------
+Case Result: Generation Produced No Surface Form
+Failure Stage: Generation
+Failure Reason: Generator returned an empty token yield
+Original Semantic Input: 18
+Generation Status: gen_empty_yield
+Generated Tokens: []
+Repaired Tokens: []
+Parser Tokens: []
+Parsing Status: parse_skipped_empty_tokens
+Parsed Semantic Output: none
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: 20
+Generation Status: ok
+Generated Tokens: [twenty]
+Repaired Tokens: [twenty]
+Parser Tokens: [twenty]
+Parsing Status: ok
+Parsed Semantic Output: 20
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: 30
+Generation Status: ok
+Generated Tokens: [thirty]
+Repaired Tokens: [thirty]
+Parser Tokens: [thirty]
+Parsing Status: ok
+Parsed Semantic Output: 30
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: 50
+Generation Status: ok
+Generated Tokens: [fifty]
+Repaired Tokens: [fifty]
+Parser Tokens: [fifty]
+Parsing Status: ok
+Parsed Semantic Output: 50
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: '1X+10'(4)
+Generation Status: ok
+Generated Tokens: [four,teen]
+Repaired Tokens: [four,teen]
+Parser Tokens: [four,teen]
+Parsing Status: ok
+Parsed Semantic Output: '1X+10'(4)
+--------------------------------------------------
+Case Result: Parsing Failed
+Failure Stage: Parsing
+Failure Reason: Parser could not derive a valid parse for the token sequence
+Original Semantic Input: '1X+10'(6)
+Generation Status: ok
+Generated Tokens: [six,teen]
+Repaired Tokens: [six,teen]
+Parser Tokens: [six,teen]
+Parsing Status: parse_fail
+Parsed Semantic Output: none
+--------------------------------------------------
+Case Result: Parsing Failed
+Failure Stage: Parsing
+Failure Reason: Parser could not derive a valid parse for the token sequence
+Original Semantic Input: '1X+10'(7)
+Generation Status: ok
+Generated Tokens: [seven,teen]
+Repaired Tokens: [seven,teen]
+Parser Tokens: [seven,teen]
+Parsing Status: parse_fail
+Parsed Semantic Output: none
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: '0X+18'(8)
+Generation Status: ok
+Generated Tokens: [eight,een]
+Repaired Tokens: [eight,een]
+Parser Tokens: [eight,een]
+Parsing Status: ok
+Parsed Semantic Output: '0X+18'(8)
+--------------------------------------------------
+Case Result: Parsing Failed
+Failure Stage: Parsing
+Failure Reason: Parser could not derive a valid parse for the token sequence
+Original Semantic Input: '1X+10'(9)
+Generation Status: ok
+Generated Tokens: [nine,teen]
+Repaired Tokens: [nine,teen]
+Parser Tokens: [nine,teen]
+Parsing Status: parse_fail
+Parsed Semantic Output: none
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: '1X+20'(1)
+Generation Status: ok
+Generated Tokens: [twenty,one]
+Repaired Tokens: [twenty,one]
+Parser Tokens: [twenty_,one]
+Parsing Status: ok
+Parsed Semantic Output: '1X+20'(1)
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: '1X+20'(2)
+Generation Status: ok
+Generated Tokens: [twenty,two]
+Repaired Tokens: [twenty,two]
+Parser Tokens: [twenty_,two]
+Parsing Status: ok
+Parsed Semantic Output: '1X+20'(2)
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: '1X+20'(3)
+Generation Status: ok
+Generated Tokens: [twenty,three]
+Repaired Tokens: [twenty,three]
+Parser Tokens: [twenty_,three]
+Parsing Status: ok
+Parsed Semantic Output: '1X+20'(3)
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: '1X+20'(4)
+Generation Status: ok
+Generated Tokens: [twenty,four]
+Repaired Tokens: [twenty,four]
+Parser Tokens: [twenty_,four]
+Parsing Status: ok
+Parsed Semantic Output: '1X+20'(4)
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: '1X+20'(5)
+Generation Status: ok
+Generated Tokens: [twenty,five]
+Repaired Tokens: [twenty,five]
+Parser Tokens: [twenty_,five]
+Parsing Status: ok
+Parsed Semantic Output: '1X+20'(5)
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: '1X+20'(6)
+Generation Status: ok
+Generated Tokens: [twenty,six]
+Repaired Tokens: [twenty,six]
+Parser Tokens: [twenty_,six]
+Parsing Status: ok
+Parsed Semantic Output: '1X+20'(6)
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: '1X+20'(7)
+Generation Status: ok
+Generated Tokens: [twenty,seven]
+Repaired Tokens: [twenty,seven]
+Parser Tokens: [twenty_,seven]
+Parsing Status: ok
+Parsed Semantic Output: '1X+20'(7)
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: '1X+20'(8)
+Generation Status: ok
+Generated Tokens: [twenty,eight]
+Repaired Tokens: [twenty,eight]
+Parser Tokens: [twenty_,eight]
+Parsing Status: ok
+Parsed Semantic Output: '1X+20'(8)
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: '1X+20'(9)
+Generation Status: ok
+Generated Tokens: [twenty,nine]
+Repaired Tokens: [twenty,nine]
+Parser Tokens: [twenty_,nine]
+Parsing Status: ok
+Parsed Semantic Output: '1X+20'(9)
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: '1X+30'(1)
+Generation Status: ok
+Generated Tokens: [thirty,one]
+Repaired Tokens: [thirty,one]
+Parser Tokens: [thirty_,one]
+Parsing Status: ok
+Parsed Semantic Output: '1X+30'(1)
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: '1X+30'(2)
+Generation Status: ok
+Generated Tokens: [thirty,two]
+Repaired Tokens: [thirty,two]
+Parser Tokens: [thirty_,two]
+Parsing Status: ok
+Parsed Semantic Output: '1X+30'(2)
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: '1X+30'(3)
+Generation Status: ok
+Generated Tokens: [thirty,three]
+Repaired Tokens: [thirty,three]
+Parser Tokens: [thirty_,three]
+Parsing Status: ok
+Parsed Semantic Output: '1X+30'(3)
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: '1X+30'(4)
+Generation Status: ok
+Generated Tokens: [thirty,four]
+Repaired Tokens: [thirty,four]
+Parser Tokens: [thirty_,four]
+Parsing Status: ok
+Parsed Semantic Output: '1X+30'(4)
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: '1X+30'(5)
+Generation Status: ok
+Generated Tokens: [thirty,five]
+Repaired Tokens: [thirty,five]
+Parser Tokens: [thirty_,five]
+Parsing Status: ok
+Parsed Semantic Output: '1X+30'(5)
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: '1X+30'(6)
+Generation Status: ok
+Generated Tokens: [thirty,six]
+Repaired Tokens: [thirty,six]
+Parser Tokens: [thirty_,six]
+Parsing Status: ok
+Parsed Semantic Output: '1X+30'(6)
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: '1X+30'(7)
+Generation Status: ok
+Generated Tokens: [thirty,seven]
+Repaired Tokens: [thirty,seven]
+Parser Tokens: [thirty_,seven]
+Parsing Status: ok
+Parsed Semantic Output: '1X+30'(7)
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: '1X+30'(8)
+Generation Status: ok
+Generated Tokens: [thirty,eight]
+Repaired Tokens: [thirty,eight]
+Parser Tokens: [thirty_,eight]
+Parsing Status: ok
+Parsed Semantic Output: '1X+30'(8)
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: '1X+30'(9)
+Generation Status: ok
+Generated Tokens: [thirty,nine]
+Repaired Tokens: [thirty,nine]
+Parser Tokens: [thirty_,nine]
+Parsing Status: ok
+Parsed Semantic Output: '1X+30'(9)
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: '1X+50'(1)
+Generation Status: ok
+Generated Tokens: [fifty,one]
+Repaired Tokens: [fifty,one]
+Parser Tokens: [fifty_,one]
+Parsing Status: ok
+Parsed Semantic Output: '1X+50'(1)
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: '1X+50'(2)
+Generation Status: ok
+Generated Tokens: [fifty,two]
+Repaired Tokens: [fifty,two]
+Parser Tokens: [fifty_,two]
+Parsing Status: ok
+Parsed Semantic Output: '1X+50'(2)
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: '1X+50'(3)
+Generation Status: ok
+Generated Tokens: [fifty,three]
+Repaired Tokens: [fifty,three]
+Parser Tokens: [fifty_,three]
+Parsing Status: ok
+Parsed Semantic Output: '1X+50'(3)
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: '1X+50'(4)
+Generation Status: ok
+Generated Tokens: [fifty,four]
+Repaired Tokens: [fifty,four]
+Parser Tokens: [fifty_,four]
+Parsing Status: ok
+Parsed Semantic Output: '1X+50'(4)
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: '1X+50'(5)
+Generation Status: ok
+Generated Tokens: [fifty,five]
+Repaired Tokens: [fifty,five]
+Parser Tokens: [fifty_,five]
+Parsing Status: ok
+Parsed Semantic Output: '1X+50'(5)
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: '1X+50'(6)
+Generation Status: ok
+Generated Tokens: [fifty,six]
+Repaired Tokens: [fifty,six]
+Parser Tokens: [fifty_,six]
+Parsing Status: ok
+Parsed Semantic Output: '1X+50'(6)
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: '1X+50'(7)
+Generation Status: ok
+Generated Tokens: [fifty,seven]
+Repaired Tokens: [fifty,seven]
+Parser Tokens: [fifty_,seven]
+Parsing Status: ok
+Parsed Semantic Output: '1X+50'(7)
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: '1X+50'(8)
+Generation Status: ok
+Generated Tokens: [fifty,eight]
+Repaired Tokens: [fifty,eight]
+Parser Tokens: [fifty_,eight]
+Parsing Status: ok
+Parsed Semantic Output: '1X+50'(8)
+--------------------------------------------------
+Case Result: Validation Passed
+Failure Stage: None
+Failure Reason: None
+Original Semantic Input: '1X+50'(9)
+Generation Status: ok
+Generated Tokens: [fifty,nine]
+Repaired Tokens: [fifty,nine]
+Parser Tokens: [fifty_,nine]
+Parsing Status: ok
+Parsed Semantic Output: '1X+50'(9)
+--------------------------------------------------
+Case Result: Generation Produced No Surface Form
+Failure Stage: Generation
+Failure Reason: Generator returned an empty token yield
+Original Semantic Input: '1X+40'(4)
+Generation Status: gen_empty_yield
+Generated Tokens: []
+Repaired Tokens: []
+Parser Tokens: []
+Parsing Status: parse_skipped_empty_tokens
+Parsed Semantic Output: none
+--------------------------------------------------
+Case Result: Generation Produced No Surface Form
+Failure Stage: Generation
+Failure Reason: Generator returned an empty token yield
+Original Semantic Input: '1X+60'(4)
+Generation Status: gen_empty_yield
+Generated Tokens: []
+Repaired Tokens: []
+Parser Tokens: []
+Parsing Status: parse_skipped_empty_tokens
+Parsed Semantic Output: none
+--------------------------------------------------
+Case Result: Generation Produced No Surface Form
+Failure Stage: Generation
+Failure Reason: Generator returned an empty token yield
+Original Semantic Input: '1X+70'(4)
+Generation Status: gen_empty_yield
+Generated Tokens: []
+Repaired Tokens: []
+Parser Tokens: []
+Parsing Status: parse_skipped_empty_tokens
+Parsed Semantic Output: none
+--------------------------------------------------
+Case Result: Generation Produced No Surface Form
+Failure Stage: Generation
+Failure Reason: Generator returned an empty token yield
+Original Semantic Input: '1X+80'(4)
+Generation Status: gen_empty_yield
+Generated Tokens: []
+Repaired Tokens: []
+Parser Tokens: []
+Parsing Status: parse_skipped_empty_tokens
+Parsed Semantic Output: none
+--------------------------------------------------
+Case Result: Generation Produced No Surface Form
+Failure Stage: Generation
+Failure Reason: Generator returned an empty token yield
+Original Semantic Input: '1X+90'(4)
+Generation Status: gen_empty_yield
+Generated Tokens: []
+Repaired Tokens: []
+Parser Tokens: []
+Parsing Status: parse_skipped_empty_tokens
+Parsed Semantic Output: none
+--------------------------------------------------
+
+================ Validation Summary ================
+Total Cases: 55
+Validation Passed: 46
+Generation Timed Out: 0
+Generation Failed: 0
+No Surface Form Generated: 6
+Parsing Skipped: 0
+Parsing Failed: 3
+Semantic Roundtrip Mismatch: 0
+
+================ Failure Stage Summary ==============
+No Failure Stage: 46
+Generation: 6
+Parsing: 3
+Semantic Comparison: 0

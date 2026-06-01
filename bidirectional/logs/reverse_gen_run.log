@@ -1,5 +1,5 @@
 
-[reverse_gen_run] profile=english_numbers_profile generator='MG Generator' generator_main='../../SemanticGenerator/MG-Generator/main.pl' generator_lexicon=numbers_Gen reverse_parse_out='../generated/reverse_parse_out.pl' reverse_out='../generated/reverse_out.pl' repair=false smoothing=false style=none
+[reverse_gen_run] profile=english_numbers_profile generator='MG Generator' generator_main='../../SemanticGenerator/MG-Generator/main.pl' generator_lexicon=numbers_Gen reverse_parse_out='../generated/reverse_parse_out.pl' reverse_out='../generated/reverse_out.pl' repair=false smoothing=true style=underscore
 Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/lambdaselect.pl:116:
 Warning:    Clauses of lambdaSelect:lambdaFitting/3 are not together in the source-file
 Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/lambdaselect.pl:27
@@ -211,5 +211,12 @@ Warning:    Clauses of ypsilonSelect:changeToLI/2 are not together in the source
 Warning:    Earlier definition at c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/ypsilonselect.pl:742
 Warning:    Current predicate: ypsilonSelect:flattenLambdaLi/2
 Warning:    Use :- discontiguous ypsilonSelect:changeToLI/2. to suppress this message
-Warning: c:/users/lenovo/mg_testbench/semanticgenerator/mg-generator/main.pl:11:
-Warning:    Local definition of user:generate/4 overrides weak import from mg_generate_wrapper
+ERROR: c:/users/lenovo/mg_testbench/bidirectional/adapters/generator_adapter.pl:6:
+ERROR:    source_sink `lambdaSelect' does not exist
+Warning: c:/users/lenovo/mg_testbench/bidirectional/adapters/generator_adapter.pl:6:
+Warning:    Goal (directive) failed: mg_generate_wrapper:use_module(lambdaSelect)
+ERROR: c:/users/lenovo/mg_testbench/bidirectional/adapters/generator_adapter.pl:7:
+ERROR:    source_sink `lambdaWorkspace' does not exist
+Warning: c:/users/lenovo/mg_testbench/bidirectional/adapters/generator_adapter.pl:7:
+Warning:    Goal (directive) failed: mg_generate_wrapper:use_module(lambdaWorkspace)
+Warning: [Thread main] Local definition of user:generate/4 overrides weak import from mg_generate_wrapper

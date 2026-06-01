@@ -179,6 +179,21 @@ extract_root_semantics(tree([(_, _, Sem) | _], _, _), Sem) :- !.
 extract_root_semantics(li(_, _, Sem), Sem) :- !.
 extract_root_semantics(Sem, Sem).
 
+write_tree_repair_fields_if_relevant(S, GenTokens, RepairedTokens, RepairStatus) :-
+    testbench_profile:repair_enabled(true),
+    !,
+    format(S, "REPAIRED TOKENS: ~q~n", [RepairedTokens]),
+    format(S, "REPAIR STATUS: ~q~n", [RepairStatus]),
+    write_tree_repair_note(S, GenTokens, RepairedTokens).
+
+write_tree_repair_fields_if_relevant(_, _, _, _).
+
+write_tree_repair_note(S, GenTokens, RepairedTokens) :-
+    (   RepairedTokens \== GenTokens
+    ->  format(S, "REPAIR NOTE: repair changed the generated token sequence~n", [])
+    ;   format(S, "REPAIR NOTE: repair was enabled but no change was applied~n", [])
+    ).
+
 write_parse_tree_block(
     S,
     Sem,
@@ -195,9 +210,8 @@ write_parse_tree_block(
     format(S, "SEMANTIC: ~q~n", [Sem]),
     format(S, "GEN STATUS: ~q~n", [GenStatus]),
     format(S, "GEN TOKENS: ~q~n", [GenTokens]),
-    format(S, "REPAIRED TOKENS: ~q~n", [RepairedTokens]),
+    write_tree_repair_fields_if_relevant(S, GenTokens, RepairedTokens, RepairStatus),
     format(S, "PARSER TOKENS: ~q~n", [ParserTokens]),
-    format(S, "REPAIR STATUS: ~q~n", [RepairStatus]),
     format(S, "PARSE STATUS: ~q~n", [ParseStatus]),
     format(S, "PARSED SEMANTICS: ~q~n", [ParsedSem]),
     format(S, "PARSE TREE:~n", []),

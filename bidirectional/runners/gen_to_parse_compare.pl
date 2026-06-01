@@ -186,11 +186,25 @@ write_case_line(
     format(S, "Original Semantic Input: ~q~n", [Sem]),
     format(S, "Generation Status: ~q~n", [GenStatus]),
     format(S, "Generated Tokens: ~q~n", [GenTokens]),
-    format(S, "Repaired Tokens: ~q~n", [RepairedTokens]),
+    write_repair_fields_if_relevant(S, GenTokens, RepairedTokens),
     format(S, "Parser Tokens: ~q~n", [ParserTokens]),
     format(S, "Parsing Status: ~q~n", [ParseStatus]),
     format(S, "Parsed Semantic Output: ~q~n", [ParsedSem]),
     format(S, "--------------------------------------------------~n", []).
+
+write_repair_fields_if_relevant(S, GenTokens, RepairedTokens) :-
+    testbench_profile:repair_enabled(true),
+    !,
+    format(S, "Repaired Tokens: ~q~n", [RepairedTokens]),
+    write_repair_status(S, GenTokens, RepairedTokens).
+
+write_repair_fields_if_relevant(_, _, _).
+
+write_repair_status(S, GenTokens, RepairedTokens) :-
+    (   RepairedTokens \== GenTokens
+    ->  format(S, "Repair Status: applied~n", [])
+    ;   format(S, "Repair Status: not applied~n", [])
+    ).
 
 summarize_results(S, Results) :-
     length(Results, Total),

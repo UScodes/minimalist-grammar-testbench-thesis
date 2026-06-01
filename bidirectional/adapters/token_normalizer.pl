@@ -13,7 +13,10 @@ MG Testbench – Token Normalizer
 
 Purpose
 -------
-Optional token smoothing/normalization layer.
+Optional token normalization layer.
+
+In this testbench, smoothing settings define the normalization policy,
+while this adapter applies the selected normalization operation.
 
 Behavior
 --------
@@ -31,31 +34,33 @@ source of truth.
 */
 
 normalize_gen_to_parser(In, Out) :-
-    testbench_profile:smoothing_enabled(false),
-    !,
-    Out = In.
-
-normalize_gen_to_parser(In, Out) :-
-    testbench_profile:smoothing_enabled(true),
-    testbench_profile:smoothing_style(Style),
-    normalize_list(gen_to_parser, Style, In, Out).
+    normalize_tokens(gen_to_parser, In, Out).
 
 normalize_parser_to_gen(In, Out) :-
-    testbench_profile:smoothing_enabled(false),
-    !,
-    Out = In.
+    normalize_tokens(parser_to_gen, In, Out).
 
-normalize_parser_to_gen(In, Out) :-
+normalize_tokens(_Direction, In, In) :-
+    testbench_profile:smoothing_enabled(false),
+    !.
+
+normalize_tokens(_Direction, In, In) :-
+    testbench_profile:smoothing_enabled(true),
+    testbench_profile:smoothing_style(none),
+    !.
+
+normalize_tokens(Direction, In, Out) :-
     testbench_profile:smoothing_enabled(true),
     testbench_profile:smoothing_style(Style),
-    normalize_list(parser_to_gen, Style, In, Out).
+    normalize_list(Direction, Style, In, Out).
 
 normalize_list(_, _, [], []).
 
-normalize_list(Direction, Style, [A, B | Rest], [A2, B | OutRest]) :-
-    smoothing_rules:smoothing_rule(Direction, Style, A, A2),
-    !,
-    normalize_list(Direction, Style, Rest, OutRest).
-
-normalize_list(Direction, Style, [H | T], [H | T2]) :-
+normalize_list(Direction, Style, [H | T], [H2 | T2]) :-
+    normalize_token(Direction, Style, H, H2),
     normalize_list(Direction, Style, T, T2).
+
+normalize_token(Direction, Style, Token, Normalized) :-
+    smoothing_rules:smoothing_rule(Direction, Style, Token, Normalized),
+    !.
+
+normalize_token(_, _, Token, Token).

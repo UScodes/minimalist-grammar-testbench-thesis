@@ -4,8 +4,8 @@
 :- initialization(main, main).
 
 main :-
-    run_metadata:reverse_out_file(ReverseOutFile),
-    consult(ReverseOutFile),
+    run_metadata:reverse_out_file(GenerationOutFile),
+    consult(GenerationOutFile),
 
     run_metadata:reverse_report_file(ReportFile),
     open(ReportFile, write, S),
@@ -13,9 +13,10 @@ main :-
     write_report_header(S),
 
     findall(
-        result(VerdictKey, FailureStageKey, FailureReasonKey),
+        result(CaseId, VerdictKey, FailureStageKey, FailureReasonKey),
         (
-            reverse_case(
+            parse_to_gen_generation_case(
+                CaseId,
                 InputTokens,
                 ParseStatus,
                 ParsedSem,
@@ -38,6 +39,7 @@ main :-
             ),
             write_case_line(
                 S,
+                CaseId,
                 InputTokens,
                 ParseStatus,
                 ParsedSem,
@@ -79,39 +81,46 @@ write_report_header(S) :-
     testbench_profile:repair_enabled(RepairEnabled0),
     testbench_profile:smoothing_enabled(SmoothingEnabled0),
     testbench_profile:smoothing_style(SmoothingStyle),
+    testbench_profile:adapter_timeout_seconds(AdapterTimeoutSeconds),
 
     yes_no(RepairEnabled0, RepairEnabled),
-    yes_no(SmoothingEnabled0, SmoothingEnabled),
+    yes_no(SmoothingEnabled0, TokenNormalizationEnabled),
 
     testbench_profile:token_cases_file(TokenCasesFile),
-    run_metadata:reverse_parse_out_file(ReverseParseOutFile),
-    run_metadata:reverse_out_file(ReverseOutFile),
+    run_metadata:reverse_parse_out_file(ParseOutFile),
+    run_metadata:reverse_out_file(GenerationOutFile),
     run_metadata:reverse_parse_tree_report_file(ParseTreeFile),
     run_metadata:reverse_gen_tree_report_file(GenTreeFile),
 
     format(S, "==================================================~n", []),
-    format(S, "Validation Report: ~w~n", [PipelineName]),
+    format(S, "Validation Report: Parsing-to-Generation~n", []),
     format(S, "==================================================~n", []),
-    format(S, "Profile Name: ~w~n", [ProfileName]),
-    format(S, "Generator: ~w~n", [GeneratorName]),
-    format(S, "Parser: ~w~n", [ParserName]),
-    format(S, "Generator Main File: ~w~n", [GeneratorMainFile]),
-    format(S, "Generator Wrapper File: ~w~n", [GeneratorWrapperFile]),
+    format(S, "Profile: ~w~n", [ProfileName]),
+    format(S, "Pipeline: ~w~n", [PipelineName]),
+    format(S, "Parser Component: ~w~n", [ParserName]),
+    format(S, "Generator Component: ~w~n", [GeneratorName]),
+    format(S, "~n", []),
     format(S, "Parser Load File: ~w~n", [ParserLoadFile]),
-    format(S, "Parser Semantics Source: ~w~n", [ParserSemanticsSource]),
-    format(S, "Parser Wrapper File: ~w~n", [ParserWrapperFile]),
-    format(S, "Generator Lexicon: ~w~n", [GeneratorLexiconName]),
+    format(S, "Parser Adapter File: ~w~n", [ParserWrapperFile]),
+    format(S, "Parser Semantic Source: ~w~n", [ParserSemanticsSource]),
+    format(S, "Generator Main File: ~w~n", [GeneratorMainFile]),
+    format(S, "Generator Adapter File: ~w~n", [GeneratorWrapperFile]),
+    format(S, "~n", []),
     format(S, "Parser Lexicon: ~w~n", [ParserLexiconName]),
-    format(S, "Generator Lexicon File: ~w~n", [GeneratorLexiconFile]),
+    format(S, "Generator Lexicon: ~w~n", [GeneratorLexiconName]),
     format(S, "Parser Lexicon File: ~w~n", [ParserLexiconFile]),
+    format(S, "Generator Lexicon File: ~w~n", [GeneratorLexiconFile]),
+    format(S, "Token Test Case File: ~w~n", [TokenCasesFile]),
+    format(S, "~n", []),
+    format(S, "Token Normalization Enabled: ~w~n", [TokenNormalizationEnabled]),
+    format(S, "Token Normalization Style: ~w~n", [SmoothingStyle]),
     format(S, "Repair Enabled: ~w~n", [RepairEnabled]),
-    format(S, "Smoothing Enabled: ~w~n", [SmoothingEnabled]),
-    format(S, "Smoothing Style: ~w~n", [SmoothingStyle]),
-    format(S, "Token Case File: ~w~n", [TokenCasesFile]),
-    format(S, "Reverse Parsing Output File: ~w~n", [ReverseParseOutFile]),
-    format(S, "Reverse Generation Output File: ~w~n", [ReverseOutFile]),
-    format(S, "Reverse Parsing Tree Report: ~w~n", [ParseTreeFile]),
-    format(S, "Reverse Generation Tree Report: ~w~n", [GenTreeFile]),
+    format(S, "Adapter Timeout: ~w seconds~n", [AdapterTimeoutSeconds]),
+    format(S, "~n", []),
+    format(S, "Parsing-stage Output File: ~w~n", [ParseOutFile]),
+    format(S, "Generation-stage Output File: ~w~n", [GenerationOutFile]),
+    format(S, "Parsing Tree Report: ~w~n", [ParseTreeFile]),
+    format(S, "Generation Tree Report: ~w~n", [GenTreeFile]),
     format(S, "==================================================~n~n", []).
 
 yes_no(true, 'Yes').
@@ -146,10 +155,6 @@ classify_case(
             VerdictKey = parsing_failed,
             FailureStageKey = parsing,
             FailureReasonKey = parser_could_not_derive_valid_parse
-    ;   GenStatus = generation_not_attempted ->
-            VerdictKey = generation_not_attempted,
-            FailureStageKey = generation,
-            FailureReasonKey = generation_not_attempted_due_to_parse_failure
     ;   GenStatus = generation_timeout ->
             VerdictKey = generation_timed_out,
             FailureStageKey = generation,
@@ -177,6 +182,7 @@ classify_case(
 
 write_case_line(
     S,
+    CaseId,
     InputTokens,
     ParseStatus,
     ParsedSem,
@@ -192,22 +198,34 @@ write_case_line(
     failure_stage_label(FailureStageKey, FailureStageLabel),
     failure_reason_label(FailureReasonKey, FailureReasonLabel),
 
-    format(S, "Case Result: ~w~n", [VerdictLabel]),
+    format(S, "Case ID: ~q~n", [CaseId]),
+    format(S, "Validation Result: ~w~n", [VerdictLabel]),
     format(S, "Failure Stage: ~w~n", [FailureStageLabel]),
-    format(S, "Failure Reason: ~w~n", [FailureReasonLabel]),
-    format(S, "Original Token Input: ~q~n", [InputTokens]),
-    format(S, "Parsing Status: ~q~n", [ParseStatus]),
-    format(S, "Parsed Semantic Output: ~q~n", [ParsedSem]),
-    format(S, "Generation Status: ~q~n", [GenStatus]),
-    format(S, "Raw Generated Tokens: ~q~n", [RawGenTokens]),
-    format(S, "Normalized Generated Tokens: ~q~n", [NormalizedGenTokens]),
-    format(S, "Generated Sentence: ~q~n", [Sent]),
+    format(S, "Diagnostic Reason: ~w~n", [FailureReasonLabel]),
+    format(S, "~n", []),
+
+    format(S, "Input~n", []),
+    format(S, "  Token Input: ~q~n", [InputTokens]),
+    format(S, "~n", []),
+
+    format(S, "Parsing Stage~n", []),
+    format(S, "  Parsing Status: ~q~n", [ParseStatus]),
+    format(S, "  Recovered Semantic Output: ~q~n", [ParsedSem]),
+    format(S, "~n", []),
+
+    format(S, "Generation Stage~n", []),
+    format(S, "  Generation Status: ~q~n", [GenStatus]),
+    format(S, "  Generated Tokens: ~q~n", [RawGenTokens]),
+    format(S, "  Generated Sentence: ~q~n", [Sent]),
+    format(S, "~n", []),
+
+    format(S, "Interface Preparation~n", []),
+    format(S, "Tokens after Normalization: ~q~n", [NormalizedGenTokens]),
     format(S, "--------------------------------------------------~n", []).
 
 summarize_results(S, Results) :-
     length(Results, Total),
     count_verdict(Results, validation_passed, Passed),
-    count_verdict(Results, generation_not_attempted, GenerationNotAttempted),
     count_verdict(Results, generation_timed_out, GenerationTimedOut),
     count_verdict(Results, generation_failed, GenerationFailed),
     count_verdict(Results, no_surface_form_generated, NoSurfaceFormGenerated),
@@ -220,7 +238,6 @@ summarize_results(S, Results) :-
     format(S, "================ Validation Summary ================~n", []),
     format(S, "Total Cases: ~d~n", [Total]),
     format(S, "Validation Passed: ~d~n", [Passed]),
-    format(S, "Generation Not Attempted: ~d~n", [GenerationNotAttempted]),
     format(S, "Generation Timed Out: ~d~n", [GenerationTimedOut]),
     format(S, "Generation Failed: ~d~n", [GenerationFailed]),
     format(S, "No Surface Form Generated: ~d~n", [NoSurfaceFormGenerated]),
@@ -252,11 +269,10 @@ count_stage(Results, Stage, Count) :-
     include(has_stage(Stage), Results, Matches),
     length(Matches, Count).
 
-has_verdict(Verdict, result(Verdict, _, _)).
-has_stage(Stage, result(_, Stage, _)).
+has_verdict(Verdict, result(_, Verdict, _, _)).
+has_stage(Stage, result(_, _, Stage, _)).
 
 verdict_label(validation_passed, 'Validation Passed').
-verdict_label(generation_not_attempted, 'Generation Not Attempted').
 verdict_label(generation_timed_out, 'Generation Timed Out').
 verdict_label(generation_failed, 'Generation Failed').
 verdict_label(no_surface_form_generated, 'Generation Produced No Surface Form').
@@ -271,7 +287,6 @@ failure_stage_label(parsing, 'Parsing').
 failure_stage_label(token_comparison, 'Token Comparison').
 
 failure_reason_label(none, 'None').
-failure_reason_label(generation_not_attempted_due_to_parse_failure, 'Generation was not attempted because parsing did not succeed').
 failure_reason_label(generation_exceeded_time_limit, 'Generation exceeded the time limit for this test case').
 failure_reason_label(generator_returned_empty_token_yield, 'Generator returned an empty token yield').
 failure_reason_label(no_tokens_available_for_parsing, 'Parsing was skipped because no tokens were available').

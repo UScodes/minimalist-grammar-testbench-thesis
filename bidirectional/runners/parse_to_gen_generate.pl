@@ -6,7 +6,7 @@
 :- initialization(main, main).
 
 main :-
-    mg_logger:log_event(system, reverse_gen_run_start),
+    mg_logger:log_event(system, parse_to_gen_generate_run_start),
     log_run_configuration,
 
     testbench_profile:generator_main_file(GeneratorMainFile),
@@ -15,19 +15,21 @@ main :-
     % Testbench-local generator adapter.
     consult('../adapters/generator_adapter.pl'),
 
-    run_metadata:reverse_parse_out_file(ReverseParseOutFile),
-    consult(ReverseParseOutFile),
+    run_metadata:reverse_parse_out_file(ParseOutFile),
+    consult(ParseOutFile),
 
-    run_metadata:reverse_out_file(ReverseOutFile),
-    open(ReverseOutFile, write, S),
+    run_metadata:reverse_out_file(GenerationOutFile),
+    open(GenerationOutFile, write, S),
 
-    run_metadata:reverse_gen_tree_report_file(ReverseGenTreeReportFile),
-    open(ReverseGenTreeReportFile, write, TreeS),
+    run_metadata:reverse_gen_tree_report_file(GenerationTreeReportFile),
+    open(GenerationTreeReportFile, write, TreeS),
+
+    write_generation_output_header(S),
 
     forall(
-        reverse_parse_case(InputTokens, ParseStatus, ParsedSem),
+        parse_to_gen_parsing_case(CaseId, InputTokens, ParseStatus, ParsedSem),
         (
-            run_reverse_gen_case(
+            run_parse_to_gen_generation_case(
                 InputTokens,
                 ParseStatus,
                 ParsedSem,
@@ -37,30 +39,37 @@ main :-
                 Sent,
                 Tree
             ),
+
             format(
                 S,
-                "reverse_case(~q, ~q, ~q, ~q, ~q, ~q, ~q).~n",
-                [InputTokens, ParseStatus, ParsedSem, GenStatus, RawGenTokens, NormalizedGenTokens, Sent]
+                "parse_to_gen_generation_case(~q, ~q, ~q, ~q, ~q, ~q, ~q, ~q).~n",
+                [CaseId, InputTokens, ParseStatus, ParsedSem, GenStatus, RawGenTokens, NormalizedGenTokens, Sent]
             ),
-            format(TreeS, "Input Tokens: ~q~n", [InputTokens]),
-            format(TreeS, "Parse Status: ~q~n", [ParseStatus]),
-            format(TreeS, "Parsed Semantic Input: ~q~n", [ParsedSem]),
-            format(TreeS, "Generation Status: ~q~n", [GenStatus]),
-            format(TreeS, "Raw Generated Tokens: ~q~n", [RawGenTokens]),
-            format(TreeS, "Normalized Generated Tokens: ~q~n", [NormalizedGenTokens]),
-            format(TreeS, "Generated Sentence: ~q~n", [Sent]),
-            format(TreeS, "Generation Tree: ~q~n", [Tree]),
-            format(TreeS, "--------------------------------------------------~n", []),
+
+            write_generation_tree_block(
+                TreeS,
+                CaseId,
+                InputTokens,
+                ParseStatus,
+                ParsedSem,
+                GenStatus,
+                RawGenTokens,
+                NormalizedGenTokens,
+                Sent,
+                Tree
+            ),
+
             mg_logger:log_event(
-                reverse_gen_session,
-                reverse_case(
-                    input_tokens(InputTokens),
-                    parse_status(ParseStatus),
-                    parsed_sem(ParsedSem),
-                    gen_status(GenStatus),
-                    raw_gen_tokens(RawGenTokens),
-                    normalized_gen_tokens(NormalizedGenTokens),
-                    sentence(Sent)
+                parse_to_gen_generation_session,
+                parse_to_gen_generation_case(
+                    case_id(CaseId),
+                    token_input(InputTokens),
+                    parsing_status(ParseStatus),
+                    recovered_semantic_output(ParsedSem),
+                    generation_status(GenStatus),
+                    generated_tokens_before_normalization(RawGenTokens),
+                    comparison_tokens(NormalizedGenTokens),
+                    generated_sentence(Sent)
                 )
             )
         )
@@ -68,7 +77,7 @@ main :-
 
     close(TreeS),
     close(S),
-    mg_logger:log_event(system, reverse_gen_run_end),
+    mg_logger:log_event(system, parse_to_gen_generate_run_end),
     halt.
 
 log_run_configuration :-
@@ -81,62 +90,69 @@ log_run_configuration :-
     testbench_profile:repair_enabled(Repair),
     testbench_profile:smoothing_enabled(Smoothing),
     testbench_profile:smoothing_style(Style),
+    testbench_profile:adapter_timeout_seconds(AdapterTimeoutSeconds),
 
-    run_metadata:reverse_parse_out_file(ReverseParseOutFile),
-    run_metadata:reverse_out_file(ReverseOutFile),
+    run_metadata:reverse_parse_out_file(ParseOutFile),
+    run_metadata:reverse_out_file(GenerationOutFile),
+    run_metadata:reverse_gen_tree_report_file(GenerationTreeReportFile),
 
     mg_logger:log_event(
         configuration,
-        reverse_gen_run(
+        parse_to_gen_generation_stage(
             profile_name(ProfileName),
             generator_name(GeneratorName),
             generator_main_file(GeneratorMainFile),
             generator_lexicon_name(GeneratorLexiconName),
             generator_lexicon_file(GeneratorLexiconFile),
-            reverse_parse_out_file(ReverseParseOutFile),
-            reverse_out_file(ReverseOutFile),
+            parsing_stage_output_file(ParseOutFile),
+            generation_stage_output_file(GenerationOutFile),
+            generation_tree_report_file(GenerationTreeReportFile),
             repair_enabled(Repair),
-            smoothing_enabled(Smoothing),
-            smoothing_style(Style)
+            token_normalization_enabled(Smoothing),
+            token_normalization_style(Style),
+            adapter_timeout_seconds(AdapterTimeoutSeconds)
         )
     ),
 
     format(
-        "~n[reverse_gen_run] profile=~q generator=~q generator_main=~q generator_lexicon=~q reverse_parse_out=~q reverse_out=~q repair=~q smoothing=~q style=~q~n",
+        "~n[parse_to_gen_generation_stage] profile=~q generator=~q generator_main=~q generator_lexicon=~q parsing_output=~q generation_output=~q generation_tree_report=~q repair=~q token_normalization=~q style=~q timeout_seconds=~q~n",
         [
             ProfileName,
             GeneratorName,
             GeneratorMainFile,
             GeneratorLexiconName,
-            ReverseParseOutFile,
-            ReverseOutFile,
+            ParseOutFile,
+            GenerationOutFile,
+            GenerationTreeReportFile,
             Repair,
             Smoothing,
-            Style
+            Style,
+            AdapterTimeoutSeconds
         ]
     ).
 
-run_reverse_gen_case(_InputTokens, parse_fail, none, generation_not_attempted, [], [], '', none) :- !.
+run_parse_to_gen_generation_case(_InputTokens, parse_fail, none, generation_not_attempted, [], [], '', none) :- !.
+run_parse_to_gen_generation_case(_InputTokens, parse_timeout, none, generation_not_attempted, [], [], '', none) :- !.
+run_parse_to_gen_generation_case(_InputTokens, parser_error(_), none, generation_not_attempted, [], [], '', none) :- !.
+run_parse_to_gen_generation_case(_InputTokens, parse_skipped_empty_tokens, none, generation_not_attempted, [], [], '', none) :- !.
 
-run_reverse_gen_case(_InputTokens, parse_skipped_empty_tokens, none, generation_not_attempted, [], [], '', none) :- !.
-
-run_reverse_gen_case(_InputTokens, ok, ParsedSem, GenStatus, RawGenTokens, NormalizedGenTokens, Sent, Tree) :-
+run_parse_to_gen_generation_case(_InputTokens, ok, ParsedSem, GenStatus, RawGenTokens, NormalizedGenTokens, Sent, Tree) :-
     catch(
         (
-            mg_generate_wrapper:generate_safe(ParsedSem, Sent0, _L, Tree0, Status0),
+            mg_generate_wrapper:generate_safe(ParsedSem, _AdapterSent, _L, Tree0, Status0),
             extract_words(Tree0, RawGenTokens0),
-            normalize_sent(Sent0, Sent),
+            tokens_to_sentence(RawGenTokens0, Sent),
             normalize_gen_status(Status0, RawGenTokens0, GenStatus),
             RawGenTokens = RawGenTokens0,
             token_normalizer:normalize_gen_to_parser(RawGenTokens, NormalizedGenTokens),
             Tree = Tree0
         ),
         E,
-        handle_reverse_gen_exception(E, GenStatus, RawGenTokens, NormalizedGenTokens, Sent, Tree)
+        handle_generation_exception(E, GenStatus, RawGenTokens, NormalizedGenTokens, Sent, Tree)
     ).
 
-handle_reverse_gen_exception(time_limit_exceeded, generation_timeout, [], [], '', none) :- !.
-handle_reverse_gen_exception(E, error(E), [], [], '', none).
+handle_generation_exception(time_limit_exceeded, generation_timeout, [], [], '', none) :- !.
+handle_generation_exception(E, error(E), [], [], '', none).
 
 normalize_gen_status(timeout, _, generation_timeout) :- !.
 normalize_gen_status(no_solution, _, gen_empty_yield) :- !.
@@ -144,7 +160,12 @@ normalize_gen_status(ok, [], gen_empty_yield) :- !.
 normalize_gen_status(ok, [_|_], ok) :- !.
 normalize_gen_status(Status, _, Status).
 
-normalize_sent(S, S).
+tokens_to_sentence(Tokens, SentenceAtom) :-
+    is_list(Tokens),
+    atomic_list_concat(Tokens, '', SentenceAtom),
+    !.
+
+tokens_to_sentence(_, '').
 
 /*
 extract_words/2
@@ -187,3 +208,47 @@ words_from_chains([], []).
 words_from_chains([(Words, _Features, _Sem) | Rest], Out) :-
     words_from_chains(Rest, RestOut),
     append(Words, RestOut, Out).
+
+write_generation_output_header(S) :-
+    format(S, "% =============================================================================~n", []),
+    format(S, "% Parsing-to-Generation: Generation-stage Output~n", []),
+    format(S, "% =============================================================================~n", []),
+    format(S, "% Each fact has the form:~n", []),
+    format(S, "%~n", []),
+    format(S, "%   parse_to_gen_generation_case(CaseId, TokenInput, ParsingStatus, RecoveredSemanticOutput, GenerationStatus, GeneratedTokens, ComparisonTokens, GeneratedSentence).~n", []),
+    format(S, "%~n", []),
+    format(S, "% Meaning:~n", []),
+    format(S, "%   CaseId                   - numeric identifier shared across all artifacts for the same test case~n", []),
+    format(S, "%   TokenInput               - original token sequence used in the parsing stage~n", []),
+    format(S, "%   ParsingStatus            - result of the parsing stage~n", []),
+    format(S, "%   RecoveredSemanticOutput  - semantic representation recovered by the parser, or none if parsing failed~n", []),
+    format(S, "%   GenerationStatus         - result of the generation stage, e.g. ok, gen_empty_yield, generation_timeout~n", []),
+    format(S, "%   GeneratedTokens          - raw token sequence produced by the generator stage~n", []),
+    format(S, "%   ComparisonTokens         - generated tokens after normalization; used for comparison with the original token input~n", []),
+    format(S, "%   GeneratedSentence        - sentence atom derived from GeneratedTokens for report consistency~n", []),
+    format(S, "% =============================================================================~n~n", []).
+
+write_generation_tree_block(
+    S,
+    CaseId,
+    InputTokens,
+    ParseStatus,
+    ParsedSem,
+    GenStatus,
+    RawGenTokens,
+    NormalizedGenTokens,
+    Sent,
+    Tree
+) :-
+    format(S, "==================================================~n", []),
+    format(S, "CASE ID: ~q~n", [CaseId]),
+    format(S, "TOKEN INPUT: ~q~n", [InputTokens]),
+    format(S, "PARSING STATUS: ~q~n", [ParseStatus]),
+    format(S, "RECOVERED SEMANTIC OUTPUT: ~q~n", [ParsedSem]),
+    format(S, "GENERATION STATUS: ~q~n", [GenStatus]),
+    format(S, "GENERATED TOKENS: ~q~n", [RawGenTokens]),
+    format(S, "COMPARISON TOKENS: ~q~n", [NormalizedGenTokens]),
+    format(S, "GENERATED SENTENCE: ~q~n", [Sent]),
+    format(S, "GENERATION TREE:~n", []),
+    write_term(S, Tree, [quoted(true), portray(true), max_depth(0)]),
+    format(S, "~n~n", []).

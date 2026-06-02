@@ -27,20 +27,23 @@ main :-
     open(ParseOutFile, write, ParseS),
     open(ParseTreeFile, write, TreeS),
 
+    write_parsing_output_header(ParseS),
+
     forall(
-        gen_case(Sem, GenStatus, GenTokens, _Sent),
+        gen_to_parse_generation_case(CaseId, Sem, GenStatus, GenTokens, _Sent),
         (
             maybe_prepare_tokens(Sem, GenTokens, RepairedTokens, ParserTokens, RepairStatus),
             run_parse_case(ParserTokens, ParseStatus, ParsedSem, ParseTree),
 
             format(
                 ParseS,
-                "bidir_case(~q, ~q, ~q, ~q, ~q, ~q, ~q).~n",
-                [Sem, GenStatus, GenTokens, RepairedTokens, ParserTokens, ParseStatus, ParsedSem]
+                "gen_to_parse_parsing_case(~q, ~q, ~q, ~q, ~q, ~q, ~q, ~q).~n",
+                [CaseId, Sem, GenStatus, GenTokens, RepairedTokens, ParserTokens, ParseStatus, ParsedSem]
             ),
 
             write_parse_tree_block(
                 TreeS,
+                CaseId,
                 Sem,
                 GenStatus,
                 GenTokens,
@@ -54,15 +57,16 @@ main :-
 
             mg_logger:log_event(
                 parse_session,
-                parse_case(
-                    semantic(Sem),
-                    gen_status(GenStatus),
-                    gen_tokens(GenTokens),
+                gen_to_parse_parsing_case(
+                    case_id(CaseId),
+                    semantic_input(Sem),
+                    generation_status(GenStatus),
+                    generated_tokens(GenTokens),
                     repaired_tokens(RepairedTokens),
-                    parser_tokens(ParserTokens),
+                    parser_input_tokens(ParserTokens),
                     repair_status(RepairStatus),
-                    parse_status(ParseStatus),
-                    parsed_sem(ParsedSem)
+                    parsing_status(ParseStatus),
+                    recovered_semantic_output(ParsedSem)
                 )
             )
         )
@@ -86,6 +90,7 @@ log_run_configuration :-
     testbench_profile:repair_enabled(Repair),
     testbench_profile:smoothing_enabled(Smoothing),
     testbench_profile:smoothing_style(Style),
+    testbench_profile:adapter_timeout_seconds(AdapterTimeoutSeconds),
 
     run_metadata:gen_out_file(GenOutFile),
     run_metadata:parse_out_file(ParseOutFile),
@@ -93,7 +98,7 @@ log_run_configuration :-
 
     mg_logger:log_event(
         configuration,
-        parse_run(
+        gen_to_parse_parsing_stage(
             profile_name(ProfileName),
             parser_name(ParserName),
             parser_load_file(ParserLoadFile),
@@ -101,17 +106,18 @@ log_run_configuration :-
             parser_wrapper_file(ParserWrapperFile),
             parser_lexicon_name(ParserLexiconName),
             parser_lexicon_file(ParserLexiconFile),
-            gen_out_file(GenOutFile),
-            parse_out_file(ParseOutFile),
-            forward_parse_tree_report_file(ParseTreeFile),
+            generation_stage_output_file(GenOutFile),
+            parsing_stage_output_file(ParseOutFile),
+            parsing_tree_report_file(ParseTreeFile),
             repair_enabled(Repair),
-            smoothing_enabled(Smoothing),
-            smoothing_style(Style)
+            token_normalization_enabled(Smoothing),
+            token_normalization_style(Style),
+            adapter_timeout_seconds(AdapterTimeoutSeconds)
         )
     ),
 
     format(
-        "~n[parse_run] profile=~q parser=~q parser_load=~q parser_semantics=~q parser_wrapper=~q parser_lexicon=~q gen_out=~q parse_out=~q parse_tree_report=~q repair=~q smoothing=~q style=~q~n",
+        "~n[gen_to_parse_parsing_stage] profile=~q parser=~q parser_load=~q parser_semantics=~q parser_wrapper=~q parser_lexicon=~q generation_output=~q parsing_output=~q parsing_tree_report=~q repair=~q token_normalization=~q style=~q timeout_seconds=~q~n",
         [
             ProfileName,
             ParserName,
@@ -124,7 +130,8 @@ log_run_configuration :-
             ParseTreeFile,
             Repair,
             Smoothing,
-            Style
+            Style,
+            AdapterTimeoutSeconds
         ]
     ).
 
@@ -194,8 +201,28 @@ write_tree_repair_note(S, GenTokens, RepairedTokens) :-
     ;   format(S, "REPAIR NOTE: repair was enabled but no change was applied~n", [])
     ).
 
+write_parsing_output_header(S) :-
+    format(S, "% =============================================================================~n", []),
+    format(S, "% Generation-to-Parsing: Parsing-stage Output~n", []),
+    format(S, "% =============================================================================~n", []),
+    format(S, "% Each fact has the form:~n", []),
+    format(S, "%~n", []),
+    format(S, "%   gen_to_parse_parsing_case(CaseId, SemanticInput, GenerationStatus, GeneratedTokens, RepairedTokens, ParserInputTokens, ParsingStatus, RecoveredSemanticOutput).~n", []),
+    format(S, "%~n", []),
+    format(S, "% Meaning:~n", []),
+    format(S, "%   CaseId                   - numeric identifier shared across all artifacts for the same test case~n", []),
+    format(S, "%   SemanticInput            - original semantic input used in the generation stage~n", []),
+    format(S, "%   GenerationStatus         - result of the generation stage~n", []),
+    format(S, "%   GeneratedTokens          - raw token sequence produced by the generation stage~n", []),
+    format(S, "%   RepairedTokens           - token sequence after optional repair; identical to GeneratedTokens when repair is disabled~n", []),
+    format(S, "%   ParserInputTokens        - token sequence after normalization; passed to the parser~n", []),
+    format(S, "%   ParsingStatus            - result of the parsing stage, e.g. ok, parse_fail, parse_timeout~n", []),
+    format(S, "%   RecoveredSemanticOutput  - semantic representation recovered by the parser, or none if parsing failed~n", []),
+    format(S, "% =============================================================================~n~n", []).
+
 write_parse_tree_block(
     S,
+    CaseId,
     Sem,
     GenStatus,
     GenTokens,
@@ -207,13 +234,14 @@ write_parse_tree_block(
     ParseTree
 ) :-
     format(S, "==================================================~n", []),
-    format(S, "SEMANTIC: ~q~n", [Sem]),
-    format(S, "GEN STATUS: ~q~n", [GenStatus]),
-    format(S, "GEN TOKENS: ~q~n", [GenTokens]),
+    format(S, "CASE ID: ~q~n", [CaseId]),
+    format(S, "SEMANTIC INPUT: ~q~n", [Sem]),
+    format(S, "GENERATION STATUS: ~q~n", [GenStatus]),
+    format(S, "GENERATED TOKENS: ~q~n", [GenTokens]),
     write_tree_repair_fields_if_relevant(S, GenTokens, RepairedTokens, RepairStatus),
-    format(S, "PARSER TOKENS: ~q~n", [ParserTokens]),
-    format(S, "PARSE STATUS: ~q~n", [ParseStatus]),
-    format(S, "PARSED SEMANTICS: ~q~n", [ParsedSem]),
-    format(S, "PARSE TREE:~n", []),
+    format(S, "PARSER INPUT TOKENS: ~q~n", [ParserTokens]),
+    format(S, "PARSING STATUS: ~q~n", [ParseStatus]),
+    format(S, "RECOVERED SEMANTIC OUTPUT: ~q~n", [ParsedSem]),
+    format(S, "PARSING TREE:~n", []),
     write_term(S, ParseTree, [quoted(true), portray(true), max_depth(0)]),
     format(S, "~n~n", []).

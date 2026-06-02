@@ -13,9 +13,9 @@ main :-
     write_report_header(S),
 
     findall(
-        result(VerdictKey, FailureStageKey, FailureReasonKey),
+        result(CaseId, VerdictKey, FailureStageKey, FailureReasonKey),
         (
-            bidir_case(Sem, GenStatus, GenTokens, RepairedTokens, ParserTokens, ParseStatus, ParsedSem),
+            gen_to_parse_parsing_case(CaseId, Sem, GenStatus, GenTokens, RepairedTokens, ParserTokens, ParseStatus, ParsedSem),
             classify_case(
                 Sem,
                 GenStatus,
@@ -30,6 +30,7 @@ main :-
             ),
             write_case_line(
                 S,
+                CaseId,
                 Sem,
                 GenStatus,
                 GenTokens,
@@ -71,9 +72,10 @@ write_report_header(S) :-
     testbench_profile:repair_enabled(RepairEnabled0),
     testbench_profile:smoothing_enabled(SmoothingEnabled0),
     testbench_profile:smoothing_style(SmoothingStyle),
+    testbench_profile:adapter_timeout_seconds(AdapterTimeoutSeconds),
 
     yes_no(RepairEnabled0, RepairEnabled),
-    yes_no(SmoothingEnabled0, SmoothingEnabled),
+    yes_no(SmoothingEnabled0, TokenNormalizationEnabled),
 
     testbench_profile:semantic_cases_file(SemanticCasesFile),
     run_metadata:gen_out_file(GenOutFile),
@@ -82,26 +84,32 @@ write_report_header(S) :-
     run_metadata:forward_parse_tree_report_file(ParseTreeFile),
 
     format(S, "==================================================~n", []),
-    format(S, "Validation Report: ~w~n", [PipelineName]),
+    format(S, "Validation Report: Generation-to-Parsing~n", []),
     format(S, "==================================================~n", []),
-    format(S, "Profile Name: ~w~n", [ProfileName]),
-    format(S, "Generator: ~w~n", [GeneratorName]),
-    format(S, "Parser: ~w~n", [ParserName]),
+    format(S, "Profile: ~w~n", [ProfileName]),
+    format(S, "Pipeline: ~w~n", [PipelineName]),
+    format(S, "Generator Component: ~w~n", [GeneratorName]),
+    format(S, "Parser Component: ~w~n", [ParserName]),
+    format(S, "~n", []),
     format(S, "Generator Main File: ~w~n", [GeneratorMainFile]),
-    format(S, "Generator Wrapper File: ~w~n", [GeneratorWrapperFile]),
+    format(S, "Generator Adapter File: ~w~n", [GeneratorWrapperFile]),
     format(S, "Parser Load File: ~w~n", [ParserLoadFile]),
-    format(S, "Parser Semantics Source: ~w~n", [ParserSemanticsSource]),
-    format(S, "Parser Wrapper File: ~w~n", [ParserWrapperFile]),
+    format(S, "Parser Adapter File: ~w~n", [ParserWrapperFile]),
+    format(S, "Parser Semantic Source: ~w~n", [ParserSemanticsSource]),
+    format(S, "~n", []),
     format(S, "Generator Lexicon: ~w~n", [GeneratorLexiconName]),
     format(S, "Parser Lexicon: ~w~n", [ParserLexiconName]),
     format(S, "Generator Lexicon File: ~w~n", [GeneratorLexiconFile]),
     format(S, "Parser Lexicon File: ~w~n", [ParserLexiconFile]),
+    format(S, "Semantic Test Case File: ~w~n", [SemanticCasesFile]),
+    format(S, "~n", []),
+    format(S, "Token Normalization Enabled: ~w~n", [TokenNormalizationEnabled]),
+    format(S, "Token Normalization Style: ~w~n", [SmoothingStyle]),
     format(S, "Repair Enabled: ~w~n", [RepairEnabled]),
-    format(S, "Smoothing Enabled: ~w~n", [SmoothingEnabled]),
-    format(S, "Smoothing Style: ~w~n", [SmoothingStyle]),
-    format(S, "Semantic Case File: ~w~n", [SemanticCasesFile]),
-    format(S, "Generation Output File: ~w~n", [GenOutFile]),
-    format(S, "Parsing Output File: ~w~n", [ParseOutFile]),
+    format(S, "Adapter Timeout: ~w seconds~n", [AdapterTimeoutSeconds]),
+    format(S, "~n", []),
+    format(S, "Generation-stage Output File: ~w~n", [GenOutFile]),
+    format(S, "Parsing-stage Output File: ~w~n", [ParseOutFile]),
     format(S, "Generation Tree Report: ~w~n", [GenTreeFile]),
     format(S, "Parsing Tree Report: ~w~n", [ParseTreeFile]),
     format(S, "==================================================~n~n", []).
@@ -165,6 +173,7 @@ classify_case(
 
 write_case_line(
     S,
+    CaseId,
     Sem,
     GenStatus,
     GenTokens,
@@ -180,30 +189,43 @@ write_case_line(
     failure_stage_label(FailureStageKey, FailureStageLabel),
     failure_reason_label(FailureReasonKey, FailureReasonLabel),
 
-    format(S, "Case Result: ~w~n", [VerdictLabel]),
+    format(S, "Case ID: ~q~n", [CaseId]),
+    format(S, "Validation Result: ~w~n", [VerdictLabel]),
     format(S, "Failure Stage: ~w~n", [FailureStageLabel]),
-    format(S, "Failure Reason: ~w~n", [FailureReasonLabel]),
-    format(S, "Original Semantic Input: ~q~n", [Sem]),
-    format(S, "Generation Status: ~q~n", [GenStatus]),
-    format(S, "Generated Tokens: ~q~n", [GenTokens]),
+    format(S, "Diagnostic Reason: ~w~n", [FailureReasonLabel]),
+    format(S, "~n", []),
+
+    format(S, "Input~n", []),
+    format(S, "  Semantic Input: ~q~n", [Sem]),
+    format(S, "~n", []),
+
+    format(S, "Generation Stage~n", []),
+    format(S, "  Generation Status: ~q~n", [GenStatus]),
+    format(S, "  Generated Tokens: ~q~n", [GenTokens]),
     write_repair_fields_if_relevant(S, GenTokens, RepairedTokens),
-    format(S, "Parser Tokens: ~q~n", [ParserTokens]),
-    format(S, "Parsing Status: ~q~n", [ParseStatus]),
-    format(S, "Parsed Semantic Output: ~q~n", [ParsedSem]),
+    format(S, "~n", []),
+
+    format(S, "Interface Preparation~n", []),
+    format(S, "Tokens after Normalization: ~q~n", [ParserTokens]),
+    format(S, "~n", []),
+
+    format(S, "Parsing Stage~n", []),
+    format(S, "  Parsing Status: ~q~n", [ParseStatus]),
+    format(S, "  Recovered Semantic Output: ~q~n", [ParsedSem]),
     format(S, "--------------------------------------------------~n", []).
 
 write_repair_fields_if_relevant(S, GenTokens, RepairedTokens) :-
     testbench_profile:repair_enabled(true),
     !,
-    format(S, "Repaired Tokens: ~q~n", [RepairedTokens]),
+    format(S, "  Repaired Tokens: ~q~n", [RepairedTokens]),
     write_repair_status(S, GenTokens, RepairedTokens).
 
 write_repair_fields_if_relevant(_, _, _).
 
 write_repair_status(S, GenTokens, RepairedTokens) :-
     (   RepairedTokens \== GenTokens
-    ->  format(S, "Repair Status: applied~n", [])
-    ;   format(S, "Repair Status: not applied~n", [])
+    ->  format(S, "  Repair Status: applied~n", [])
+    ;   format(S, "  Repair Status: not applied~n", [])
     ).
 
 summarize_results(S, Results) :-
@@ -252,8 +274,8 @@ count_stage(Results, Stage, Count) :-
     include(has_stage(Stage), Results, Matches),
     length(Matches, Count).
 
-has_verdict(Verdict, result(Verdict, _, _)).
-has_stage(Stage, result(_, Stage, _)).
+has_verdict(Verdict, result(_, Verdict, _, _)).
+has_stage(Stage, result(_, _, Stage, _)).
 
 verdict_label(validation_passed, 'Validation Passed').
 verdict_label(generation_timed_out, 'Generation Timed Out').

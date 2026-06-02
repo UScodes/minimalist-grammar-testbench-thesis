@@ -18,7 +18,6 @@
     generator_lexicon_file/1,
     parser_lexicon_file/1,
 
-    repair_enabled/1,
     smoothing_enabled/1,
     smoothing_style/1,
     adapter_timeout_seconds/1,
@@ -39,8 +38,8 @@ Minimalist Grammar testbench.
 
 The profile separates experiment-specific configuration from the runner
 logic. Runners and adapters read this file to determine which parser,
-generator, lexicons, test cases, normalization settings, repair setting,
-and timeout value should be used in a test run.
+generator, lexicons, test cases, normalization settings, and timeout
+value should be used in a test run.
 
 This keeps the orchestration code reusable: a different experiment can
 be configured by changing this profile instead of modifying the runner
@@ -109,10 +108,6 @@ parser_lexicon_file('../../MG-LC-Parser-with-Semantic-main/grammars/English_tran
 % =============================================================================
 % Runtime options
 % =============================================================================
-
-% Optional repair layer for known compatibility cases.
-% Disabled by default so strict evaluation is preserved.
-repair_enabled(false).
 
 % Token normalization/smoothing configuration.
 % If enabled, the selected style is applied by token_normalizer.pl.

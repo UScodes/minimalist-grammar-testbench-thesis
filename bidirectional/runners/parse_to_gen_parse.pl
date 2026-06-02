@@ -76,7 +76,7 @@ log_run_configuration :-
     testbench_profile:parser_lexicon_name(ParserLexiconName),
     testbench_profile:parser_lexicon_file(ParserLexiconFile),
 
-    testbench_profile:repair_enabled(Repair),
+    
     testbench_profile:smoothing_enabled(Smoothing),
     testbench_profile:smoothing_style(Style),
     testbench_profile:adapter_timeout_seconds(AdapterTimeoutSeconds),
@@ -98,7 +98,7 @@ log_run_configuration :-
             token_cases_file(TokenCasesFile),
             parsing_stage_output_file(ParseOutFile),
             parsing_tree_report_file(ParseTreeReportFile),
-            repair_enabled(Repair),
+            
             token_normalization_enabled(Smoothing),
             token_normalization_style(Style),
             adapter_timeout_seconds(AdapterTimeoutSeconds)
@@ -106,7 +106,7 @@ log_run_configuration :-
     ),
 
     format(
-        "~n[parse_to_gen_parsing_stage] profile=~q parser=~q parser_load=~q parser_semantics=~q parser_wrapper=~q parser_lexicon=~q token_cases=~q parsing_output=~q parsing_tree_report=~q repair=~q token_normalization=~q style=~q timeout_seconds=~q~n",
+        "~n[parse_to_gen_parsing_stage] profile=~q parser=~q parser_load=~q parser_semantics=~q parser_wrapper=~q parser_lexicon=~q token_cases=~q parsing_output=~q parsing_tree_report=~q token_normalization=~q style=~q timeout_seconds=~q~n",
         [
             ProfileName,
             ParserName,
@@ -117,7 +117,7 @@ log_run_configuration :-
             TokenCasesFile,
             ParseOutFile,
             ParseTreeReportFile,
-            Repair,
+            
             Smoothing,
             Style,
             AdapterTimeoutSeconds

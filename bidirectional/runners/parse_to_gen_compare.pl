@@ -78,12 +78,12 @@ write_report_header(S) :-
     testbench_profile:generator_lexicon_file(GeneratorLexiconFile),
     testbench_profile:parser_lexicon_file(ParserLexiconFile),
 
-    testbench_profile:repair_enabled(RepairEnabled0),
+  
     testbench_profile:smoothing_enabled(SmoothingEnabled0),
     testbench_profile:smoothing_style(SmoothingStyle),
     testbench_profile:adapter_timeout_seconds(AdapterTimeoutSeconds),
 
-    yes_no(RepairEnabled0, RepairEnabled),
+   
     yes_no(SmoothingEnabled0, TokenNormalizationEnabled),
 
     testbench_profile:token_cases_file(TokenCasesFile),
@@ -102,7 +102,6 @@ write_report_header(S) :-
     format(S, "~n", []),
     format(S, "Parser Load File: ~w~n", [ParserLoadFile]),
     format(S, "Parser Adapter File: ~w~n", [ParserWrapperFile]),
-    format(S, "Parser Semantic Source: ~w~n", [ParserSemanticsSource]),
     format(S, "Generator Main File: ~w~n", [GeneratorMainFile]),
     format(S, "Generator Adapter File: ~w~n", [GeneratorWrapperFile]),
     format(S, "~n", []),
@@ -114,7 +113,7 @@ write_report_header(S) :-
     format(S, "~n", []),
     format(S, "Token Normalization Enabled: ~w~n", [TokenNormalizationEnabled]),
     format(S, "Token Normalization Style: ~w~n", [SmoothingStyle]),
-    format(S, "Repair Enabled: ~w~n", [RepairEnabled]),
+  
     format(S, "Adapter Timeout: ~w seconds~n", [AdapterTimeoutSeconds]),
     format(S, "~n", []),
     format(S, "Parsing-stage Output File: ~w~n", [ParseOutFile]),

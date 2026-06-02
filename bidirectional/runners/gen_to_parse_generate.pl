@@ -63,7 +63,7 @@ log_run_configuration :-
     testbench_profile:generator_lexicon_name(GeneratorLexiconName),
     testbench_profile:generator_lexicon_file(GeneratorLexiconFile),
 
-    testbench_profile:repair_enabled(Repair),
+  
     testbench_profile:smoothing_enabled(Smoothing),
     testbench_profile:smoothing_style(Style),
     testbench_profile:adapter_timeout_seconds(AdapterTimeoutSeconds),
@@ -83,7 +83,7 @@ log_run_configuration :-
             semantic_cases_file(TestCasesFile),
             generation_stage_output_file(GenOutFile),
             generation_tree_report_file(TreeReportFile),
-            repair_enabled(Repair),
+         
             token_normalization_enabled(Smoothing),
             token_normalization_style(Style),
             adapter_timeout_seconds(AdapterTimeoutSeconds)
@@ -91,7 +91,7 @@ log_run_configuration :-
     ),
 
     format(
-        "~n[gen_to_parse_generation_stage] profile=~q generator=~q generator_main=~q generator_lexicon=~q semantic_cases=~q generation_output=~q generation_tree_report=~q repair=~q token_normalization=~q style=~q timeout_seconds=~q~n",
+        "~n[gen_to_parse_generation_stage] profile=~q generator=~q generator_main=~q generator_lexicon=~q semantic_cases=~q generation_output=~q generation_tree_report=~q token_normalization=~q style=~q timeout_seconds=~q~n",
         [
             ProfileName,
             GeneratorName,
@@ -100,7 +100,7 @@ log_run_configuration :-
             TestCasesFile,
             GenOutFile,
             TreeReportFile,
-            Repair,
+            
             Smoothing,
             Style,
             AdapterTimeoutSeconds

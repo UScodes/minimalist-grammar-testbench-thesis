@@ -15,12 +15,11 @@ main :-
     findall(
         result(CaseId, VerdictKey, FailureStageKey, FailureReasonKey),
         (
-            gen_to_parse_parsing_case(CaseId, Sem, GenStatus, GenTokens, RepairedTokens, ParserTokens, ParseStatus, ParsedSem),
+            gen_to_parse_parsing_case(CaseId, Sem, GenStatus, GenTokens, ParserTokens, ParseStatus, ParsedSem),
             classify_case(
                 Sem,
                 GenStatus,
                 GenTokens,
-                RepairedTokens,
                 ParserTokens,
                 ParseStatus,
                 ParsedSem,
@@ -34,7 +33,6 @@ main :-
                 Sem,
                 GenStatus,
                 GenTokens,
-                RepairedTokens,
                 ParserTokens,
                 ParseStatus,
                 ParsedSem,
@@ -69,12 +67,10 @@ write_report_header(S) :-
     testbench_profile:generator_lexicon_file(GeneratorLexiconFile),
     testbench_profile:parser_lexicon_file(ParserLexiconFile),
 
-    testbench_profile:repair_enabled(RepairEnabled0),
     testbench_profile:smoothing_enabled(SmoothingEnabled0),
     testbench_profile:smoothing_style(SmoothingStyle),
     testbench_profile:adapter_timeout_seconds(AdapterTimeoutSeconds),
 
-    yes_no(RepairEnabled0, RepairEnabled),
     yes_no(SmoothingEnabled0, TokenNormalizationEnabled),
 
     testbench_profile:semantic_cases_file(SemanticCasesFile),
@@ -105,7 +101,6 @@ write_report_header(S) :-
     format(S, "~n", []),
     format(S, "Token Normalization Enabled: ~w~n", [TokenNormalizationEnabled]),
     format(S, "Token Normalization Style: ~w~n", [SmoothingStyle]),
-    format(S, "Repair Enabled: ~w~n", [RepairEnabled]),
     format(S, "Adapter Timeout: ~w seconds~n", [AdapterTimeoutSeconds]),
     format(S, "~n", []),
     format(S, "Generation-stage Output File: ~w~n", [GenOutFile]),
@@ -121,7 +116,6 @@ classify_case(
     Sem,
     GenStatus,
     _GenTokens,
-    _RepairedTokens,
     _ParserTokens,
     ParseStatus,
     ParsedSem,
@@ -177,7 +171,6 @@ write_case_line(
     Sem,
     GenStatus,
     GenTokens,
-    RepairedTokens,
     ParserTokens,
     ParseStatus,
     ParsedSem,
@@ -202,31 +195,16 @@ write_case_line(
     format(S, "Generation Stage~n", []),
     format(S, "  Generation Status: ~q~n", [GenStatus]),
     format(S, "  Generated Tokens: ~q~n", [GenTokens]),
-    write_repair_fields_if_relevant(S, GenTokens, RepairedTokens),
     format(S, "~n", []),
 
     format(S, "Interface Preparation~n", []),
-    format(S, "Tokens after Normalization: ~q~n", [ParserTokens]),
+    format(S, "  Tokens after Normalization: ~q~n", [ParserTokens]),
     format(S, "~n", []),
 
     format(S, "Parsing Stage~n", []),
     format(S, "  Parsing Status: ~q~n", [ParseStatus]),
     format(S, "  Recovered Semantic Output: ~q~n", [ParsedSem]),
     format(S, "--------------------------------------------------~n", []).
-
-write_repair_fields_if_relevant(S, GenTokens, RepairedTokens) :-
-    testbench_profile:repair_enabled(true),
-    !,
-    format(S, "  Repaired Tokens: ~q~n", [RepairedTokens]),
-    write_repair_status(S, GenTokens, RepairedTokens).
-
-write_repair_fields_if_relevant(_, _, _).
-
-write_repair_status(S, GenTokens, RepairedTokens) :-
-    (   RepairedTokens \== GenTokens
-    ->  format(S, "  Repair Status: applied~n", [])
-    ;   format(S, "  Repair Status: not applied~n", [])
-    ).
 
 summarize_results(S, Results) :-
     length(Results, Total),

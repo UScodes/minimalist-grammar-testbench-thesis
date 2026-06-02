@@ -15,7 +15,10 @@
     forward_gen_tree_report_file/1,
     forward_parse_tree_report_file/1,
     reverse_gen_tree_report_file/1,
-    reverse_parse_tree_report_file/1
+    reverse_parse_tree_report_file/1,
+
+    single_generate_report_file/1,
+    single_parse_report_file/1
 ]).
 
 /*
@@ -30,7 +33,7 @@ and validation reports.
 
 It does not define the active experiment setup. Information such as
 the selected parser, generator, lexicons, test cases, normalization
-settings, repair settings, and timeout values belongs in:
+settings, and timeout values belongs in:
 
     config/testbench_profile.pl
 
@@ -107,3 +110,16 @@ reverse_report_file('../generated/parse_to_gen_report.txt').
 % Tree/debug reports for the Parsing-to-Generation pipeline.
 reverse_parse_tree_report_file('../generated/parse_to_gen_parsing_trees.txt').
 reverse_gen_tree_report_file('../generated/parse_to_gen_generation_trees.txt').
+
+
+% =============================================================================
+% Single-case diagnostic artifacts
+% =============================================================================
+
+% Diagnostic report for one generator-only test case.
+% Produced by runners/single_generate.pl.
+single_generate_report_file('../generated/single_generate_report.txt').
+
+% Diagnostic report for one parser-only test case.
+% Produced by runners/single_parse.pl.
+single_parse_report_file('../generated/single_parse_report.txt').

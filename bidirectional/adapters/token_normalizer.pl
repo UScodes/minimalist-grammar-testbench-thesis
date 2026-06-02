@@ -13,24 +13,34 @@ MG Testbench – Token Normalizer
 
 Purpose
 -------
-Optional token normalization layer.
+This adapter applies optional token normalization between pipeline
+stages.
 
-In this testbench, smoothing settings define the normalization policy,
-while this adapter applies the selected normalization operation.
+Token normalization is used when the parser and generator use slightly
+different surface conventions for the same lexical material. For example,
+one component may use a stem-like token such as twenty_, while another
+component may use twenty.
+
+The normalizer does not decide the policy itself. The active experiment
+profile controls whether normalization is enabled and which normalization
+style is used.
 
 Behavior
 --------
 If smoothing_enabled(false), tokens are left unchanged.
 
-If smoothing_enabled(true), the chosen smoothing_style/1 is used.
-Currently supported:
+If smoothing_enabled(true), the selected smoothing_style/1 is applied.
+The name smoothing_style/1 is kept as the profile option name, while this
+file treats it as the selected token-normalization style.
+
+Currently supported styles:
   - none
   - underscore
   - plain
 
-The options smoothing_enabled/1 and smoothing_style/1 are read
-from testbench_profile.pl, so the active profile is the single
-source of truth.
+The options smoothing_enabled/1 and smoothing_style/1 are read from
+testbench_profile.pl, so the active profile remains the single source of
+truth for normalization behavior.
 */
 
 normalize_gen_to_parser(In, Out) :-

@@ -29,8 +29,9 @@ predicates:
           -> workSpace/2
           -> lappend/2
           -> betaRoot/2
-
-      This avoids using the old sem_from_tree.pl reconstruction file.
+ 	
+	This exposes the parser's semantic output through a stable
+   	 testbench-facing interface.
 
 Status values
 -------------

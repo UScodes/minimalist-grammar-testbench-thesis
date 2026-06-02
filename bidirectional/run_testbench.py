@@ -21,6 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent
 
 REPORTS_DIR = BASE_DIR / "reports"
 LOGS_DIR = BASE_DIR / "logs"
+PROTOCOL_LOG = LOGS_DIR / "protocol.log"
 
 RUNNERS_DIR = BASE_DIR / "runners"
 CONFIG_DIR = BASE_DIR / "config"
@@ -100,6 +101,18 @@ def cleanup_outputs() -> None:
     for file in ALL_OUTPUTS:
         if file.exists():
             file.unlink()
+
+def cleanup_protocol_log() -> None:
+    """
+    Remove the structured Prolog protocol log before a new run.
+
+    Stage logs are already overwritten by run_prolog(...), because each stage
+    opens its own log file in write mode. The protocol log is different: the
+    Prolog logger appends to it, so the Python runner clears it once at the
+    start of every run to avoid mixing old and new testbench versions.
+    """
+    if PROTOCOL_LOG.exists():
+        PROTOCOL_LOG.unlink()
 
 
 # =============================================================================
@@ -348,8 +361,9 @@ def main(argv: Iterable[str]) -> int:
     ensure_dirs()
     print_existing_case_info()
 
-    print("\n=== Cleaning previous generated outputs ===")
+    print("\n=== Cleaning previous generated outputs and protocol log ===")
     cleanup_outputs()
+    cleanup_protocol_log()
 
     if mode == "single_gen":
         if args.semantic is None:

@@ -1,0 +1,56 @@
+==================================================
+CASE ID: 1
+TOKEN INPUT: [one,hundred]
+PARSING STATUS: parse_fail
+RECOVERED SEMANTIC OUTPUT: none
+PARSING TREE:
+none
+
+==================================================
+CASE ID: 2
+TOKEN INPUT: [two,hundred]
+PARSING STATUS: parse_fail
+RECOVERED SEMANTIC OUTPUT: none
+PARSING TREE:
+none
+
+==================================================
+CASE ID: 3
+TOKEN INPUT: [three,hundred]
+PARSING STATUS: parse_fail
+RECOVERED SEMANTIC OUTPUT: none
+PARSING TREE:
+none
+
+==================================================
+CASE ID: 4
+TOKEN INPUT: [one,hundred_and,twenty]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+100Y'(20,1)
+PARSING TREE:
+[tree(_110674,tree(_110992,li([hundred_and],[=c3e,=c1,cfin]),li([twenty],[c3e])),li([one],[c1]))]
+
+==================================================
+CASE ID: 5
+TOKEN INPUT: [two,hundred_and,thirty]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+100Y'(30,2)
+PARSING TREE:
+[tree(_112216,tree(_112534,li([hundred_and],[=c3e,=c1,cfin]),li([thirty],[c3e])),li([two],[c1]))]
+
+==================================================
+CASE ID: 6
+TOKEN INPUT: [three,hundred_and,twenty_,four]
+PARSING STATUS: parse_fail
+RECOVERED SEMANTIC OUTPUT: none
+PARSING TREE:
+none
+
+==================================================
+CASE ID: 7
+TOKEN INPUT: [five,hundred_and,thirty_,six]
+PARSING STATUS: parse_fail
+RECOVERED SEMANTIC OUTPUT: none
+PARSING TREE:
+none
+

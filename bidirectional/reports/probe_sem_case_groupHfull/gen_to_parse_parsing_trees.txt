@@ -1,0 +1,44 @@
+==================================================
+CASE ID: 1
+SEMANTIC INPUT: '1X+100Y'(1,20)
+GENERATION STATUS: ok
+GENERATED TOKENS: [one,hundred_and,twenty]
+PARSER INPUT TOKENS: [one,hundred_and,twenty_]
+PARSING STATUS: parse_fail
+RECOVERED SEMANTIC OUTPUT: none
+PARSING TREE:
+none
+
+==================================================
+CASE ID: 2
+SEMANTIC INPUT: '1X+100Y'(2,30)
+GENERATION STATUS: ok
+GENERATED TOKENS: [two,hundred_and,thirty]
+PARSER INPUT TOKENS: [two,hundred_and,thirty_]
+PARSING STATUS: parse_fail
+RECOVERED SEMANTIC OUTPUT: none
+PARSING TREE:
+none
+
+==================================================
+CASE ID: 3
+SEMANTIC INPUT: '1X+100Y'(3,'1X+20'(4))
+GENERATION STATUS: ok
+GENERATED TOKENS: [three,hundred_and,twenty,four]
+PARSER INPUT TOKENS: [three,hundred_and,twenty_,four]
+PARSING STATUS: parse_fail
+RECOVERED SEMANTIC OUTPUT: none
+PARSING TREE:
+none
+
+==================================================
+CASE ID: 4
+SEMANTIC INPUT: '1X+100Y'(5,'1X+30'(6))
+GENERATION STATUS: ok
+GENERATED TOKENS: [five,hundred_and,thirty,six]
+PARSER INPUT TOKENS: [five,hundred_and,thirty_,six]
+PARSING STATUS: parse_fail
+RECOVERED SEMANTIC OUTPUT: none
+PARSING TREE:
+none
+

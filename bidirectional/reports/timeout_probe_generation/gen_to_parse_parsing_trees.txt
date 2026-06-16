@@ -1,0 +1,33 @@
+==================================================
+CASE ID: 1
+SEMANTIC INPUT: '1X+20'(4)
+GENERATION STATUS: ok
+GENERATED TOKENS: [twenty,four]
+PARSER INPUT TOKENS: [twenty_,four]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+20'(4)
+PARSING TREE:
+[tree(_101652,li([twenty_],[=c1,cfin]),li([four],[c1]))]
+
+==================================================
+CASE ID: 2
+SEMANTIC INPUT: '1X+20'(15)
+GENERATION STATUS: generation_timeout
+GENERATED TOKENS: []
+PARSER INPUT TOKENS: []
+PARSING STATUS: parse_skipped_empty_tokens
+RECOVERED SEMANTIC OUTPUT: none
+PARSING TREE:
+none
+
+==================================================
+CASE ID: 3
+SEMANTIC INPUT: 'UNKNOWN_SEM'(4)
+GENERATION STATUS: gen_empty_yield
+GENERATED TOKENS: []
+PARSER INPUT TOKENS: []
+PARSING STATUS: parse_skipped_empty_tokens
+RECOVERED SEMANTIC OUTPUT: none
+PARSING TREE:
+none
+

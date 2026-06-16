@@ -1,6 +1,7 @@
 :- use_module('../logging/testbench_logger').
 :- use_module('../config/run_metadata').
 :- use_module('../config/testbench_profile').
+:- use_module('../reporting/report_messages').
 
 :- initialization(main, main).
 
@@ -74,8 +75,7 @@ main :-
         single_generate_case(
             semantic_input(SemanticInput),
             generation_status(GenStatus),
-            generated_tokens(Tokens),
-            generated_sentence(Sent)
+            generated_tokens(Tokens)
         )
     ),
 
@@ -223,14 +223,19 @@ words_from_chains([(Words, _Features, _Sem) | Rest], Out) :-
 % Report output
 % =============================================================================
 
-write_single_generate_report(S, SemanticInput, GenStatus, Tokens, Sent, Tree) :-
+write_single_generate_report(S, SemanticInput, GenStatus, Tokens, _Sent, Tree) :-
+    report_messages:report_text(single_generator_diagnostic_report, ReportTitle),
+    report_messages:report_text(semantic_input, SemanticInputLabel),
+    report_messages:report_text(generation_status, GenerationStatusLabel),
+    report_messages:report_text(generated_tokens, GeneratedTokensLabel),
+    report_messages:report_text(generation_tree, GenerationTreeLabel),
+
     format(S, "==================================================~n", []),
-    format(S, "Single Generator Diagnostic Report~n", []),
+    format(S, "~w~n", [ReportTitle]),
     format(S, "==================================================~n", []),
-    format(S, "Semantic Input: ~q~n", [SemanticInput]),
-    format(S, "Generation Status: ~q~n", [GenStatus]),
-    format(S, "Generated Tokens: ~q~n", [Tokens]),
-    format(S, "Generated Sentence: ~q~n", [Sent]),
-    format(S, "Generation Tree:~n", []),
+    format(S, "~w: ~q~n", [SemanticInputLabel, SemanticInput]),
+    format(S, "~w: ~q~n", [GenerationStatusLabel, GenStatus]),
+    format(S, "~w: ~q~n", [GeneratedTokensLabel, Tokens]),
+    format(S, "~w:~n", [GenerationTreeLabel]),
     write_term(S, Tree, [quoted(true), portray(true), max_depth(0)]),
     format(S, "~n==================================================~n~n", []).

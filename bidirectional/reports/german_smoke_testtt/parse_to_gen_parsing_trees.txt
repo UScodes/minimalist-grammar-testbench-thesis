@@ -1,0 +1,168 @@
+==================================================
+CASE ID: 1
+TOKEN INPUT: [eins]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 1
+PARSING TREE:
+[li([eins],[cfin])]
+
+==================================================
+CASE ID: 2
+TOKEN INPUT: [zwei]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 2
+PARSING TREE:
+[li([zwei],[cfin])]
+
+==================================================
+CASE ID: 3
+TOKEN INPUT: [drei]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 3
+PARSING TREE:
+[li([drei],[cfin])]
+
+==================================================
+CASE ID: 4
+TOKEN INPUT: [vier]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 4
+PARSING TREE:
+[li([vier],[cfin])]
+
+==================================================
+CASE ID: 5
+TOKEN INPUT: [sechs]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 6
+PARSING TREE:
+[li([sechs],[cfin])]
+
+==================================================
+CASE ID: 6
+TOKEN INPUT: [sieben]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 7
+PARSING TREE:
+[li([sieben],[cfin])]
+
+==================================================
+CASE ID: 7
+TOKEN INPUT: [acht]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 8
+PARSING TREE:
+[li([acht],[cfin])]
+
+==================================================
+CASE ID: 8
+TOKEN INPUT: [neun]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 9
+PARSING TREE:
+[li([neun],[cfin])]
+
+==================================================
+CASE ID: 9
+TOKEN INPUT: [zehn]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 10
+PARSING TREE:
+[li([zehn],[cfin])]
+
+==================================================
+CASE ID: 10
+TOKEN INPUT: [elf]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 11
+PARSING TREE:
+[li([elf],[cfin])]
+
+==================================================
+CASE ID: 11
+TOKEN INPUT: [zwanzig]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 20
+PARSING TREE:
+[li([zwanzig],[cfin])]
+
+==================================================
+CASE ID: 12
+TOKEN INPUT: [sechzig]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 60
+PARSING TREE:
+[li([sechzig],[cfin])]
+
+==================================================
+CASE ID: 13
+TOKEN INPUT: [siebzig]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 70
+PARSING TREE:
+[li([siebzig],[cfin])]
+
+==================================================
+CASE ID: 14
+TOKEN INPUT: [zwei,undzwanzig]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+20'(2)
+PARSING TREE:
+[tree(_76140,empty,tree(_75782,li([undzwanzig],[=c1,+b,cfin]),li([zwei],[c1,-b])))]
+
+==================================================
+CASE ID: 15
+TOKEN INPUT: [sechs,undzwanzig]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+20'(6)
+PARSING TREE:
+[tree(_77494,empty,tree(_77136,li([undzwanzig],[=c1,+b,cfin]),li([sechs],[c1,-b])))]
+
+==================================================
+CASE ID: 16
+TOKEN INPUT: [sieben,undzwanzig]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+20'(7)
+PARSING TREE:
+[tree(_77494,empty,tree(_77136,li([undzwanzig],[=c1,+b,cfin]),li([sieben],[c1,-b])))]
+
+==================================================
+CASE ID: 17
+TOKEN INPUT: [hundert]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 100
+PARSING TREE:
+[li([hundert],[cfin])]
+
+==================================================
+CASE ID: 18
+TOKEN INPUT: [zwei,hundert]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '100X'(2)
+PARSING TREE:
+[tree(_77494,empty,tree(_77136,li([hundert],[=c1,+b,cfin]),li([zwei],[c1,-b])))]
+
+==================================================
+CASE ID: 19
+TOKEN INPUT: [hundert,zwanzig]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+100'(20)
+PARSING TREE:
+[tree(_77068,li([hundert],[=c3e,cfin]),li([zwanzig],[c3e]))]
+
+==================================================
+CASE ID: 20
+TOKEN INPUT: [hundert,sechzig]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+100'(60)
+PARSING TREE:
+[tree(_77068,li([hundert],[=c3e,cfin]),li([sechzig],[c3e]))]
+
+==================================================
+CASE ID: 21
+TOKEN INPUT: [hundert,siebzig]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+100'(70)
+PARSING TREE:
+[tree(_77068,li([hundert],[=c3e,cfin]),li([siebzig],[c3e]))]
+

@@ -1,0 +1,10 @@
+==================================================
+Single Parser Diagnostic Report
+==================================================
+Token Input: [zwei,undzwanzig]
+Parsing Status: ok
+Recovered Semantic Output: '1X+20'(2)
+Parse Tree:
+[tree(_69960,empty,tree(_69602,li([undzwanzig],[=c1,+b,cfin]),li([zwei],[c1,-b])))]
+==================================================
+

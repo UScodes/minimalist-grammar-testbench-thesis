@@ -1,0 +1,9 @@
+==================================================
+CASE ID: 1
+SEMANTIC INPUT: '10X'(4)
+GENERATION STATUS: ok
+GENERATED TOKENS: [four,ty]
+GENERATED SENTENCE: fourty
+GENERATION TREE:
+tree([([four,ty],[c2],'10X'(4))],move1,empty,tree([([ty],[+tee,c2],[_3916,_3948]>>(_3948='10X'(_3916))),([four],[-tee],4)],merge3,li([ty],[=c1,+tee,c2],[_3916,_3948]>>(_3948='10X'(_3916))),li([four],[c1,-tee],4)))
+

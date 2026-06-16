@@ -25,8 +25,8 @@
 % Used Lexikon for the Parsen
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %:- ['grammars/numbers_Gen'].
-%:- ['grammars/German_Parse'].
-:- ['grammars/English_trans_pruned'].
+:- ['grammars/German_Parse'].
+%:- ['grammars/English_trans_pruned'].
 %:-['grammars/grammar_test/maus'].
 %:-['grammars/grammar_test/Banane-Affe-MG_ESSV'].
 %:-['grammars/grammar_test/sanity'].

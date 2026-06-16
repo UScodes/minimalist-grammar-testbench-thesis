@@ -1,6 +1,7 @@
 :- use_module('../logging/testbench_logger').
 :- use_module('../config/run_metadata').
 :- use_module('../config/testbench_profile').
+:- use_module('../reporting/report_messages').
 
 :- initialization(main, main).
 
@@ -210,12 +211,18 @@ extract_root_semantics(Sem, Sem).
 % =============================================================================
 
 write_single_parse_report(S, Tokens, ParseStatus, ParsedSem, ParseTree) :-
+    report_messages:report_text(single_parser_diagnostic_report, ReportTitle),
+    report_messages:report_text(token_input, TokenInputLabel),
+    report_messages:report_text(parsing_status, ParsingStatusLabel),
+    report_messages:report_text(recovered_semantic_output, RecoveredSemanticOutputLabel),
+    report_messages:report_text(parse_tree, ParseTreeLabel),
+
     format(S, "==================================================~n", []),
-    format(S, "Single Parser Diagnostic Report~n", []),
+    format(S, "~w~n", [ReportTitle]),
     format(S, "==================================================~n", []),
-    format(S, "Token Input: ~q~n", [Tokens]),
-    format(S, "Parsing Status: ~q~n", [ParseStatus]),
-    format(S, "Recovered Semantic Output: ~q~n", [ParsedSem]),
-    format(S, "Parse Tree:~n", []),
+    format(S, "~w: ~q~n", [TokenInputLabel, Tokens]),
+    format(S, "~w: ~q~n", [ParsingStatusLabel, ParseStatus]),
+    format(S, "~w: ~q~n", [RecoveredSemanticOutputLabel, ParsedSem]),
+    format(S, "~w:~n", [ParseTreeLabel]),
     write_term(S, ParseTree, [quoted(true), portray(true), max_depth(0)]),
     format(S, "~n==================================================~n~n", []).

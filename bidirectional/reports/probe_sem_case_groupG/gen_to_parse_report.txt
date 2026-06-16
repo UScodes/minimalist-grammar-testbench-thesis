@@ -1,0 +1,66 @@
+==================================================
+Validation Report: Generation-to-Parsing
+==================================================
+Profile: english_numbers_profile
+Pipeline: Generation -> Parsing
+Generator Component: MG Generator
+Parser Component: MG LC Parser
+
+Generator Main File: ../../SemanticGenerator/MG-Generator/main.pl
+Generator Adapter File: ../adapters/generator_adapter.pl
+Parser Load File: ../../MG-LC-Parser-with-Semantic-main/load.pl
+Parser Adapter File: ../adapters/parser_adapter.pl
+Parser Semantic Source: parser_internal_pipeline
+
+Generator Lexicon: numbers_Gen
+Parser Lexicon: English_trans_pruned
+Generator Lexicon File: ../../SemanticGenerator/MG-Generator/grammars/numbers_Gen.pl
+Parser Lexicon File: ../../MG-LC-Parser-with-Semantic-main/grammars/English_trans_pruned.pl
+Semantic Test Case File: ../cases/test_cases_full.pl
+
+Token Normalization Enabled: Yes
+Token Normalization Style: underscore
+Adapter Timeout: 5 seconds
+
+Generation-stage Output File: ../generated/gen_to_parse_gen_out.pl
+Parsing-stage Output File: ../generated/gen_to_parse_parse_out.pl
+Generation Tree Report: ../generated/gen_to_parse_generation_trees.txt
+Parsing Tree Report: ../generated/gen_to_parse_parsing_trees.txt
+==================================================
+
+Case ID: 1
+Validation Result: Parsing Failed
+Failure Stage: Parsing
+Diagnostic Reason: Parser could not derive a valid parse for the token sequence
+
+Input
+  Semantic Input: '10X'(4)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [four,ty]
+
+Interface Preparation
+  Tokens after Normalization: [four,ty]
+
+Parsing Stage
+  Parsing Status: parse_fail
+  Recovered Semantic Output: none
+--------------------------------------------------
+
+================ Validation Summary ================
+Total Cases: 1
+Validation Passed: 0
+Generation Timed Out: 0
+Generation Failed: 0
+No Surface Form Generated: 0
+Parsing Skipped: 0
+Parsing Timed Out: 0
+Parsing Failed: 1
+Semantic Roundtrip Mismatch: 0
+
+================ Failure Stage Summary ==============
+No Failure Stage: 0
+Generation: 0
+Parsing: 1
+Semantic Comparison: 0

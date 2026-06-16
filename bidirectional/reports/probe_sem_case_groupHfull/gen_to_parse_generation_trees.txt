@@ -1,0 +1,36 @@
+==================================================
+CASE ID: 1
+SEMANTIC INPUT: '1X+100Y'(1,20)
+GENERATION STATUS: ok
+GENERATED TOKENS: [one,hundred_and,twenty]
+GENERATED SENTENCE: onehundred_andtwenty
+GENERATION TREE:
+tree([([one,hundred_and,twenty],[cfin],'1X+100Y'(1,20))],merge2,tree([([hundred_and,twenty],[=c1,cfin],cl([_3974,_3968,_4008]>>(_4008='1X+100Y'(_3968,_3974)),[20]))],merge1,li([hundred_and],[=c2,=c1,cfin],[_3974,_3968,_4008]>>(_4008='1X+100Y'(_3968,_3974))),li([twenty],[c2],20)),li([one],[c1],1))
+
+==================================================
+CASE ID: 2
+SEMANTIC INPUT: '1X+100Y'(2,30)
+GENERATION STATUS: ok
+GENERATED TOKENS: [two,hundred_and,thirty]
+GENERATED SENTENCE: twohundred_andthirty
+GENERATION TREE:
+tree([([two,hundred_and,thirty],[cfin],'1X+100Y'(2,30))],merge2,tree([([hundred_and,thirty],[=c1,cfin],cl([_10142,_10136,_10176]>>(_10176='1X+100Y'(_10136,_10142)),[30]))],merge1,li([hundred_and],[=c2,=c1,cfin],[_10142,_10136,_10176]>>(_10176='1X+100Y'(_10136,_10142))),li([thirty],[c2],30)),li([two],[c1],2))
+
+==================================================
+CASE ID: 3
+SEMANTIC INPUT: '1X+100Y'(3,'1X+20'(4))
+GENERATION STATUS: ok
+GENERATED TOKENS: [three,hundred_and,twenty,four]
+GENERATED SENTENCE: threehundred_andtwentyfour
+GENERATION TREE:
+tree([([three,hundred_and,twenty],[cfin],'1X+100Y'(3,[_10516,_10548]>>(_10548='1X+20'(_10516)))),([four],[-tee],4)],merge2,tree([([hundred_and,twenty],[=c1,cfin],cl([_10142,_10136,_10176]>>(_10176='1X+100Y'(_10136,_10142)),[[_10516,_10548]>>(_10548='1X+20'(_10516))])),([four],[-tee],4)],merge1,li([hundred_and],[=c2,=c1,cfin],[_10142,_10136,_10176]>>(_10176='1X+100Y'(_10136,_10142))),tree([([twenty],[c2],[_10516,_10548]>>(_10548='1X+20'(_10516))),([four],[-tee],4)],merge3,li([twenty],[=c1,c2],[_10516,_10548]>>(_10548='1X+20'(_10516))),li([four],[c1,-tee],4))),li([three],[c1],3))
+
+==================================================
+CASE ID: 4
+SEMANTIC INPUT: '1X+100Y'(5,'1X+30'(6))
+GENERATION STATUS: ok
+GENERATED TOKENS: [five,hundred_and,thirty,six]
+GENERATED SENTENCE: fivehundred_andthirtysix
+GENERATION TREE:
+tree([([five,hundred_and,thirty],[cfin],'1X+100Y'(5,[_10516,_10548]>>(_10548='1X+30'(_10516)))),([six],[-tee],6)],merge2,tree([([hundred_and,thirty],[=c1,cfin],cl([_10142,_10136,_10176]>>(_10176='1X+100Y'(_10136,_10142)),[[_10516,_10548]>>(_10548='1X+30'(_10516))])),([six],[-tee],6)],merge1,li([hundred_and],[=c2,=c1,cfin],[_10142,_10136,_10176]>>(_10176='1X+100Y'(_10136,_10142))),tree([([thirty],[c2],[_10516,_10548]>>(_10548='1X+30'(_10516))),([six],[-tee],6)],merge3,li([thirty],[=c1,c2],[_10516,_10548]>>(_10548='1X+30'(_10516))),li([six],[c1,-tee],6))),li([five],[c1],5))
+

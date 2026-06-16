@@ -1,0 +1,104 @@
+==================================================
+CASE ID: 1
+TOKEN INPUT: [one]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 1
+PARSING TREE:
+[li([one],[cfin])]
+
+==================================================
+CASE ID: 2
+TOKEN INPUT: [two]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 2
+PARSING TREE:
+[li([two],[cfin])]
+
+==================================================
+CASE ID: 3
+TOKEN INPUT: [three]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 3
+PARSING TREE:
+[li([three],[cfin])]
+
+==================================================
+CASE ID: 4
+TOKEN INPUT: [ten]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 10
+PARSING TREE:
+[li([ten],[cfin])]
+
+==================================================
+CASE ID: 5
+TOKEN INPUT: [eleven]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 11
+PARSING TREE:
+[li([eleven],[cfin])]
+
+==================================================
+CASE ID: 6
+TOKEN INPUT: [twenty]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 20
+PARSING TREE:
+[li([twenty],[cfin])]
+
+==================================================
+CASE ID: 7
+TOKEN INPUT: [thirty]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 30
+PARSING TREE:
+[li([thirty],[cfin])]
+
+==================================================
+CASE ID: 8
+TOKEN INPUT: [fifty]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 50
+PARSING TREE:
+[li([fifty],[cfin])]
+
+==================================================
+CASE ID: 9
+TOKEN INPUT: [twenty_,one]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+20'(1)
+PARSING TREE:
+[tree(_110504,li([twenty_],[=c1,cfin]),li([one],[c1]))]
+
+==================================================
+CASE ID: 10
+TOKEN INPUT: [twenty_,seven]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+20'(7)
+PARSING TREE:
+[tree(_111522,li([twenty_],[=c1,cfin]),li([seven],[c1]))]
+
+==================================================
+CASE ID: 11
+TOKEN INPUT: [thirty_,four]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+30'(4)
+PARSING TREE:
+[tree(_111522,li([thirty_],[=c1,cfin]),li([four],[c1]))]
+
+==================================================
+CASE ID: 12
+TOKEN INPUT: [fifty_,six]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+50'(6)
+PARSING TREE:
+[tree(_111522,li([fifty_],[=c1,cfin]),li([six],[c1]))]
+
+==================================================
+CASE ID: 13
+TOKEN INPUT: [one,hundred_and,twenty]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+100Y'(20,1)
+PARSING TREE:
+[tree(_111546,tree(_111864,li([hundred_and],[=c3e,=c1,cfin]),li([twenty],[c3e])),li([one],[c1]))]
+

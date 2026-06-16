@@ -1,0 +1,11 @@
+==================================================
+Einzelfall-Diagnosebericht: Generator
+==================================================
+Semantische Eingabe: '1X+20'(7)
+Generierungsstatus: ok
+Generierte Tokens: [sieben,undzwanzig]
+Generierter Satz: siebenundzwanzig
+Generierungsbaum:
+tree([([sieben,undzwanzig],[c2,-s1],'1X+20'(7))],move1,empty,tree([([undzwanzig],[+b,c2,-s1],[_4482,_4514]>>(_4514='1X+20'(_4482))),([sieben],[-b],7)],merge3,li([undzwanzig],[=c1,+b,c2,-s1],[_4482,_4514]>>(_4514='1X+20'(_4482))),li([sieben],[c1,-b],7)))
+==================================================
+

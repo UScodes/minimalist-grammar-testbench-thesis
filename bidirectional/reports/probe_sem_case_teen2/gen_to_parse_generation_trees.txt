@@ -1,0 +1,54 @@
+==================================================
+CASE ID: 1
+SEMANTIC INPUT: 1
+GENERATION STATUS: ok
+GENERATED TOKENS: [one]
+GENERATED SENTENCE: one
+GENERATION TREE:
+li([one],[c1],1)
+
+==================================================
+CASE ID: 2
+SEMANTIC INPUT: '1X+10'(4)
+GENERATION STATUS: ok
+GENERATED TOKENS: [four,teen]
+GENERATED SENTENCE: fourteen
+GENERATION TREE:
+tree([([four,teen],[c2],'1X+10'(4))],move1,empty,tree([([teen],[+tee,c2],[_3962,_3994]>>(_3994='1X+10'(_3962))),([four],[-tee],4)],merge3,li([teen],[=c1,+tee,c2],[_3962,_3994]>>(_3994='1X+10'(_3962))),li([four],[c1,-tee],4)))
+
+==================================================
+CASE ID: 3
+SEMANTIC INPUT: '1X+10'(6)
+GENERATION STATUS: ok
+GENERATED TOKENS: [six,teen]
+GENERATED SENTENCE: sixteen
+GENERATION TREE:
+tree([([six,teen],[c2],'1X+10'(6))],move1,empty,tree([([teen],[+tee,c2],[_9798,_9830]>>(_9830='1X+10'(_9798))),([six],[-tee],6)],merge3,li([teen],[=c1,+tee,c2],[_9798,_9830]>>(_9830='1X+10'(_9798))),li([six],[c1,-tee],6)))
+
+==================================================
+CASE ID: 4
+SEMANTIC INPUT: '1X+10'(7)
+GENERATION STATUS: ok
+GENERATED TOKENS: [seven,teen]
+GENERATED SENTENCE: seventeen
+GENERATION TREE:
+tree([([seven,teen],[c2],'1X+10'(7))],move1,empty,tree([([teen],[+tee,c2],[_9798,_9830]>>(_9830='1X+10'(_9798))),([seven],[-tee],7)],merge3,li([teen],[=c1,+tee,c2],[_9798,_9830]>>(_9830='1X+10'(_9798))),li([seven],[c1,-tee],7)))
+
+==================================================
+CASE ID: 5
+SEMANTIC INPUT: '1X+10'(9)
+GENERATION STATUS: ok
+GENERATED TOKENS: [nine,teen]
+GENERATED SENTENCE: nineteen
+GENERATION TREE:
+tree([([nine,teen],[c2],'1X+10'(9))],move1,empty,tree([([teen],[+tee,c2],[_9798,_9830]>>(_9830='1X+10'(_9798))),([nine],[-tee],9)],merge3,li([teen],[=c1,+tee,c2],[_9798,_9830]>>(_9830='1X+10'(_9798))),li([nine],[c1,-tee],9)))
+
+==================================================
+CASE ID: 6
+SEMANTIC INPUT: '0X+18'(8)
+GENERATION STATUS: ok
+GENERATED TOKENS: [eight,een]
+GENERATED SENTENCE: eighteen
+GENERATION TREE:
+tree([([eight,een],[c2],'0X+18'(8))],move1,empty,tree([([een],[+ee,c2],[_9798,_9830]>>(_9830='0X+18'(_9798))),([eight],[-ee],8)],merge3,li([een],[=c1,+ee,c2],[_9798,_9830]>>(_9830='0X+18'(_9798))),li([eight],[c1,-ee],8)))
+

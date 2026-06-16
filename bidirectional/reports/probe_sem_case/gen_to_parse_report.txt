@@ -1,0 +1,218 @@
+==================================================
+Validation Report: Generation-to-Parsing
+==================================================
+Profile: english_numbers_profile
+Pipeline: Generation -> Parsing
+Generator Component: MG Generator
+Parser Component: MG LC Parser
+
+Generator Main File: ../../SemanticGenerator/MG-Generator/main.pl
+Generator Adapter File: ../adapters/generator_adapter.pl
+Parser Load File: ../../MG-LC-Parser-with-Semantic-main/load.pl
+Parser Adapter File: ../adapters/parser_adapter.pl
+Parser Semantic Source: parser_internal_pipeline
+
+Generator Lexicon: numbers_Gen
+Parser Lexicon: English_trans_pruned
+Generator Lexicon File: ../../SemanticGenerator/MG-Generator/grammars/numbers_Gen.pl
+Parser Lexicon File: ../../MG-LC-Parser-with-Semantic-main/grammars/English_trans_pruned.pl
+Semantic Test Case File: ../cases/test_cases_full.pl
+
+Token Normalization Enabled: Yes
+Token Normalization Style: underscore
+Adapter Timeout: 5 seconds
+
+Generation-stage Output File: ../generated/gen_to_parse_gen_out.pl
+Parsing-stage Output File: ../generated/gen_to_parse_parse_out.pl
+Generation Tree Report: ../generated/gen_to_parse_generation_trees.txt
+Parsing Tree Report: ../generated/gen_to_parse_parsing_trees.txt
+==================================================
+
+Case ID: 1
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Semantic Input: 1
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [one]
+
+Interface Preparation
+  Tokens after Normalization: [one]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 1
+--------------------------------------------------
+Case ID: 2
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Semantic Input: 2
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [two]
+
+Interface Preparation
+  Tokens after Normalization: [two]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 2
+--------------------------------------------------
+Case ID: 3
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Semantic Input: 3
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [three]
+
+Interface Preparation
+  Tokens after Normalization: [three]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 3
+--------------------------------------------------
+Case ID: 4
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Semantic Input: 4
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [four]
+
+Interface Preparation
+  Tokens after Normalization: [four]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 4
+--------------------------------------------------
+Case ID: 5
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Semantic Input: 5
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [five]
+
+Interface Preparation
+  Tokens after Normalization: [five]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 5
+--------------------------------------------------
+Case ID: 6
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Semantic Input: 6
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [six]
+
+Interface Preparation
+  Tokens after Normalization: [six]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 6
+--------------------------------------------------
+Case ID: 7
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Semantic Input: 7
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [seven]
+
+Interface Preparation
+  Tokens after Normalization: [seven]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 7
+--------------------------------------------------
+Case ID: 8
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Semantic Input: 8
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [eight]
+
+Interface Preparation
+  Tokens after Normalization: [eight]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 8
+--------------------------------------------------
+Case ID: 9
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Semantic Input: 9
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [nine]
+
+Interface Preparation
+  Tokens after Normalization: [nine]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 9
+--------------------------------------------------
+
+================ Validation Summary ================
+Total Cases: 9
+Validation Passed: 9
+Generation Timed Out: 0
+Generation Failed: 0
+No Surface Form Generated: 0
+Parsing Skipped: 0
+Parsing Timed Out: 0
+Parsing Failed: 0
+Semantic Roundtrip Mismatch: 0
+
+================ Failure Stage Summary ==============
+No Failure Stage: 9
+Generation: 0
+Parsing: 0
+Semantic Comparison: 0

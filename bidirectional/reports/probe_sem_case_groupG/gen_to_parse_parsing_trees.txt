@@ -1,0 +1,11 @@
+==================================================
+CASE ID: 1
+SEMANTIC INPUT: '10X'(4)
+GENERATION STATUS: ok
+GENERATED TOKENS: [four,ty]
+PARSER INPUT TOKENS: [four,ty]
+PARSING STATUS: parse_fail
+RECOVERED SEMANTIC OUTPUT: none
+PARSING TREE:
+none
+

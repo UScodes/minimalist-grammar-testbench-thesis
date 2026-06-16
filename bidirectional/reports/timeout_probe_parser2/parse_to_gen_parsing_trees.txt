@@ -1,0 +1,48 @@
+==================================================
+CASE ID: 1
+TOKEN INPUT: [teen]
+PARSING STATUS: parse_fail
+RECOVERED SEMANTIC OUTPUT: none
+PARSING TREE:
+none
+
+==================================================
+CASE ID: 2
+TOKEN INPUT: [banana]
+PARSING STATUS: parse_fail
+RECOVERED SEMANTIC OUTPUT: none
+PARSING TREE:
+none
+
+==================================================
+CASE ID: 3
+TOKEN INPUT: [twenty_,ten]
+PARSING STATUS: parse_fail
+RECOVERED SEMANTIC OUTPUT: none
+PARSING TREE:
+none
+
+==================================================
+CASE ID: 4
+TOKEN INPUT: [seven,twenty_]
+PARSING STATUS: parse_fail
+RECOVERED SEMANTIC OUTPUT: none
+PARSING TREE:
+none
+
+==================================================
+CASE ID: 5
+TOKEN INPUT: [sixty_,four]
+PARSING STATUS: parse_fail
+RECOVERED SEMANTIC OUTPUT: none
+PARSING TREE:
+none
+
+==================================================
+CASE ID: 6
+TOKEN INPUT: [forty_,four]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+40'(4)
+PARSING TREE:
+[tree(_110628,li([forty_],[=c1,cfin]),li([four],[c1]))]
+

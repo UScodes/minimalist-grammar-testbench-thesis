@@ -20,7 +20,10 @@
 
     smoothing_enabled/1,
     smoothing_style/1,
+    smoothing_rule_set/1,
     adapter_timeout_seconds/1,
+
+    report_language/1,
 
     semantic_cases_file/1,
     token_cases_file/1
@@ -38,8 +41,8 @@ Minimalist Grammar testbench.
 
 The profile separates experiment-specific configuration from the runner
 logic. Runners and adapters read this file to determine which parser,
-generator, lexicons, test cases, normalization settings, and timeout
-value should be used in a test run.
+generator, lexicons, test cases, normalization settings, report language,
+and timeout value should be used in a test run.
 
 This keeps the orchestration code reusable: a different experiment can
 be configured by changing this profile instead of modifying the runner
@@ -55,6 +58,20 @@ internal semantic pipeline, exposed by the parser adapter:
 The active semantic source is recorded by:
 
     parser_semantics_source(parser_internal_pipeline).
+
+Report language
+---------------
+The report_language/1 option controls the language used for human-facing
+terminal summaries and text reports.
+
+Supported values:
+
+    report_language(en).
+    report_language(de).
+
+This setting only affects displayed labels and diagnostic descriptions.
+Internal identifiers, case IDs, semantic terms, tokens, grammar names,
+file paths, and generated Prolog facts remain unchanged.
 */
 
 
@@ -62,7 +79,8 @@ The active semantic source is recorded by:
 % Profile identity and validation directions
 % =============================================================================
 
-profile_name('english_numbers_profile').
+%profile_name('english_numbers_profile').
+profile_name('german_numbers_profile').
 
 validation_pipeline_gen_parse('Generation -> Parsing').
 validation_pipeline_parse_gen('Parsing -> Generation').
@@ -98,11 +116,15 @@ parser_semantics_source(parser_internal_pipeline).
 % Lexical resources
 % =============================================================================
 
-generator_lexicon_name('numbers_Gen').
-parser_lexicon_name('English_trans_pruned').
+%generator_lexicon_name('numbers_Gen').
+%parser_lexicon_name('English_trans_pruned').
+generator_lexicon_name('German_Generation').
+parser_lexicon_name('German_Parse').
 
-generator_lexicon_file('../../SemanticGenerator/MG-Generator/grammars/numbers_Gen.pl').
-parser_lexicon_file('../../MG-LC-Parser-with-Semantic-main/grammars/English_trans_pruned.pl').
+%generator_lexicon_file('../../SemanticGenerator/MG-Generator/grammars/numbers_Gen.pl').
+%parser_lexicon_file('../../MG-LC-Parser-with-Semantic-main/grammars/English_trans_pruned.pl').
+generator_lexicon_file('../../SemanticGenerator/MG-Generator/grammars/German_Generation.pl').
+parser_lexicon_file('../../MG-LC-Parser-with-Semantic-main/grammars/German_Parse.pl').
 
 
 % =============================================================================
@@ -114,6 +136,14 @@ parser_lexicon_file('../../MG-LC-Parser-with-Semantic-main/grammars/English_tran
 smoothing_enabled(true).
 smoothing_style(underscore).
 
+%smoothing_rule_set(english).
+smoothing_rule_set(german).
+
+% Human-facing language for terminal output and generated text reports.
+% Supported values: en, de.
+report_language(en).
+%report_language(de).
+
 % Execution limit used by the parser and generator adapters.
 adapter_timeout_seconds(5).
 
@@ -123,7 +153,23 @@ adapter_timeout_seconds(5).
 % =============================================================================
 
 % Semantic inputs for the Generation-to-Parsing pipeline.
-semantic_cases_file('../cases/test_cases.pl').
+
+
+%semantic_cases_file('../cases/english/english_semantic_cases_smoke.pl').
+%semantic_cases_file('../cases/english/english_semantic_cases_balanced.pl').
+%semantic_cases_file('../cases/english/english_semantic_cases_normalization_probe.pl').
+
+%semantic_cases_file('../cases/german/german_semantic_cases_smoke.pl').
+semantic_cases_file('../cases/german/german_semantic_cases_balanced.pl').
+
+
 
 % Token inputs for the Parsing-to-Generation pipeline.
-token_cases_file('../cases/token_cases.pl').
+
+
+%token_cases_file('../cases/english/english_token_cases_smoke.pl').
+%token_cases_file('../cases/english/english_token_cases_balanced.pl').
+%token_cases_file('../cases/english/english_token_cases_normalization_probe.pl').
+
+%token_cases_file('../cases/german/german_token_cases_smoke.pl').
+token_cases_file('../cases/german/german_token_cases_balanced.pl').

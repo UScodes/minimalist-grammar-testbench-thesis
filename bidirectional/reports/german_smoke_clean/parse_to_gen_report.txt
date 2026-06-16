@@ -1,0 +1,523 @@
+==================================================
+Validation Report: Parsing-to-Generation
+==================================================
+Profile: german_numbers_profile
+Pipeline: Parsing -> Generation
+Parser Component: MG LC Parser
+Generator Component: MG Generator
+
+Parser Load File: ../../MG-LC-Parser-with-Semantic-main/load.pl
+Parser Adapter File: ../adapters/parser_adapter.pl
+Generator Main File: ../../SemanticGenerator/MG-Generator/main.pl
+Generator Adapter File: ../adapters/generator_adapter.pl
+
+Parser Lexicon: German_Parse
+Generator Lexicon: German_Generation
+Parser Lexicon File: ../../MG-LC-Parser-with-Semantic-main/grammars/German_Parse.pl
+Generator Lexicon File: ../../SemanticGenerator/MG-Generator/grammars/German_Generation.pl
+Token Test Case File: ../cases/german_token_cases_smoke.pl
+
+Token Normalization Enabled: Yes
+Token Normalization Style: underscore
+Token Normalization Rule Set: german
+Token Normalization Dispatcher: normalization_rule_dispatcher
+Adapter Timeout: 5 seconds
+
+Parsing-stage Output File: ../generated/parse_to_gen_parse_out.pl
+Generation-stage Output File: ../generated/parse_to_gen_gen_out.pl
+Parsing Tree Report: ../generated/parse_to_gen_parsing_trees.txt
+Generation Tree Report: ../generated/parse_to_gen_generation_trees.txt
+==================================================
+
+Case ID: 1
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Token Input: [eins]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 1
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [eins]
+
+Interface Preparation
+  Tokens after Normalization: [eins]
+--------------------------------------------------
+Case ID: 2
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Token Input: [zwei]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 2
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [zwei]
+
+Interface Preparation
+  Tokens after Normalization: [zwei]
+--------------------------------------------------
+Case ID: 3
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Token Input: [drei]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 3
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [drei]
+
+Interface Preparation
+  Tokens after Normalization: [drei]
+--------------------------------------------------
+Case ID: 4
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Token Input: [vier]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 4
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [vier]
+
+Interface Preparation
+  Tokens after Normalization: [vier]
+--------------------------------------------------
+Case ID: 5
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Token Input: [sechs]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 6
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [sechs]
+
+Interface Preparation
+  Tokens after Normalization: [sechs]
+--------------------------------------------------
+Case ID: 6
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Token Input: [sieben]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 7
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [sieben]
+
+Interface Preparation
+  Tokens after Normalization: [sieben]
+--------------------------------------------------
+Case ID: 7
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Token Input: [acht]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 8
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [acht]
+
+Interface Preparation
+  Tokens after Normalization: [acht]
+--------------------------------------------------
+Case ID: 8
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Token Input: [neun]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 9
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [neun]
+
+Interface Preparation
+  Tokens after Normalization: [neun]
+--------------------------------------------------
+Case ID: 9
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Token Input: [zehn]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 10
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [zehn]
+
+Interface Preparation
+  Tokens after Normalization: [zehn]
+--------------------------------------------------
+Case ID: 10
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Token Input: [elf]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 11
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [elf]
+
+Interface Preparation
+  Tokens after Normalization: [elf]
+--------------------------------------------------
+Case ID: 11
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Token Input: [sechzehn]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 16
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [sechzehn]
+
+Interface Preparation
+  Tokens after Normalization: [sechzehn]
+--------------------------------------------------
+Case ID: 12
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Token Input: [siebzehn]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 17
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [siebzehn]
+
+Interface Preparation
+  Tokens after Normalization: [siebzehn]
+--------------------------------------------------
+Case ID: 13
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Token Input: [zwanzig]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 20
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [zwanzig]
+
+Interface Preparation
+  Tokens after Normalization: [zwanzig]
+--------------------------------------------------
+Case ID: 14
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Token Input: [einundzwanzig]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 21
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [einundzwanzig]
+
+Interface Preparation
+  Tokens after Normalization: [einundzwanzig]
+--------------------------------------------------
+Case ID: 15
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Token Input: [sechzig]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 60
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [sechzig]
+
+Interface Preparation
+  Tokens after Normalization: [sechzig]
+--------------------------------------------------
+Case ID: 16
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Token Input: [einundsechzig]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 61
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [einundsechzig]
+
+Interface Preparation
+  Tokens after Normalization: [einundsechzig]
+--------------------------------------------------
+Case ID: 17
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Token Input: [siebzig]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 70
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [siebzig]
+
+Interface Preparation
+  Tokens after Normalization: [siebzig]
+--------------------------------------------------
+Case ID: 18
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Token Input: [einundsiebzig]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 71
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [einundsiebzig]
+
+Interface Preparation
+  Tokens after Normalization: [einundsiebzig]
+--------------------------------------------------
+Case ID: 19
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Token Input: [hundert]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 100
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [hundert]
+
+Interface Preparation
+  Tokens after Normalization: [hundert]
+--------------------------------------------------
+Case ID: 20
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Token Input: [zwei,undzwanzig]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: '1X+20'(2)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [zwei,undzwanzig]
+
+Interface Preparation
+  Tokens after Normalization: [zwei,undzwanzig]
+--------------------------------------------------
+Case ID: 21
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Token Input: [sechs,undzwanzig]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: '1X+20'(6)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [sechs,undzwanzig]
+
+Interface Preparation
+  Tokens after Normalization: [sechs,undzwanzig]
+--------------------------------------------------
+Case ID: 22
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Token Input: [sieben,undzwanzig]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: '1X+20'(7)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [sieben,undzwanzig]
+
+Interface Preparation
+  Tokens after Normalization: [sieben,undzwanzig]
+--------------------------------------------------
+Case ID: 23
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Token Input: [zwei,hundert]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: '100X'(2)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [zwei,hundert]
+
+Interface Preparation
+  Tokens after Normalization: [zwei,hundert]
+--------------------------------------------------
+Case ID: 24
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Token Input: [sechs,hundert]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: '100X'(6)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [sechs,hundert]
+
+Interface Preparation
+  Tokens after Normalization: [sechs,hundert]
+--------------------------------------------------
+Case ID: 25
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Token Input: [sieben,hundert]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: '100X'(7)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [sieben,hundert]
+
+Interface Preparation
+  Tokens after Normalization: [sieben,hundert]
+--------------------------------------------------
+
+================ Validation Summary ================
+Total Cases: 25
+Validation Passed: 25
+Generation Timed Out: 0
+Generation Failed: 0
+No Surface Form Generated: 0
+Parsing Skipped: 0
+Parsing Timed Out: 0
+Parsing Failed: 0
+Token Roundtrip Mismatch: 0
+
+================ Failure Stage Summary ==============
+No Failure Stage: 25
+Generation: 0
+Parsing: 0
+Token Comparison: 0

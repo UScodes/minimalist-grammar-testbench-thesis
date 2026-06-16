@@ -1,0 +1,81 @@
+==================================================
+CASE ID: 1
+SEMANTIC INPUT: '1X+50'(1)
+GENERATION STATUS: ok
+GENERATED TOKENS: [fifty,one]
+GENERATED SENTENCE: fiftyone
+GENERATION TREE:
+tree([([fifty,one],[c2],'1X+50'(1))],merge1,li([fifty],[=c1,c2],[_3996,_4028]>>(_4028='1X+50'(_3996))),li([one],[c1],1))
+
+==================================================
+CASE ID: 2
+SEMANTIC INPUT: '1X+50'(2)
+GENERATION STATUS: ok
+GENERATED TOKENS: [fifty,two]
+GENERATED SENTENCE: fiftytwo
+GENERATION TREE:
+tree([([fifty,two],[c2],'1X+50'(2))],merge1,li([fifty],[=c1,c2],[_9614,_9646]>>(_9646='1X+50'(_9614))),li([two],[c1],2))
+
+==================================================
+CASE ID: 3
+SEMANTIC INPUT: '1X+50'(3)
+GENERATION STATUS: ok
+GENERATED TOKENS: [fifty,three]
+GENERATED SENTENCE: fiftythree
+GENERATION TREE:
+tree([([fifty,three],[c2],'1X+50'(3))],merge1,li([fifty],[=c1,c2],[_9614,_9646]>>(_9646='1X+50'(_9614))),li([three],[c1],3))
+
+==================================================
+CASE ID: 4
+SEMANTIC INPUT: '1X+50'(4)
+GENERATION STATUS: ok
+GENERATED TOKENS: [fifty,four]
+GENERATED SENTENCE: fiftyfour
+GENERATION TREE:
+tree([([fifty],[c2],[_9614,_9646]>>(_9646='1X+50'(_9614))),([four],[-tee],4)],merge3,li([fifty],[=c1,c2],[_9614,_9646]>>(_9646='1X+50'(_9614))),li([four],[c1,-tee],4))
+
+==================================================
+CASE ID: 5
+SEMANTIC INPUT: '1X+50'(5)
+GENERATION STATUS: ok
+GENERATED TOKENS: [fifty,five]
+GENERATED SENTENCE: fiftyfive
+GENERATION TREE:
+tree([([fifty,five],[c2],'1X+50'(5))],merge1,li([fifty],[=c1,c2],[_9614,_9646]>>(_9646='1X+50'(_9614))),li([five],[c1],5))
+
+==================================================
+CASE ID: 6
+SEMANTIC INPUT: '1X+50'(6)
+GENERATION STATUS: ok
+GENERATED TOKENS: [fifty,six]
+GENERATED SENTENCE: fiftysix
+GENERATION TREE:
+tree([([fifty],[c2],[_9614,_9646]>>(_9646='1X+50'(_9614))),([six],[-tee],6)],merge3,li([fifty],[=c1,c2],[_9614,_9646]>>(_9646='1X+50'(_9614))),li([six],[c1,-tee],6))
+
+==================================================
+CASE ID: 7
+SEMANTIC INPUT: '1X+50'(7)
+GENERATION STATUS: ok
+GENERATED TOKENS: [fifty,seven]
+GENERATED SENTENCE: fiftyseven
+GENERATION TREE:
+tree([([fifty],[c2],[_9614,_9646]>>(_9646='1X+50'(_9614))),([seven],[-tee],7)],merge3,li([fifty],[=c1,c2],[_9614,_9646]>>(_9646='1X+50'(_9614))),li([seven],[c1,-tee],7))
+
+==================================================
+CASE ID: 8
+SEMANTIC INPUT: '1X+50'(8)
+GENERATION STATUS: ok
+GENERATED TOKENS: [fifty,eight]
+GENERATED SENTENCE: fiftyeight
+GENERATION TREE:
+tree([([fifty],[c2],[_9614,_9646]>>(_9646='1X+50'(_9614))),([eight],[-ee],8)],merge3,li([fifty],[=c1,c2],[_9614,_9646]>>(_9646='1X+50'(_9614))),li([eight],[c1,-ee],8))
+
+==================================================
+CASE ID: 9
+SEMANTIC INPUT: '1X+50'(9)
+GENERATION STATUS: ok
+GENERATED TOKENS: [fifty,nine]
+GENERATED SENTENCE: fiftynine
+GENERATION TREE:
+tree([([fifty],[c2],[_9614,_9646]>>(_9646='1X+50'(_9614))),([nine],[-tee],9)],merge3,li([fifty],[=c1,c2],[_9614,_9646]>>(_9646='1X+50'(_9614))),li([nine],[c1,-tee],9))
+

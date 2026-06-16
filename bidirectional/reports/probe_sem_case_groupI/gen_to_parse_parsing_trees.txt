@@ -1,0 +1,11 @@
+==================================================
+CASE ID: 1
+SEMANTIC INPUT: 'UNKNOWN_SEM'(4)
+GENERATION STATUS: gen_empty_yield
+GENERATED TOKENS: []
+PARSER INPUT TOKENS: []
+PARSING STATUS: parse_skipped_empty_tokens
+RECOVERED SEMANTIC OUTPUT: none
+PARSING TREE:
+none
+

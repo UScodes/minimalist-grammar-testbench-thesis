@@ -1,0 +1,12 @@
+==================================================
+CASE ID: 1
+TOKEN INPUT: [teen]
+PARSING STATUS: parse_fail
+RECOVERED SEMANTIC OUTPUT: none
+GENERATION STATUS: generation_not_attempted
+GENERATED TOKENS: []
+COMPARISON TOKENS: []
+GENERATED SENTENCE: ''
+GENERATION TREE:
+none
+

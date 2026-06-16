@@ -1,0 +1,10 @@
+==================================================
+Einzelfall-Diagnosebericht: Parser
+==================================================
+Token-Eingabe: [zwei,undzwanzig]
+Parsing-Status: ok
+Rekonstruierte semantische Ausgabe: '1X+20'(2)
+Parsing-Baum:
+[tree(_69960,empty,tree(_69602,li([undzwanzig],[=c1,+b,cfin]),li([zwei],[c1,-b])))]
+==================================================
+

@@ -1,0 +1,9 @@
+==================================================
+CASE ID: 1
+SEMANTIC INPUT: 'UNKNOWN_SEM'(4)
+GENERATION STATUS: gen_empty_yield
+GENERATED TOKENS: []
+GENERATED SENTENCE: ''
+GENERATION TREE:
+li([],[=c1,cfin],['UNKNOWN_SEM'(_3916),_3948]>>(_3948='UNKNOWN_SEM'(_3916)))
+

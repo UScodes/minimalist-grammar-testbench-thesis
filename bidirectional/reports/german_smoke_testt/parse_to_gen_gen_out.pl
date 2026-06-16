@@ -1,0 +1,39 @@
+% =============================================================================
+% Parsing-to-Generation: Generation-stage Output
+% =============================================================================
+% Each fact has the form:
+%
+%   parse_to_gen_generation_case(CaseId, TokenInput, ParsingStatus, RecoveredSemanticOutput, GenerationStatus, GeneratedTokens, ComparisonTokens, GeneratedSentence).
+%
+% Meaning:
+%   CaseId                   - numeric identifier shared across all artifacts for the same test case
+%   TokenInput               - original token sequence used in the parsing stage
+%   ParsingStatus            - result of the parsing stage
+%   RecoveredSemanticOutput  - semantic representation recovered by the parser, or none if parsing failed
+%   GenerationStatus         - result of the generation stage, e.g. ok, gen_empty_yield, generation_timeout
+%   GeneratedTokens          - raw token sequence produced by the generator stage
+%   ComparisonTokens         - generated tokens after normalization; used for comparison with the original token input
+%   GeneratedSentence        - sentence atom derived from GeneratedTokens for report consistency
+% =============================================================================
+
+parse_to_gen_generation_case(1, [eins], ok, 1, ok, [eins], [eins], eins).
+parse_to_gen_generation_case(2, [zwei], ok, 2, ok, [zwei], [zwei], zwei).
+parse_to_gen_generation_case(3, [drei], ok, 3, ok, [drei], [drei], drei).
+parse_to_gen_generation_case(4, [vier], ok, 4, ok, [vier], [vier], vier).
+parse_to_gen_generation_case(5, [sechs], ok, 6, ok, [sechs], [sechs], sechs).
+parse_to_gen_generation_case(6, [sieben], ok, 7, ok, [sieben], [sieben], sieben).
+parse_to_gen_generation_case(7, [acht], ok, 8, ok, [acht], [acht], acht).
+parse_to_gen_generation_case(8, [neun], ok, 9, ok, [neun], [neun], neun).
+parse_to_gen_generation_case(9, [zehn], ok, 10, ok, [zehn], [zehn], zehn).
+parse_to_gen_generation_case(10, [elf], ok, 11, ok, [elf], [elf], elf).
+parse_to_gen_generation_case(11, [zwanzig], ok, 20, ok, [zwanzig], [zwanzig], zwanzig).
+parse_to_gen_generation_case(12, [sechzig], ok, 60, ok, [sechzig], [sechzig], sechzig).
+parse_to_gen_generation_case(13, [siebzig], ok, 70, ok, [siebzig], [siebzig], siebzig).
+parse_to_gen_generation_case(14, [zwei,und,zwanzig], parse_fail, none, generation_not_attempted, [], [], '').
+parse_to_gen_generation_case(15, [sechs,und,zwanzig], parse_fail, none, generation_not_attempted, [], [], '').
+parse_to_gen_generation_case(16, [sieben,und,zwanzig], parse_fail, none, generation_not_attempted, [], [], '').
+parse_to_gen_generation_case(17, [hundert], ok, 100, ok, [hundert], [hundert], hundert).
+parse_to_gen_generation_case(18, [zwei,hundert], ok, '100X'(2), ok, [zwei,hundert], [zwei,hundert], zweihundert).
+parse_to_gen_generation_case(19, [hundert,zwanzig], ok, '1X+100'(20), ok, [hundert,zwanzig], [hundert,zwanzig], hundertzwanzig).
+parse_to_gen_generation_case(20, [hundert,sechzig], ok, '1X+100'(60), ok, [hundert,sechzig], [hundert,sechzig], hundertsechzig).
+parse_to_gen_generation_case(21, [hundert,siebzig], ok, '1X+100'(70), ok, [hundert,siebzig], [hundert,siebzig], hundertsiebzig).

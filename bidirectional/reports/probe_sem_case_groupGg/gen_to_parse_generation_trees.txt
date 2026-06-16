@@ -1,0 +1,81 @@
+==================================================
+CASE ID: 1
+SEMANTIC INPUT: '10X'(4)
+GENERATION STATUS: ok
+GENERATED TOKENS: [four,ty]
+GENERATED SENTENCE: fourty
+GENERATION TREE:
+tree([([four,ty],[c2],'10X'(4))],move1,empty,tree([([ty],[+tee,c2],[_3996,_4028]>>(_4028='10X'(_3996))),([four],[-tee],4)],merge3,li([ty],[=c1,+tee,c2],[_3996,_4028]>>(_4028='10X'(_3996))),li([four],[c1,-tee],4)))
+
+==================================================
+CASE ID: 2
+SEMANTIC INPUT: '10X'(6)
+GENERATION STATUS: ok
+GENERATED TOKENS: [six,ty]
+GENERATED SENTENCE: sixty
+GENERATION TREE:
+tree([([six,ty],[c2],'10X'(6))],move1,empty,tree([([ty],[+tee,c2],[_9832,_9864]>>(_9864='10X'(_9832))),([six],[-tee],6)],merge3,li([ty],[=c1,+tee,c2],[_9832,_9864]>>(_9864='10X'(_9832))),li([six],[c1,-tee],6)))
+
+==================================================
+CASE ID: 3
+SEMANTIC INPUT: '10X'(7)
+GENERATION STATUS: ok
+GENERATED TOKENS: [seven,ty]
+GENERATED SENTENCE: seventy
+GENERATION TREE:
+tree([([seven,ty],[c2],'10X'(7))],move1,empty,tree([([ty],[+tee,c2],[_9832,_9864]>>(_9864='10X'(_9832))),([seven],[-tee],7)],merge3,li([ty],[=c1,+tee,c2],[_9832,_9864]>>(_9864='10X'(_9832))),li([seven],[c1,-tee],7)))
+
+==================================================
+CASE ID: 4
+SEMANTIC INPUT: '0X+80'(8)
+GENERATION STATUS: ok
+GENERATED TOKENS: [eight,y]
+GENERATED SENTENCE: eighty
+GENERATION TREE:
+tree([([eight,y],[c2],'0X+80'(8))],move1,empty,tree([([y],[+ee,c2],[_9832,_9864]>>(_9864='0X+80'(_9832))),([eight],[-ee],8)],merge3,li([y],[=c1,+ee,c2],[_9832,_9864]>>(_9864='0X+80'(_9832))),li([eight],[c1,-ee],8)))
+
+==================================================
+CASE ID: 5
+SEMANTIC INPUT: '1X+40'(4)
+GENERATION STATUS: gen_empty_yield
+GENERATED TOKENS: []
+GENERATED SENTENCE: ''
+GENERATION TREE:
+li([],[=c1,cfin],['1X+40'(_9832),_9864]>>(_9864='1X+40'(_9832)))
+
+==================================================
+CASE ID: 6
+SEMANTIC INPUT: '1X+60'(4)
+GENERATION STATUS: gen_empty_yield
+GENERATED TOKENS: []
+GENERATED SENTENCE: ''
+GENERATION TREE:
+li([],[=c1,cfin],['1X+60'(_9832),_9864]>>(_9864='1X+60'(_9832)))
+
+==================================================
+CASE ID: 7
+SEMANTIC INPUT: '1X+70'(4)
+GENERATION STATUS: gen_empty_yield
+GENERATED TOKENS: []
+GENERATED SENTENCE: ''
+GENERATION TREE:
+li([],[=c1,cfin],['1X+70'(_9832),_9864]>>(_9864='1X+70'(_9832)))
+
+==================================================
+CASE ID: 8
+SEMANTIC INPUT: '1X+80'(4)
+GENERATION STATUS: gen_empty_yield
+GENERATED TOKENS: []
+GENERATED SENTENCE: ''
+GENERATION TREE:
+li([],[=c1,cfin],['1X+80'(_9832),_9864]>>(_9864='1X+80'(_9832)))
+
+==================================================
+CASE ID: 9
+SEMANTIC INPUT: '1X+90'(4)
+GENERATION STATUS: gen_empty_yield
+GENERATED TOKENS: []
+GENERATED SENTENCE: ''
+GENERATION TREE:
+li([],[=c1,cfin],['1X+90'(_9832),_9864]>>(_9864='1X+90'(_9832)))
+

@@ -1,0 +1,84 @@
+==================================================
+CASE ID: 1
+TOKEN INPUT: [one,hundred]
+PARSING STATUS: parse_fail
+RECOVERED SEMANTIC OUTPUT: none
+GENERATION STATUS: generation_not_attempted
+GENERATED TOKENS: []
+COMPARISON TOKENS: []
+GENERATED SENTENCE: ''
+GENERATION TREE:
+none
+
+==================================================
+CASE ID: 2
+TOKEN INPUT: [two,hundred]
+PARSING STATUS: parse_fail
+RECOVERED SEMANTIC OUTPUT: none
+GENERATION STATUS: generation_not_attempted
+GENERATED TOKENS: []
+COMPARISON TOKENS: []
+GENERATED SENTENCE: ''
+GENERATION TREE:
+none
+
+==================================================
+CASE ID: 3
+TOKEN INPUT: [three,hundred]
+PARSING STATUS: parse_fail
+RECOVERED SEMANTIC OUTPUT: none
+GENERATION STATUS: generation_not_attempted
+GENERATED TOKENS: []
+COMPARISON TOKENS: []
+GENERATED SENTENCE: ''
+GENERATION TREE:
+none
+
+==================================================
+CASE ID: 4
+TOKEN INPUT: [one,hundred_and,twenty]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+100Y'(20,1)
+GENERATION STATUS: ok
+GENERATED TOKENS: [one,hundred_and,twenty]
+COMPARISON TOKENS: [one,hundred_and,twenty_]
+GENERATED SENTENCE: onehundred_andtwenty
+GENERATION TREE:
+tree([([one,hundred_and,twenty],[cfin],'1X+100Y'(1,20))],merge2,tree([([hundred_and,twenty],[=c1,cfin],cl([_20894,_20888,_20928]>>(_20928='1X+100Y'(_20888,_20894)),[20]))],merge1,li([hundred_and],[=c2,=c1,cfin],[_20894,_20888,_20928]>>(_20928='1X+100Y'(_20888,_20894))),li([twenty],[c2],20)),li([one],[c1],1))
+
+==================================================
+CASE ID: 5
+TOKEN INPUT: [two,hundred_and,thirty]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+100Y'(30,2)
+GENERATION STATUS: ok
+GENERATED TOKENS: [two,hundred_and,thirty]
+COMPARISON TOKENS: [two,hundred_and,thirty_]
+GENERATED SENTENCE: twohundred_andthirty
+GENERATION TREE:
+tree([([two,hundred_and,thirty],[cfin],'1X+100Y'(2,30))],merge2,tree([([hundred_and,thirty],[=c1,cfin],cl([_26988,_26982,_27022]>>(_27022='1X+100Y'(_26982,_26988)),[30]))],merge1,li([hundred_and],[=c2,=c1,cfin],[_26988,_26982,_27022]>>(_27022='1X+100Y'(_26982,_26988))),li([thirty],[c2],30)),li([two],[c1],2))
+
+==================================================
+CASE ID: 6
+TOKEN INPUT: [three,hundred_and,twenty_,four]
+PARSING STATUS: parse_fail
+RECOVERED SEMANTIC OUTPUT: none
+GENERATION STATUS: generation_not_attempted
+GENERATED TOKENS: []
+COMPARISON TOKENS: []
+GENERATED SENTENCE: ''
+GENERATION TREE:
+none
+
+==================================================
+CASE ID: 7
+TOKEN INPUT: [five,hundred_and,thirty_,six]
+PARSING STATUS: parse_fail
+RECOVERED SEMANTIC OUTPUT: none
+GENERATION STATUS: generation_not_attempted
+GENERATED TOKENS: []
+COMPARISON TOKENS: []
+GENERATED SENTENCE: ''
+GENERATION TREE:
+none
+

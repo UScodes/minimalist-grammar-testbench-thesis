@@ -28,6 +28,14 @@ It wraps the existing MG generator and exposes two predicates:
       It returns structured status information instead of allowing
       timeouts, missing solutions, or exceptions to stop the pipeline.
 
+Important design point
+----------------------
+The timeout is grammar-independent. The adapter does not check whether
+a semantic input is valid for a particular grammar. Instead, every
+generation attempt is given the configured amount of time. If the
+generator does not finish within that limit, the adapter returns the
+status timeout.
+
 Status values
 -------------
   ok
@@ -58,75 +66,71 @@ adapter_time_limit_seconds(5).
 % =============================================================================
 % generate(+LogicExp, -SentenceAtom, -Lambda, -Tree)
 % Compatibility predicate for direct generation.
+%
+% This predicate is preserved for compatibility with older calls, but it now
+% delegates to generate_safe/5. This means old calls also benefit from the same
+% timeout boundary. If generation does not succeed with status ok, this predicate
+% simply fails.
 % =============================================================================
 
 generate(LogicExp, SentenceAtom, Lambda, Tree) :-
-    once(lambdaSelect:lambdaSelectFkt(LogicExp, LambdaLIs)),
-    lambdaLis_to_lis(LambdaLIs, LIs),
-    adapter_time_limit_seconds(Limit),
-    call_with_time_limit(Limit, lambdaWorkspace:generateExp(LIs, RawOut)),
-    extract_top(RawOut, SentenceAtom, Lambda, Tree).
+    generate_safe(LogicExp, SentenceAtom, Lambda, Tree, ok).
 
 
 % =============================================================================
 % generate_safe(+LogicExp, -SentenceAtom, -Lambda, -Tree, -Status)
 % Safe predicate used by the testbench.
+%
+% The timeout wraps the complete generation attempt:
+%
+%   1. lambda selection
+%   2. conversion from lambdaLi/5 to li/3
+%   3. workspace generation
+%   4. output extraction
+%
+% This is intentionally grammar-independent. Inputs that lead to long or
+% non-terminating generator search are classified by timeout, not by hard-coded
+% semantic validation.
 % =============================================================================
 
 generate_safe(LogicExp, SentenceAtom, Lambda, Tree, Status) :-
-    catch(
-        generate_safe_(LogicExp, SentenceAtom, Lambda, Tree, Status),
-        E,
-        (
-            empty_generation_result(SentenceAtom, Lambda, Tree),
-            Status = error(E)
-        )
-    ).
-
-
-generate_safe_(LogicExp, SentenceAtom, Lambda, Tree, Status) :-
-    run_limited_once(
-        lambdaSelect:lambdaSelectFkt(LogicExp, LambdaLIs),
-        SelectStatus
-    ),
-
-    (   SelectStatus \== ok
-    ->  empty_generation_result(SentenceAtom, Lambda, Tree),
-        Status = SelectStatus
-    ;   lambdaLis_to_lis(LambdaLIs, LIs),
-        run_limited_once(
-            lambdaWorkspace:generateExp(LIs, RawOut),
-            GenerateStatus
-        ),
-
-        (   GenerateStatus \== ok
-        ->  empty_generation_result(SentenceAtom, Lambda, Tree),
-            Status = GenerateStatus
-        ;   (   extract_top(RawOut, SentenceAtom, Lambda, Tree)
-            ->  Status = ok
-            ;   empty_generation_result(SentenceAtom, Lambda, Tree),
-                Status = no_solution
-            )
-        )
-    ).
-
-
-% =============================================================================
-% Shared execution helper
-% =============================================================================
-
-:- meta_predicate run_limited_once(0, -).
-
-run_limited_once(Goal, Status) :-
     adapter_time_limit_seconds(Limit),
     catch(
-        (   call_with_time_limit(Limit, once(Goal))
+        (
+            call_with_time_limit(
+                Limit,
+                once(generate_attempt(LogicExp, SentenceAtom, Lambda, Tree))
+            )
         ->  Status = ok
-        ;   Status = no_solution
+        ;   empty_generation_result(SentenceAtom, Lambda, Tree),
+            Status = no_solution
         ),
-        time_limit_exceeded,
-        Status = timeout
+        Error,
+        handle_generation_exception(Error, SentenceAtom, Lambda, Tree, Status)
     ).
+
+
+% =============================================================================
+% Full generation attempt
+% =============================================================================
+
+generate_attempt(LogicExp, SentenceAtom, Lambda, Tree) :-
+    lambdaSelect:lambdaSelectFkt(LogicExp, LambdaLIs),
+    lambdaLis_to_lis(LambdaLIs, LIs),
+    lambdaWorkspace:generateExp(LIs, RawOut),
+    extract_top(RawOut, SentenceAtom, Lambda, Tree).
+
+
+% =============================================================================
+% Exception handling
+% =============================================================================
+
+handle_generation_exception(time_limit_exceeded, SentenceAtom, Lambda, Tree, timeout) :-
+    !,
+    empty_generation_result(SentenceAtom, Lambda, Tree).
+
+handle_generation_exception(Error, SentenceAtom, Lambda, Tree, error(Error)) :-
+    empty_generation_result(SentenceAtom, Lambda, Tree).
 
 
 % =============================================================================

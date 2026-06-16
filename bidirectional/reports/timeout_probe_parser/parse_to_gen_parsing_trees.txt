@@ -1,0 +1,8 @@
+==================================================
+CASE ID: 1
+TOKEN INPUT: [teen]
+PARSING STATUS: parse_fail
+RECOVERED SEMANTIC OUTPUT: none
+PARSING TREE:
+none
+

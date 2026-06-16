@@ -1,0 +1,675 @@
+==================================================
+Validierungsbericht: Parsing-zu-Generierung
+==================================================
+Profil: german_numbers_profile
+Pipeline: Parsing -> Generation
+Parser-Komponente: MG LC Parser
+Generator-Komponente: MG Generator
+
+Parser-Ladedatei: ../../MG-LC-Parser-with-Semantic-main/load.pl
+Parser-Adapterdatei: ../adapters/parser_adapter.pl
+Generator-Hauptdatei: ../../SemanticGenerator/MG-Generator/main.pl
+Generator-Adapterdatei: ../adapters/generator_adapter.pl
+
+Parser-Lexikon: German_Parse
+Generator-Lexikon: German_Generation
+Parser-Lexikondatei: ../../MG-LC-Parser-with-Semantic-main/grammars/German_Parse.pl
+Generator-Lexikondatei: ../../SemanticGenerator/MG-Generator/grammars/German_Generation.pl
+Datei der Token-Testfälle: ../cases/german_token_cases_balanced.pl
+
+Token-Normalisierung aktiviert: Ja
+Token-Normalisierungsstil: underscore
+Token-Normalisierungsregelsatz: german
+Token-Normalisierungs-Dispatcher: normalization_rule_dispatcher
+Adapter-Zeitlimit: 5 Sekunden
+
+Ausgabedatei der Parsing-Stufe: ../generated/parse_to_gen_parse_out.pl
+Ausgabedatei der Generierungsstufe: ../generated/parse_to_gen_gen_out.pl
+Parsing-Baumbericht: ../generated/parse_to_gen_parsing_trees.txt
+Generierungsbaumbericht: ../generated/parse_to_gen_generation_trees.txt
+==================================================
+
+Case ID: 1
+Validierungsergebnis: Validierung bestanden
+Fehlerstufe: Keine
+Diagnosegrund: Keine
+
+Eingabe
+  Token-Eingabe: [eins]
+
+Parsing-Stufe
+  Parsing-Status: ok
+  Rekonstruierte semantische Ausgabe: 1
+
+Generierungsstufe
+  Generierungsstatus: ok
+  Generierte Tokens: [eins]
+
+Schnittstellenvorbereitung
+  Tokens nach Normalisierung: [eins]
+--------------------------------------------------
+Case ID: 2
+Validierungsergebnis: Validierung bestanden
+Fehlerstufe: Keine
+Diagnosegrund: Keine
+
+Eingabe
+  Token-Eingabe: [zwei]
+
+Parsing-Stufe
+  Parsing-Status: ok
+  Rekonstruierte semantische Ausgabe: 2
+
+Generierungsstufe
+  Generierungsstatus: ok
+  Generierte Tokens: [zwei]
+
+Schnittstellenvorbereitung
+  Tokens nach Normalisierung: [zwei]
+--------------------------------------------------
+Case ID: 3
+Validierungsergebnis: Validierung bestanden
+Fehlerstufe: Keine
+Diagnosegrund: Keine
+
+Eingabe
+  Token-Eingabe: [drei]
+
+Parsing-Stufe
+  Parsing-Status: ok
+  Rekonstruierte semantische Ausgabe: 3
+
+Generierungsstufe
+  Generierungsstatus: ok
+  Generierte Tokens: [drei]
+
+Schnittstellenvorbereitung
+  Tokens nach Normalisierung: [drei]
+--------------------------------------------------
+Case ID: 4
+Validierungsergebnis: Validierung bestanden
+Fehlerstufe: Keine
+Diagnosegrund: Keine
+
+Eingabe
+  Token-Eingabe: [vier]
+
+Parsing-Stufe
+  Parsing-Status: ok
+  Rekonstruierte semantische Ausgabe: 4
+
+Generierungsstufe
+  Generierungsstatus: ok
+  Generierte Tokens: [vier]
+
+Schnittstellenvorbereitung
+  Tokens nach Normalisierung: [vier]
+--------------------------------------------------
+Case ID: 5
+Validierungsergebnis: Validierung bestanden
+Fehlerstufe: Keine
+Diagnosegrund: Keine
+
+Eingabe
+  Token-Eingabe: [sechs]
+
+Parsing-Stufe
+  Parsing-Status: ok
+  Rekonstruierte semantische Ausgabe: 6
+
+Generierungsstufe
+  Generierungsstatus: ok
+  Generierte Tokens: [sechs]
+
+Schnittstellenvorbereitung
+  Tokens nach Normalisierung: [sechs]
+--------------------------------------------------
+Case ID: 6
+Validierungsergebnis: Validierung bestanden
+Fehlerstufe: Keine
+Diagnosegrund: Keine
+
+Eingabe
+  Token-Eingabe: [sieben]
+
+Parsing-Stufe
+  Parsing-Status: ok
+  Rekonstruierte semantische Ausgabe: 7
+
+Generierungsstufe
+  Generierungsstatus: ok
+  Generierte Tokens: [sieben]
+
+Schnittstellenvorbereitung
+  Tokens nach Normalisierung: [sieben]
+--------------------------------------------------
+Case ID: 7
+Validierungsergebnis: Validierung bestanden
+Fehlerstufe: Keine
+Diagnosegrund: Keine
+
+Eingabe
+  Token-Eingabe: [acht]
+
+Parsing-Stufe
+  Parsing-Status: ok
+  Rekonstruierte semantische Ausgabe: 8
+
+Generierungsstufe
+  Generierungsstatus: ok
+  Generierte Tokens: [acht]
+
+Schnittstellenvorbereitung
+  Tokens nach Normalisierung: [acht]
+--------------------------------------------------
+Case ID: 8
+Validierungsergebnis: Validierung bestanden
+Fehlerstufe: Keine
+Diagnosegrund: Keine
+
+Eingabe
+  Token-Eingabe: [neun]
+
+Parsing-Stufe
+  Parsing-Status: ok
+  Rekonstruierte semantische Ausgabe: 9
+
+Generierungsstufe
+  Generierungsstatus: ok
+  Generierte Tokens: [neun]
+
+Schnittstellenvorbereitung
+  Tokens nach Normalisierung: [neun]
+--------------------------------------------------
+Case ID: 9
+Validierungsergebnis: Validierung bestanden
+Fehlerstufe: Keine
+Diagnosegrund: Keine
+
+Eingabe
+  Token-Eingabe: [zehn]
+
+Parsing-Stufe
+  Parsing-Status: ok
+  Rekonstruierte semantische Ausgabe: 10
+
+Generierungsstufe
+  Generierungsstatus: ok
+  Generierte Tokens: [zehn]
+
+Schnittstellenvorbereitung
+  Tokens nach Normalisierung: [zehn]
+--------------------------------------------------
+Case ID: 10
+Validierungsergebnis: Validierung bestanden
+Fehlerstufe: Keine
+Diagnosegrund: Keine
+
+Eingabe
+  Token-Eingabe: [elf]
+
+Parsing-Stufe
+  Parsing-Status: ok
+  Rekonstruierte semantische Ausgabe: 11
+
+Generierungsstufe
+  Generierungsstatus: ok
+  Generierte Tokens: [elf]
+
+Schnittstellenvorbereitung
+  Tokens nach Normalisierung: [elf]
+--------------------------------------------------
+Case ID: 11
+Validierungsergebnis: Validierung bestanden
+Fehlerstufe: Keine
+Diagnosegrund: Keine
+
+Eingabe
+  Token-Eingabe: [sechzehn]
+
+Parsing-Stufe
+  Parsing-Status: ok
+  Rekonstruierte semantische Ausgabe: 16
+
+Generierungsstufe
+  Generierungsstatus: ok
+  Generierte Tokens: [sechzehn]
+
+Schnittstellenvorbereitung
+  Tokens nach Normalisierung: [sechzehn]
+--------------------------------------------------
+Case ID: 12
+Validierungsergebnis: Validierung bestanden
+Fehlerstufe: Keine
+Diagnosegrund: Keine
+
+Eingabe
+  Token-Eingabe: [siebzehn]
+
+Parsing-Stufe
+  Parsing-Status: ok
+  Rekonstruierte semantische Ausgabe: 17
+
+Generierungsstufe
+  Generierungsstatus: ok
+  Generierte Tokens: [siebzehn]
+
+Schnittstellenvorbereitung
+  Tokens nach Normalisierung: [siebzehn]
+--------------------------------------------------
+Case ID: 13
+Validierungsergebnis: Validierung bestanden
+Fehlerstufe: Keine
+Diagnosegrund: Keine
+
+Eingabe
+  Token-Eingabe: [zwanzig]
+
+Parsing-Stufe
+  Parsing-Status: ok
+  Rekonstruierte semantische Ausgabe: 20
+
+Generierungsstufe
+  Generierungsstatus: ok
+  Generierte Tokens: [zwanzig]
+
+Schnittstellenvorbereitung
+  Tokens nach Normalisierung: [zwanzig]
+--------------------------------------------------
+Case ID: 14
+Validierungsergebnis: Validierung bestanden
+Fehlerstufe: Keine
+Diagnosegrund: Keine
+
+Eingabe
+  Token-Eingabe: [einundzwanzig]
+
+Parsing-Stufe
+  Parsing-Status: ok
+  Rekonstruierte semantische Ausgabe: 21
+
+Generierungsstufe
+  Generierungsstatus: ok
+  Generierte Tokens: [einundzwanzig]
+
+Schnittstellenvorbereitung
+  Tokens nach Normalisierung: [einundzwanzig]
+--------------------------------------------------
+Case ID: 15
+Validierungsergebnis: Validierung bestanden
+Fehlerstufe: Keine
+Diagnosegrund: Keine
+
+Eingabe
+  Token-Eingabe: [sechzig]
+
+Parsing-Stufe
+  Parsing-Status: ok
+  Rekonstruierte semantische Ausgabe: 60
+
+Generierungsstufe
+  Generierungsstatus: ok
+  Generierte Tokens: [sechzig]
+
+Schnittstellenvorbereitung
+  Tokens nach Normalisierung: [sechzig]
+--------------------------------------------------
+Case ID: 16
+Validierungsergebnis: Validierung bestanden
+Fehlerstufe: Keine
+Diagnosegrund: Keine
+
+Eingabe
+  Token-Eingabe: [einundsechzig]
+
+Parsing-Stufe
+  Parsing-Status: ok
+  Rekonstruierte semantische Ausgabe: 61
+
+Generierungsstufe
+  Generierungsstatus: ok
+  Generierte Tokens: [einundsechzig]
+
+Schnittstellenvorbereitung
+  Tokens nach Normalisierung: [einundsechzig]
+--------------------------------------------------
+Case ID: 17
+Validierungsergebnis: Validierung bestanden
+Fehlerstufe: Keine
+Diagnosegrund: Keine
+
+Eingabe
+  Token-Eingabe: [siebzig]
+
+Parsing-Stufe
+  Parsing-Status: ok
+  Rekonstruierte semantische Ausgabe: 70
+
+Generierungsstufe
+  Generierungsstatus: ok
+  Generierte Tokens: [siebzig]
+
+Schnittstellenvorbereitung
+  Tokens nach Normalisierung: [siebzig]
+--------------------------------------------------
+Case ID: 18
+Validierungsergebnis: Validierung bestanden
+Fehlerstufe: Keine
+Diagnosegrund: Keine
+
+Eingabe
+  Token-Eingabe: [einundsiebzig]
+
+Parsing-Stufe
+  Parsing-Status: ok
+  Rekonstruierte semantische Ausgabe: 71
+
+Generierungsstufe
+  Generierungsstatus: ok
+  Generierte Tokens: [einundsiebzig]
+
+Schnittstellenvorbereitung
+  Tokens nach Normalisierung: [einundsiebzig]
+--------------------------------------------------
+Case ID: 19
+Validierungsergebnis: Validierung bestanden
+Fehlerstufe: Keine
+Diagnosegrund: Keine
+
+Eingabe
+  Token-Eingabe: [hundert]
+
+Parsing-Stufe
+  Parsing-Status: ok
+  Rekonstruierte semantische Ausgabe: 100
+
+Generierungsstufe
+  Generierungsstatus: ok
+  Generierte Tokens: [hundert]
+
+Schnittstellenvorbereitung
+  Tokens nach Normalisierung: [hundert]
+--------------------------------------------------
+Case ID: 20
+Validierungsergebnis: Validierung bestanden
+Fehlerstufe: Keine
+Diagnosegrund: Keine
+
+Eingabe
+  Token-Eingabe: [zwei,undzwanzig]
+
+Parsing-Stufe
+  Parsing-Status: ok
+  Rekonstruierte semantische Ausgabe: '1X+20'(2)
+
+Generierungsstufe
+  Generierungsstatus: ok
+  Generierte Tokens: [zwei,undzwanzig]
+
+Schnittstellenvorbereitung
+  Tokens nach Normalisierung: [zwei,undzwanzig]
+--------------------------------------------------
+Case ID: 21
+Validierungsergebnis: Validierung bestanden
+Fehlerstufe: Keine
+Diagnosegrund: Keine
+
+Eingabe
+  Token-Eingabe: [sechs,undzwanzig]
+
+Parsing-Stufe
+  Parsing-Status: ok
+  Rekonstruierte semantische Ausgabe: '1X+20'(6)
+
+Generierungsstufe
+  Generierungsstatus: ok
+  Generierte Tokens: [sechs,undzwanzig]
+
+Schnittstellenvorbereitung
+  Tokens nach Normalisierung: [sechs,undzwanzig]
+--------------------------------------------------
+Case ID: 22
+Validierungsergebnis: Validierung bestanden
+Fehlerstufe: Keine
+Diagnosegrund: Keine
+
+Eingabe
+  Token-Eingabe: [sieben,undzwanzig]
+
+Parsing-Stufe
+  Parsing-Status: ok
+  Rekonstruierte semantische Ausgabe: '1X+20'(7)
+
+Generierungsstufe
+  Generierungsstatus: ok
+  Generierte Tokens: [sieben,undzwanzig]
+
+Schnittstellenvorbereitung
+  Tokens nach Normalisierung: [sieben,undzwanzig]
+--------------------------------------------------
+Case ID: 23
+Validierungsergebnis: Validierung bestanden
+Fehlerstufe: Keine
+Diagnosegrund: Keine
+
+Eingabe
+  Token-Eingabe: [zwei,hundert]
+
+Parsing-Stufe
+  Parsing-Status: ok
+  Rekonstruierte semantische Ausgabe: '100X'(2)
+
+Generierungsstufe
+  Generierungsstatus: ok
+  Generierte Tokens: [zwei,hundert]
+
+Schnittstellenvorbereitung
+  Tokens nach Normalisierung: [zwei,hundert]
+--------------------------------------------------
+Case ID: 24
+Validierungsergebnis: Validierung bestanden
+Fehlerstufe: Keine
+Diagnosegrund: Keine
+
+Eingabe
+  Token-Eingabe: [sechs,hundert]
+
+Parsing-Stufe
+  Parsing-Status: ok
+  Rekonstruierte semantische Ausgabe: '100X'(6)
+
+Generierungsstufe
+  Generierungsstatus: ok
+  Generierte Tokens: [sechs,hundert]
+
+Schnittstellenvorbereitung
+  Tokens nach Normalisierung: [sechs,hundert]
+--------------------------------------------------
+Case ID: 25
+Validierungsergebnis: Validierung bestanden
+Fehlerstufe: Keine
+Diagnosegrund: Keine
+
+Eingabe
+  Token-Eingabe: [sieben,hundert]
+
+Parsing-Stufe
+  Parsing-Status: ok
+  Rekonstruierte semantische Ausgabe: '100X'(7)
+
+Generierungsstufe
+  Generierungsstatus: ok
+  Generierte Tokens: [sieben,hundert]
+
+Schnittstellenvorbereitung
+  Tokens nach Normalisierung: [sieben,hundert]
+--------------------------------------------------
+Case ID: 26
+Validierungsergebnis: Token-Roundtrip-Abweichung
+Fehlerstufe: Token-Vergleich
+Diagnosegrund: Die regenerierten Tokens unterscheiden sich von der ursprünglichen Token-Eingabe: erwartet [drei,undzwanzig], erhalten [undzwanzig,drei]
+
+Eingabe
+  Token-Eingabe: [drei,undzwanzig]
+
+Parsing-Stufe
+  Parsing-Status: ok
+  Rekonstruierte semantische Ausgabe: '1X+20'(3)
+
+Generierungsstufe
+  Generierungsstatus: ok
+  Generierte Tokens: [undzwanzig,drei]
+
+Schnittstellenvorbereitung
+  Tokens nach Normalisierung: [undzwanzig,drei]
+--------------------------------------------------
+Case ID: 27
+Validierungsergebnis: Token-Roundtrip-Abweichung
+Fehlerstufe: Token-Vergleich
+Diagnosegrund: Die regenerierten Tokens unterscheiden sich von der ursprünglichen Token-Eingabe: erwartet [vier,zig], erhalten [zig,vier]
+
+Eingabe
+  Token-Eingabe: [vier,zig]
+
+Parsing-Stufe
+  Parsing-Status: ok
+  Rekonstruierte semantische Ausgabe: '10X'(4)
+
+Generierungsstufe
+  Generierungsstatus: ok
+  Generierte Tokens: [zig,vier]
+
+Schnittstellenvorbereitung
+  Tokens nach Normalisierung: [zig,vier]
+--------------------------------------------------
+Case ID: 28
+Validierungsergebnis: Token-Roundtrip-Abweichung
+Fehlerstufe: Token-Vergleich
+Diagnosegrund: Die regenerierten Tokens unterscheiden sich von der ursprünglichen Token-Eingabe: erwartet [drei,hundert], erhalten [hundert,drei]
+
+Eingabe
+  Token-Eingabe: [drei,hundert]
+
+Parsing-Stufe
+  Parsing-Status: ok
+  Rekonstruierte semantische Ausgabe: '100X'(3)
+
+Generierungsstufe
+  Generierungsstatus: ok
+  Generierte Tokens: [hundert,drei]
+
+Schnittstellenvorbereitung
+  Tokens nach Normalisierung: [hundert,drei]
+--------------------------------------------------
+Case ID: 29
+Validierungsergebnis: Generierung mit Zeitüberschreitung
+Fehlerstufe: Generierung
+Diagnosegrund: Die Generierung überschritt das Zeitlimit für diesen Testfall
+
+Eingabe
+  Token-Eingabe: [sieben,und,vier,zig]
+
+Parsing-Stufe
+  Parsing-Status: ok
+  Rekonstruierte semantische Ausgabe: '1X+1Y'('10X+N'(4),7)
+
+Generierungsstufe
+  Generierungsstatus: generation_timeout
+  Generierte Tokens: []
+
+Schnittstellenvorbereitung
+  Tokens nach Normalisierung: []
+--------------------------------------------------
+Case ID: 30
+Validierungsergebnis: Generierung mit Zeitüberschreitung
+Fehlerstufe: Generierung
+Diagnosegrund: Die Generierung überschritt das Zeitlimit für diesen Testfall
+
+Eingabe
+  Token-Eingabe: [drei,hundert,vier]
+
+Parsing-Stufe
+  Parsing-Status: ok
+  Rekonstruierte semantische Ausgabe: '1X+100Y'(4,3)
+
+Generierungsstufe
+  Generierungsstatus: generation_timeout
+  Generierte Tokens: []
+
+Schnittstellenvorbereitung
+  Tokens nach Normalisierung: []
+--------------------------------------------------
+Case ID: 31
+Validierungsergebnis: Parsing fehlgeschlagen
+Fehlerstufe: Parsing
+Diagnosegrund: Der Parser konnte keine gültige Ableitung für die Token-Sequenz finden
+
+Eingabe
+  Token-Eingabe: [sieben,und,acht,zig]
+
+Parsing-Stufe
+  Parsing-Status: parse_fail
+  Rekonstruierte semantische Ausgabe: none
+
+Generierungsstufe
+  Generierungsstatus: generation_not_attempted
+  Generierte Tokens: []
+
+Schnittstellenvorbereitung
+  Tokens nach Normalisierung: []
+--------------------------------------------------
+Case ID: 32
+Validierungsergebnis: Parsing fehlgeschlagen
+Fehlerstufe: Parsing
+Diagnosegrund: Der Parser konnte keine gültige Ableitung für die Token-Sequenz finden
+
+Eingabe
+  Token-Eingabe: ['Schinken']
+
+Parsing-Stufe
+  Parsing-Status: parse_fail
+  Rekonstruierte semantische Ausgabe: none
+
+Generierungsstufe
+  Generierungsstatus: generation_not_attempted
+  Generierte Tokens: []
+
+Schnittstellenvorbereitung
+  Tokens nach Normalisierung: []
+--------------------------------------------------
+Case ID: 33
+Validierungsergebnis: Parsing fehlgeschlagen
+Fehlerstufe: Parsing
+Diagnosegrund: Der Parser konnte keine gültige Ableitung für die Token-Sequenz finden
+
+Eingabe
+  Token-Eingabe: [hundert,hundert]
+
+Parsing-Stufe
+  Parsing-Status: parse_fail
+  Rekonstruierte semantische Ausgabe: none
+
+Generierungsstufe
+  Generierungsstatus: generation_not_attempted
+  Generierte Tokens: []
+
+Schnittstellenvorbereitung
+  Tokens nach Normalisierung: []
+--------------------------------------------------
+
+================ Validierungszusammenfassung ================
+Gesamtzahl der Fälle: 33
+Validierung bestanden: 25
+Generierung mit Zeitüberschreitung: 2
+Generierung fehlgeschlagen: 0
+Keine Oberflächenform generiert: 0
+Parsing übersprungen: 0
+Parsing mit Zeitüberschreitung: 0
+Parsing fehlgeschlagen: 3
+Token-Roundtrip-Abweichung: 3
+
+================ Zusammenfassung der Fehlerstufen ==============
+Keine Fehlerstufe: 25
+Generierung: 2
+Parsing: 3
+Token-Vergleich: 3

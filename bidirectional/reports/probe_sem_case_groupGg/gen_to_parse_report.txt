@@ -1,0 +1,218 @@
+==================================================
+Validation Report: Generation-to-Parsing
+==================================================
+Profile: english_numbers_profile
+Pipeline: Generation -> Parsing
+Generator Component: MG Generator
+Parser Component: MG LC Parser
+
+Generator Main File: ../../SemanticGenerator/MG-Generator/main.pl
+Generator Adapter File: ../adapters/generator_adapter.pl
+Parser Load File: ../../MG-LC-Parser-with-Semantic-main/load.pl
+Parser Adapter File: ../adapters/parser_adapter.pl
+Parser Semantic Source: parser_internal_pipeline
+
+Generator Lexicon: numbers_Gen
+Parser Lexicon: English_trans_pruned
+Generator Lexicon File: ../../SemanticGenerator/MG-Generator/grammars/numbers_Gen.pl
+Parser Lexicon File: ../../MG-LC-Parser-with-Semantic-main/grammars/English_trans_pruned.pl
+Semantic Test Case File: ../cases/test_cases_full.pl
+
+Token Normalization Enabled: Yes
+Token Normalization Style: underscore
+Adapter Timeout: 5 seconds
+
+Generation-stage Output File: ../generated/gen_to_parse_gen_out.pl
+Parsing-stage Output File: ../generated/gen_to_parse_parse_out.pl
+Generation Tree Report: ../generated/gen_to_parse_generation_trees.txt
+Parsing Tree Report: ../generated/gen_to_parse_parsing_trees.txt
+==================================================
+
+Case ID: 1
+Validation Result: Parsing Failed
+Failure Stage: Parsing
+Diagnostic Reason: Parser could not derive a valid parse for the token sequence
+
+Input
+  Semantic Input: '10X'(4)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [four,ty]
+
+Interface Preparation
+  Tokens after Normalization: [four,ty]
+
+Parsing Stage
+  Parsing Status: parse_fail
+  Recovered Semantic Output: none
+--------------------------------------------------
+Case ID: 2
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Semantic Input: '10X'(6)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [six,ty]
+
+Interface Preparation
+  Tokens after Normalization: [six,ty]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: '10X'(6)
+--------------------------------------------------
+Case ID: 3
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Semantic Input: '10X'(7)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [seven,ty]
+
+Interface Preparation
+  Tokens after Normalization: [seven,ty]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: '10X'(7)
+--------------------------------------------------
+Case ID: 4
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Semantic Input: '0X+80'(8)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [eight,y]
+
+Interface Preparation
+  Tokens after Normalization: [eight,y]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: '0X+80'(8)
+--------------------------------------------------
+Case ID: 5
+Validation Result: Generation Produced No Surface Form
+Failure Stage: Generation
+Diagnostic Reason: Generator returned an empty token yield
+
+Input
+  Semantic Input: '1X+40'(4)
+
+Generation Stage
+  Generation Status: gen_empty_yield
+  Generated Tokens: []
+
+Interface Preparation
+  Tokens after Normalization: []
+
+Parsing Stage
+  Parsing Status: parse_skipped_empty_tokens
+  Recovered Semantic Output: none
+--------------------------------------------------
+Case ID: 6
+Validation Result: Generation Produced No Surface Form
+Failure Stage: Generation
+Diagnostic Reason: Generator returned an empty token yield
+
+Input
+  Semantic Input: '1X+60'(4)
+
+Generation Stage
+  Generation Status: gen_empty_yield
+  Generated Tokens: []
+
+Interface Preparation
+  Tokens after Normalization: []
+
+Parsing Stage
+  Parsing Status: parse_skipped_empty_tokens
+  Recovered Semantic Output: none
+--------------------------------------------------
+Case ID: 7
+Validation Result: Generation Produced No Surface Form
+Failure Stage: Generation
+Diagnostic Reason: Generator returned an empty token yield
+
+Input
+  Semantic Input: '1X+70'(4)
+
+Generation Stage
+  Generation Status: gen_empty_yield
+  Generated Tokens: []
+
+Interface Preparation
+  Tokens after Normalization: []
+
+Parsing Stage
+  Parsing Status: parse_skipped_empty_tokens
+  Recovered Semantic Output: none
+--------------------------------------------------
+Case ID: 8
+Validation Result: Generation Produced No Surface Form
+Failure Stage: Generation
+Diagnostic Reason: Generator returned an empty token yield
+
+Input
+  Semantic Input: '1X+80'(4)
+
+Generation Stage
+  Generation Status: gen_empty_yield
+  Generated Tokens: []
+
+Interface Preparation
+  Tokens after Normalization: []
+
+Parsing Stage
+  Parsing Status: parse_skipped_empty_tokens
+  Recovered Semantic Output: none
+--------------------------------------------------
+Case ID: 9
+Validation Result: Generation Produced No Surface Form
+Failure Stage: Generation
+Diagnostic Reason: Generator returned an empty token yield
+
+Input
+  Semantic Input: '1X+90'(4)
+
+Generation Stage
+  Generation Status: gen_empty_yield
+  Generated Tokens: []
+
+Interface Preparation
+  Tokens after Normalization: []
+
+Parsing Stage
+  Parsing Status: parse_skipped_empty_tokens
+  Recovered Semantic Output: none
+--------------------------------------------------
+
+================ Validation Summary ================
+Total Cases: 9
+Validation Passed: 3
+Generation Timed Out: 0
+Generation Failed: 0
+No Surface Form Generated: 5
+Parsing Skipped: 0
+Parsing Timed Out: 0
+Parsing Failed: 1
+Semantic Roundtrip Mismatch: 0
+
+================ Failure Stage Summary ==============
+No Failure Stage: 3
+Generation: 5
+Parsing: 1
+Semantic Comparison: 0

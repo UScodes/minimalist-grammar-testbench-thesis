@@ -1,0 +1,286 @@
+==================================================
+CASE ID: 1
+SEMANTIC INPUT: 1
+GENERATION STATUS: ok
+GENERATED TOKENS: [eins]
+PARSER INPUT TOKENS: [eins]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 1
+PARSING TREE:
+[li([eins],[cfin])]
+
+==================================================
+CASE ID: 2
+SEMANTIC INPUT: 2
+GENERATION STATUS: ok
+GENERATED TOKENS: [zwei]
+PARSER INPUT TOKENS: [zwei]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 2
+PARSING TREE:
+[li([zwei],[cfin])]
+
+==================================================
+CASE ID: 3
+SEMANTIC INPUT: 3
+GENERATION STATUS: ok
+GENERATED TOKENS: [drei]
+PARSER INPUT TOKENS: [drei]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 3
+PARSING TREE:
+[li([drei],[cfin])]
+
+==================================================
+CASE ID: 4
+SEMANTIC INPUT: 4
+GENERATION STATUS: ok
+GENERATED TOKENS: [vier]
+PARSER INPUT TOKENS: [vier]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 4
+PARSING TREE:
+[li([vier],[cfin])]
+
+==================================================
+CASE ID: 5
+SEMANTIC INPUT: 6
+GENERATION STATUS: ok
+GENERATED TOKENS: [sechs]
+PARSER INPUT TOKENS: [sechs]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 6
+PARSING TREE:
+[li([sechs],[cfin])]
+
+==================================================
+CASE ID: 6
+SEMANTIC INPUT: 7
+GENERATION STATUS: ok
+GENERATED TOKENS: [sieben]
+PARSER INPUT TOKENS: [sieben]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 7
+PARSING TREE:
+[li([sieben],[cfin])]
+
+==================================================
+CASE ID: 7
+SEMANTIC INPUT: 8
+GENERATION STATUS: ok
+GENERATED TOKENS: [acht]
+PARSER INPUT TOKENS: [acht]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 8
+PARSING TREE:
+[li([acht],[cfin])]
+
+==================================================
+CASE ID: 8
+SEMANTIC INPUT: 9
+GENERATION STATUS: ok
+GENERATED TOKENS: [neun]
+PARSER INPUT TOKENS: [neun]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 9
+PARSING TREE:
+[li([neun],[cfin])]
+
+==================================================
+CASE ID: 9
+SEMANTIC INPUT: 10
+GENERATION STATUS: ok
+GENERATED TOKENS: [zehn]
+PARSER INPUT TOKENS: [zehn]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 10
+PARSING TREE:
+[li([zehn],[cfin])]
+
+==================================================
+CASE ID: 10
+SEMANTIC INPUT: 11
+GENERATION STATUS: ok
+GENERATED TOKENS: [elf]
+PARSER INPUT TOKENS: [elf]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 11
+PARSING TREE:
+[li([elf],[cfin])]
+
+==================================================
+CASE ID: 11
+SEMANTIC INPUT: 16
+GENERATION STATUS: ok
+GENERATED TOKENS: [sechzehn]
+PARSER INPUT TOKENS: [sechzehn]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 16
+PARSING TREE:
+[li([sechzehn],[cfin])]
+
+==================================================
+CASE ID: 12
+SEMANTIC INPUT: 17
+GENERATION STATUS: ok
+GENERATED TOKENS: [siebzehn]
+PARSER INPUT TOKENS: [siebzehn]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 17
+PARSING TREE:
+[li([siebzehn],[cfin])]
+
+==================================================
+CASE ID: 13
+SEMANTIC INPUT: 20
+GENERATION STATUS: ok
+GENERATED TOKENS: [zwanzig]
+PARSER INPUT TOKENS: [zwanzig]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 20
+PARSING TREE:
+[li([zwanzig],[cfin])]
+
+==================================================
+CASE ID: 14
+SEMANTIC INPUT: 21
+GENERATION STATUS: ok
+GENERATED TOKENS: [einundzwanzig]
+PARSER INPUT TOKENS: [einundzwanzig]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 21
+PARSING TREE:
+[li([einundzwanzig],[cfin])]
+
+==================================================
+CASE ID: 15
+SEMANTIC INPUT: 60
+GENERATION STATUS: ok
+GENERATED TOKENS: [sechzig]
+PARSER INPUT TOKENS: [sechzig]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 60
+PARSING TREE:
+[li([sechzig],[cfin])]
+
+==================================================
+CASE ID: 16
+SEMANTIC INPUT: 61
+GENERATION STATUS: ok
+GENERATED TOKENS: [einundsechzig]
+PARSER INPUT TOKENS: [einundsechzig]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 61
+PARSING TREE:
+[li([einundsechzig],[cfin])]
+
+==================================================
+CASE ID: 17
+SEMANTIC INPUT: 70
+GENERATION STATUS: ok
+GENERATED TOKENS: [siebzig]
+PARSER INPUT TOKENS: [siebzig]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 70
+PARSING TREE:
+[li([siebzig],[cfin])]
+
+==================================================
+CASE ID: 18
+SEMANTIC INPUT: 71
+GENERATION STATUS: ok
+GENERATED TOKENS: [einundsiebzig]
+PARSER INPUT TOKENS: [einundsiebzig]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 71
+PARSING TREE:
+[li([einundsiebzig],[cfin])]
+
+==================================================
+CASE ID: 19
+SEMANTIC INPUT: 100
+GENERATION STATUS: ok
+GENERATED TOKENS: [hundert]
+PARSER INPUT TOKENS: [hundert]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 100
+PARSING TREE:
+[li([hundert],[cfin])]
+
+==================================================
+CASE ID: 20
+SEMANTIC INPUT: '1X+20'(2)
+GENERATION STATUS: ok
+GENERATED TOKENS: [zwei,undzwanzig]
+PARSER INPUT TOKENS: [zwei,undzwanzig]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+20'(2)
+PARSING TREE:
+[tree(_72256,empty,tree(_71898,li([undzwanzig],[=c1,+b,cfin]),li([zwei],[c1,-b])))]
+
+==================================================
+CASE ID: 21
+SEMANTIC INPUT: '1X+20'(6)
+GENERATION STATUS: ok
+GENERATED TOKENS: [sechs,undzwanzig]
+PARSER INPUT TOKENS: [sechs,undzwanzig]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+20'(6)
+PARSING TREE:
+[tree(_73640,empty,tree(_73282,li([undzwanzig],[=c1,+b,cfin]),li([sechs],[c1,-b])))]
+
+==================================================
+CASE ID: 22
+SEMANTIC INPUT: '1X+20'(7)
+GENERATION STATUS: ok
+GENERATED TOKENS: [sieben,undzwanzig]
+PARSER INPUT TOKENS: [sieben,undzwanzig]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+20'(7)
+PARSING TREE:
+[tree(_73640,empty,tree(_73282,li([undzwanzig],[=c1,+b,cfin]),li([sieben],[c1,-b])))]
+
+==================================================
+CASE ID: 23
+SEMANTIC INPUT: '100X'(2)
+GENERATION STATUS: ok
+GENERATED TOKENS: [zwei,hundert]
+PARSER INPUT TOKENS: [zwei,hundert]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '100X'(2)
+PARSING TREE:
+[tree(_73640,empty,tree(_73282,li([hundert],[=c1,+b,cfin]),li([zwei],[c1,-b])))]
+
+==================================================
+CASE ID: 24
+SEMANTIC INPUT: '1X+100'(20)
+GENERATION STATUS: ok
+GENERATED TOKENS: [hundert,zwanzig]
+PARSER INPUT TOKENS: [hundert,zwanzig]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+100'(20)
+PARSING TREE:
+[tree(_73214,li([hundert],[=c3e,cfin]),li([zwanzig],[c3e]))]
+
+==================================================
+CASE ID: 25
+SEMANTIC INPUT: '1X+100'(60)
+GENERATION STATUS: ok
+GENERATED TOKENS: [hundert,sechzig]
+PARSER INPUT TOKENS: [hundert,sechzig]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+100'(60)
+PARSING TREE:
+[tree(_73214,li([hundert],[=c3e,cfin]),li([sechzig],[c3e]))]
+
+==================================================
+CASE ID: 26
+SEMANTIC INPUT: '1X+100'(70)
+GENERATION STATUS: ok
+GENERATED TOKENS: [hundert,siebzig]
+PARSER INPUT TOKENS: [hundert,siebzig]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+100'(70)
+PARSING TREE:
+[tree(_73214,li([hundert],[=c3e,cfin]),li([siebzig],[c3e]))]
+

@@ -1,0 +1,942 @@
+==================================================
+Validation Report: Generation-to-Parsing
+==================================================
+Profile: german_numbers_profile
+Pipeline: Generation -> Parsing
+Generator Component: MG Generator
+Parser Component: MG LC Parser
+
+Generator Main File: ../../SemanticGenerator/MG-Generator/main.pl
+Generator Adapter File: ../adapters/generator_adapter.pl
+Parser Load File: ../../MG-LC-Parser-with-Semantic-main/load.pl
+Parser Adapter File: ../adapters/parser_adapter.pl
+Parser Semantic Source: parser_internal_pipeline
+
+Generator Lexicon: German_Generation
+Parser Lexicon: German_Parse
+Generator Lexicon File: ../../SemanticGenerator/MG-Generator/grammars/German_Generation.pl
+Parser Lexicon File: ../../MG-LC-Parser-with-Semantic-main/grammars/German_Parse.pl
+Semantic Test Case File: ../cases/german/german_semantic_cases_balanced.pl
+
+Token Normalization Enabled: Yes
+Token Normalization Style: underscore
+Token Normalization Rule Set: german
+Token Normalization Dispatcher: normalization_rule_dispatcher
+Adapter Timeout: 5 seconds
+
+Generation-stage Output File: ../generated/gen_to_parse_gen_out.pl
+Parsing-stage Output File: ../generated/gen_to_parse_parse_out.pl
+Generation Tree Report: ../generated/gen_to_parse_generation_trees.txt
+Parsing Tree Report: ../generated/gen_to_parse_parsing_trees.txt
+==================================================
+
+Case ID: 1
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Semantic Input: 1
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [eins]
+
+Interface Preparation
+  Tokens after Normalization: [eins]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 1
+--------------------------------------------------
+Case ID: 2
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Semantic Input: 2
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [zwei]
+
+Interface Preparation
+  Tokens after Normalization: [zwei]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 2
+--------------------------------------------------
+Case ID: 3
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Semantic Input: 3
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [drei]
+
+Interface Preparation
+  Tokens after Normalization: [drei]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 3
+--------------------------------------------------
+Case ID: 4
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Semantic Input: 4
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [vier]
+
+Interface Preparation
+  Tokens after Normalization: [vier]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 4
+--------------------------------------------------
+Case ID: 6
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Semantic Input: 6
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [sechs]
+
+Interface Preparation
+  Tokens after Normalization: [sechs]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 6
+--------------------------------------------------
+Case ID: 7
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Semantic Input: 7
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [sieben]
+
+Interface Preparation
+  Tokens after Normalization: [sieben]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 7
+--------------------------------------------------
+Case ID: 8
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Semantic Input: 8
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [acht]
+
+Interface Preparation
+  Tokens after Normalization: [acht]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 8
+--------------------------------------------------
+Case ID: 9
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Semantic Input: 9
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [neun]
+
+Interface Preparation
+  Tokens after Normalization: [neun]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 9
+--------------------------------------------------
+Case ID: 10
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Semantic Input: 10
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [zehn]
+
+Interface Preparation
+  Tokens after Normalization: [zehn]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 10
+--------------------------------------------------
+Case ID: 11
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Semantic Input: 11
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [elf]
+
+Interface Preparation
+  Tokens after Normalization: [elf]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 11
+--------------------------------------------------
+Case ID: 13
+Validation Result: Generation Produced No Surface Form
+Failure Stage: Generation
+Diagnostic Reason: Generator returned an empty token yield
+
+Input
+  Semantic Input: 13
+
+Generation Stage
+  Generation Status: gen_empty_yield
+  Generated Tokens: []
+
+Interface Preparation
+  Tokens after Normalization: []
+
+Parsing Stage
+  Parsing Status: parse_skipped_empty_tokens
+  Recovered Semantic Output: none
+--------------------------------------------------
+Case ID: 14
+Validation Result: Generation Produced No Surface Form
+Failure Stage: Generation
+Diagnostic Reason: Generator returned an empty token yield
+
+Input
+  Semantic Input: 15
+
+Generation Stage
+  Generation Status: gen_empty_yield
+  Generated Tokens: []
+
+Interface Preparation
+  Tokens after Normalization: []
+
+Parsing Stage
+  Parsing Status: parse_skipped_empty_tokens
+  Recovered Semantic Output: none
+--------------------------------------------------
+Case ID: 15
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Semantic Input: 20
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [zwanzig]
+
+Interface Preparation
+  Tokens after Normalization: [zwanzig]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 20
+--------------------------------------------------
+Case ID: 16
+Validation Result: Generation Produced No Surface Form
+Failure Stage: Generation
+Diagnostic Reason: Generator returned an empty token yield
+
+Input
+  Semantic Input: 30
+
+Generation Stage
+  Generation Status: gen_empty_yield
+  Generated Tokens: []
+
+Interface Preparation
+  Tokens after Normalization: []
+
+Parsing Stage
+  Parsing Status: parse_skipped_empty_tokens
+  Recovered Semantic Output: none
+--------------------------------------------------
+Case ID: 17
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Semantic Input: 60
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [sechzig]
+
+Interface Preparation
+  Tokens after Normalization: [sechzig]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 60
+--------------------------------------------------
+Case ID: 18
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Semantic Input: 70
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [siebzig]
+
+Interface Preparation
+  Tokens after Normalization: [siebzig]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 70
+--------------------------------------------------
+Case ID: 19
+Validation Result: Parsing Failed
+Failure Stage: Parsing
+Diagnostic Reason: Parser could not derive a valid parse for the token sequence
+
+Input
+  Semantic Input: '1X+20'(1)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [undzwanzig,eins]
+
+Interface Preparation
+  Tokens after Normalization: [undzwanzig,eins]
+
+Parsing Stage
+  Parsing Status: parse_fail
+  Recovered Semantic Output: none
+--------------------------------------------------
+Case ID: 20
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Semantic Input: '1X+20'(2)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [zwei,undzwanzig]
+
+Interface Preparation
+  Tokens after Normalization: [zwei,undzwanzig]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: '1X+20'(2)
+--------------------------------------------------
+Case ID: 21
+Validation Result: Parsing Failed
+Failure Stage: Parsing
+Diagnostic Reason: Parser could not derive a valid parse for the token sequence
+
+Input
+  Semantic Input: '1X+20'(3)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [undzwanzig,drei]
+
+Interface Preparation
+  Tokens after Normalization: [undzwanzig,drei]
+
+Parsing Stage
+  Parsing Status: parse_fail
+  Recovered Semantic Output: none
+--------------------------------------------------
+Case ID: 22
+Validation Result: Parsing Failed
+Failure Stage: Parsing
+Diagnostic Reason: Parser could not derive a valid parse for the token sequence
+
+Input
+  Semantic Input: '1X+20'(4)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [undzwanzig,vier]
+
+Interface Preparation
+  Tokens after Normalization: [undzwanzig,vier]
+
+Parsing Stage
+  Parsing Status: parse_fail
+  Recovered Semantic Output: none
+--------------------------------------------------
+Case ID: 24
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Semantic Input: '1X+20'(6)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [sechs,undzwanzig]
+
+Interface Preparation
+  Tokens after Normalization: [sechs,undzwanzig]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: '1X+20'(6)
+--------------------------------------------------
+Case ID: 25
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Semantic Input: '1X+20'(7)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [sieben,undzwanzig]
+
+Interface Preparation
+  Tokens after Normalization: [sieben,undzwanzig]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: '1X+20'(7)
+--------------------------------------------------
+Case ID: 26
+Validation Result: Parsing Failed
+Failure Stage: Parsing
+Diagnostic Reason: Parser could not derive a valid parse for the token sequence
+
+Input
+  Semantic Input: '1X+20'(8)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [undzwanzig,acht]
+
+Interface Preparation
+  Tokens after Normalization: [undzwanzig,acht]
+
+Parsing Stage
+  Parsing Status: parse_fail
+  Recovered Semantic Output: none
+--------------------------------------------------
+Case ID: 27
+Validation Result: Parsing Failed
+Failure Stage: Parsing
+Diagnostic Reason: Parser could not derive a valid parse for the token sequence
+
+Input
+  Semantic Input: '1X+20'(9)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [undzwanzig,neun]
+
+Interface Preparation
+  Tokens after Normalization: [undzwanzig,neun]
+
+Parsing Stage
+  Parsing Status: parse_fail
+  Recovered Semantic Output: none
+--------------------------------------------------
+Case ID: 28
+Validation Result: Parsing Failed
+Failure Stage: Parsing
+Diagnostic Reason: Parser could not derive a valid parse for the token sequence
+
+Input
+  Semantic Input: '1X+60'(1)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [undsechzig,eins]
+
+Interface Preparation
+  Tokens after Normalization: [undsechzig,eins]
+
+Parsing Stage
+  Parsing Status: parse_fail
+  Recovered Semantic Output: none
+--------------------------------------------------
+Case ID: 29
+Validation Result: Semantic Roundtrip Mismatch
+Failure Stage: Semantic Comparison
+Diagnostic Reason: Parsed semantics differed from the original semantic input: expected '1X+60'(2) but got plus60(2)
+
+Input
+  Semantic Input: '1X+60'(2)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [zwei,undsechzig]
+
+Interface Preparation
+  Tokens after Normalization: [zwei,undsechzig]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: plus60(2)
+--------------------------------------------------
+Case ID: 30
+Validation Result: Parsing Failed
+Failure Stage: Parsing
+Diagnostic Reason: Parser could not derive a valid parse for the token sequence
+
+Input
+  Semantic Input: '1X+60'(4)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [undsechzig,vier]
+
+Interface Preparation
+  Tokens after Normalization: [undsechzig,vier]
+
+Parsing Stage
+  Parsing Status: parse_fail
+  Recovered Semantic Output: none
+--------------------------------------------------
+Case ID: 31
+Validation Result: Semantic Roundtrip Mismatch
+Failure Stage: Semantic Comparison
+Diagnostic Reason: Parsed semantics differed from the original semantic input: expected '1X+60'(6) but got plus60(6)
+
+Input
+  Semantic Input: '1X+60'(6)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [sechs,undsechzig]
+
+Interface Preparation
+  Tokens after Normalization: [sechs,undsechzig]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: plus60(6)
+--------------------------------------------------
+Case ID: 32
+Validation Result: Semantic Roundtrip Mismatch
+Failure Stage: Semantic Comparison
+Diagnostic Reason: Parsed semantics differed from the original semantic input: expected '1X+60'(7) but got plus60(7)
+
+Input
+  Semantic Input: '1X+60'(7)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [sieben,undsechzig]
+
+Interface Preparation
+  Tokens after Normalization: [sieben,undsechzig]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: plus60(7)
+--------------------------------------------------
+Case ID: 33
+Validation Result: Parsing Failed
+Failure Stage: Parsing
+Diagnostic Reason: Parser could not derive a valid parse for the token sequence
+
+Input
+  Semantic Input: '1X+60'(8)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [undsechzig,acht]
+
+Interface Preparation
+  Tokens after Normalization: [undsechzig,acht]
+
+Parsing Stage
+  Parsing Status: parse_fail
+  Recovered Semantic Output: none
+--------------------------------------------------
+Case ID: 34
+Validation Result: Parsing Failed
+Failure Stage: Parsing
+Diagnostic Reason: Parser could not derive a valid parse for the token sequence
+
+Input
+  Semantic Input: '1X+70'(1)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [undsiebzig,eins]
+
+Interface Preparation
+  Tokens after Normalization: [undsiebzig,eins]
+
+Parsing Stage
+  Parsing Status: parse_fail
+  Recovered Semantic Output: none
+--------------------------------------------------
+Case ID: 35
+Validation Result: Semantic Roundtrip Mismatch
+Failure Stage: Semantic Comparison
+Diagnostic Reason: Parsed semantics differed from the original semantic input: expected '1X+70'(2) but got plus70(2)
+
+Input
+  Semantic Input: '1X+70'(2)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [zwei,undsiebzig]
+
+Interface Preparation
+  Tokens after Normalization: [zwei,undsiebzig]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: plus70(2)
+--------------------------------------------------
+Case ID: 36
+Validation Result: Parsing Failed
+Failure Stage: Parsing
+Diagnostic Reason: Parser could not derive a valid parse for the token sequence
+
+Input
+  Semantic Input: '1X+70'(4)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [undsiebzig,vier]
+
+Interface Preparation
+  Tokens after Normalization: [undsiebzig,vier]
+
+Parsing Stage
+  Parsing Status: parse_fail
+  Recovered Semantic Output: none
+--------------------------------------------------
+Case ID: 37
+Validation Result: Semantic Roundtrip Mismatch
+Failure Stage: Semantic Comparison
+Diagnostic Reason: Parsed semantics differed from the original semantic input: expected '1X+70'(6) but got plus70(6)
+
+Input
+  Semantic Input: '1X+70'(6)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [sechs,undsiebzig]
+
+Interface Preparation
+  Tokens after Normalization: [sechs,undsiebzig]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: plus70(6)
+--------------------------------------------------
+Case ID: 38
+Validation Result: Semantic Roundtrip Mismatch
+Failure Stage: Semantic Comparison
+Diagnostic Reason: Parsed semantics differed from the original semantic input: expected '1X+70'(7) but got plus70(7)
+
+Input
+  Semantic Input: '1X+70'(7)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [sieben,undsiebzig]
+
+Interface Preparation
+  Tokens after Normalization: [sieben,undsiebzig]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: plus70(7)
+--------------------------------------------------
+Case ID: 39
+Validation Result: Parsing Failed
+Failure Stage: Parsing
+Diagnostic Reason: Parser could not derive a valid parse for the token sequence
+
+Input
+  Semantic Input: '1X+70'(8)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [undsiebzig,acht]
+
+Interface Preparation
+  Tokens after Normalization: [undsiebzig,acht]
+
+Parsing Stage
+  Parsing Status: parse_fail
+  Recovered Semantic Output: none
+--------------------------------------------------
+Case ID: 40
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Semantic Input: 100
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [hundert]
+
+Interface Preparation
+  Tokens after Normalization: [hundert]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: 100
+--------------------------------------------------
+Case ID: 41
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Semantic Input: '100X'(2)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [zwei,hundert]
+
+Interface Preparation
+  Tokens after Normalization: [zwei,hundert]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: '100X'(2)
+--------------------------------------------------
+Case ID: 42
+Validation Result: Semantic Roundtrip Mismatch
+Failure Stage: Semantic Comparison
+Diagnostic Reason: Parsed semantics differed from the original semantic input: expected '100X'(3) but got '1X+100'(3)
+
+Input
+  Semantic Input: '100X'(3)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [hundert,drei]
+
+Interface Preparation
+  Tokens after Normalization: [hundert,drei]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: '1X+100'(3)
+--------------------------------------------------
+Case ID: 44
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Semantic Input: '1X+100'(20)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [hundert,zwanzig]
+
+Interface Preparation
+  Tokens after Normalization: [hundert,zwanzig]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: '1X+100'(20)
+--------------------------------------------------
+Case ID: 45
+Validation Result: Generation Timed Out
+Failure Stage: Generation
+Diagnostic Reason: Generation exceeded the time limit for this test case
+
+Input
+  Semantic Input: '1X+100'(30)
+
+Generation Stage
+  Generation Status: generation_timeout
+  Generated Tokens: []
+
+Interface Preparation
+  Tokens after Normalization: []
+
+Parsing Stage
+  Parsing Status: parse_skipped_empty_tokens
+  Recovered Semantic Output: none
+--------------------------------------------------
+Case ID: 46
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Semantic Input: '1X+100'(60)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [hundert,sechzig]
+
+Interface Preparation
+  Tokens after Normalization: [hundert,sechzig]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: '1X+100'(60)
+--------------------------------------------------
+Case ID: 47
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Semantic Input: '1X+100'(70)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [hundert,siebzig]
+
+Interface Preparation
+  Tokens after Normalization: [hundert,siebzig]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: '1X+100'(70)
+--------------------------------------------------
+Case ID: 48
+Validation Result: Generation Produced No Surface Form
+Failure Stage: Generation
+Diagnostic Reason: Generator returned an empty token yield
+
+Input
+  Semantic Input: '1X+40'(4)
+
+Generation Stage
+  Generation Status: gen_empty_yield
+  Generated Tokens: []
+
+Interface Preparation
+  Tokens after Normalization: []
+
+Parsing Stage
+  Parsing Status: parse_skipped_empty_tokens
+  Recovered Semantic Output: none
+--------------------------------------------------
+Case ID: 49
+Validation Result: Generation Produced No Surface Form
+Failure Stage: Generation
+Diagnostic Reason: Generator returned an empty token yield
+
+Input
+  Semantic Input: '1X+50'(6)
+
+Generation Stage
+  Generation Status: gen_empty_yield
+  Generated Tokens: []
+
+Interface Preparation
+  Tokens after Normalization: []
+
+Parsing Stage
+  Parsing Status: parse_skipped_empty_tokens
+  Recovered Semantic Output: none
+--------------------------------------------------
+Case ID: 50
+Validation Result: Generation Produced No Surface Form
+Failure Stage: Generation
+Diagnostic Reason: Generator returned an empty token yield
+
+Input
+  Semantic Input: '1X+80'(8)
+
+Generation Stage
+  Generation Status: gen_empty_yield
+  Generated Tokens: []
+
+Interface Preparation
+  Tokens after Normalization: []
+
+Parsing Stage
+  Parsing Status: parse_skipped_empty_tokens
+  Recovered Semantic Output: none
+--------------------------------------------------
+Case ID: 51
+Validation Result: Generation Produced No Surface Form
+Failure Stage: Generation
+Diagnostic Reason: Generator returned an empty token yield
+
+Input
+  Semantic Input: 'UNKNOWN_SEM'(4)
+
+Generation Stage
+  Generation Status: gen_empty_yield
+  Generated Tokens: []
+
+Interface Preparation
+  Tokens after Normalization: []
+
+Parsing Stage
+  Parsing Status: parse_skipped_empty_tokens
+  Recovered Semantic Output: none
+--------------------------------------------------
+
+================ Validation Summary ================
+Total Cases: 47
+Validation Passed: 21
+Generation Timed Out: 1
+Generation Failed: 0
+No Surface Form Generated: 7
+Parsing Skipped: 0
+Parsing Timed Out: 0
+Parsing Failed: 11
+Semantic Roundtrip Mismatch: 7
+
+================ Failure Stage Summary ==============
+No Failure Stage: 21
+Generation: 8
+Parsing: 11
+Semantic Comparison: 7

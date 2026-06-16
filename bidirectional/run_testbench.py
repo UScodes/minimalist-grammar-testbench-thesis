@@ -84,6 +84,116 @@ MODE_ALIASES = {
 
 
 # =============================================================================
+# Terminal localization
+# =============================================================================
+#
+# The terminal language is selected through:
+#
+#     report_language(en).
+#     report_language(de).
+#
+# in config/testbench_profile.pl.
+#
+# This only affects human-facing terminal messages. Internal identifiers,
+# runner script names, file paths, labels, and generated Prolog data remain
+# unchanged.
+
+SUPPORTED_LANGUAGES = {"en", "de"}
+
+MESSAGES = {
+    "en": {
+        "active_profile_header": "=== Using active testbench profile ===",
+        "profile_file": "Profile file",
+        "active_profile": "Active profile",
+        "generator_lexicon": "Generator lexicon",
+        "parser_lexicon": "Parser lexicon",
+        "semantic_cases_file": "Semantic cases file",
+        "token_cases_file": "Token cases file",
+        "token_normalization": "Token normalization",
+        "normalization_style": "Normalization style",
+        "normalization_rule_set": "Normalization rule set",
+        "report_language": "Report language",
+        "adapter_timeout": "Adapter timeout",
+        "seconds": "seconds",
+        "cleaning": "=== Cleaning previous generated outputs and protocol log ===",
+        "running": "Running",
+        "ok": "OK",
+        "log": "log",
+        "no_outputs": "No outputs found to archive.",
+        "archived_outputs": "Archived outputs to",
+        "diagnostic_preview": "=== Diagnostic Report Preview ===",
+        "report_missing": "Report file was not created",
+        "done": "=== Done ===",
+        "error": "ERROR",
+        "missing_profile": "Missing profile file",
+        "missing_semantic_cases": "Missing semantic case file",
+        "missing_token_cases": "Missing token case file",
+        "missing_semantic_fact": "Could not read semantic_cases_file/1 from testbench_profile.pl",
+        "missing_token_fact": "Could not read token_cases_file/1 from testbench_profile.pl",
+        "single_gen_requires_semantic": "--mode single_gen requires --semantic",
+        "single_parse_requires_tokens": "--mode single_parse requires --tokens",
+        "prolog_failed": "failed with exit code",
+        "see_log": "See log",
+    },
+    "de": {
+        "active_profile_header": "=== Aktives Testbench-Profil ===",
+        "profile_file": "Profildatei",
+        "active_profile": "Aktives Profil",
+        "generator_lexicon": "Generator-Lexikon",
+        "parser_lexicon": "Parser-Lexikon",
+        "semantic_cases_file": "Semantische Testfälle",
+        "token_cases_file": "Token-Testfälle",
+        "token_normalization": "Token-Normalisierung",
+        "normalization_style": "Normalisierungsstil",
+        "normalization_rule_set": "Normalisierungsregelsatz",
+        "report_language": "Berichtssprache",
+        "adapter_timeout": "Adapter-Zeitlimit",
+        "seconds": "Sekunden",
+        "cleaning": "=== Vorherige Ausgaben und Protokolllog werden bereinigt ===",
+        "running": "Starte",
+        "ok": "OK",
+        "log": "Log",
+        "no_outputs": "Keine Ausgaben zum Archivieren gefunden.",
+        "archived_outputs": "Ausgaben archiviert unter",
+        "diagnostic_preview": "=== Vorschau des Diagnoseberichts ===",
+        "report_missing": "Berichtsdatei wurde nicht erstellt",
+        "done": "=== Fertig ===",
+        "error": "FEHLER",
+        "missing_profile": "Profildatei fehlt",
+        "missing_semantic_cases": "Datei mit semantischen Testfällen fehlt",
+        "missing_token_cases": "Datei mit Token-Testfällen fehlt",
+        "missing_semantic_fact": "semantic_cases_file/1 konnte nicht aus testbench_profile.pl gelesen werden",
+        "missing_token_fact": "token_cases_file/1 konnte nicht aus testbench_profile.pl gelesen werden",
+        "single_gen_requires_semantic": "--mode single_gen benötigt --semantic",
+        "single_parse_requires_tokens": "--mode single_parse benötigt --tokens",
+        "prolog_failed": "ist mit Exit-Code fehlgeschlagen",
+        "see_log": "Siehe Log",
+    },
+}
+
+
+def normalize_language(language: str | None) -> str:
+    """Return a supported report language, falling back to English."""
+    if language is None:
+        return "en"
+
+    language = language.strip().lower()
+
+    if language in SUPPORTED_LANGUAGES:
+        return language
+
+    return "en"
+
+
+def msg(language: str, key: str) -> str:
+    """Return a localized terminal message."""
+    return MESSAGES.get(language, MESSAGES["en"]).get(
+        key,
+        MESSAGES["en"].get(key, key),
+    )
+
+
+# =============================================================================
 # Directory and cleanup helpers
 # =============================================================================
 
@@ -101,6 +211,7 @@ def cleanup_outputs() -> None:
     for file in ALL_OUTPUTS:
         if file.exists():
             file.unlink()
+
 
 def cleanup_protocol_log() -> None:
     """
@@ -122,6 +233,7 @@ def cleanup_protocol_log() -> None:
 def run_prolog(
     script_name: str,
     log_name: str,
+    language: str,
     prolog_args: list[str] | None = None,
 ) -> None:
     """
@@ -145,7 +257,7 @@ def run_prolog(
     if prolog_args:
         cmd.extend(["--", *prolog_args])
 
-    print(f"\n>>> Running {script_name}")
+    print(f"\n>>> {msg(language, 'running')} {script_name}")
 
     with log_path.open("w", encoding="utf-8") as logf:
         proc = subprocess.run(
@@ -158,18 +270,18 @@ def run_prolog(
 
     if proc.returncode != 0:
         raise RuntimeError(
-            f"{script_name} failed with exit code {proc.returncode}. "
-            f"See log: {log_path}"
+            f"{script_name} {msg(language, 'prolog_failed')} {proc.returncode}. "
+            f"{msg(language, 'see_log')}: {log_path}"
         )
 
-    print(f"OK: {script_name} (log: {log_path})")
+    print(f"{msg(language, 'ok')}: {script_name} ({msg(language, 'log')}: {log_path})")
 
 
 # =============================================================================
 # Archiving and report preview
 # =============================================================================
 
-def archive_outputs(label: str | None) -> None:
+def archive_outputs(label: str | None, language: str) -> None:
     """
     Copy generated outputs into reports/<label>/.
 
@@ -178,7 +290,7 @@ def archive_outputs(label: str | None) -> None:
     """
     existing = [p for p in ALL_OUTPUTS if p.exists()]
     if not existing:
-        print("No outputs found to archive.")
+        print(msg(language, "no_outputs"))
         return
 
     target_dir = REPORTS_DIR / (label or "latest")
@@ -191,10 +303,10 @@ def archive_outputs(label: str | None) -> None:
     for src in existing:
         shutil.copy2(src, target_dir / src.name)
 
-    print(f"\nArchived outputs to: {target_dir}")
+    print(f"\n{msg(language, 'archived_outputs')}: {target_dir}")
 
 
-def print_report_file(report_path: Path) -> None:
+def print_report_file(report_path: Path, language: str) -> None:
     """
     Print a short generated report to the terminal.
 
@@ -202,10 +314,10 @@ def print_report_file(report_path: Path) -> None:
     small enough to be useful directly in the console.
     """
     if not report_path.exists():
-        print(f"\nReport file was not created: {report_path}")
+        print(f"\n{msg(language, 'report_missing')}: {report_path}")
         return
 
-    print("\n=== Diagnostic Report Preview ===")
+    print(f"\n{msg(language, 'diagnostic_preview')}")
     print(report_path.read_text(encoding="utf-8"))
 
 
@@ -217,16 +329,40 @@ def extract_profile_value(profile_text: str, predicate: str) -> str | None:
     """
     Extract a simple one-argument Prolog fact from testbench_profile.pl.
 
+    This skips:
+      - single-line comments starting with %
+      - block comments between /* and */
+
     Example:
         profile_name('english_numbers_profile').
-
-    This helper is intentionally simple. It is only used to print a readable
-    run summary and to check that required case files exist.
     """
     needle = f"{predicate}("
+    in_block_comment = False
 
     for line in profile_text.splitlines():
         stripped = line.strip()
+
+        if not stripped:
+            continue
+
+        # Handle block comments.
+        if "/*" in stripped:
+            in_block_comment = True
+
+            # If comment starts and ends on the same line, ignore that line only.
+            if "*/" in stripped and stripped.index("*/") > stripped.index("/*"):
+                in_block_comment = False
+
+            continue
+
+        if in_block_comment:
+            if "*/" in stripped:
+                in_block_comment = False
+            continue
+
+        # Skip single-line comments.
+        if stripped.startswith("%"):
+            continue
 
         if not stripped.startswith(needle):
             continue
@@ -240,22 +376,29 @@ def extract_profile_value(profile_text: str, predicate: str) -> str | None:
 
     return None
 
+def read_profile_text() -> str:
+    """Read the active profile file."""
+    if not PROFILE_FILE.exists():
+        raise FileNotFoundError(f"{msg('en', 'missing_profile')}: {PROFILE_FILE}")
 
-def print_existing_case_info() -> None:
+    return PROFILE_FILE.read_text(encoding="utf-8")
+
+
+def read_report_language(profile_text: str) -> str:
+    """Read report_language/1 from the active profile, defaulting to English."""
+    return normalize_language(extract_profile_value(profile_text, "report_language"))
+
+
+def print_existing_case_info(profile_text: str, language: str) -> None:
     """
     Print the active experiment profile summary before running the testbench.
 
     This makes each command-line run easier to verify because the user can see
-    which profile, lexicons, test case files, normalization settings, and timeout
-    value are active.
+    which profile, lexicons, test case files, normalization settings, report
+    language, and timeout value are active.
     """
-    print("=== Using active testbench profile ===")
-    print(f"Profile file: {PROFILE_FILE}")
-
-    if not PROFILE_FILE.exists():
-        raise FileNotFoundError(f"Missing profile file: {PROFILE_FILE}")
-
-    profile_text = PROFILE_FILE.read_text(encoding="utf-8")
+    print(msg(language, "active_profile_header"))
+    print(f"{msg(language, 'profile_file')}: {PROFILE_FILE}")
 
     profile_name = extract_profile_value(profile_text, "profile_name")
     semantic_cases = extract_profile_value(profile_text, "semantic_cases_file")
@@ -265,31 +408,34 @@ def print_existing_case_info() -> None:
 
     normalization_enabled = extract_profile_value(profile_text, "smoothing_enabled")
     normalization_style = extract_profile_value(profile_text, "smoothing_style")
+    normalization_rule_set = extract_profile_value(profile_text, "smoothing_rule_set")
     adapter_timeout = extract_profile_value(profile_text, "adapter_timeout_seconds")
 
-    print(f"Active profile:      {profile_name}")
-    print(f"Generator lexicon:   {gen_lexicon}")
-    print(f"Parser lexicon:      {parser_lexicon}")
-    print(f"Semantic cases file: {semantic_cases}")
-    print(f"Token cases file:    {token_cases}")
-    print(f"Token normalization: {normalization_enabled}")
-    print(f"Normalization style: {normalization_style}")
-    print(f"Adapter timeout:     {adapter_timeout} seconds")
+    print(f"{msg(language, 'active_profile')}:          {profile_name}")
+    print(f"{msg(language, 'generator_lexicon')}:       {gen_lexicon}")
+    print(f"{msg(language, 'parser_lexicon')}:          {parser_lexicon}")
+    print(f"{msg(language, 'semantic_cases_file')}:     {semantic_cases}")
+    print(f"{msg(language, 'token_cases_file')}:        {token_cases}")
+    print(f"{msg(language, 'token_normalization')}:     {normalization_enabled}")
+    print(f"{msg(language, 'normalization_style')}:     {normalization_style}")
+    print(f"{msg(language, 'normalization_rule_set')}: {normalization_rule_set}")
+    print(f"{msg(language, 'report_language')}:         {language}")
+    print(f"{msg(language, 'adapter_timeout')}:        {adapter_timeout} {msg(language, 'seconds')}")
 
     if semantic_cases is None:
-        raise RuntimeError("Could not read semantic_cases_file/1 from testbench_profile.pl")
+        raise RuntimeError(msg(language, "missing_semantic_fact"))
 
     if token_cases is None:
-        raise RuntimeError("Could not read token_cases_file/1 from testbench_profile.pl")
+        raise RuntimeError(msg(language, "missing_token_fact"))
 
     semantic_cases_path = (RUNNERS_DIR / semantic_cases).resolve()
     token_cases_path = (RUNNERS_DIR / token_cases).resolve()
 
     if not semantic_cases_path.exists():
-        raise FileNotFoundError(f"Missing semantic case file: {semantic_cases_path}")
+        raise FileNotFoundError(f"{msg(language, 'missing_semantic_cases')}: {semantic_cases_path}")
 
     if not token_cases_path.exists():
-        raise FileNotFoundError(f"Missing token case file: {token_cases_path}")
+        raise FileNotFoundError(f"{msg(language, 'missing_token_cases')}: {token_cases_path}")
 
 
 # =============================================================================
@@ -359,57 +505,64 @@ def main(argv: Iterable[str]) -> int:
     mode = normalize_mode(args.mode)
 
     ensure_dirs()
-    print_existing_case_info()
 
-    print("\n=== Cleaning previous generated outputs and protocol log ===")
+    profile_text = read_profile_text()
+    language = read_report_language(profile_text)
+   
+
+    print_existing_case_info(profile_text, language)
+
+    print(f"\n{msg(language, 'cleaning')}")
     cleanup_outputs()
     cleanup_protocol_log()
 
     if mode == "single_gen":
         if args.semantic is None:
-            raise RuntimeError("--mode single_gen requires --semantic")
+            raise RuntimeError(msg(language, "single_gen_requires_semantic"))
 
         run_prolog(
             "single_generate.pl",
             "single_generate.log",
+            language,
             [args.semantic],
         )
 
-        print_report_file(GENERATED_DIR / "single_generate_report.txt")
+        print_report_file(GENERATED_DIR / "single_generate_report.txt", language)
 
-        archive_outputs(args.label)
-        print("\n=== Done ===")
+        archive_outputs(args.label, language)
+        print(f"\n{msg(language, 'done')}")
         return 0
 
     if mode == "single_parse":
         if args.tokens is None:
-            raise RuntimeError("--mode single_parse requires --tokens")
+            raise RuntimeError(msg(language, "single_parse_requires_tokens"))
 
         run_prolog(
             "single_parse.pl",
             "single_parse.log",
+            language,
             [args.tokens],
         )
 
-        print_report_file(GENERATED_DIR / "single_parse_report.txt")
+        print_report_file(GENERATED_DIR / "single_parse_report.txt", language)
 
-        archive_outputs(args.label)
-        print("\n=== Done ===")
+        archive_outputs(args.label, language)
+        print(f"\n{msg(language, 'done')}")
         return 0
 
     if mode in ("gen_to_parse", "both"):
-        run_prolog("gen_to_parse_generate.pl", "gen_to_parse_generate.log")
-        run_prolog("gen_to_parse_parse.pl", "gen_to_parse_parse.log")
-        run_prolog("gen_to_parse_compare.pl", "gen_to_parse_compare.log")
+        run_prolog("gen_to_parse_generate.pl", "gen_to_parse_generate.log", language)
+        run_prolog("gen_to_parse_parse.pl", "gen_to_parse_parse.log", language)
+        run_prolog("gen_to_parse_compare.pl", "gen_to_parse_compare.log", language)
 
     if mode in ("parse_to_gen", "both"):
-        run_prolog("parse_to_gen_parse.pl", "parse_to_gen_parse.log")
-        run_prolog("parse_to_gen_generate.pl", "parse_to_gen_generate.log")
-        run_prolog("parse_to_gen_compare.pl", "parse_to_gen_compare.log")
+        run_prolog("parse_to_gen_parse.pl", "parse_to_gen_parse.log", language)
+        run_prolog("parse_to_gen_generate.pl", "parse_to_gen_generate.log", language)
+        run_prolog("parse_to_gen_compare.pl", "parse_to_gen_compare.log", language)
 
-    archive_outputs(args.label)
+    archive_outputs(args.label, language)
 
-    print("\n=== Done ===")
+    print(f"\n{msg(language, 'done')}")
     return 0
 
 
@@ -417,5 +570,13 @@ if __name__ == "__main__":
     try:
         raise SystemExit(main(sys.argv[1:]))
     except Exception as exc:
-        print(f"ERROR: {exc}", file=sys.stderr)
+        profile_language = "en"
+
+        try:
+            if PROFILE_FILE.exists():
+                profile_language = read_report_language(PROFILE_FILE.read_text(encoding="utf-8"))
+        except Exception:
+            profile_language = "en"
+
+        print(f"{msg(profile_language, 'error')}: {exc}", file=sys.stderr)
         raise

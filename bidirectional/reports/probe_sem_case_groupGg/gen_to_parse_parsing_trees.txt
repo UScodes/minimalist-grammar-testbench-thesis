@@ -1,0 +1,99 @@
+==================================================
+CASE ID: 1
+SEMANTIC INPUT: '10X'(4)
+GENERATION STATUS: ok
+GENERATED TOKENS: [four,ty]
+PARSER INPUT TOKENS: [four,ty]
+PARSING STATUS: parse_fail
+RECOVERED SEMANTIC OUTPUT: none
+PARSING TREE:
+none
+
+==================================================
+CASE ID: 2
+SEMANTIC INPUT: '10X'(6)
+GENERATION STATUS: ok
+GENERATED TOKENS: [six,ty]
+PARSER INPUT TOKENS: [six,ty]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '10X'(6)
+PARSING TREE:
+[tree(_102488,empty,tree(_102130,li([ty],[=c1,+d,cfin]),li([six],[c1,-d])))]
+
+==================================================
+CASE ID: 3
+SEMANTIC INPUT: '10X'(7)
+GENERATION STATUS: ok
+GENERATED TOKENS: [seven,ty]
+PARSER INPUT TOKENS: [seven,ty]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '10X'(7)
+PARSING TREE:
+[tree(_103958,empty,tree(_103600,li([ty],[=c1,+d,cfin]),li([seven],[c1,-d])))]
+
+==================================================
+CASE ID: 4
+SEMANTIC INPUT: '0X+80'(8)
+GENERATION STATUS: ok
+GENERATED TOKENS: [eight,y]
+PARSER INPUT TOKENS: [eight,y]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '0X+80'(8)
+PARSING TREE:
+[tree(_103958,empty,tree(_103600,li([y],[=c1,+b,cfin]),li([eight],[c1,-b])))]
+
+==================================================
+CASE ID: 5
+SEMANTIC INPUT: '1X+40'(4)
+GENERATION STATUS: gen_empty_yield
+GENERATED TOKENS: []
+PARSER INPUT TOKENS: []
+PARSING STATUS: parse_skipped_empty_tokens
+RECOVERED SEMANTIC OUTPUT: none
+PARSING TREE:
+none
+
+==================================================
+CASE ID: 6
+SEMANTIC INPUT: '1X+60'(4)
+GENERATION STATUS: gen_empty_yield
+GENERATED TOKENS: []
+PARSER INPUT TOKENS: []
+PARSING STATUS: parse_skipped_empty_tokens
+RECOVERED SEMANTIC OUTPUT: none
+PARSING TREE:
+none
+
+==================================================
+CASE ID: 7
+SEMANTIC INPUT: '1X+70'(4)
+GENERATION STATUS: gen_empty_yield
+GENERATED TOKENS: []
+PARSER INPUT TOKENS: []
+PARSING STATUS: parse_skipped_empty_tokens
+RECOVERED SEMANTIC OUTPUT: none
+PARSING TREE:
+none
+
+==================================================
+CASE ID: 8
+SEMANTIC INPUT: '1X+80'(4)
+GENERATION STATUS: gen_empty_yield
+GENERATED TOKENS: []
+PARSER INPUT TOKENS: []
+PARSING STATUS: parse_skipped_empty_tokens
+RECOVERED SEMANTIC OUTPUT: none
+PARSING TREE:
+none
+
+==================================================
+CASE ID: 9
+SEMANTIC INPUT: '1X+90'(4)
+GENERATION STATUS: gen_empty_yield
+GENERATED TOKENS: []
+PARSER INPUT TOKENS: []
+PARSING STATUS: parse_skipped_empty_tokens
+RECOVERED SEMANTIC OUTPUT: none
+PARSING TREE:
+none
+

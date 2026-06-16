@@ -1,0 +1,81 @@
+==================================================
+CASE ID: 1
+SEMANTIC INPUT: 1
+GENERATION STATUS: ok
+GENERATED TOKENS: [one]
+GENERATED SENTENCE: one
+GENERATION TREE:
+li([one],[c1],1)
+
+==================================================
+CASE ID: 2
+SEMANTIC INPUT: 2
+GENERATION STATUS: ok
+GENERATED TOKENS: [two]
+GENERATED SENTENCE: two
+GENERATION TREE:
+li([two],[c1],2)
+
+==================================================
+CASE ID: 3
+SEMANTIC INPUT: 3
+GENERATION STATUS: ok
+GENERATED TOKENS: [three]
+GENERATED SENTENCE: three
+GENERATION TREE:
+li([three],[c1],3)
+
+==================================================
+CASE ID: 4
+SEMANTIC INPUT: 4
+GENERATION STATUS: ok
+GENERATED TOKENS: [four]
+GENERATED SENTENCE: four
+GENERATION TREE:
+li([four],[c1,-tee],4)
+
+==================================================
+CASE ID: 5
+SEMANTIC INPUT: 5
+GENERATION STATUS: ok
+GENERATED TOKENS: [five]
+GENERATED SENTENCE: five
+GENERATION TREE:
+li([five],[c1],5)
+
+==================================================
+CASE ID: 6
+SEMANTIC INPUT: 6
+GENERATION STATUS: ok
+GENERATED TOKENS: [six]
+GENERATED SENTENCE: six
+GENERATION TREE:
+li([six],[c1,-tee],6)
+
+==================================================
+CASE ID: 7
+SEMANTIC INPUT: 7
+GENERATION STATUS: ok
+GENERATED TOKENS: [seven]
+GENERATED SENTENCE: seven
+GENERATION TREE:
+li([seven],[c1,-tee],7)
+
+==================================================
+CASE ID: 8
+SEMANTIC INPUT: 8
+GENERATION STATUS: ok
+GENERATED TOKENS: [eight]
+GENERATED SENTENCE: eight
+GENERATION TREE:
+li([eight],[c1,-ee],8)
+
+==================================================
+CASE ID: 9
+SEMANTIC INPUT: 9
+GENERATION STATUS: ok
+GENERATED TOKENS: [nine]
+GENERATED SENTENCE: nine
+GENERATION TREE:
+li([nine],[c1,-tee],9)
+

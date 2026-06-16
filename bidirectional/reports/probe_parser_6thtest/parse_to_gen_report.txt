@@ -1,0 +1,186 @@
+==================================================
+Validation Report: Parsing-to-Generation
+==================================================
+Profile: english_numbers_profile
+Pipeline: Parsing -> Generation
+Parser Component: MG LC Parser
+Generator Component: MG Generator
+
+Parser Load File: ../../MG-LC-Parser-with-Semantic-main/load.pl
+Parser Adapter File: ../adapters/parser_adapter.pl
+Generator Main File: ../../SemanticGenerator/MG-Generator/main.pl
+Generator Adapter File: ../adapters/generator_adapter.pl
+
+Parser Lexicon: English_trans_pruned
+Generator Lexicon: numbers_Gen
+Parser Lexicon File: ../../MG-LC-Parser-with-Semantic-main/grammars/English_trans_pruned.pl
+Generator Lexicon File: ../../SemanticGenerator/MG-Generator/grammars/numbers_Gen.pl
+Token Test Case File: ../cases/token_cases_full.pl
+
+Token Normalization Enabled: Yes
+Token Normalization Style: underscore
+Adapter Timeout: 5 seconds
+
+Parsing-stage Output File: ../generated/parse_to_gen_parse_out.pl
+Generation-stage Output File: ../generated/parse_to_gen_gen_out.pl
+Parsing Tree Report: ../generated/parse_to_gen_parsing_trees.txt
+Generation Tree Report: ../generated/parse_to_gen_generation_trees.txt
+==================================================
+
+Case ID: 1
+Validation Result: Parsing Failed
+Failure Stage: Parsing
+Diagnostic Reason: Parser could not derive a valid parse for the token sequence
+
+Input
+  Token Input: [one,hundred]
+
+Parsing Stage
+  Parsing Status: parse_fail
+  Recovered Semantic Output: none
+
+Generation Stage
+  Generation Status: generation_not_attempted
+  Generated Tokens: []
+  Generated Sentence: ''
+
+Interface Preparation
+Tokens after Normalization: []
+--------------------------------------------------
+Case ID: 2
+Validation Result: Parsing Failed
+Failure Stage: Parsing
+Diagnostic Reason: Parser could not derive a valid parse for the token sequence
+
+Input
+  Token Input: [two,hundred]
+
+Parsing Stage
+  Parsing Status: parse_fail
+  Recovered Semantic Output: none
+
+Generation Stage
+  Generation Status: generation_not_attempted
+  Generated Tokens: []
+  Generated Sentence: ''
+
+Interface Preparation
+Tokens after Normalization: []
+--------------------------------------------------
+Case ID: 3
+Validation Result: Parsing Failed
+Failure Stage: Parsing
+Diagnostic Reason: Parser could not derive a valid parse for the token sequence
+
+Input
+  Token Input: [three,hundred]
+
+Parsing Stage
+  Parsing Status: parse_fail
+  Recovered Semantic Output: none
+
+Generation Stage
+  Generation Status: generation_not_attempted
+  Generated Tokens: []
+  Generated Sentence: ''
+
+Interface Preparation
+Tokens after Normalization: []
+--------------------------------------------------
+Case ID: 4
+Validation Result: Token Roundtrip Mismatch
+Failure Stage: Token Comparison
+Diagnostic Reason: Regenerated tokens differed from the original token input: expected [one,hundred_and,twenty] but got [one,hundred_and,twenty_]
+
+Input
+  Token Input: [one,hundred_and,twenty]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: '1X+100Y'(20,1)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [one,hundred_and,twenty]
+  Generated Sentence: onehundred_andtwenty
+
+Interface Preparation
+Tokens after Normalization: [one,hundred_and,twenty_]
+--------------------------------------------------
+Case ID: 5
+Validation Result: Token Roundtrip Mismatch
+Failure Stage: Token Comparison
+Diagnostic Reason: Regenerated tokens differed from the original token input: expected [two,hundred_and,thirty] but got [two,hundred_and,thirty_]
+
+Input
+  Token Input: [two,hundred_and,thirty]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: '1X+100Y'(30,2)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [two,hundred_and,thirty]
+  Generated Sentence: twohundred_andthirty
+
+Interface Preparation
+Tokens after Normalization: [two,hundred_and,thirty_]
+--------------------------------------------------
+Case ID: 6
+Validation Result: Parsing Failed
+Failure Stage: Parsing
+Diagnostic Reason: Parser could not derive a valid parse for the token sequence
+
+Input
+  Token Input: [three,hundred_and,twenty_,four]
+
+Parsing Stage
+  Parsing Status: parse_fail
+  Recovered Semantic Output: none
+
+Generation Stage
+  Generation Status: generation_not_attempted
+  Generated Tokens: []
+  Generated Sentence: ''
+
+Interface Preparation
+Tokens after Normalization: []
+--------------------------------------------------
+Case ID: 7
+Validation Result: Parsing Failed
+Failure Stage: Parsing
+Diagnostic Reason: Parser could not derive a valid parse for the token sequence
+
+Input
+  Token Input: [five,hundred_and,thirty_,six]
+
+Parsing Stage
+  Parsing Status: parse_fail
+  Recovered Semantic Output: none
+
+Generation Stage
+  Generation Status: generation_not_attempted
+  Generated Tokens: []
+  Generated Sentence: ''
+
+Interface Preparation
+Tokens after Normalization: []
+--------------------------------------------------
+
+================ Validation Summary ================
+Total Cases: 7
+Validation Passed: 0
+Generation Timed Out: 0
+Generation Failed: 0
+No Surface Form Generated: 0
+Parsing Skipped: 0
+Parsing Timed Out: 0
+Parsing Failed: 5
+Token Roundtrip Mismatch: 2
+
+================ Failure Stage Summary ==============
+No Failure Stage: 0
+Generation: 0
+Parsing: 5
+Token Comparison: 2

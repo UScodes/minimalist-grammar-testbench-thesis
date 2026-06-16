@@ -1,0 +1,226 @@
+==================================================
+Validation Report: Parsing-to-Generation
+==================================================
+Profile: english_numbers_profile
+Pipeline: Parsing -> Generation
+Parser Component: MG LC Parser
+Generator Component: MG Generator
+
+Parser Load File: ../../MG-LC-Parser-with-Semantic-main/load.pl
+Parser Adapter File: ../adapters/parser_adapter.pl
+Generator Main File: ../../SemanticGenerator/MG-Generator/main.pl
+Generator Adapter File: ../adapters/generator_adapter.pl
+
+Parser Lexicon: English_trans_pruned
+Generator Lexicon: numbers_Gen
+Parser Lexicon File: ../../MG-LC-Parser-with-Semantic-main/grammars/English_trans_pruned.pl
+Generator Lexicon File: ../../SemanticGenerator/MG-Generator/grammars/numbers_Gen.pl
+Token Test Case File: ../cases/token_cases_full.pl
+
+Token Normalization Enabled: Yes
+Token Normalization Style: underscore
+Adapter Timeout: 5 seconds
+
+Parsing-stage Output File: ../generated/parse_to_gen_parse_out.pl
+Generation-stage Output File: ../generated/parse_to_gen_gen_out.pl
+Parsing Tree Report: ../generated/parse_to_gen_parsing_trees.txt
+Generation Tree Report: ../generated/parse_to_gen_generation_trees.txt
+==================================================
+
+Case ID: 1
+Validation Result: Parsing Failed
+Failure Stage: Parsing
+Diagnostic Reason: Parser could not derive a valid parse for the token sequence
+
+Input
+  Token Input: [four,ty]
+
+Parsing Stage
+  Parsing Status: parse_fail
+  Recovered Semantic Output: none
+
+Generation Stage
+  Generation Status: generation_not_attempted
+  Generated Tokens: []
+  Generated Sentence: ''
+
+Interface Preparation
+Tokens after Normalization: []
+--------------------------------------------------
+Case ID: 2
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Token Input: [six,ty]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: '10X'(6)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [six,ty]
+  Generated Sentence: sixty
+
+Interface Preparation
+Tokens after Normalization: [six,ty]
+--------------------------------------------------
+Case ID: 3
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Token Input: [seven,ty]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: '10X'(7)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [seven,ty]
+  Generated Sentence: seventy
+
+Interface Preparation
+Tokens after Normalization: [seven,ty]
+--------------------------------------------------
+Case ID: 4
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Token Input: [nine,ty]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: '10X'(9)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [nine,ty]
+  Generated Sentence: ninety
+
+Interface Preparation
+Tokens after Normalization: [nine,ty]
+--------------------------------------------------
+Case ID: 5
+Validation Result: Validation Passed
+Failure Stage: None
+Diagnostic Reason: None
+
+Input
+  Token Input: [eight,y]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: '0X+80'(8)
+
+Generation Stage
+  Generation Status: ok
+  Generated Tokens: [eight,y]
+  Generated Sentence: eighty
+
+Interface Preparation
+Tokens after Normalization: [eight,y]
+--------------------------------------------------
+Case ID: 6
+Validation Result: Generation Timed Out
+Failure Stage: Generation
+Diagnostic Reason: Generation exceeded the time limit for this test case
+
+Input
+  Token Input: [six,ty_,four]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: '1X+10Y'(4,6)
+
+Generation Stage
+  Generation Status: generation_timeout
+  Generated Tokens: []
+  Generated Sentence: ''
+
+Interface Preparation
+Tokens after Normalization: []
+--------------------------------------------------
+Case ID: 7
+Validation Result: Generation Timed Out
+Failure Stage: Generation
+Diagnostic Reason: Generation exceeded the time limit for this test case
+
+Input
+  Token Input: [seven,ty_,four]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: '1X+10Y'(4,7)
+
+Generation Stage
+  Generation Status: generation_timeout
+  Generated Tokens: []
+  Generated Sentence: ''
+
+Interface Preparation
+Tokens after Normalization: []
+--------------------------------------------------
+Case ID: 8
+Validation Result: Generation Timed Out
+Failure Stage: Generation
+Diagnostic Reason: Generation exceeded the time limit for this test case
+
+Input
+  Token Input: [eight,y_,four]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: '1X+10Y'(4,8)
+
+Generation Stage
+  Generation Status: generation_timeout
+  Generated Tokens: []
+  Generated Sentence: ''
+
+Interface Preparation
+Tokens after Normalization: []
+--------------------------------------------------
+Case ID: 9
+Validation Result: Generation Timed Out
+Failure Stage: Generation
+Diagnostic Reason: Generation exceeded the time limit for this test case
+
+Input
+  Token Input: [nine,ty_,four]
+
+Parsing Stage
+  Parsing Status: ok
+  Recovered Semantic Output: '1X+10Y'(4,9)
+
+Generation Stage
+  Generation Status: generation_timeout
+  Generated Tokens: []
+  Generated Sentence: ''
+
+Interface Preparation
+Tokens after Normalization: []
+--------------------------------------------------
+
+================ Validation Summary ================
+Total Cases: 9
+Validation Passed: 4
+Generation Timed Out: 4
+Generation Failed: 0
+No Surface Form Generated: 0
+Parsing Skipped: 0
+Parsing Timed Out: 0
+Parsing Failed: 1
+Token Roundtrip Mismatch: 0
+
+================ Failure Stage Summary ==============
+No Failure Stage: 4
+Generation: 4
+Parsing: 1
+Token Comparison: 0

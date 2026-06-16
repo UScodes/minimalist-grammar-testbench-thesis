@@ -1,0 +1,81 @@
+==================================================
+CASE ID: 1
+SEMANTIC INPUT: '1X+30'(1)
+GENERATION STATUS: ok
+GENERATED TOKENS: [thirty,one]
+GENERATED SENTENCE: thirtyone
+GENERATION TREE:
+tree([([thirty,one],[c2],'1X+30'(1))],merge1,li([thirty],[=c1,c2],[_3996,_4028]>>(_4028='1X+30'(_3996))),li([one],[c1],1))
+
+==================================================
+CASE ID: 2
+SEMANTIC INPUT: '1X+30'(2)
+GENERATION STATUS: ok
+GENERATED TOKENS: [thirty,two]
+GENERATED SENTENCE: thirtytwo
+GENERATION TREE:
+tree([([thirty,two],[c2],'1X+30'(2))],merge1,li([thirty],[=c1,c2],[_9614,_9646]>>(_9646='1X+30'(_9614))),li([two],[c1],2))
+
+==================================================
+CASE ID: 3
+SEMANTIC INPUT: '1X+30'(3)
+GENERATION STATUS: ok
+GENERATED TOKENS: [thirty,three]
+GENERATED SENTENCE: thirtythree
+GENERATION TREE:
+tree([([thirty,three],[c2],'1X+30'(3))],merge1,li([thirty],[=c1,c2],[_9614,_9646]>>(_9646='1X+30'(_9614))),li([three],[c1],3))
+
+==================================================
+CASE ID: 4
+SEMANTIC INPUT: '1X+30'(4)
+GENERATION STATUS: ok
+GENERATED TOKENS: [thirty,four]
+GENERATED SENTENCE: thirtyfour
+GENERATION TREE:
+tree([([thirty],[c2],[_9614,_9646]>>(_9646='1X+30'(_9614))),([four],[-tee],4)],merge3,li([thirty],[=c1,c2],[_9614,_9646]>>(_9646='1X+30'(_9614))),li([four],[c1,-tee],4))
+
+==================================================
+CASE ID: 5
+SEMANTIC INPUT: '1X+30'(5)
+GENERATION STATUS: ok
+GENERATED TOKENS: [thirty,five]
+GENERATED SENTENCE: thirtyfive
+GENERATION TREE:
+tree([([thirty,five],[c2],'1X+30'(5))],merge1,li([thirty],[=c1,c2],[_9614,_9646]>>(_9646='1X+30'(_9614))),li([five],[c1],5))
+
+==================================================
+CASE ID: 6
+SEMANTIC INPUT: '1X+30'(6)
+GENERATION STATUS: ok
+GENERATED TOKENS: [thirty,six]
+GENERATED SENTENCE: thirtysix
+GENERATION TREE:
+tree([([thirty],[c2],[_9614,_9646]>>(_9646='1X+30'(_9614))),([six],[-tee],6)],merge3,li([thirty],[=c1,c2],[_9614,_9646]>>(_9646='1X+30'(_9614))),li([six],[c1,-tee],6))
+
+==================================================
+CASE ID: 7
+SEMANTIC INPUT: '1X+30'(7)
+GENERATION STATUS: ok
+GENERATED TOKENS: [thirty,seven]
+GENERATED SENTENCE: thirtyseven
+GENERATION TREE:
+tree([([thirty],[c2],[_9614,_9646]>>(_9646='1X+30'(_9614))),([seven],[-tee],7)],merge3,li([thirty],[=c1,c2],[_9614,_9646]>>(_9646='1X+30'(_9614))),li([seven],[c1,-tee],7))
+
+==================================================
+CASE ID: 8
+SEMANTIC INPUT: '1X+30'(8)
+GENERATION STATUS: ok
+GENERATED TOKENS: [thirty,eight]
+GENERATED SENTENCE: thirtyeight
+GENERATION TREE:
+tree([([thirty],[c2],[_9614,_9646]>>(_9646='1X+30'(_9614))),([eight],[-ee],8)],merge3,li([thirty],[=c1,c2],[_9614,_9646]>>(_9646='1X+30'(_9614))),li([eight],[c1,-ee],8))
+
+==================================================
+CASE ID: 9
+SEMANTIC INPUT: '1X+30'(9)
+GENERATION STATUS: ok
+GENERATED TOKENS: [thirty,nine]
+GENERATED SENTENCE: thirtynine
+GENERATION TREE:
+tree([([thirty],[c2],[_9614,_9646]>>(_9646='1X+30'(_9614))),([nine],[-tee],9)],merge3,li([thirty],[=c1,c2],[_9614,_9646]>>(_9646='1X+30'(_9614))),li([nine],[c1,-tee],9))
+

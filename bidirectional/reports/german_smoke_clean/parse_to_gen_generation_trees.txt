@@ -1,0 +1,300 @@
+==================================================
+CASE ID: 1
+TOKEN INPUT: [eins]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 1
+GENERATION STATUS: ok
+GENERATED TOKENS: [eins]
+COMPARISON TOKENS: [eins]
+GENERATED SENTENCE: eins
+GENERATION TREE:
+li([eins],[c1],1)
+
+==================================================
+CASE ID: 2
+TOKEN INPUT: [zwei]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 2
+GENERATION STATUS: ok
+GENERATED TOKENS: [zwei]
+COMPARISON TOKENS: [zwei]
+GENERATED SENTENCE: zwei
+GENERATION TREE:
+li([zwei],[c1,-b],2)
+
+==================================================
+CASE ID: 3
+TOKEN INPUT: [drei]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 3
+GENERATION STATUS: ok
+GENERATED TOKENS: [drei]
+COMPARISON TOKENS: [drei]
+GENERATED SENTENCE: drei
+GENERATION TREE:
+li([drei],[c1,-c,-b,-a],3)
+
+==================================================
+CASE ID: 4
+TOKEN INPUT: [vier]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 4
+GENERATION STATUS: ok
+GENERATED TOKENS: [vier]
+COMPARISON TOKENS: [vier]
+GENERATED SENTENCE: vier
+GENERATION TREE:
+li([vier],[c1,-b,-a,-d],4)
+
+==================================================
+CASE ID: 5
+TOKEN INPUT: [sechs]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 6
+GENERATION STATUS: ok
+GENERATED TOKENS: [sechs]
+COMPARISON TOKENS: [sechs]
+GENERATED SENTENCE: sechs
+GENERATION TREE:
+li([sechs],[c1,-b],6)
+
+==================================================
+CASE ID: 6
+TOKEN INPUT: [sieben]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 7
+GENERATION STATUS: ok
+GENERATED TOKENS: [sieben]
+COMPARISON TOKENS: [sieben]
+GENERATED SENTENCE: sieben
+GENERATION TREE:
+li([sieben],[c1,-b],7)
+
+==================================================
+CASE ID: 7
+TOKEN INPUT: [acht]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 8
+GENERATION STATUS: ok
+GENERATED TOKENS: [acht]
+COMPARISON TOKENS: [acht]
+GENERATED SENTENCE: acht
+GENERATION TREE:
+li([acht],[c1,-b,-a,-d],8)
+
+==================================================
+CASE ID: 8
+TOKEN INPUT: [neun]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 9
+GENERATION STATUS: ok
+GENERATED TOKENS: [neun]
+COMPARISON TOKENS: [neun]
+GENERATED SENTENCE: neun
+GENERATION TREE:
+li([neun],[c1,-b,-a,-d],9)
+
+==================================================
+CASE ID: 9
+TOKEN INPUT: [zehn]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 10
+GENERATION STATUS: ok
+GENERATED TOKENS: [zehn]
+COMPARISON TOKENS: [zehn]
+GENERATED SENTENCE: zehn
+GENERATION TREE:
+li([zehn],[c2,-s1],10)
+
+==================================================
+CASE ID: 10
+TOKEN INPUT: [elf]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 11
+GENERATION STATUS: ok
+GENERATED TOKENS: [elf]
+COMPARISON TOKENS: [elf]
+GENERATED SENTENCE: elf
+GENERATION TREE:
+li([elf],[c2,-s1],11)
+
+==================================================
+CASE ID: 11
+TOKEN INPUT: [sechzehn]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 16
+GENERATION STATUS: ok
+GENERATED TOKENS: [sechzehn]
+COMPARISON TOKENS: [sechzehn]
+GENERATED SENTENCE: sechzehn
+GENERATION TREE:
+li([sechzehn],[c2,-s1],16)
+
+==================================================
+CASE ID: 12
+TOKEN INPUT: [siebzehn]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 17
+GENERATION STATUS: ok
+GENERATED TOKENS: [siebzehn]
+COMPARISON TOKENS: [siebzehn]
+GENERATED SENTENCE: siebzehn
+GENERATION TREE:
+li([siebzehn],[c2,-s1],17)
+
+==================================================
+CASE ID: 13
+TOKEN INPUT: [zwanzig]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 20
+GENERATION STATUS: ok
+GENERATED TOKENS: [zwanzig]
+COMPARISON TOKENS: [zwanzig]
+GENERATED SENTENCE: zwanzig
+GENERATION TREE:
+li([zwanzig],[c2,-s1],20)
+
+==================================================
+CASE ID: 14
+TOKEN INPUT: [einundzwanzig]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 21
+GENERATION STATUS: ok
+GENERATED TOKENS: [einundzwanzig]
+COMPARISON TOKENS: [einundzwanzig]
+GENERATED SENTENCE: einundzwanzig
+GENERATION TREE:
+li([einundzwanzig],[c2,-s1],21)
+
+==================================================
+CASE ID: 15
+TOKEN INPUT: [sechzig]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 60
+GENERATION STATUS: ok
+GENERATED TOKENS: [sechzig]
+COMPARISON TOKENS: [sechzig]
+GENERATED SENTENCE: sechzig
+GENERATION TREE:
+li([sechzig],[c2,-s1],60)
+
+==================================================
+CASE ID: 16
+TOKEN INPUT: [einundsechzig]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 61
+GENERATION STATUS: ok
+GENERATED TOKENS: [einundsechzig]
+COMPARISON TOKENS: [einundsechzig]
+GENERATED SENTENCE: einundsechzig
+GENERATION TREE:
+li([einundsechzig],[c2,-s1],61)
+
+==================================================
+CASE ID: 17
+TOKEN INPUT: [siebzig]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 70
+GENERATION STATUS: ok
+GENERATED TOKENS: [siebzig]
+COMPARISON TOKENS: [siebzig]
+GENERATED SENTENCE: siebzig
+GENERATION TREE:
+li([siebzig],[c2,-s1],70)
+
+==================================================
+CASE ID: 18
+TOKEN INPUT: [einundsiebzig]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 71
+GENERATION STATUS: ok
+GENERATED TOKENS: [einundsiebzig]
+COMPARISON TOKENS: [einundsiebzig]
+GENERATED SENTENCE: einundsiebzig
+GENERATION TREE:
+li([einundsiebzig],[c2,-s1],71)
+
+==================================================
+CASE ID: 19
+TOKEN INPUT: [hundert]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: 100
+GENERATION STATUS: ok
+GENERATED TOKENS: [hundert]
+COMPARISON TOKENS: [hundert]
+GENERATED SENTENCE: hundert
+GENERATION TREE:
+li([hundert],[c3],100)
+
+==================================================
+CASE ID: 20
+TOKEN INPUT: [zwei,undzwanzig]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+20'(2)
+GENERATION STATUS: ok
+GENERATED TOKENS: [zwei,undzwanzig]
+COMPARISON TOKENS: [zwei,undzwanzig]
+GENERATED SENTENCE: zweiundzwanzig
+GENERATION TREE:
+tree([([zwei,undzwanzig],[c2,-s1],'1X+20'(2))],move1,empty,tree([([undzwanzig],[+b,c2,-s1],[_6642,_6674]>>(_6674='1X+20'(_6642))),([zwei],[-b],2)],merge3,li([undzwanzig],[=c1,+b,c2,-s1],[_6642,_6674]>>(_6674='1X+20'(_6642))),li([zwei],[c1,-b],2)))
+
+==================================================
+CASE ID: 21
+TOKEN INPUT: [sechs,undzwanzig]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+20'(6)
+GENERATION STATUS: ok
+GENERATED TOKENS: [sechs,undzwanzig]
+COMPARISON TOKENS: [sechs,undzwanzig]
+GENERATED SENTENCE: sechsundzwanzig
+GENERATION TREE:
+tree([([sechs,undzwanzig],[c2,-s1],'1X+20'(6))],move1,empty,tree([([undzwanzig],[+b,c2,-s1],[_12370,_12402]>>(_12402='1X+20'(_12370))),([sechs],[-b],6)],merge3,li([undzwanzig],[=c1,+b,c2,-s1],[_12370,_12402]>>(_12402='1X+20'(_12370))),li([sechs],[c1,-b],6)))
+
+==================================================
+CASE ID: 22
+TOKEN INPUT: [sieben,undzwanzig]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+20'(7)
+GENERATION STATUS: ok
+GENERATED TOKENS: [sieben,undzwanzig]
+COMPARISON TOKENS: [sieben,undzwanzig]
+GENERATED SENTENCE: siebenundzwanzig
+GENERATION TREE:
+tree([([sieben,undzwanzig],[c2,-s1],'1X+20'(7))],move1,empty,tree([([undzwanzig],[+b,c2,-s1],[_12370,_12402]>>(_12402='1X+20'(_12370))),([sieben],[-b],7)],merge3,li([undzwanzig],[=c1,+b,c2,-s1],[_12370,_12402]>>(_12402='1X+20'(_12370))),li([sieben],[c1,-b],7)))
+
+==================================================
+CASE ID: 23
+TOKEN INPUT: [zwei,hundert]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '100X'(2)
+GENERATION STATUS: ok
+GENERATED TOKENS: [zwei,hundert]
+COMPARISON TOKENS: [zwei,hundert]
+GENERATED SENTENCE: zweihundert
+GENERATION TREE:
+tree([([zwei,hundert],[c3],'100X'(2))],move1,empty,tree([([hundert],[+b,c3],[_12370,_12402]>>(_12402='100X'(_12370))),([zwei],[-b],2)],merge3,li([hundert],[=c1,+b,c3],[_12370,_12402]>>(_12402='100X'(_12370))),li([zwei],[c1,-b],2)))
+
+==================================================
+CASE ID: 24
+TOKEN INPUT: [sechs,hundert]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '100X'(6)
+GENERATION STATUS: ok
+GENERATED TOKENS: [sechs,hundert]
+COMPARISON TOKENS: [sechs,hundert]
+GENERATED SENTENCE: sechshundert
+GENERATION TREE:
+tree([([sechs,hundert],[c3],'100X'(6))],move1,empty,tree([([hundert],[+b,c3],[_12370,_12402]>>(_12402='100X'(_12370))),([sechs],[-b],6)],merge3,li([hundert],[=c1,+b,c3],[_12370,_12402]>>(_12402='100X'(_12370))),li([sechs],[c1,-b],6)))
+
+==================================================
+CASE ID: 25
+TOKEN INPUT: [sieben,hundert]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '100X'(7)
+GENERATION STATUS: ok
+GENERATED TOKENS: [sieben,hundert]
+COMPARISON TOKENS: [sieben,hundert]
+GENERATED SENTENCE: siebenhundert
+GENERATION TREE:
+tree([([sieben,hundert],[c3],'100X'(7))],move1,empty,tree([([hundert],[+b,c3],[_12370,_12402]>>(_12402='100X'(_12370))),([sieben],[-b],7)],merge3,li([hundert],[=c1,+b,c3],[_12370,_12402]>>(_12402='100X'(_12370))),li([sieben],[c1,-b],7)))
+

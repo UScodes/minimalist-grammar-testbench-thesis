@@ -1,0 +1,27 @@
+==================================================
+CASE ID: 1
+SEMANTIC INPUT: '1X+20'(4)
+GENERATION STATUS: ok
+GENERATED TOKENS: [twenty,four]
+GENERATED SENTENCE: twentyfour
+GENERATION TREE:
+tree([([twenty],[c2],[_3912,_3944]>>(_3944='1X+20'(_3912))),([four],[-tee],4)],merge3,li([twenty],[=c1,c2],[_3912,_3944]>>(_3944='1X+20'(_3912))),li([four],[c1,-tee],4))
+
+==================================================
+CASE ID: 2
+SEMANTIC INPUT: '1X+20'(15)
+GENERATION STATUS: generation_timeout
+GENERATED TOKENS: []
+GENERATED SENTENCE: ''
+GENERATION TREE:
+none
+
+==================================================
+CASE ID: 3
+SEMANTIC INPUT: 'UNKNOWN_SEM'(4)
+GENERATION STATUS: gen_empty_yield
+GENERATED TOKENS: []
+GENERATED SENTENCE: ''
+GENERATION TREE:
+li([],[=c1,cfin],['UNKNOWN_SEM'(_548),_580]>>(_580='UNKNOWN_SEM'(_548)))
+

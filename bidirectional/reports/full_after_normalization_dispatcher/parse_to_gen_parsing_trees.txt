@@ -1,0 +1,72 @@
+==================================================
+CASE ID: 1
+TOKEN INPUT: [four,ty]
+PARSING STATUS: parse_fail
+RECOVERED SEMANTIC OUTPUT: none
+PARSING TREE:
+none
+
+==================================================
+CASE ID: 2
+TOKEN INPUT: [six,ty]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '10X'(6)
+PARSING TREE:
+[tree(_110924,empty,tree(_110566,li([ty],[=c1,+d,cfin]),li([six],[c1,-d])))]
+
+==================================================
+CASE ID: 3
+TOKEN INPUT: [seven,ty]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '10X'(7)
+PARSING TREE:
+[tree(_112278,empty,tree(_111920,li([ty],[=c1,+d,cfin]),li([seven],[c1,-d])))]
+
+==================================================
+CASE ID: 4
+TOKEN INPUT: [nine,ty]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '10X'(9)
+PARSING TREE:
+[tree(_112278,empty,tree(_111920,li([ty],[=c1,+d,cfin]),li([nine],[c1,-d])))]
+
+==================================================
+CASE ID: 5
+TOKEN INPUT: [eight,y]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '0X+80'(8)
+PARSING TREE:
+[tree(_112278,empty,tree(_111920,li([y],[=c1,+b,cfin]),li([eight],[c1,-b])))]
+
+==================================================
+CASE ID: 6
+TOKEN INPUT: [six,ty_,four]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+10Y'(4,6)
+PARSING TREE:
+[tree(_111876,tree(_112194,li([ty_],[=c1,=c2d,cfin]),li([four],[c1])),li([six],[c2d]))]
+
+==================================================
+CASE ID: 7
+TOKEN INPUT: [seven,ty_,four]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+10Y'(4,7)
+PARSING TREE:
+[tree(_111876,tree(_112194,li([ty_],[=c1,=c2d,cfin]),li([four],[c1])),li([seven],[c2d]))]
+
+==================================================
+CASE ID: 8
+TOKEN INPUT: [eight,y_,four]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+10Y'(4,8)
+PARSING TREE:
+[tree(_111876,tree(_112194,li([y_],[=c1,=c2b,cfin]),li([four],[c1])),li([eight],[c2b]))]
+
+==================================================
+CASE ID: 9
+TOKEN INPUT: [nine,ty_,four]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+10Y'(4,9)
+PARSING TREE:
+[tree(_111876,tree(_112194,li([ty_],[=c1,=c2d,cfin]),li([four],[c1])),li([nine],[c2d]))]
+

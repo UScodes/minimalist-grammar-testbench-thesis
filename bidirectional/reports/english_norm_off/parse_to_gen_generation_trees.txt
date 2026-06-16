@@ -1,0 +1,60 @@
+==================================================
+CASE ID: 1
+TOKEN INPUT: [twenty_,one]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+20'(1)
+GENERATION STATUS: ok
+GENERATED TOKENS: [twenty,one]
+COMPARISON TOKENS: [twenty,one]
+GENERATED SENTENCE: twentyone
+GENERATION TREE:
+tree([([twenty,one],[c2],'1X+20'(1))],merge1,li([twenty],[=c1,c2],[_6642,_6674]>>(_6674='1X+20'(_6642))),li([one],[c1],1))
+
+==================================================
+CASE ID: 2
+TOKEN INPUT: [twenty_,four]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+20'(4)
+GENERATION STATUS: ok
+GENERATED TOKENS: [twenty,four]
+COMPARISON TOKENS: [twenty,four]
+GENERATED SENTENCE: twentyfour
+GENERATION TREE:
+tree([([twenty],[c2],[_12142,_12174]>>(_12174='1X+20'(_12142))),([four],[-tee],4)],merge3,li([twenty],[=c1,c2],[_12142,_12174]>>(_12174='1X+20'(_12142))),li([four],[c1,-tee],4))
+
+==================================================
+CASE ID: 3
+TOKEN INPUT: [twenty_,seven]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+20'(7)
+GENERATION STATUS: ok
+GENERATED TOKENS: [twenty,seven]
+COMPARISON TOKENS: [twenty,seven]
+GENERATED SENTENCE: twentyseven
+GENERATION TREE:
+tree([([twenty],[c2],[_12142,_12174]>>(_12174='1X+20'(_12142))),([seven],[-tee],7)],merge3,li([twenty],[=c1,c2],[_12142,_12174]>>(_12174='1X+20'(_12142))),li([seven],[c1,-tee],7))
+
+==================================================
+CASE ID: 4
+TOKEN INPUT: [thirty_,four]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+30'(4)
+GENERATION STATUS: ok
+GENERATED TOKENS: [thirty,four]
+COMPARISON TOKENS: [thirty,four]
+GENERATED SENTENCE: thirtyfour
+GENERATION TREE:
+tree([([thirty],[c2],[_12142,_12174]>>(_12174='1X+30'(_12142))),([four],[-tee],4)],merge3,li([thirty],[=c1,c2],[_12142,_12174]>>(_12174='1X+30'(_12142))),li([four],[c1,-tee],4))
+
+==================================================
+CASE ID: 5
+TOKEN INPUT: [fifty_,six]
+PARSING STATUS: ok
+RECOVERED SEMANTIC OUTPUT: '1X+50'(6)
+GENERATION STATUS: ok
+GENERATED TOKENS: [fifty,six]
+COMPARISON TOKENS: [fifty,six]
+GENERATED SENTENCE: fiftysix
+GENERATION TREE:
+tree([([fifty],[c2],[_12142,_12174]>>(_12174='1X+50'(_12142))),([six],[-tee],6)],merge3,li([fifty],[=c1,c2],[_12142,_12174]>>(_12174='1X+50'(_12142))),li([six],[c1,-tee],6))
+

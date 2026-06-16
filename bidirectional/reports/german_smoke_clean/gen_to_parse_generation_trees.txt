@@ -1,0 +1,234 @@
+==================================================
+CASE ID: 1
+SEMANTIC INPUT: 1
+GENERATION STATUS: ok
+GENERATED TOKENS: [eins]
+GENERATED SENTENCE: eins
+GENERATION TREE:
+li([eins],[c1],1)
+
+==================================================
+CASE ID: 2
+SEMANTIC INPUT: 2
+GENERATION STATUS: ok
+GENERATED TOKENS: [zwei]
+GENERATED SENTENCE: zwei
+GENERATION TREE:
+li([zwei],[c1,-b],2)
+
+==================================================
+CASE ID: 3
+SEMANTIC INPUT: 3
+GENERATION STATUS: ok
+GENERATED TOKENS: [drei]
+GENERATED SENTENCE: drei
+GENERATION TREE:
+li([drei],[c1,-c,-b,-a],3)
+
+==================================================
+CASE ID: 4
+SEMANTIC INPUT: 4
+GENERATION STATUS: ok
+GENERATED TOKENS: [vier]
+GENERATED SENTENCE: vier
+GENERATION TREE:
+li([vier],[c1,-b,-a,-d],4)
+
+==================================================
+CASE ID: 5
+SEMANTIC INPUT: 6
+GENERATION STATUS: ok
+GENERATED TOKENS: [sechs]
+GENERATED SENTENCE: sechs
+GENERATION TREE:
+li([sechs],[c1,-b],6)
+
+==================================================
+CASE ID: 6
+SEMANTIC INPUT: 7
+GENERATION STATUS: ok
+GENERATED TOKENS: [sieben]
+GENERATED SENTENCE: sieben
+GENERATION TREE:
+li([sieben],[c1,-b],7)
+
+==================================================
+CASE ID: 7
+SEMANTIC INPUT: 8
+GENERATION STATUS: ok
+GENERATED TOKENS: [acht]
+GENERATED SENTENCE: acht
+GENERATION TREE:
+li([acht],[c1,-b,-a,-d],8)
+
+==================================================
+CASE ID: 8
+SEMANTIC INPUT: 9
+GENERATION STATUS: ok
+GENERATED TOKENS: [neun]
+GENERATED SENTENCE: neun
+GENERATION TREE:
+li([neun],[c1,-b,-a,-d],9)
+
+==================================================
+CASE ID: 9
+SEMANTIC INPUT: 10
+GENERATION STATUS: ok
+GENERATED TOKENS: [zehn]
+GENERATED SENTENCE: zehn
+GENERATION TREE:
+li([zehn],[c2,-s1],10)
+
+==================================================
+CASE ID: 10
+SEMANTIC INPUT: 11
+GENERATION STATUS: ok
+GENERATED TOKENS: [elf]
+GENERATED SENTENCE: elf
+GENERATION TREE:
+li([elf],[c2,-s1],11)
+
+==================================================
+CASE ID: 11
+SEMANTIC INPUT: 16
+GENERATION STATUS: ok
+GENERATED TOKENS: [sechzehn]
+GENERATED SENTENCE: sechzehn
+GENERATION TREE:
+li([sechzehn],[c2,-s1],16)
+
+==================================================
+CASE ID: 12
+SEMANTIC INPUT: 17
+GENERATION STATUS: ok
+GENERATED TOKENS: [siebzehn]
+GENERATED SENTENCE: siebzehn
+GENERATION TREE:
+li([siebzehn],[c2,-s1],17)
+
+==================================================
+CASE ID: 13
+SEMANTIC INPUT: 20
+GENERATION STATUS: ok
+GENERATED TOKENS: [zwanzig]
+GENERATED SENTENCE: zwanzig
+GENERATION TREE:
+li([zwanzig],[c2,-s1],20)
+
+==================================================
+CASE ID: 14
+SEMANTIC INPUT: 21
+GENERATION STATUS: ok
+GENERATED TOKENS: [einundzwanzig]
+GENERATED SENTENCE: einundzwanzig
+GENERATION TREE:
+li([einundzwanzig],[c2,-s1],21)
+
+==================================================
+CASE ID: 15
+SEMANTIC INPUT: 60
+GENERATION STATUS: ok
+GENERATED TOKENS: [sechzig]
+GENERATED SENTENCE: sechzig
+GENERATION TREE:
+li([sechzig],[c2,-s1],60)
+
+==================================================
+CASE ID: 16
+SEMANTIC INPUT: 61
+GENERATION STATUS: ok
+GENERATED TOKENS: [einundsechzig]
+GENERATED SENTENCE: einundsechzig
+GENERATION TREE:
+li([einundsechzig],[c2,-s1],61)
+
+==================================================
+CASE ID: 17
+SEMANTIC INPUT: 70
+GENERATION STATUS: ok
+GENERATED TOKENS: [siebzig]
+GENERATED SENTENCE: siebzig
+GENERATION TREE:
+li([siebzig],[c2,-s1],70)
+
+==================================================
+CASE ID: 18
+SEMANTIC INPUT: 71
+GENERATION STATUS: ok
+GENERATED TOKENS: [einundsiebzig]
+GENERATED SENTENCE: einundsiebzig
+GENERATION TREE:
+li([einundsiebzig],[c2,-s1],71)
+
+==================================================
+CASE ID: 19
+SEMANTIC INPUT: 100
+GENERATION STATUS: ok
+GENERATED TOKENS: [hundert]
+GENERATED SENTENCE: hundert
+GENERATION TREE:
+li([hundert],[c3],100)
+
+==================================================
+CASE ID: 20
+SEMANTIC INPUT: '1X+20'(2)
+GENERATION STATUS: ok
+GENERATED TOKENS: [zwei,undzwanzig]
+GENERATED SENTENCE: zweiundzwanzig
+GENERATION TREE:
+tree([([zwei,undzwanzig],[c2,-s1],'1X+20'(2))],move1,empty,tree([([undzwanzig],[+b,c2,-s1],[_4066,_4098]>>(_4098='1X+20'(_4066))),([zwei],[-b],2)],merge3,li([undzwanzig],[=c1,+b,c2,-s1],[_4066,_4098]>>(_4098='1X+20'(_4066))),li([zwei],[c1,-b],2)))
+
+==================================================
+CASE ID: 21
+SEMANTIC INPUT: '1X+20'(6)
+GENERATION STATUS: ok
+GENERATED TOKENS: [sechs,undzwanzig]
+GENERATED SENTENCE: sechsundzwanzig
+GENERATION TREE:
+tree([([sechs,undzwanzig],[c2,-s1],'1X+20'(6))],move1,empty,tree([([undzwanzig],[+b,c2,-s1],[_9758,_9790]>>(_9790='1X+20'(_9758))),([sechs],[-b],6)],merge3,li([undzwanzig],[=c1,+b,c2,-s1],[_9758,_9790]>>(_9790='1X+20'(_9758))),li([sechs],[c1,-b],6)))
+
+==================================================
+CASE ID: 22
+SEMANTIC INPUT: '1X+20'(7)
+GENERATION STATUS: ok
+GENERATED TOKENS: [sieben,undzwanzig]
+GENERATED SENTENCE: siebenundzwanzig
+GENERATION TREE:
+tree([([sieben,undzwanzig],[c2,-s1],'1X+20'(7))],move1,empty,tree([([undzwanzig],[+b,c2,-s1],[_9758,_9790]>>(_9790='1X+20'(_9758))),([sieben],[-b],7)],merge3,li([undzwanzig],[=c1,+b,c2,-s1],[_9758,_9790]>>(_9790='1X+20'(_9758))),li([sieben],[c1,-b],7)))
+
+==================================================
+CASE ID: 23
+SEMANTIC INPUT: '100X'(2)
+GENERATION STATUS: ok
+GENERATED TOKENS: [zwei,hundert]
+GENERATED SENTENCE: zweihundert
+GENERATION TREE:
+tree([([zwei,hundert],[c3],'100X'(2))],move1,empty,tree([([hundert],[+b,c3],[_9758,_9790]>>(_9790='100X'(_9758))),([zwei],[-b],2)],merge3,li([hundert],[=c1,+b,c3],[_9758,_9790]>>(_9790='100X'(_9758))),li([zwei],[c1,-b],2)))
+
+==================================================
+CASE ID: 24
+SEMANTIC INPUT: '1X+100'(20)
+GENERATION STATUS: ok
+GENERATED TOKENS: [hundert,zwanzig]
+GENERATED SENTENCE: hundertzwanzig
+GENERATION TREE:
+tree([([hundert],[c3],[_9758,_9790]>>(_9790='1X+100'(_9758))),([zwanzig],[-s1],20)],merge3,li([hundert],[=c2,c3],[_9758,_9790]>>(_9790='1X+100'(_9758))),li([zwanzig],[c2,-s1],20))
+
+==================================================
+CASE ID: 25
+SEMANTIC INPUT: '1X+100'(60)
+GENERATION STATUS: ok
+GENERATED TOKENS: [hundert,sechzig]
+GENERATED SENTENCE: hundertsechzig
+GENERATION TREE:
+tree([([hundert],[c3],[_9758,_9790]>>(_9790='1X+100'(_9758))),([sechzig],[-s1],60)],merge3,li([hundert],[=c2,c3],[_9758,_9790]>>(_9790='1X+100'(_9758))),li([sechzig],[c2,-s1],60))
+
+==================================================
+CASE ID: 26
+SEMANTIC INPUT: '1X+100'(70)
+GENERATION STATUS: ok
+GENERATED TOKENS: [hundert,siebzig]
+GENERATED SENTENCE: hundertsiebzig
+GENERATION TREE:
+tree([([hundert],[c3],[_9758,_9790]>>(_9790='1X+100'(_9758))),([siebzig],[-s1],70)],merge3,li([hundert],[=c2,c3],[_9758,_9790]>>(_9790='1X+100'(_9758))),li([siebzig],[c2,-s1],70))
+
